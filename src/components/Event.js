@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import ReactMarkdown from "react-markdown";
 
 const Container = styled.div`
   display: flex;
@@ -36,13 +37,13 @@ const Image = styled.div`
   max-height: 300px;
 `;
 
-export default function Event({ event, placement }) {
+export default function Event({ event }) {
   const { date, body, image } = event;
   return (
     <Container>
-      <Content placement={placement} className="content">
+      <Content className="content">
         <time>{date}</time>
-        <p>{body}</p>
+        <ReactMarkdown source={body} />
         {image && (
           <Image>
             <img src={image.src} alt={image.src} />

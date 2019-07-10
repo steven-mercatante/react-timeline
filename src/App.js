@@ -12,7 +12,7 @@ function App() {
         alt: "trees"
       }
     },
-    { body: "bar", date: "2/1/2019" },
+    { body: "**hello** _world_", date: "2/1/2019" },
     { body: "quux", date: "3/1/2019" },
     { body: "pizza", date: "4/1/2019" }
   ];
