@@ -1,3 +1,7 @@
-.has-tweet .content {
+/* body {
   background-color: red;
+} */
+
+.has-tweet .content {
+  background-color: inherit;
 }
