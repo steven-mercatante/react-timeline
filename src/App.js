@@ -13,7 +13,7 @@ function App() {
       }
     },
     { body: "**hello** _world_", date: "2/1/2019" },
-    { body: "quux", date: "3/1/2019" },
+    { body: "quux", date: "3/1/2019", tweet: "1006202911632904197" },
     { body: "pizza", date: "4/1/2019" }
   ];
   return (

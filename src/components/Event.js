@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
+import { TwitterTweetEmbed } from "react-twitter-embed";
 
 const Container = styled.div`
   display: flex;
@@ -38,7 +39,7 @@ const Image = styled.div`
 `;
 
 export default function Event({ event }) {
-  const { date, body, image } = event;
+  const { date, body, image, tweet } = event;
   return (
     <Container>
       <Content className="content">
@@ -49,6 +50,8 @@ export default function Event({ event }) {
             <img src={image.src} alt={image.src} />
           </Image>
         )}
+
+        {tweet && <TwitterTweetEmbed tweetId={tweet} />}
       </Content>
     </Container>
   );
