@@ -30,11 +30,24 @@ const Content = styled.div`
   align-self: flex-end;
 `;
 
+const Image = styled.div`
+  overflow: hidden;
+  position: relative;
+  max-height: 300px;
+`;
+
 export default function Event({ event, placement }) {
+  const { date, body, image } = event;
   return (
     <Container>
       <Content placement={placement} className="content">
-        <p>{event.body}</p>
+        <time>{date}</time>
+        <p>{body}</p>
+        {image && (
+          <Image>
+            <img src={image.src} alt={image.src} />
+          </Image>
+        )}
       </Content>
     </Container>
   );
