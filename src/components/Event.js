@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
-import { TwitterTweetEmbed } from "react-twitter-embed";
+import TweetEmbed from "./TweetEmbed";
 import YouTubeEmbed from "./YoutubeEmbed";
 
 const Container = styled.div`
@@ -50,10 +50,6 @@ const ImageContainer = styled.div`
   }
 `;
 
-const TweetContainer = styled.div`
-  width: 100%;
-`;
-
 export default function Event({ event }) {
   const { date, body, image, tweet, youtube } = event;
   const hasImage = Boolean(image);
@@ -79,11 +75,7 @@ export default function Event({ event }) {
           </ImageContainer>
         )}
 
-        {tweet && (
-          <TweetContainer className="tweet-container">
-            <TwitterTweetEmbed tweetId={tweet} />
-          </TweetContainer>
-        )}
+        {tweet && <TweetEmbed id={tweet} />}
 
         {youtube && <YouTubeEmbed id={youtube} />}
       </Content>
