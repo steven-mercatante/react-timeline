@@ -6,7 +6,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  // border: 1px solid red;
   margin: 4px;
 
   ::after {
@@ -21,7 +20,7 @@ const Container = styled.div`
 
 export default function Timeline({ events }) {
   return (
-    <Container>
+    <Container className="timeline">
       {events.map((event, i) => (
         <Event event={event} key={i} />
       ))}
