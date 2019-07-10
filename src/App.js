@@ -8,6 +8,7 @@ function App() {
   const events = [
     { date: "7/10/19", body: "Began prototyping React Timeline" },
     { tweet: "1006202911632904197" },
+    { youtube: "8ktONdU_wXU" },
     {
       date: "1/1/2019",
       body: "You can include images",
@@ -17,8 +18,7 @@ function App() {
         alt: "trees"
       }
     },
-    { body: "**Markdown** is *supported*", date: "2/1/2019" },
-    { youtube: "8ktONdU_wXU" }
+    { body: "**Markdown** is *supported*", date: "2/1/2019" }
   ];
   return (
     <div>
