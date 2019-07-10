@@ -46,8 +46,8 @@ const Content = styled.div`
 `;
 
 const Marker = styled.span`
-  background-color: #1a1a1c;
-  border: 3px solid #950f44;
+  background-color: #ee18b6;
+  border: 2px solid #ee18b6;
   border-radius: 50%;
   position: absolute;
   top: calc(50% - 10px);
