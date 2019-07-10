@@ -1,5 +1,6 @@
 import React from "react";
 import Timeline from "./components/Timeline";
+import "./App.css";
 
 // TODO: let users specify custom class names (& maybe CSS) per Event
 function App() {

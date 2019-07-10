@@ -54,9 +54,20 @@ const TweetContainer = styled.div`
 
 export default function Event({ event }) {
   const { date, body, image, tweet } = event;
+  const hasImage = Boolean(image);
+  const hasTweet = Boolean(tweet);
+
+  const containerClasses = ["event"];
+  if (hasImage) {
+    containerClasses.push("has-image");
+  }
+
+  if (hasTweet) {
+    containerClasses.push("has-tweet");
+  }
 
   return (
-    <Container className="event">
+    <Container className={containerClasses.join(" ")}>
       <Content className="content">
         <time>{date}</time>
         <ReactMarkdown source={body} />
