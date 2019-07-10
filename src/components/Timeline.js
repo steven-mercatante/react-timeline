@@ -11,8 +11,8 @@ const Container = styled.div`
 
   ::after {
     position: absolute;
-    left: calc(50% - 2px);
-    width: 4px;
+    left: calc(50% - 1px);
+    width: 2px;
     height: 100%;
     background-color: black;
     content: "";
@@ -23,7 +23,7 @@ export default function Timeline({ events }) {
   return (
     <Container>
       {events.map((event, i) => (
-        <Event event={event} key={i} />
+        <Event event={event} placement={i % 2} key={i} />
       ))}
     </Container>
   );

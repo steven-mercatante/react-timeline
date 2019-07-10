@@ -8,6 +8,7 @@ const Container = styled.div`
   align-self: flex-start;
   margin-bottom: 10px;
   // border: 1px solid red;
+  text-align: right;
 
   :nth-child(1) {
     margin-top: 10px;
@@ -16,6 +17,7 @@ const Container = styled.div`
   :nth-child(even) {
     align-self: flex-end;
     justify-content: flex-start;
+    text-align: left;
   }
 `;
 
@@ -24,13 +26,14 @@ const Content = styled.div`
   background-color: cyan;
   width: 90%;
   padding: 4px;
-  // margin: 6px;
+  margin: 0 6px;
+  align-self: flex-end;
 `;
 
-export default function Event({ event }) {
+export default function Event({ event, placement }) {
   return (
     <Container>
-      <Content>
+      <Content placement={placement} className="content">
         <p>{event.body}</p>
       </Content>
     </Container>
