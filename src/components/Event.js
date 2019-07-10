@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
 import TweetEmbed from "./TweetEmbed";
 import YouTubeEmbed from "./YoutubeEmbed";
+import Image from "./Image";
 
 const Container = styled.div`
   display: flex;
@@ -39,18 +40,6 @@ const Content = styled.div`
   margin: 0 6px;
 `;
 
-const ImageContainer = styled.div`
-  display: flex;
-  max-height: 400px;
-  width: 100%;
-
-  img {
-    flex: 1;
-    object-fit: cover;
-    overflow: hidden;
-  }
-`;
-
 const Marker = styled.span`
   background-color: #1a1a1c;
   border: 3px solid #950f44;
@@ -82,16 +71,9 @@ export default function Event({ event }) {
       <Content className="content">
         <time>{date}</time>
         <ReactMarkdown source={body} />
-        {image && (
-          <ImageContainer>
-            <img src={image.src} alt={image.alt} />
-          </ImageContainer>
-        )}
-
+        {image && <Image {...image} />}
         {tweet && <TweetEmbed id={tweet} />}
-
         {youtube && <YouTubeEmbed id={youtube} />}
-
         <Marker />
       </Content>
     </Container>
