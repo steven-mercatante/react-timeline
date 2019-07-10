@@ -6,6 +6,7 @@ import YouTubeEmbed from "./YoutubeEmbed";
 import Image from "./Image";
 
 const Container = styled.div`
+  // border: 1px solid yellow;
   display: flex;
   justify-content: flex-end;
   width: 50%;
@@ -22,6 +23,10 @@ const Container = styled.div`
 
     .content {
       align-items: flex-start;
+
+      .marker {
+        left: -40px;
+      }
     }
   }
 `;
@@ -37,7 +42,7 @@ const Content = styled.div`
   min-width: 200px;
   max-width: 700px;
   padding: 10px;
-  margin: 0 6px;
+  margin: 0 27px;
 `;
 
 const Marker = styled.span`
@@ -74,7 +79,7 @@ export default function Event({ event }) {
         {image && <Image {...image} />}
         {tweet && <TweetEmbed id={tweet} />}
         {youtube && <YouTubeEmbed id={youtube} />}
-        <Marker />
+        <Marker className="marker" />
       </Content>
     </Container>
   );
