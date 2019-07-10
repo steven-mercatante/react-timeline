@@ -30,10 +30,11 @@ const Content = styled.div`
   flex-direction: column;
   align-items: flex-end;
   border-radius: 4px;
-  background-color: cyan;
+  background-color: #4e4e50;
+  color: #fff;
   min-width: 200px;
   max-width: 700px;
-  padding: 4px;
+  padding: 10px;
   margin: 0 6px;
 `;
 

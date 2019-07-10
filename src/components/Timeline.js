@@ -13,7 +13,7 @@ const Container = styled.div`
     left: calc(50% - 1px);
     width: 2px;
     height: 100%;
-    background-color: black;
+    background-color: #950f44;
     content: "";
   }
 `;
