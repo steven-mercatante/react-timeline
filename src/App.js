@@ -1,11 +1,10 @@
 import React from "react";
 import Timeline from "./components/Timeline";
-import "./App.css";
 
 // TODO: let users specify custom class names (& maybe CSS) per Event
 function App() {
   const events = [
-    { body: "quux", date: "3/1/2019", tweet: "1006202911632904197" },
+    { tweet: "1006202911632904197" },
     {
       date: "1/1/2019",
       body: "foo",
@@ -16,7 +15,7 @@ function App() {
       }
     },
     { body: "**hello** _world_", date: "2/1/2019" },
-    { body: "pizza", date: "4/1/2019", tweet: "1144426377787183105" }
+    { tweet: "1144426377787183105" }
   ];
   return (
     <div>

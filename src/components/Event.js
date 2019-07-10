@@ -10,10 +10,6 @@ const Container = styled.div`
   align-self: flex-start;
   margin-bottom: 10px;
 
-  .content {
-    align-items: flex-end;
-  }
-
   :nth-child(1) {
     margin-top: 10px;
   }
@@ -31,13 +27,13 @@ const Container = styled.div`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   border-radius: 4px;
   background-color: cyan;
   min-width: 200px;
   max-width: 700px;
   padding: 4px;
   margin: 0 6px;
-  align-self: flex-end;
 `;
 
 const ImageContainer = styled.div`
@@ -50,6 +46,10 @@ const ImageContainer = styled.div`
     object-fit: cover;
     overflow: hidden;
   }
+`;
+
+const TweetContainer = styled.div`
+  width: 100%;
 `;
 
 export default function Event({ event }) {
@@ -66,7 +66,11 @@ export default function Event({ event }) {
           </ImageContainer>
         )}
 
-        {tweet && <TwitterTweetEmbed tweetId={tweet} />}
+        {tweet && (
+          <TweetContainer className="tweet-container">
+            <TwitterTweetEmbed tweetId={tweet} />
+          </TweetContainer>
+        )}
       </Content>
     </Container>
   );
