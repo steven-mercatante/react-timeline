@@ -27,7 +27,7 @@ const Container = styled.div`
     flex-direction: row !important;
 
     .content {
-      max-width: 400px;
+      max-width: 80%;
     }
 
     :nth-child(odd) {
@@ -40,6 +40,7 @@ const Container = styled.div`
     :nth-child(even) {
       .content {
         // border: 1px solid yellow;
+        left: 80px !important;
       }
     }
   }
