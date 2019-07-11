@@ -10,14 +10,14 @@ const Container = styled.div`
   position: relative;
   display: flex;
   margin-bottom: 20px;
-  opacity: ${({ isVisible }) => (isVisible ? 1 : 0.25)};
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0.15)};
   transition: opacity 0.25s ease-in;
 
   :nth-child(1) {
     margin-top: 20px;
   }
 
-  :nth-child(even) {
+  :nth-child(odd) {
     flex-direction: row-reverse;
     // border-color: orange;
   }
@@ -32,12 +32,12 @@ const Content = styled.div`
   max-width: 40%;
 
   ${Container}:nth-child(odd) & {
-    left: 52%;
+    left: auto;
+    right: 52%;
   }
 
   ${Container}:nth-child(even) & {
-    left: auto;
-    right: 52%;
+    left: 52%;
   }
 `;
 
@@ -52,11 +52,11 @@ const Timestamp = styled.time`
   font-size: .85rem;
 
   ${Container}:nth-child(odd) & {
-    right: 52%;
-  }
-
-  ${Container}:nth-child(even) & {
     left: 52%;
+  }
+  
+  ${Container}:nth-child(even) & {
+    right: 52%;
   }
 `;
 
