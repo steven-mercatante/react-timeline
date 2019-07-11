@@ -6,7 +6,7 @@ import YouTubeEmbed from "./YoutubeEmbed";
 import Image from "./Image";
 
 const Container = styled.div`
-  border: 1px solid green;
+  // border: 1px solid green;
   position: relative;
   display: flex;
   margin-bottom: 20px;
@@ -26,16 +26,20 @@ const Container = styled.div`
   @media (max-width: 768px) {
     flex-direction: row !important;
 
+    .content {
+      max-width: 400px;
+    }
+
     :nth-child(odd) {
       .content {
-        border: 1px solid red;
-        left: 60px !important;
+        // border: 1px solid red;
+        left: 80px !important;
       }
     }
 
     :nth-child(even) {
       .content {
-        border: 1px solid yellow;
+        // border: 1px solid yellow;
       }
     }
   }
@@ -93,7 +97,7 @@ const Marker = styled.span`
   z-index: 100;
 
   @media (max-width: 768px) {
-    left: calc(4% - 12px);
+    left: 32px;
   }
 `;
 

@@ -21,7 +21,7 @@ const Container = styled.div`
     content: "";
 
     @media (max-width: 768px) {
-      left: 4%;
+      left: 44px;
     }
   }
 `;
