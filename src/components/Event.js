@@ -34,13 +34,13 @@ const Content = styled.div`
 
   ${Container}:nth-child(odd) & {
     left: ${({ alternateEvents }) =>
-      alternateEvents ? "auto" : "calc(12% + 30px)"};
+      alternateEvents ? "auto" : "calc(4% + 30px)"};
     right: ${({ alternateEvents }) => (alternateEvents ? "52%" : 0)};
   }
 
   ${Container}:nth-child(even) & {
     left: ${({ alternateEvents }) =>
-      alternateEvents ? "52%" : "calc(12% + 30px)"};
+      alternateEvents ? "52%" : "calc(4% + 30px)"};
   }
 `;
 
@@ -67,7 +67,7 @@ const Marker = styled.span`
   position: absolute;
   top: calc(50% - 10px);
   left: ${({ alternateEvents }) =>
-    alternateEvents ? "calc(50% - 12px)" : "calc(12% - 12px)"};
+    alternateEvents ? "calc(50% - 12px)" : "calc(4% - 12px)"};
   background-color: #eb2db4;
   border: 2px solid #eb2db4;
   border-radius: 50%;

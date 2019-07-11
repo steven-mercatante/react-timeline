@@ -14,7 +14,7 @@ const Container = styled.div`
   ::after {
     position: absolute;
     left: ${({ alternateEvents }) =>
-      alternateEvents === true ? `calc(50% - 1px)` : `12%`};
+      alternateEvents === true ? `calc(50% - 1px)` : `4%`};
     width: 2px;
     height: 100%;
     background-color: #ee18b6;
