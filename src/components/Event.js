@@ -49,8 +49,12 @@ const Content = styled.div`
 `;
 
 const Timestamp = styled.time`
-  background-color: yellow;
-  color: green;
+  background-color: #ec24b5;
+  color: #fff
+  padding: 4px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: .85rem;
   position: absolute;
   top: calc(50% - 10px);
   ${({ placement }) => placement === 0 && `right: -110px`}
@@ -95,8 +99,8 @@ export default function Event({ event, placement }) {
         {image && <Image {...image} />}
         {tweet && <TweetEmbed id={tweet} />}
         {youtube && <YouTubeEmbed id={youtube} />}
+        <EventMarker className="marker" />
       </Content>
-      <EventMarker className="marker" />
     </Container>
   );
 }
