@@ -6,7 +6,7 @@ import YouTubeEmbed from "./YoutubeEmbed";
 import Image from "./Image";
 
 const Container = styled.div`
-  border: 1px solid red;
+  // border: 1px solid red;
   position: relative;
   display: flex;
   margin-bottom: 20px;
@@ -17,12 +17,11 @@ const Container = styled.div`
 
   :nth-child(even) {
     flex-direction: row-reverse;
-    border-color: orange;
+    // border-color: orange;
   }
 `;
 
 const Content = styled.div`
-  border: 1px solid blue;
   display: flex;
   // align-items: center;
 
@@ -72,7 +71,7 @@ const Marker = styled.span`
 `;
 
 const Bubble = styled.div`
-  border: 1px solid yellow;
+  // border: 1px solid yellow;
   border-radius: 4px;
   background-color: #4e4e50;
   color: #fff;
