@@ -6,7 +6,7 @@ import YouTubeEmbed from "./YoutubeEmbed";
 import Image from "./Image";
 
 const Container = styled.div`
-  // border: 1px solid yellow;
+  border: 1px solid green;
   position: relative;
   display: flex;
   margin-bottom: 20px;
@@ -22,6 +22,23 @@ const Container = styled.div`
     `:nth-child(odd) {
       flex-direction: row-reverse;
     }`}
+
+  @media (max-width: 768px) {
+    flex-direction: row !important;
+
+    :nth-child(odd) {
+      .content {
+        border: 1px solid red;
+        left: 60px !important;
+      }
+    }
+
+    :nth-child(even) {
+      .content {
+        border: 1px solid yellow;
+      }
+    }
+  }
 `;
 
 const Content = styled.div`
@@ -33,15 +50,14 @@ const Content = styled.div`
   max-width: ${({ alternateEvents }) => (alternateEvents ? "42%" : "88%")};
 
   ${Container}:nth-child(odd) & {
-    left: ${({ alternateEvents }) =>
-      alternateEvents ? "auto" : "calc(4% + 30px)"};
+    left: ${({ alternateEvents }) => (alternateEvents ? "auto" : "80px")};
     right: ${({ alternateEvents }) =>
       alternateEvents ? "calc(50% + 30px)" : 0};
   }
 
   ${Container}:nth-child(even) & {
     left: ${({ alternateEvents }) =>
-      alternateEvents ? "calc(50% + 30px)" : "calc(4% + 30px)"};
+      alternateEvents ? "calc(50% + 30px)" : "80px"};
   }
 `;
 
@@ -68,7 +84,7 @@ const Marker = styled.span`
   position: absolute;
   top: calc(50% - 10px);
   left: ${({ alternateEvents }) =>
-    alternateEvents ? "calc(50% - 12px)" : "calc(4% - 12px)"};
+    alternateEvents ? "calc(50% - 12px)" : "32px"};
   background-color: #eb2db4;
   border: 2px solid #eb2db4;
   border-radius: 50%;
