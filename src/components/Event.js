@@ -59,20 +59,9 @@ const Marker = styled.span`
 
 export default function Event({ event }) {
   const { date, body, image, tweet, youtube } = event;
-  const hasImage = Boolean(image);
-  const hasTweet = Boolean(tweet);
-
-  const containerClasses = ["event"];
-  if (hasImage) {
-    containerClasses.push("has-image");
-  }
-
-  if (hasTweet) {
-    containerClasses.push("has-tweet");
-  }
 
   return (
-    <Container className={containerClasses.join(" ")}>
+    <Container className="event">
       <Content className="content">
         <time>{date}</time>
         <ReactMarkdown source={body} />
