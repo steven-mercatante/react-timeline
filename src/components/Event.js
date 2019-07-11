@@ -75,6 +75,10 @@ const Marker = styled.span`
   width: 20px;
   height: 20px;
   z-index: 100;
+
+  @media (max-width: 768px) {
+    left: calc(4% - 12px);
+  }
 `;
 
 export default function Event({ event, alternateEvents, inlineDate }) {

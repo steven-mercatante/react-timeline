@@ -19,6 +19,10 @@ const Container = styled.div`
     height: 100%;
     background-color: #ee18b6;
     content: "";
+
+    @media (max-width: 768px) {
+      left: 4%;
+    }
   }
 `;
 
