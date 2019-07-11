@@ -1,3 +1,7 @@
 body {
   background-color: #11040c;
 }
+
+.visible {
+  border: 1px solid green;
+}

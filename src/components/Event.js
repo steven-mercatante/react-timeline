@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
 import TweetEmbed from "./TweetEmbed";
@@ -6,7 +6,7 @@ import YouTubeEmbed from "./YoutubeEmbed";
 import Image from "./Image";
 
 const Container = styled.div`
-  // border: 1px solid yellow;
+  border: 1px solid red;
   display: flex;
   justify-content: flex-end;
   width: 50%;
@@ -58,10 +58,38 @@ const Marker = styled.span`
 `;
 
 export default function Event({ event }) {
+  // console.log("Event.render()");
+  const [isVisible, setIsVisible] = useState(false);
+  const eventRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          } else {
+            setIsVisible(false);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5
+      }
+    );
+    observer.observe(eventRef.current);
+  });
+
   const { date, body, image, tweet, youtube } = event;
+  const containerClasses = ["event"];
+  if (isVisible) {
+    containerClasses.push("visible");
+  }
 
   return (
-    <Container className="event">
+    <Container className={containerClasses.join(" ")} ref={eventRef}>
       <Content className="content">
         <time>{date}</time>
         <ReactMarkdown source={body} />
