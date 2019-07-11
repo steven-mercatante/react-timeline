@@ -13,8 +13,6 @@ const Container = styled.div`
   width: 50%;
   align-self: flex-start;
   margin-bottom: 10px;
-  opacity: ${({ isVisible }) => (isVisible ? 1 : 0.25)};
-  transition: opacity 0.5s ease-in;
 
   :nth-child(1) {
     margin-top: 10px;
@@ -46,6 +44,8 @@ const Content = styled.div`
   max-width: 700px;
   padding: 10px;
   margin: 0 27px;
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0.25)};
+  transition: opacity 0.5s ease-in-out;
 `;
 
 export default function Event({ event }) {
@@ -76,15 +76,15 @@ export default function Event({ event }) {
   const { date, body, image, tweet, youtube } = event;
 
   return (
-    <Container className="event" ref={eventRef} isVisible={isVisible}>
-      <Content className="content">
+    <Container className="event" ref={eventRef}>
+      <Content className="content" isVisible={isVisible}>
         <time>{date}</time>
         <ReactMarkdown source={body} />
         {image && <Image {...image} />}
         {tweet && <TweetEmbed id={tweet} />}
         {youtube && <YouTubeEmbed id={youtube} />}
-        <EventMarker className="marker" />
       </Content>
+      <EventMarker className="marker" />
     </Container>
   );
 }
