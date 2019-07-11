@@ -59,6 +59,7 @@ const Content = styled.div`
   max-width: ${({ alternateEvents }) => (alternateEvents ? "42%" : "88%")};
 
   ${Container}:nth-child(odd) & {
+    // text-align: right;
     left: ${({ alternateEvents }) => (alternateEvents ? "auto" : "80px")};
     right: ${({ alternateEvents }) =>
       alternateEvents ? "calc(50% + 30px)" : 0};

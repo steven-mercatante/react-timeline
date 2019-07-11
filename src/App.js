@@ -4,12 +4,8 @@ import "./App.css";
 
 // TODO: events should be able to be passed via local data or from HTTP req
 // TODO: let users specify custom class names (& maybe CSS) per Event
+// TODO: allow for passing datetime which would be passed as datetime attr to the time element
 const events = [
-  {
-    date: "7/10/19",
-    body: "Began prototyping React Timeline",
-    opts: { cssClass: "custom-event-class" }
-  },
   {
     date: "1/1/2019",
     image: {
@@ -18,6 +14,11 @@ const events = [
       alt: "fireworks",
       credit: "Photo by https://unsplash.com/@aahubs"
     }
+  },
+  {
+    date: "7/10/19",
+    body: "Began prototyping React Timeline",
+    opts: { cssClass: "custom-event-class" }
   },
   { date: "July of the year 2019", tweet: "1006202911632904197" },
   {
@@ -75,7 +76,7 @@ function App() {
       <Timeline
         events={events}
         alternateEvents={true}
-        inlineDate={isMobile || true}
+        inlineDate={isMobile || false}
       />
     </div>
   );
