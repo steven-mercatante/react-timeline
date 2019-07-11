@@ -30,17 +30,18 @@ const Content = styled.div`
   background-color: #4e4e50;
   color: #fff;
   padding: 10px;
-  max-width: 40%;
+  max-width: 42%;
 
   ${Container}:nth-child(odd) & {
     left: ${({ alternateEvents }) =>
       alternateEvents ? "auto" : "calc(4% + 30px)"};
-    right: ${({ alternateEvents }) => (alternateEvents ? "52%" : 0)};
+    right: ${({ alternateEvents }) =>
+      alternateEvents ? "calc(50% + 30px)" : 0};
   }
 
   ${Container}:nth-child(even) & {
     left: ${({ alternateEvents }) =>
-      alternateEvents ? "52%" : "calc(4% + 30px)"};
+      alternateEvents ? "calc(50% + 30px)" : "calc(4% + 30px)"};
   }
 `;
 
@@ -55,11 +56,11 @@ const Timestamp = styled.time`
   font-size: .85rem;
 
   ${Container}:nth-child(odd) & {
-    left: 52%;
+    left: calc(50% + 30px);
   }
   
   ${Container}:nth-child(even) & {
-    right: 52%;
+    right: calc(50% + 30px);
   }
 `;
 

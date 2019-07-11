@@ -17,7 +17,6 @@ function App() {
     },
     { date: "July - September 2019", body: "Began prototyping React Timeline" },
     { date: "July of the year 2019", tweet: "1006202911632904197" },
-    { date: "7/10/19", youtube: "8ktONdU_wXU" },
     {
       date: "Sometime in 2018",
       body: "You can include images",
@@ -27,12 +26,13 @@ function App() {
         alt: "trees"
       }
     },
+    { date: "7/10/19", youtube: "8ktONdU_wXU" },
     { date: "7/10/19", body: "**Markdown** is *supported*" }
   ];
   return (
     <div>
       {/* TODO: pass config or opts object instead of a bunch of props? */}
-      <Timeline events={events} alternateEvents={true} inlineDate={false} />
+      <Timeline events={events} alternateEvents={false} inlineDate={false} />
     </div>
   );
 }
