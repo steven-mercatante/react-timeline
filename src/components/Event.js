@@ -5,6 +5,8 @@ import TweetEmbed from "./TweetEmbed";
 import YouTubeEmbed from "./YoutubeEmbed";
 import Image from "./Image";
 
+// TODO: avoid using !important in CSS
+
 const Container = styled.div`
   // border: 1px solid green;
   position: relative;
