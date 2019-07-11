@@ -30,7 +30,7 @@ const Content = styled.div`
   background-color: #4e4e50;
   color: #fff;
   padding: 10px;
-  max-width: 42%;
+  max-width: ${({ alternateEvents }) => (alternateEvents ? "42%" : "88%")};
 
   ${Container}:nth-child(odd) & {
     left: ${({ alternateEvents }) =>
