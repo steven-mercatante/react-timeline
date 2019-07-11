@@ -31,7 +31,8 @@ function App() {
   ];
   return (
     <div>
-      <Timeline events={events} />
+      {/* TODO: pass config or opts object instead of a bunch of props? */}
+      <Timeline events={events} alternateEvents={false} inlineDate={false} />
     </div>
   );
 }

@@ -6,7 +6,7 @@ import YouTubeEmbed from "./YoutubeEmbed";
 import Image from "./Image";
 
 const Container = styled.div`
-  // border: 1px solid red;
+  // border: 1px solid yellow;
   position: relative;
   display: flex;
   margin-bottom: 20px;
@@ -33,12 +33,14 @@ const Content = styled.div`
   max-width: 40%;
 
   ${Container}:nth-child(odd) & {
-    left: ${({ alternateEvents }) => (alternateEvents ? "auto" : "52%")};
+    left: ${({ alternateEvents }) =>
+      alternateEvents ? "auto" : "calc(12% + 30px)"};
     right: ${({ alternateEvents }) => (alternateEvents ? "52%" : 0)};
   }
 
   ${Container}:nth-child(even) & {
-    left: 52%;
+    left: ${({ alternateEvents }) =>
+      alternateEvents ? "52%" : "calc(12% + 30px)"};
   }
 `;
 
@@ -64,7 +66,8 @@ const Timestamp = styled.time`
 const Marker = styled.span`
   position: absolute;
   top: calc(50% - 10px);
-  left: calc(50% - 12px);
+  left: ${({ alternateEvents }) =>
+    alternateEvents ? "calc(50% - 12px)" : "calc(12% - 12px)"};
   background-color: #eb2db4;
   border: 2px solid #eb2db4;
   border-radius: 50%;
@@ -73,7 +76,7 @@ const Marker = styled.span`
   z-index: 100;
 `;
 
-export default function Event({ event }) {
+export default function Event({ event, alternateEvents, inlineDate }) {
   // console.log("Event.render()");
   const [isVisible, setIsVisible] = useState(false);
   const eventRef = useRef(null);
@@ -101,8 +104,7 @@ export default function Event({ event }) {
   // TODO: s/tweet/tweetId
   // TODO: s/youTube/youTubeId
   const { date, body, image, tweet, youtube } = event;
-  const alternateEvents = false;
-  let inlineDate = true;
+
   // TODO: can this be improved/made more clear?
   if (alternateEvents === false) {
     inlineDate = true;
@@ -116,8 +118,8 @@ export default function Event({ event }) {
       alternateEvents={alternateEvents}
     >
       {!inlineDate && <Timestamp>{date}</Timestamp>}
-      <Marker className="marker" />
-      <Content className="content">
+      <Marker className="marker" alternateEvents={alternateEvents} />
+      <Content className="content" alternateEvents={alternateEvents}>
         {inlineDate && <Timestamp inline={true}>{date}</Timestamp>}
         <ReactMarkdown source={body} />
         {image && <Image {...image} />}
