@@ -7,7 +7,10 @@ const Container = styled.div`
   flex-direction: column;
   position: relative;
   margin: 4px;
+  // overflow: hidden;
 
+  // renders the vertical line
+  // TODO: can width (and thus left calc) be passed via prop?
   ::after {
     position: absolute;
     left: calc(50% - 1px);

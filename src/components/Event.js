@@ -22,13 +22,13 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  display: flex;
-  // align-items: center;
-
-  // opacity: ${({ isVisible }) => (isVisible ? 1 : 0.25)};
-  // transition: opacity 0.25s ease-in;
   position: relative;
-  
+  border-radius: 4px;
+  background-color: #4e4e50;
+  color: #fff;
+  padding: 10px;
+  max-width: 40%;
+
   ${Container}:nth-child(odd) & {
     left: 52%;
   }
@@ -61,23 +61,9 @@ const Timestamp = styled.time`
 const Marker = styled.span`
   background-color: cyan;
   border: 2px solid cyan;
-  // background-color: #ee18b6;
-  // border: 2px solid #ee18b6;
   border-radius: 50%;
-  // top: calc(50% - 10px);
-  // right: -40px;
   width: 20px;
   height: 20px;
-`;
-
-const Bubble = styled.div`
-  // border: 1px solid yellow;
-  border-radius: 4px;
-  background-color: #4e4e50;
-  color: #fff;
-  min-width: 200px;
-  max-width: 500px;
-  padding: 10px;
 `;
 
 export default function Event({ event, placement }) {
@@ -116,12 +102,10 @@ export default function Event({ event, placement }) {
       </Timestamp>
       {/* <Marker className="marker" /> */}
       <Content className="content" isVisible={isVisible}>
-        <Bubble>
-          <ReactMarkdown source={body} />
-          {image && <Image {...image} />}
-          {tweet && <TweetEmbed id={tweet} />}
-          {youtube && <YouTubeEmbed id={youtube} />}
-        </Bubble>
+        <ReactMarkdown source={body} />
+        {image && <Image {...image} />}
+        {tweet && <TweetEmbed id={tweet} />}
+        {youtube && <YouTubeEmbed id={youtube} />}
       </Content>
     </Container>
   );
