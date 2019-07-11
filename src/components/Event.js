@@ -17,10 +17,11 @@ const Container = styled.div`
     margin-top: 20px;
   }
 
-  :nth-child(odd) {
-    flex-direction: row-reverse;
-    // border-color: orange;
-  }
+  ${({ alternateEvents }) =>
+    alternateEvents &&
+    `:nth-child(odd) {
+      flex-direction: row-reverse;
+    }`}
 `;
 
 const Content = styled.div`
@@ -32,8 +33,8 @@ const Content = styled.div`
   max-width: 40%;
 
   ${Container}:nth-child(odd) & {
-    left: auto;
-    right: 52%;
+    left: ${({ alternateEvents }) => (alternateEvents ? "auto" : "52%")};
+    right: ${({ alternateEvents }) => (alternateEvents ? "52%" : 0)};
   }
 
   ${Container}:nth-child(even) & {
@@ -100,10 +101,20 @@ export default function Event({ event }) {
   // TODO: s/tweet/tweetId
   // TODO: s/youTube/youTubeId
   const { date, body, image, tweet, youtube } = event;
-  const inlineDate = false;
+  const alternateEvents = false;
+  let inlineDate = true;
+  // TODO: can this be improved/made more clear?
+  if (alternateEvents === false) {
+    inlineDate = true;
+  }
 
   return (
-    <Container className="event" ref={eventRef} isVisible={isVisible}>
+    <Container
+      className="event"
+      ref={eventRef}
+      isVisible={isVisible}
+      alternateEvents={alternateEvents}
+    >
       {!inlineDate && <Timestamp>{date}</Timestamp>}
       <Marker className="marker" />
       <Content className="content">
