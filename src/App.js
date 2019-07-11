@@ -18,14 +18,21 @@ const events = [
       alt: "fireworks"
     }
   },
-  { date: "July - September 2019", body: "Began prototyping React Timeline" },
   { date: "July of the year 2019", tweet: "1006202911632904197" },
   {
     date: "Sometime in 2018",
     body: "You can include images",
     image: {
       src:
-        "https://images.unsplash.com/photo-1562696482-77619dec0ae7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80",
+        "https://images.unsplash.com/photo-1562741789-fd05816d507e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+      alt: "trees"
+    }
+  },
+  {
+    date: "Sometime in 2018",
+    image: {
+      src:
+        "https://images.unsplash.com/photo-1421494756418-72f0f89c6bfd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
       alt: "trees"
     }
   },
