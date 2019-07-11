@@ -9,8 +9,8 @@ const Container = styled.div`
   // border: 1px solid red;
   display: flex;
   justify-content: flex-end;
-  width: 50%;
   align-self: flex-start;
+  width: 50%;
   margin-bottom: 20px;
 
   :nth-child(1) {
@@ -105,7 +105,7 @@ export default function Event({ event, placement }) {
   return (
     <Container className="event" ref={eventRef}>
       <Content className="content" isVisible={isVisible}>
-        <Timestamp placement={placement} inline={true}>
+        <Timestamp placement={placement} inline={false}>
           {date}
         </Timestamp>
         <ReactMarkdown source={body} />
