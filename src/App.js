@@ -15,7 +15,8 @@ const events = [
     image: {
       src:
         "https://images.unsplash.com/photo-1562734041-a2d56f060a44?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80",
-      alt: "fireworks"
+      alt: "fireworks",
+      credit: "Photo by https://unsplash.com/@aahubs"
     }
   },
   { date: "July of the year 2019", tweet: "1006202911632904197" },
@@ -25,7 +26,8 @@ const events = [
     image: {
       src:
         "https://images.unsplash.com/photo-1562741789-fd05816d507e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-      alt: "trees"
+      alt: "bhudda statue",
+      credit: "Photo by https://unsplash.com/@supermojor"
     }
   },
   {
@@ -33,7 +35,8 @@ const events = [
     image: {
       src:
         "https://images.unsplash.com/photo-1421494756418-72f0f89c6bfd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-      alt: "trees"
+      alt: "cherries",
+      credit: "Photo by https://unsplash.com/@nehadeshmukh"
     }
   },
   {
