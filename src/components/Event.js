@@ -59,11 +59,15 @@ const Timestamp = styled.time`
 `;
 
 const Marker = styled.span`
-  background-color: cyan;
-  border: 2px solid cyan;
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 12px);
+  background-color: #eb2db4;
+  border: 2px solid #eb2db4;
   border-radius: 50%;
   width: 20px;
   height: 20px;
+  z-index: 100;
 `;
 
 export default function Event({ event, placement }) {
@@ -100,7 +104,7 @@ export default function Event({ event, placement }) {
       <Timestamp placement={placement} inline={false}>
         {date}
       </Timestamp>
-      {/* <Marker className="marker" /> */}
+      <Marker className="marker" />
       <Content className="content" isVisible={isVisible}>
         <ReactMarkdown source={body} />
         {image && <Image {...image} />}
