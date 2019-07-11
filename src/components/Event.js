@@ -4,14 +4,17 @@ import ReactMarkdown from "react-markdown";
 import TweetEmbed from "./TweetEmbed";
 import YouTubeEmbed from "./YoutubeEmbed";
 import Image from "./Image";
+import EventMarker from "./EventMarker";
 
 const Container = styled.div`
-  border: 1px solid red;
+  // border: 1px solid red;
   display: flex;
   justify-content: flex-end;
   width: 50%;
   align-self: flex-start;
   margin-bottom: 10px;
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0.25)};
+  transition: opacity 0.5s ease-in;
 
   :nth-child(1) {
     margin-top: 10px;
@@ -45,18 +48,6 @@ const Content = styled.div`
   margin: 0 27px;
 `;
 
-const Marker = styled.span`
-  background-color: #ee18b6;
-  border: 2px solid #ee18b6;
-  border-radius: 50%;
-  position: absolute;
-  top: calc(50% - 10px);
-  right: -40px;
-  width: 20px;
-  height: 20px;
-  z-index: 100;
-`;
-
 export default function Event({ event }) {
   // console.log("Event.render()");
   const [isVisible, setIsVisible] = useState(false);
@@ -83,20 +74,16 @@ export default function Event({ event }) {
   });
 
   const { date, body, image, tweet, youtube } = event;
-  const containerClasses = ["event"];
-  if (isVisible) {
-    containerClasses.push("visible");
-  }
 
   return (
-    <Container className={containerClasses.join(" ")} ref={eventRef}>
+    <Container className="event" ref={eventRef} isVisible={isVisible}>
       <Content className="content">
         <time>{date}</time>
         <ReactMarkdown source={body} />
         {image && <Image {...image} />}
         {tweet && <TweetEmbed id={tweet} />}
         {youtube && <YouTubeEmbed id={youtube} />}
-        <Marker className="marker" />
+        <EventMarker className="marker" />
       </Content>
     </Container>
   );
