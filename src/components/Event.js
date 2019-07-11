@@ -50,6 +50,8 @@ const Container = styled.div`
 
 const Content = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
   border-radius: 4px;
   background-color: #4e4e50;
   color: #fff;
@@ -74,6 +76,7 @@ const Timestamp = styled.time`
   top: calc(50% - 10px);
   color: #fff
   padding: 4px;
+  margin-bottom: 4px;
   border-radius: 4px;
   font-weight: 500;
   font-size: .85rem;
