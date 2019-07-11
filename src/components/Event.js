@@ -10,6 +10,8 @@ const Container = styled.div`
   position: relative;
   display: flex;
   margin-bottom: 20px;
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0.25)};
+  transition: opacity 0.25s ease-in;
 
   :nth-child(1) {
     margin-top: 20px;
@@ -100,12 +102,12 @@ export default function Event({ event, placement }) {
   const { date, body, image, tweet, youtube } = event;
 
   return (
-    <Container className="event" ref={eventRef}>
+    <Container className="event" ref={eventRef} isVisible={isVisible}>
       <Timestamp placement={placement} inline={false}>
         {date}
       </Timestamp>
       <Marker className="marker" />
-      <Content className="content" isVisible={isVisible}>
+      <Content className="content">
         <ReactMarkdown source={body} />
         {image && <Image {...image} />}
         {tweet && <TweetEmbed id={tweet} />}
