@@ -45,10 +45,20 @@ const Content = styled.div`
   padding: 10px;
   margin: 0 27px;
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0.25)};
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in;
 `;
 
-export default function Event({ event }) {
+const Timestamp = styled.time`
+  background-color: yellow;
+  color: green;
+  position: absolute;
+  top: calc(50% - 10px);
+  ${({ placement }) => placement === 0 && `right: -110px`}
+  ${({ placement }) => placement === 1 && `left: -110px`}
+  z-index: 100;
+`;
+
+export default function Event({ event, placement }) {
   // console.log("Event.render()");
   const [isVisible, setIsVisible] = useState(false);
   const eventRef = useRef(null);
@@ -73,12 +83,14 @@ export default function Event({ event }) {
     observer.observe(eventRef.current);
   });
 
+  // TODO: s/tweet/tweetId
+  // TODO: s/youTube/youTubeId
   const { date, body, image, tweet, youtube } = event;
 
   return (
     <Container className="event" ref={eventRef}>
       <Content className="content" isVisible={isVisible}>
-        <time>{date}</time>
+        <Timestamp placement={placement}>{date}</Timestamp>
         <ReactMarkdown source={body} />
         {image && <Image {...image} />}
         {tweet && <TweetEmbed id={tweet} />}
