@@ -25,7 +25,7 @@ export default function Timeline({ events }) {
   return (
     <Container className="timeline">
       {events.map((event, i) => (
-        <Event key={i} event={event} placement={i % 2} />
+        <Event key={i} event={event} />
       ))}
     </Container>
   );
