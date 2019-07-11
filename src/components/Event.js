@@ -43,7 +43,7 @@ const Content = styled.div`
 
 const Timestamp = styled.time`
   background-color: #ec24b5;
-  position: absolute;
+  position: ${({ inline }) => (inline ? "static" : "absolute")};
   top: calc(50% - 10px);
   color: #fff
   padding: 4px;
@@ -72,7 +72,7 @@ const Marker = styled.span`
   z-index: 100;
 `;
 
-export default function Event({ event, placement }) {
+export default function Event({ event }) {
   // console.log("Event.render()");
   const [isVisible, setIsVisible] = useState(false);
   const eventRef = useRef(null);
@@ -100,14 +100,14 @@ export default function Event({ event, placement }) {
   // TODO: s/tweet/tweetId
   // TODO: s/youTube/youTubeId
   const { date, body, image, tweet, youtube } = event;
+  const inlineDate = false;
 
   return (
     <Container className="event" ref={eventRef} isVisible={isVisible}>
-      <Timestamp placement={placement} inline={false}>
-        {date}
-      </Timestamp>
+      {!inlineDate && <Timestamp>{date}</Timestamp>}
       <Marker className="marker" />
       <Content className="content">
+        {inlineDate && <Timestamp inline={true}>{date}</Timestamp>}
         <ReactMarkdown source={body} />
         {image && <Image {...image} />}
         {tweet && <TweetEmbed id={tweet} />}
