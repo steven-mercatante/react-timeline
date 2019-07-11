@@ -131,16 +131,22 @@ export default function Event({ event, alternateEvents, inlineDate }) {
 
   // TODO: s/tweet/tweetId
   // TODO: s/youTube/youTubeId
-  const { date, body, image, tweet, youtube } = event;
+  // TODO: not sure if opts should be a member of `event`
+  const { date, body, image, tweet, youtube, opts } = event;
 
   // TODO: can this be improved/made more clear?
   if (alternateEvents === false) {
     inlineDate = true;
   }
 
+  const containerClasses = ["event"];
+  if (opts && opts.cssClass) {
+    containerClasses.push(opts.cssClass);
+  }
+
   return (
     <Container
-      className="event"
+      className={containerClasses.join(" ")}
       ref={eventRef}
       isVisible={isVisible}
       alternateEvents={alternateEvents}

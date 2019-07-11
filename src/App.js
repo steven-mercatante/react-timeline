@@ -6,7 +6,11 @@ import "./App.css";
 // TODO: let users specify custom class names (& maybe CSS) per Event
 function App() {
   const events = [
-    { date: "7/10/19", body: "Began prototyping React Timeline" },
+    {
+      date: "7/10/19",
+      body: "Began prototyping React Timeline",
+      opts: { cssClass: "custom-event-class" }
+    },
     {
       date: "1/1/2019",
       image: {
