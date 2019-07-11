@@ -30,6 +30,10 @@ const Content = styled.div`
   // transition: opacity 0.25s ease-in;
   position: relative;
   
+  ${Container}:nth-child(odd) & {
+    left: 52%;
+  }
+
   ${Container}:nth-child(even) & {
     left: auto;
     right: 52%;
@@ -47,8 +51,7 @@ const Timestamp = styled.time`
   font-size: .85rem;
 
   ${Container}:nth-child(odd) & {
-    left: auto;
-    right: 32%;
+    right: 52%;
   }
 
   ${Container}:nth-child(even) & {
