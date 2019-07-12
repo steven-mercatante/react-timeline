@@ -11,6 +11,7 @@ export default function NodeWrapper({ event, children, alternateEvents }) {
       <EventContent
         className={`node-content ${event.type}`}
         alternateEvents={alternateEvents}
+        width="500px"
       >
         <EventTimestamp>{event.date}</EventTimestamp>
         {children}
