@@ -2,7 +2,7 @@ import styled from "styled-components";
 import EventContainer from "./EventContainer";
 
 const EventContent = styled.div`
-  border: 1px solid yellow;
+  // border: 1px solid yellow;
   position: relative;
   border-radius: 4px;
   background-color: #4e4e50;
@@ -10,9 +10,8 @@ const EventContent = styled.div`
   color: #fff;
   padding: 10px;
 
-  ${({ width }) => width && `width: ${width}`}
-
   max-width: 42%;
+  ${({ width }) => width && `width: ${width};`}
 
   ${EventContainer}:nth-child(odd) & {
     left: calc(50% + 30px);
@@ -20,6 +19,10 @@ const EventContent = styled.div`
 
   ${EventContainer}:nth-child(even) & {
     right: calc(50% + 30px);
+  }
+
+  @media (max-width: 768px) {
+    max-width: 80%;
   }
 `;
 
