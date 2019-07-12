@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Event from "./Event";
 import TextNode from "./TextNode";
+import ImageNode from "./ImageNode";
+import NodeWrapper from "./NodeWrapper";
 
 const Container = styled.div`
   // border: 1px solid red;
@@ -27,7 +29,7 @@ const Container = styled.div`
   }
 `;
 
-const nodes = { text: TextNode };
+const nodes = { text: TextNode, image: ImageNode };
 
 export default function Timeline({ events, alternateEvents, inlineDate }) {
   return (
@@ -35,12 +37,14 @@ export default function Timeline({ events, alternateEvents, inlineDate }) {
       {events.map((event, i) => {
         const Node = nodes[event.type];
         return (
-          <Node
-            key={i}
-            event={event}
-            alternateEvents={alternateEvents}
-            inlineDate={inlineDate}
-          />
+          <NodeWrapper event={event}>
+            <Node
+              key={i}
+              event={event}
+              alternateEvents={alternateEvents}
+              inlineDate={inlineDate}
+            />
+          </NodeWrapper>
         );
 
         // if (event.component) {

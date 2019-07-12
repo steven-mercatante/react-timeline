@@ -18,17 +18,16 @@ const events = [
     date: "7/10/19",
     body: "hello world",
     opts: { cssClass: "custom-event-class" }
+  },
+  {
+    type: "image",
+    // component: MyDopeEvent,
+    date: "1/1/2019",
+    src:
+      "https://images.unsplash.com/photo-1562734041-a2d56f060a44?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80",
+    alt: "fireworks",
+    credit: `Photo by https://unsplash.com/@aahubs`
   }
-  // {
-  //   // component: MyDopeEvent,
-  //   date: "1/1/2019",
-  //   image: {
-  //     src:
-  //       "https://images.unsplash.com/photo-1562734041-a2d56f060a44?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80",
-  //     alt: "fireworks",
-  //     credit: `Photo by https://unsplash.com/@aahubs`
-  //   }
-  // },
   // {
   //   date: "Sometime in 2018",
   //   body: "You can include images",

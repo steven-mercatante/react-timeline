@@ -6,7 +6,7 @@ const EventMarker = styled.span`
   left: ${({ alternateEvents }) =>
     alternateEvents ? "calc(50% - 12px)" : "32px"};
   background-color: #eb2db4;
-  border: 2px solid #eb2db4;
+  border: 2px solid yellow;
   border-radius: 50%;
   width: 20px;
   height: 20px;
