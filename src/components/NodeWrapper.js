@@ -4,13 +4,12 @@ import EventTimestamp from "./EventTimestamp";
 import EventContainer from "./EventContainer";
 import EventContent from "./EventContent";
 
-export default function NodeWrapper({ event, children, alternateEvents }) {
+export default function NodeWrapper({ event, children }) {
   return (
-    <EventContainer className="node-wrapper" alternateEvents={alternateEvents}>
-      <EventMarker className="node-marker" alternateEvents={alternateEvents} />
+    <EventContainer className="node-wrapper">
+      <EventMarker className="node-marker" />
       <EventContent
         className={`node-content ${event.type}`}
-        alternateEvents={alternateEvents}
         width={event.type === "youTube" ? "500px" : null}
       >
         <EventTimestamp>{event.date}</EventTimestamp>
