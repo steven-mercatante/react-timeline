@@ -27,34 +27,32 @@ const events = [
       "https://images.unsplash.com/photo-1562734041-a2d56f060a44?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80",
     alt: "fireworks",
     credit: `Photo by https://unsplash.com/@aahubs`
-  }
-  // {
-  //   date: "Sometime in 2018",
-  //   body: "You can include images",
-  //   image: {
-  //     src:
-  //       "https://images.unsplash.com/photo-1562741789-fd05816d507e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-  //     alt: "bhudda statue",
-  //     credit: "Photo by https://unsplash.com/@supermojor"
-  //   }
-  // },
+  },
+  {
+    type: "image",
+    date: "Sometime in 2018",
+    body: "You can include images",
+    src:
+      "https://images.unsplash.com/photo-1562741789-fd05816d507e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+    alt: "bhudda statue",
+    credit: "Photo by https://unsplash.com/@supermojor"
+  },
   // { date: "July of the year 2019", tweetId: "1006202911632904197" },
-  // {
-  //   date: "Sometime in 2018",
-  //   image: {
-  //     src:
-  //       "https://images.unsplash.com/photo-1421494756418-72f0f89c6bfd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-  //     alt: "cherries",
-  //     credit: "Photo by https://unsplash.com/@nehadeshmukh"
-  //   }
-  // },
-  // {
-  //   date: "7/10/19",
-  //   body:
-  //     '> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
-  // },
-
-  // { date: "7/10/19", body: "**Markdown** is *supported*" }
+  {
+    type: "image",
+    date: "Sometime in 2018",
+    src:
+      "https://images.unsplash.com/photo-1421494756418-72f0f89c6bfd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+    alt: "cherries",
+    credit: "Photo by https://unsplash.com/@nehadeshmukh"
+  },
+  {
+    type: "text",
+    date: "7/10/19",
+    body:
+      '> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
+  },
+  { type: "text", date: "7/10/19", body: "**Markdown** is *supported*" }
 ];
 
 function MyDopeEvent({ event }) {
