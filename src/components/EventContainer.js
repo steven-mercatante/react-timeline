@@ -12,11 +12,9 @@ const EventContainer = styled.div`
     margin-top: 20px;
   }
 
-  ${({ alternateEvents }) =>
-    alternateEvents &&
-    `:nth-child(odd) {
-      flex-direction: row-reverse;
-    }`}
+  :nth-child(odd) {
+    flex-direction: row-reverse;
+  }
 
   @media (max-width: 768px) {
     flex-direction: row !important;
