@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Event from "./Event";
+import TextNode from "./TextNode";
 
 const Container = styled.div`
   // border: 1px solid red;
@@ -26,30 +27,42 @@ const Container = styled.div`
   }
 `;
 
+const nodes = { text: TextNode };
+
 export default function Timeline({ events, alternateEvents, inlineDate }) {
   return (
     <Container className="timeline" alternateEvents={alternateEvents}>
       {events.map((event, i) => {
-        if (event.component) {
-          const CustomEvent = event.component;
-          return (
-            <CustomEvent
-              key={i}
-              event={event}
-              alternateEvents={alternateEvents}
-              inlineDate={inlineDate}
-            />
-          );
-        }
-
+        const Node = nodes[event.type];
         return (
-          <Event
+          <Node
             key={i}
             event={event}
             alternateEvents={alternateEvents}
             inlineDate={inlineDate}
           />
         );
+
+        // if (event.component) {
+        //   const CustomEvent = event.component;
+        //   return (
+        //     <CustomEvent
+        //       key={i}
+        //       event={event}
+        //       alternateEvents={alternateEvents}
+        //       inlineDate={inlineDate}
+        //     />
+        //   );
+        // }
+
+        // return (
+        //   <Event
+        //     key={i}
+        //     event={event}
+        //     alternateEvents={alternateEvents}
+        //     inlineDate={inlineDate}
+        //   />
+        // );
       })}
     </Container>
   );
