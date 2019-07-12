@@ -9,7 +9,7 @@ import EventMarker from "./EventMarker";
 import EventTimestamp from "./EventTimestamp";
 import useIntersectionObserver from "../hooks/useIntersectionObserver";
 
-export default function Event({ event, alternateEvents, inlineDate }) {
+export default function Event({ event, inlineDate }) {
   // console.log("Event.render()");
   const { isVisible, ref } = useIntersectionObserver({
     root: null,
@@ -19,11 +19,6 @@ export default function Event({ event, alternateEvents, inlineDate }) {
 
   // TODO: not sure if opts should be a member of `event`
   const { date, body, image, tweetId, youTubeId, opts } = event;
-
-  // TODO: can this be improved/made more clear?
-  if (alternateEvents === false) {
-    inlineDate = true;
-  }
 
   const containerClasses = ["event"];
   if (opts && opts.cssClass) {
@@ -35,11 +30,10 @@ export default function Event({ event, alternateEvents, inlineDate }) {
       className={containerClasses.join(" ")}
       ref={ref}
       isVisible={isVisible}
-      alternateEvents={alternateEvents}
     >
       {!inlineDate && <EventTimestamp>{date}</EventTimestamp>}
-      <EventMarker className="marker" alternateEvents={alternateEvents} />
-      <EventContent className="content" alternateEvents={alternateEvents}>
+      <EventMarker className="marker" />
+      <EventContent className="content">
         {inlineDate && <EventTimestamp inline={true}>{date}</EventTimestamp>}
         <ReactMarkdown source={body} />
         {image && <Image {...image} />}
