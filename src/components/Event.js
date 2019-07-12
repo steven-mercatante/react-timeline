@@ -5,32 +5,10 @@ import TweetEmbed from "./TweetEmbed";
 import YouTubeEmbed from "./YoutubeEmbed";
 import Image from "./Image";
 import EventContainer from "./EventContainer";
+import EventContent from "./EventContent";
 import EventMarker from "./EventMarker";
 
 // TODO: avoid using !important in CSS
-
-const Content = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  border-radius: 4px;
-  background-color: #4e4e50;
-  color: #fff;
-  padding: 10px;
-  max-width: ${({ alternateEvents }) => (alternateEvents ? "42%" : "88%")};
-
-  ${EventContainer}:nth-child(odd) & {
-    // text-align: right;
-    left: ${({ alternateEvents }) => (alternateEvents ? "auto" : "80px")};
-    right: ${({ alternateEvents }) =>
-      alternateEvents ? "calc(50% + 30px)" : 0};
-  }
-
-  ${EventContainer}:nth-child(even) & {
-    left: ${({ alternateEvents }) =>
-      alternateEvents ? "calc(50% + 30px)" : "80px"};
-  }
-`;
 
 const Timestamp = styled.time`
   background-color: #ec24b5;
@@ -99,13 +77,13 @@ export default function Event({ event, alternateEvents, inlineDate }) {
     >
       {!inlineDate && <Timestamp>{date}</Timestamp>}
       <EventMarker className="marker" alternateEvents={alternateEvents} />
-      <Content className="content" alternateEvents={alternateEvents}>
+      <EventContent className="content" alternateEvents={alternateEvents}>
         {inlineDate && <Timestamp inline={true}>{date}</Timestamp>}
         <ReactMarkdown source={body} />
         {image && <Image {...image} />}
         {tweetId && <TweetEmbed id={tweetId} />}
         {youTubeId && <YouTubeEmbed id={youTubeId} />}
-      </Content>
+      </EventContent>
     </EventContainer>
   );
 }
