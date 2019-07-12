@@ -31,7 +31,7 @@ const Container = styled.div`
 
 const nodes = { text: TextNode, image: ImageNode, youTube: YouTubeNode };
 
-export default function Timeline({ events, alternateEvents, inlineDate }) {
+export default function Timeline({ events, inlineDate }) {
   return (
     <Container className="timeline">
       {events.map((event, i) => {
