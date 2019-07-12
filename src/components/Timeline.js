@@ -4,6 +4,7 @@ import Event from "./Event";
 import TextNode from "./TextNode";
 import ImageNode from "./ImageNode";
 import NodeWrapper from "./NodeWrapper";
+import YouTubeNode from "./YouTubeNode";
 
 const Container = styled.div`
   // border: 1px solid red;
@@ -29,7 +30,7 @@ const Container = styled.div`
   }
 `;
 
-const nodes = { text: TextNode, image: ImageNode };
+const nodes = { text: TextNode, image: ImageNode, youTube: YouTubeNode };
 
 export default function Timeline({ events, alternateEvents, inlineDate }) {
   return (

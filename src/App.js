@@ -7,6 +7,7 @@ import styled from "styled-components";
 // TODO: let users specify custom class names (& maybe CSS) per Event
 // TODO: allow for passing datetime which would be passed as datetime attr to the time element
 const events = [
+  { type: "youTube", date: "7/10/19", id: "8ktONdU_wXU" },
   {
     type: "text",
     date: "7/10/19",
@@ -53,7 +54,7 @@ const events = [
   //   body:
   //     '> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
   // },
-  // { date: "7/10/19", youTubeId: "8ktONdU_wXU" },
+
   // { date: "7/10/19", body: "**Markdown** is *supported*" }
 ];
 
