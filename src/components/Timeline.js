@@ -37,7 +37,12 @@ export default function Timeline({ events, alternateEvents, inlineDate }) {
       {events.map((event, i) => {
         const Node = nodes[event.type];
         return (
-          <NodeWrapper event={event}>
+          <NodeWrapper
+            key={i}
+            event={event}
+            alternateEvents={alternateEvents}
+            inlineDate={inlineDate}
+          >
             <Node
               key={i}
               event={event}

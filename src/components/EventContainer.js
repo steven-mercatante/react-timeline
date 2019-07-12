@@ -5,8 +5,8 @@ const EventContainer = styled.div`
   position: relative;
   display: flex;
   margin-bottom: 20px;
-  opacity: ${({ isVisible }) => (isVisible ? 1 : 0.15)};
-  transition: opacity 0.25s ease-in;
+  // opacity: ${({ isVisible }) => (isVisible ? 1 : 0.15)};
+  // transition: opacity 0.25s ease-in;
 
   :nth-child(1) {
     margin-top: 20px;
@@ -27,14 +27,12 @@ const EventContainer = styled.div`
 
     :nth-child(odd) {
       .content {
-        // border: 1px solid red;
         left: 80px !important;
       }
     }
 
     :nth-child(even) {
       .content {
-        // border: 1px solid yellow;
         left: 80px !important;
       }
     }
