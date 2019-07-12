@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const EventContainer = styled.div`
-  // border: 1px solid green;
+  border: 1px solid red;
   position: relative;
   display: flex;
   margin-bottom: 20px;
@@ -26,13 +26,13 @@ const EventContainer = styled.div`
     }
 
     :nth-child(odd) {
-      .content {
+      .node-content {
         left: 80px !important;
       }
     }
 
     :nth-child(even) {
-      .content {
+      .node-content {
         left: 80px !important;
       }
     }

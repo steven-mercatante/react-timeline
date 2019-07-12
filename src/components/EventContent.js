@@ -2,10 +2,11 @@ import styled from "styled-components";
 import EventContainer from "./EventContainer";
 
 const EventContent = styled.div`
-  border: 1px solid rebeccapurple;
+  border: 1px solid yellow;
   position: relative;
   border-radius: 4px;
   background-color: #4e4e50;
+  flex-grow: 0;
   color: #fff;
   padding: 10px;
   max-width: ${({ alternateEvents }) => (alternateEvents ? "42%" : "88%")};
