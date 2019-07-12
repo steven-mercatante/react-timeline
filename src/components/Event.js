@@ -133,10 +133,8 @@ export default function Event({ event, alternateEvents, inlineDate }) {
     observer.observe(eventRef.current);
   });
 
-  // TODO: s/tweet/tweetId
-  // TODO: s/youTube/youTubeId
   // TODO: not sure if opts should be a member of `event`
-  const { date, body, image, tweet, youtube, opts } = event;
+  const { date, body, image, tweetId, youTubeId, opts } = event;
 
   // TODO: can this be improved/made more clear?
   if (alternateEvents === false) {
@@ -161,8 +159,8 @@ export default function Event({ event, alternateEvents, inlineDate }) {
         {inlineDate && <Timestamp inline={true}>{date}</Timestamp>}
         <ReactMarkdown source={body} />
         {image && <Image {...image} />}
-        {tweet && <TweetEmbed id={tweet} />}
-        {youtube && <YouTubeEmbed id={youtube} />}
+        {tweetId && <TweetEmbed id={tweetId} />}
+        {youTubeId && <YouTubeEmbed id={youTubeId} />}
       </Content>
     </Container>
   );

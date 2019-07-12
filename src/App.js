@@ -22,7 +22,7 @@ const events = [
     body: "Began prototyping React Timeline",
     opts: { cssClass: "custom-event-class" }
   },
-  { date: "July of the year 2019", tweet: "1006202911632904197" },
+  { date: "July of the year 2019", tweetId: "1006202911632904197" },
   {
     date: "Sometime in 2018",
     body: "You can include images",
@@ -47,14 +47,15 @@ const events = [
     body:
       '> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
   },
-  { date: "7/10/19", youtube: "8ktONdU_wXU" },
+  { date: "7/10/19", youTubeId: "8ktONdU_wXU" },
   { date: "7/10/19", body: "**Markdown** is *supported*" }
 ];
 
 function MyDopeEvent({ event }) {
   const Container = styled.div`
     background-color: rebeccapurple;
-    width: 50%;
+    width: 40%;
+    border-radius: 10px;
   `;
 
   return (
