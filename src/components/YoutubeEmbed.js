@@ -2,27 +2,28 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  display: flex;
-`;
+  position: relative;
+  overflow: hidden;
+  // width: 500px;
+  // height: 281px;
 
-const RespIframe = styled.iframe`
-  flex: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  iframe {
+    left: 10;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export default function YouTubeEmbed({ id, name }) {
   return (
     <Container className="youtube-container">
-      <RespIframe
-        title={name}
-        // width="560"
-        // height="315"
+      <iframe
         src={`https://www.youtube.com/embed/${id}`}
+        title={name}
         frameBorder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        gesture="media"
+        allow="encrypted-media"
         allowFullScreen
       />
     </Container>
