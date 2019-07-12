@@ -8,7 +8,7 @@ import styled from "styled-components";
 // TODO: allow for passing datetime which would be passed as datetime attr to the time element
 const events = [
   {
-    component: MyDopeEvent,
+    // component: MyDopeEvent,
     date: "1/1/2019",
     image: {
       src:
@@ -22,7 +22,7 @@ const events = [
     body: "Began prototyping React Timeline",
     opts: { cssClass: "custom-event-class" }
   },
-  { date: "July of the year 2019", tweetId: "1006202911632904197" },
+  // { date: "July of the year 2019", tweetId: "1006202911632904197" },
   {
     date: "Sometime in 2018",
     body: "You can include images",
