@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 const EventContainer = styled.div`
-  // border: 1px solid red;
+  border: 1px solid red;
   position: relative;
-  display: flex;
+  // display: flex;
   margin-bottom: 20px;
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0.15)};
   transition: opacity 0.25s ease-in;

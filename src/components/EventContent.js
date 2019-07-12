@@ -9,15 +9,7 @@ const EventContent = styled.div`
   background-color: #4e4e50;
   color: #fff;
   padding: 10px;
-  // width: 516px;
-  // height: 315px;
   max-width: ${({ alternateEvents }) => (alternateEvents ? "42%" : "88%")};
-
-  ${EventContainer}:nth-child(odd) & {
-    left: ${({ alternateEvents }) => (alternateEvents ? "auto" : "80px")};
-    right: ${({ alternateEvents }) =>
-      alternateEvents ? "calc(50% + 30px)" : 0};
-  }
 
   ${EventContainer}:nth-child(even) & {
     left: ${({ alternateEvents }) =>
@@ -26,3 +18,11 @@ const EventContent = styled.div`
 `;
 
 export default EventContent;
+
+/**
+ * ${EventContainer}:nth-child(odd) & {
+    left: ${({ alternateEvents }) => (alternateEvents ? "auto" : "80px")};
+    right: ${({ alternateEvents }) =>
+      alternateEvents ? "calc(50% + 30px)" : 0};
+  }
+ */

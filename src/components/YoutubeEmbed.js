@@ -3,26 +3,27 @@ import styled from "styled-components";
 
 const Container = styled.div`
   position: relative;
-  overflow: hidden;
-  // width: 500px;
-  // height: 281px;
+  padding-bottom: 56.25%;
+`;
 
-  iframe {
-    left: 10;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
+const Iframe = styled.iframe`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 `;
 
 export default function YouTubeEmbed({ id, name }) {
   return (
     <Container className="youtube-container">
-      <iframe
+      <Iframe
         src={`https://www.youtube.com/embed/${id}`}
         title={name}
         frameBorder="0"
         gesture="media"
+        width="560"
+        height="315"
         allow="encrypted-media"
         allowFullScreen
       />
