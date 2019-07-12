@@ -14,11 +14,11 @@ const EventContent = styled.div`
   ${({ width }) => width && `width: ${width};`}
 
   ${EventContainer}:nth-child(odd) & {
-    left: calc(50% + 30px);
-  }
-
-  ${EventContainer}:nth-child(even) & {
     right: calc(50% + 30px);
+  }
+  
+  ${EventContainer}:nth-child(even) & {
+    left: calc(50% + 30px);
   }
 
   @media (max-width: 768px) {
