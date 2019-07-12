@@ -17,8 +17,7 @@ const Container = styled.div`
   // TODO: can width (and thus left calc) be passed via prop?
   ::after {
     position: absolute;
-    left: ${({ alternateEvents }) =>
-      alternateEvents === true ? `calc(50% - 1px)` : `44px`};
+    left: calc(50% - 1px);
     width: 2px;
     height: 100%;
     background-color: #ee18b6;
@@ -34,22 +33,12 @@ const nodes = { text: TextNode, image: ImageNode, youTube: YouTubeNode };
 
 export default function Timeline({ events, alternateEvents, inlineDate }) {
   return (
-    <Container className="timeline" alternateEvents={alternateEvents}>
+    <Container className="timeline">
       {events.map((event, i) => {
         const Node = nodes[event.type];
         return (
-          <NodeWrapper
-            key={i}
-            event={event}
-            alternateEvents={alternateEvents}
-            inlineDate={inlineDate}
-          >
-            <Node
-              key={i}
-              event={event}
-              alternateEvents={alternateEvents}
-              inlineDate={inlineDate}
-            />
+          <NodeWrapper key={i} event={event} inlineDate={inlineDate}>
+            <Node key={i} event={event} inlineDate={inlineDate} />
           </NodeWrapper>
         );
 
@@ -59,7 +48,7 @@ export default function Timeline({ events, alternateEvents, inlineDate }) {
         //     <CustomEvent
         //       key={i}
         //       event={event}
-        //       alternateEvents={alternateEvents}
+        //
         //       inlineDate={inlineDate}
         //     />
         //   );
@@ -69,7 +58,7 @@ export default function Timeline({ events, alternateEvents, inlineDate }) {
         //   <Event
         //     key={i}
         //     event={event}
-        //     alternateEvents={alternateEvents}
+        //
         //     inlineDate={inlineDate}
         //   />
         // );
