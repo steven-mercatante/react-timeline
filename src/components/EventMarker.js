@@ -3,8 +3,7 @@ import styled from "styled-components";
 const EventMarker = styled.span`
   position: absolute;
   top: calc(50% - 10px);
-  left: ${({ alternateEvents }) =>
-    alternateEvents ? "calc(50% - 12px)" : "32px"};
+  left: calc(50% - 12px);
   background-color: #eb2db4;
   border: 2px solid #eb2db4;
   border-radius: 50%;
