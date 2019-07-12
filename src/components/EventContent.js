@@ -13,7 +13,11 @@ const EventContent = styled.div`
   ${({ width }) => width && `width: ${width}`}
 
 
-  max-width: ${({ alternateEvents }) => (alternateEvents ? "62%" : "88%")};
+  max-width: ${({ alternateEvents }) => (alternateEvents ? "42%" : "88%")};
+
+  // @media (max-width: 768px) {
+  //   max-width: 90%;
+  // }
 
   ${EventContainer}:nth-child(odd) & {
     left: ${({ alternateEvents }) => (alternateEvents ? "auto" : "80px")};
