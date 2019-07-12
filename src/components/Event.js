@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import ReactMarkdown from "react-markdown";
 import TweetEmbed from "./TweetEmbed";
 import YouTubeEmbed from "./YoutubeEmbed";
@@ -7,30 +7,14 @@ import EventContainer from "./EventContainer";
 import EventContent from "./EventContent";
 import EventMarker from "./EventMarker";
 import EventTimestamp from "./EventTimestamp";
+import useIntersectionObserver from "../hooks/useIntersectionObserver";
 
 export default function Event({ event, alternateEvents, inlineDate }) {
   // console.log("Event.render()");
-  const [isVisible, setIsVisible] = useState(false);
-  const eventRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          } else {
-            setIsVisible(false);
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.5
-      }
-    );
-    observer.observe(eventRef.current);
+  const { isVisible, ref } = useIntersectionObserver({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5
   });
 
   // TODO: not sure if opts should be a member of `event`
@@ -49,7 +33,7 @@ export default function Event({ event, alternateEvents, inlineDate }) {
   return (
     <EventContainer
       className={containerClasses.join(" ")}
-      ref={eventRef}
+      ref={ref}
       isVisible={isVisible}
       alternateEvents={alternateEvents}
     >
