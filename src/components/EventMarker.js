@@ -12,7 +12,7 @@ const EventMarker = styled.span`
   z-index: 100;
 
   @media (max-width: 768px) {
-    left: 32px;
+    left: 13px;
   }
 `;
 

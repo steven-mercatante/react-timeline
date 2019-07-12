@@ -25,13 +25,13 @@ const EventContainer = styled.div`
 
     :nth-child(odd) {
       .node-content {
-        left: 80px !important;
+        left: 50px !important;
       }
     }
 
     :nth-child(even) {
       .node-content {
-        left: 80px !important;
+        left: 50px !important;
       }
     }
   }

@@ -16,7 +16,7 @@ const EventContent = styled.div`
   ${EventContainer}:nth-child(odd) & {
     right: calc(50% + 30px);
   }
-  
+
   ${EventContainer}:nth-child(even) & {
     left: calc(50% + 30px);
   }
