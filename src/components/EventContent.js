@@ -2,6 +2,7 @@ import styled from "styled-components";
 import EventContainer from "./EventContainer";
 
 const EventContent = styled.div`
+  // display: inline-block;
   border: 1px solid yellow;
   position: relative;
   border-radius: 4px;

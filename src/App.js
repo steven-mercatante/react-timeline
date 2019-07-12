@@ -22,7 +22,6 @@ const events = [
   },
   {
     type: "image",
-    // component: MyDopeEvent,
     date: "1/1/2019",
     src:
       "https://images.unsplash.com/photo-1562734041-a2d56f060a44?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80",

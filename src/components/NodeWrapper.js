@@ -8,7 +8,10 @@ export default function NodeWrapper({ event, children, alternateEvents }) {
   return (
     <EventContainer className="node-wrapper" alternateEvents={alternateEvents}>
       <EventMarker className="node-marker" alternateEvents={alternateEvents} />
-      <EventContent className="node-content" alternateEvents={alternateEvents}>
+      <EventContent
+        className={`node-content ${event.type}`}
+        alternateEvents={alternateEvents}
+      >
         <EventTimestamp>{event.date}</EventTimestamp>
         {children}
       </EventContent>
