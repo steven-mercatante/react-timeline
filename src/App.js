@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Timeline from "./components/Timeline";
 import "./App.css";
+import styled from "styled-components";
 
 // TODO: events should be able to be passed via local data or from HTTP req
 // TODO: let users specify custom class names (& maybe CSS) per Event
 // TODO: allow for passing datetime which would be passed as datetime attr to the time element
 const events = [
   {
+    component: MyDopeEvent,
     date: "1/1/2019",
     image: {
       src:
@@ -48,6 +50,20 @@ const events = [
   { date: "7/10/19", youtube: "8ktONdU_wXU" },
   { date: "7/10/19", body: "**Markdown** is *supported*" }
 ];
+
+function MyDopeEvent({ event }) {
+  const Container = styled.div`
+    background-color: rebeccapurple;
+    width: 50%;
+  `;
+
+  return (
+    <Container>
+      <h1>custom event!</h1>
+      <p>{event.date}</p>
+    </Container>
+  );
+}
 
 function App() {
   // TODO: use a more semantic var name

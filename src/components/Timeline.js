@@ -29,14 +29,28 @@ const Container = styled.div`
 export default function Timeline({ events, alternateEvents, inlineDate }) {
   return (
     <Container className="timeline" alternateEvents={alternateEvents}>
-      {events.map((event, i) => (
-        <Event
-          key={i}
-          event={event}
-          alternateEvents={alternateEvents}
-          inlineDate={inlineDate}
-        />
-      ))}
+      {events.map((event, i) => {
+        if (event.component) {
+          const CustomEvent = event.component;
+          return (
+            <CustomEvent
+              key={i}
+              event={event}
+              alternateEvents={alternateEvents}
+              inlineDate={inlineDate}
+            />
+          );
+        }
+
+        return (
+          <Event
+            key={i}
+            event={event}
+            alternateEvents={alternateEvents}
+            inlineDate={inlineDate}
+          />
+        );
+      })}
     </Container>
   );
 }
