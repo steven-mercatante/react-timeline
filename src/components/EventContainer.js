@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const EventContainer = styled.div`
-  // border: 1px solid red;
+  border: 1px solid red;
   position: relative;
   display: flex;
   margin-bottom: 20px;
@@ -12,7 +12,7 @@ const EventContainer = styled.div`
     margin-top: 20px;
   }
 
-  :nth-child(odd) {
+  :nth-child(even) {
     flex-direction: row-reverse;
   }
 
