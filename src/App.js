@@ -19,7 +19,7 @@ const events = [
       src:
         "https://images.unsplash.com/photo-1562734041-a2d56f060a44?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80",
       alt: "fireworks",
-      credit: "Photo by https://unsplash.com/@aahubs"
+      credit: `Photo by https://unsplash.com/@aahubs`
     }
   },
   {

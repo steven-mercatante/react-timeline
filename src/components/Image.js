@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import ReactMarkdown from "react-markdown";
 
 const Container = styled.div`
   display: flex;
@@ -22,7 +23,7 @@ export default function Image({ src, alt, credit }) {
   return (
     <Container className="image">
       <img src={src} alt={alt} />
-      {credit && <p className="credit">{credit}</p>}
+      {credit && <ReactMarkdown className="credit">{credit}</ReactMarkdown>}
     </Container>
   );
 }
