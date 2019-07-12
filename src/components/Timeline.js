@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import Event from "./Event";
 import TextNode from "./TextNode";
 import ImageNode from "./ImageNode";
 import NodeWrapper from "./NodeWrapper";
 import YouTubeNode from "./YouTubeNode";
+import TwitterNode from "./TwitterNode";
 
 const Container = styled.div`
   // border: 1px solid red;
@@ -29,7 +29,12 @@ const Container = styled.div`
   }
 `;
 
-const nodes = { text: TextNode, image: ImageNode, youTube: YouTubeNode };
+const nodes = {
+  text: TextNode,
+  image: ImageNode,
+  youTube: YouTubeNode,
+  twitter: TwitterNode
+};
 
 export default function Timeline({ events, inlineDate }) {
   return (

@@ -9,6 +9,11 @@ import styled from "styled-components";
 const events = [
   { type: "youTube", date: "7/10/19", id: "8ktONdU_wXU" },
   {
+    type: "twitter",
+    date: "July of the year 2019",
+    id: "1006202911632904197"
+  },
+  {
     type: "text",
     date: "7/10/19",
     body: "Began prototyping React Timeline",
@@ -37,7 +42,7 @@ const events = [
     alt: "bhudda statue",
     credit: "Photo by https://unsplash.com/@supermojor"
   },
-  // { date: "July of the year 2019", tweetId: "1006202911632904197" },
+
   {
     type: "image",
     date: "Sometime in 2018",

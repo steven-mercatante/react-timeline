@@ -6,10 +6,10 @@ const Container = styled.div`
   width: 100%;
 `;
 
-export default function TweetEmbed({ id }) {
+export default function TwitterNode({ event }) {
   return (
     <Container className="tweet-container">
-      <TwitterTweetEmbed tweetId={id} />
+      <TwitterTweetEmbed tweetId={event.id} />
     </Container>
   );
 }
