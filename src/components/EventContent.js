@@ -12,22 +12,19 @@ const EventContent = styled.div`
 
   ${({ width }) => width && `width: ${width}`}
 
-
-  max-width: ${({ alternateEvents }) => (alternateEvents ? "42%" : "88%")};
+  max-width: 42%;
 
   // @media (max-width: 768px) {
   //   max-width: 90%;
   // }
 
-  ${EventContainer}:nth-child(odd) & {
-    left: ${({ alternateEvents }) => (alternateEvents ? "auto" : "80px")};
-    right: ${({ alternateEvents }) =>
-      alternateEvents ? "calc(50% + 30px)" : 0};
+  ${EventContainer}:nth-child (odd) & {
+    left: "auto";
+    right: calc(50% + 30px);
   }
 
-  ${EventContainer}:nth-child(even) & {
-    left: ${({ alternateEvents }) =>
-      alternateEvents ? "calc(50% + 30px)" : "80px"};
+  ${EventContainer}:nth-child (even) & {
+    left: calc(50% + 30px);
   }
 `;
 
