@@ -1,5 +1,7 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var React = require('react');
@@ -89,6 +91,23 @@ function _templateObject() {
   return data;
 }
 var Container = styled.div(_templateObject());
+function ImageNode(_ref) {
+  var event = _ref.event;
+  var src = event.src,
+      alt = event.alt,
+      credit = event.credit,
+      text = event.text;
+  return React__default.createElement(Container, {
+    className: "image"
+  }, text && React__default.createElement(Markdown, {
+    className: "text"
+  }, text), React__default.createElement("img", {
+    src: src,
+    alt: alt
+  }), credit && React__default.createElement(Markdown, {
+    className: "credit"
+  }, credit));
+}
 
 function TextNode(_ref) {
   var event = _ref.event;
@@ -210,7 +229,7 @@ function NodeWrapper(_ref) {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  position: relative;\n\n  // renders the vertical line\n  // TODO: can width (and thus left calc) be passed via prop?\n  ::after {\n    position: absolute;\n    left: calc(50% - 1px);\n    width: 2px;\n    height: 100%;\n    background-color: #ee18b6;\n    content: \"\";\n\n    @media (max-width: 768px) {\n      left: 24px;\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  border: 0;\n\n  // display: 1 1 auto;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -220,7 +239,7 @@ function _templateObject2() {
 }
 
 function _templateObject$5() {
-  var data = _taggedTemplateLiteral(["\n  overflow: auto;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  overflow: hidden;\n  padding-top: 56.25%;\n\n  // display: flex;\n  // flex-direction: row;\n  // height: 100%;\n"]);
 
   _templateObject$5 = function _templateObject() {
     return data;
@@ -228,58 +247,23 @@ function _templateObject$5() {
 
   return data;
 }
-// import TwitterNode from "./TwitterNode";
-
-var OverflowWrapper = styled.div(_templateObject$5());
-var Container$1 = styled.div(_templateObject2());
-var nodes = {
-  text: TextNode // image: ImageNode,
-  // youtube: YouTubeNode,
-  // twitter: TwitterNode
-
-};
-function Timeline(_ref) {
-  var events = _ref.events;
-
-  // TODO: use a more semantic var name
-  var _useState = React.useState(false),
-      _useState2 = _slicedToArray(_useState, 2),
-      isCompact = _useState2[0],
-      setIsCompact = _useState2[1];
-
-  React.useEffect(function () {
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return function () {
-      window.removeEventListener("resize", handleResize);
-    };
-  });
-
-  function handleResize() {
-    var mediaQueryList = window.matchMedia("(max-width: 768px)");
-
-    if (mediaQueryList.matches === true) {
-      setIsCompact(true);
-    } else {
-      setIsCompact(false);
-    }
-  }
-
-  return React__default.createElement(OverflowWrapper, {
-    className: "timeline-overflow-wrapper"
-  }, React__default.createElement(Container$1, {
-    className: "timeline-container"
-  }, events.map(function (event, i) {
-    var Node = nodes[event.type.toLowerCase()];
-    return React__default.createElement(NodeWrapper, {
-      key: i,
-      event: event,
-      isCompact: isCompact
-    }, React__default.createElement(Node, {
-      key: i,
-      event: event
-    }));
-  })));
+var Container$1 = styled.div(_templateObject$5());
+var RespIframe = styled.iframe(_templateObject2());
+function YouTubeNode(_ref) {
+  var event = _ref.event;
+  var id = event.id,
+      name = event.name;
+  return React__default.createElement(Container$1, {
+    className: "youtube-container"
+  }, React__default.createElement(RespIframe, {
+    title: name,
+    width: "560",
+    height: "315",
+    src: "https://www.youtube.com/embed/".concat(id),
+    frameBorder: "0",
+    allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
+    allowFullScreen: true
+  }));
 }
 
 function unwrapExports (x) {
@@ -2267,9 +2251,17 @@ function _templateObject$6() {
 }
 
 var Container$2 = styled.div(_templateObject$6());
+function TwitterNode(_ref) {
+  var event = _ref.event;
+  return React__default.createElement(Container$2, {
+    className: "tweet-container"
+  }, React__default.createElement(TwitterTweetEmbed, {
+    tweetId: event.id
+  }));
+}
 
 function _templateObject2$1() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  border: 0;\n\n  // display: 1 1 auto;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  position: relative;\n\n  // renders the vertical line\n  // TODO: can width (and thus left calc) be passed via prop?\n  ::after {\n    position: absolute;\n    left: calc(50% - 1px);\n    width: 2px;\n    height: 100%;\n    background-color: #ee18b6;\n    content: \"\";\n\n    @media (max-width: 768px) {\n      left: 24px;\n    }\n  }\n"]);
 
   _templateObject2$1 = function _templateObject2() {
     return data;
@@ -2279,7 +2271,7 @@ function _templateObject2$1() {
 }
 
 function _templateObject$7() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  overflow: hidden;\n  padding-top: 56.25%;\n\n  // display: flex;\n  // flex-direction: row;\n  // height: 100%;\n"]);
+  var data = _taggedTemplateLiteral(["\n  overflow: auto;\n"]);
 
   _templateObject$7 = function _templateObject() {
     return data;
@@ -2287,7 +2279,61 @@ function _templateObject$7() {
 
   return data;
 }
-var Container$3 = styled.div(_templateObject$7());
-var RespIframe = styled.iframe(_templateObject2$1());
+var OverflowWrapper = styled.div(_templateObject$7());
+var Container$3 = styled.div(_templateObject2$1());
+var nodes = {
+  text: TextNode,
+  image: ImageNode,
+  youtube: YouTubeNode,
+  twitter: TwitterNode
+};
+function Timeline(_ref) {
+  var events = _ref.events;
 
-module.exports = Timeline;
+  // TODO: use a more semantic var name
+  var _useState = React.useState(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      isCompact = _useState2[0],
+      setIsCompact = _useState2[1];
+
+  React.useEffect(function () {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return function () {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
+
+  function handleResize() {
+    var mediaQueryList = window.matchMedia("(max-width: 768px)");
+
+    if (mediaQueryList.matches === true) {
+      setIsCompact(true);
+    } else {
+      setIsCompact(false);
+    }
+  }
+
+  return React__default.createElement(OverflowWrapper, {
+    className: "timeline-overflow-wrapper"
+  }, React__default.createElement(Container$3, {
+    className: "timeline-container"
+  }, events.map(function (event, i) {
+    var Node = nodes[event.type.toLowerCase()];
+    return React__default.createElement(NodeWrapper, {
+      key: i,
+      event: event,
+      isCompact: isCompact
+    }, React__default.createElement(Node, {
+      key: i,
+      event: event
+    }));
+  })));
+}
+
+exports.ImageNode = ImageNode;
+exports.TextNode = TextNode;
+exports.Timeline = Timeline;
+exports.TwitterNode = TwitterNode;
+exports.YouTubeNode = YouTubeNode;
+exports.useIntersectionObserver = useIntersectionObserver;

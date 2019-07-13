@@ -32,7 +32,7 @@ const Container = styled.div`
 `;
 
 const nodes = {
-  text: TextNode
+  text: TextNode,
   image: ImageNode,
   youtube: YouTubeNode,
   twitter: TwitterNode
