@@ -1,6 +1,6 @@
 {
   "name": "@merc/react-timeline",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "An opinionated (but highly customizable) timeline component",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -36,6 +36,7 @@
     "@babel/core": "^7.5.4",
     "@babel/preset-env": "^7.5.4",
     "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.5.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "rollup": "^1.16.7",
