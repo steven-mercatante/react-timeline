@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import TextNode from "./TextNode";
 import ImageNode from "./ImageNode";
@@ -37,12 +37,37 @@ const nodes = {
 };
 
 export default function Timeline({ events, inlineDate }) {
+  // TODO: use a more semantic var name
+  const [isCompact, setIsCompact] = useState(false);
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
+
+  function handleResize() {
+    const mediaQueryList = window.matchMedia(`(max-width: 768px)`);
+    if (mediaQueryList.matches === true) {
+      setIsCompact(true);
+    } else {
+      setIsCompact(false);
+    }
+  }
+
   return (
     <Container className="timeline">
       {events.map((event, i) => {
         const Node = nodes[event.type];
         return (
-          <NodeWrapper key={i} event={event} inlineDate={inlineDate}>
+          <NodeWrapper
+            key={i}
+            event={event}
+            inlineDate={inlineDate}
+            isCompact={isCompact}
+          >
             <Node key={i} event={event} inlineDate={inlineDate} />
           </NodeWrapper>
         );

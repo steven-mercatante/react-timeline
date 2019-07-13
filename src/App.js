@@ -76,30 +76,9 @@ function MyDopeEvent({ event }) {
 }
 
 function App() {
-  // TODO: use a more semantic var name
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  });
-
-  function handleResize() {
-    const mediaQueryList = window.matchMedia(`(max-width: 768px)`);
-    if (mediaQueryList.matches === true) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-  }
-
   return (
     <div>
-      {/* TODO: pass config or opts object instead of a bunch of props? */}
-      <Timeline events={events} inlineDate={isMobile || false} />
+      <Timeline events={events} />
     </div>
   );
 }
