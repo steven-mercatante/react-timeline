@@ -13,10 +13,11 @@ export default [
     ],
     plugins: [
       external(),
-      babel({
-        exclude: "node_modules/**"
-      }),
       resolve(),
+      babel({
+        exclude: "node_modules/**",
+        presets: ["@babel/preset-env", "@babel/preset-react"]
+      }),
       commonjs()
     ]
   }
