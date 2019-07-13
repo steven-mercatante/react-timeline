@@ -1,6 +1,6 @@
 import React from "react";
-import ReactMarkdown from "react-markdown";
+import Markdown from "markdown-to-jsx";
 
 export default function TextNode({ event }) {
-  return <ReactMarkdown>{event.text}</ReactMarkdown>;
+  return <Markdown>{event.text}</Markdown>;
 }

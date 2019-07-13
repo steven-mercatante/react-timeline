@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ReactMarkdown from "react-markdown";
+import Markdown from "markdown-to-jsx";
 
 const Container = styled.div`
   display: flex;
@@ -23,9 +23,9 @@ export default function ImageNode({ event }) {
   const { src, alt, credit, text } = event;
   return (
     <Container className="image">
-      {text && <ReactMarkdown className="text">{text}</ReactMarkdown>}
+      {text && <Markdown className="text">{text}</Markdown>}
       <img src={src} alt={alt} />
-      {credit && <ReactMarkdown className="credit">{credit}</ReactMarkdown>}
+      {credit && <Markdown className="credit">{credit}</Markdown>}
     </Container>
   );
 }
