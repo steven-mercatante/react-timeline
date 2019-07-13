@@ -13,9 +13,14 @@ export default function NodeWrapper({ event, children, isCompact }) {
     threshold: 0.5
   });
 
+  const classes = ["node-wrapper", event.type.toLowerCase()];
+  if (event.opts && event.opts.cssClass) {
+    classes.push(event.opts.cssClass);
+  }
+
   return (
     <EventContainer
-      className={`node-wrapper ${event.type.toLowerCase()}`}
+      className={classes.join(" ")}
       ref={ref}
       isVisible={isVisible}
     >
