@@ -15,13 +15,13 @@ const events = [
   {
     type: "text",
     date: "7/10/19",
-    body: "Began prototyping React Timeline",
+    text: "Began prototyping React Timeline",
     opts: { cssClass: "custom-event-class" }
   },
   {
     type: "text",
     date: "7/10/19",
-    body: "hello world",
+    text: "hello world",
     opts: { cssClass: "custom-event-class" }
   },
   {
@@ -35,7 +35,7 @@ const events = [
   {
     type: "image",
     date: "Sometime in 2018",
-    body: "You can include images",
+    text: "You can include images",
     src:
       "https://images.unsplash.com/photo-1562741789-fd05816d507e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
     alt: "bhudda statue",
@@ -53,10 +53,10 @@ const events = [
   {
     type: "text",
     date: "7/10/19",
-    body:
+    text:
       '> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
   },
-  { type: "text", date: "7/10/19", body: "**Markdown** is *supported*" }
+  { type: "text", date: "7/10/19", text: "**Markdown** is *supported*" }
 ];
 
 function MyDopeEvent({ event }) {
