@@ -60,9 +60,7 @@ export default function Timeline({ events, inlineDate }) {
   return (
     <Container className="timeline">
       {events.map((event, i) => {
-        console.log(">>>>>", event.type.toLowerCase());
         const Node = nodes[event.type.toLowerCase()];
-        console.log("node:", Node);
         return (
           <NodeWrapper
             key={i}
@@ -73,27 +71,6 @@ export default function Timeline({ events, inlineDate }) {
             <Node key={i} event={event} inlineDate={inlineDate} />
           </NodeWrapper>
         );
-
-        // if (event.component) {
-        //   const CustomEvent = event.component;
-        //   return (
-        //     <CustomEvent
-        //       key={i}
-        //       event={event}
-        //
-        //       inlineDate={inlineDate}
-        //     />
-        //   );
-        // }
-
-        // return (
-        //   <Event
-        //     key={i}
-        //     event={event}
-        //
-        //     inlineDate={inlineDate}
-        //   />
-        // );
       })}
     </Container>
   );
