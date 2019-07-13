@@ -1,3 +1,3 @@
 # React Timeline
 
-## An opinionated, yet customizable, timeline component
+An opinionated (but highly customizable!) timeline component.
