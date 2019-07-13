@@ -1,0 +1,23 @@
+{
+  "name": "@merc/react-timeline",
+  "version": "0.1.0",
+  "description": "An opinionated (but highly customizable) timeline component",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steven-mercatante/react-timeline.git"
+  },
+  "keywords": [
+    "react",
+    "timeline"
+  ],
+  "author": "Steven Mercatante",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/steven-mercatante/react-timeline/issues"
+  },
+  "homepage": "https://github.com/steven-mercatante/react-timeline#readme"
+}
