@@ -6,12 +6,14 @@ import NodeWrapper from "./NodeWrapper";
 import YouTubeNode from "./YouTubeNode";
 import TwitterNode from "./TwitterNode";
 
+const OverflowWrapper = styled.div`
+  overflow: auto;
+`;
+
 const Container = styled.div`
-  // border: 1px solid red;
   display: flex;
   flex-direction: column;
   position: relative;
-  margin: 4px;
 
   // renders the vertical line
   // TODO: can width (and thus left calc) be passed via prop?
@@ -58,15 +60,17 @@ export default function Timeline({ events }) {
   }
 
   return (
-    <Container className="timeline">
-      {events.map((event, i) => {
-        const Node = nodes[event.type.toLowerCase()];
-        return (
-          <NodeWrapper key={i} event={event} isCompact={isCompact}>
-            <Node key={i} event={event} />
-          </NodeWrapper>
-        );
-      })}
-    </Container>
+    <OverflowWrapper className="timeline-overflow-wrapper">
+      <Container className="timeline-container">
+        {events.map((event, i) => {
+          const Node = nodes[event.type.toLowerCase()];
+          return (
+            <NodeWrapper key={i} event={event} isCompact={isCompact}>
+              <Node key={i} event={event} />
+            </NodeWrapper>
+          );
+        })}
+      </Container>
+    </OverflowWrapper>
   );
 }
