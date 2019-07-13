@@ -14,7 +14,11 @@ export default function NodeWrapper({ event, children, isCompact }) {
   });
 
   return (
-    <EventContainer className="node-wrapper" ref={ref} isVisible={isVisible}>
+    <EventContainer
+      className={`node-wrapper ${event.type.toLowerCase()}`}
+      ref={ref}
+      isVisible={isVisible}
+    >
       {!isCompact && (
         <EventTimestamp className="timestamp" inline={false}>
           {event.date}
@@ -22,8 +26,8 @@ export default function NodeWrapper({ event, children, isCompact }) {
       )}
       <EventMarker className="node-marker" />
       <EventContent
-        className={`node-content ${event.type}`}
-        width={event.type === "youTube" ? "500px" : null}
+        className="node-content"
+        width={event.type.toLowerCase() === "youtube" ? "500px" : null}
       >
         {isCompact && (
           <EventTimestamp className="timestamp inline" inline={true}>

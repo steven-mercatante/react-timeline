@@ -32,7 +32,7 @@ const Container = styled.div`
 const nodes = {
   text: TextNode,
   image: ImageNode,
-  youTube: YouTubeNode,
+  youtube: YouTubeNode,
   twitter: TwitterNode
 };
 
@@ -60,7 +60,9 @@ export default function Timeline({ events, inlineDate }) {
   return (
     <Container className="timeline">
       {events.map((event, i) => {
-        const Node = nodes[event.type];
+        console.log(">>>>>", event.type.toLowerCase());
+        const Node = nodes[event.type.toLowerCase()];
+        console.log("node:", Node);
         return (
           <NodeWrapper
             key={i}

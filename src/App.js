@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Timeline from "./components/Timeline";
 import "./App.css";
 import styled from "styled-components";
 
-// TODO: events should be able to be passed via local data or from HTTP req
 // TODO: let users specify custom class names (& maybe CSS) per Event
 // TODO: allow for passing datetime which would be passed as datetime attr to the time element
 const events = [
