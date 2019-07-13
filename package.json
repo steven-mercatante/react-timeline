@@ -19,5 +19,14 @@
   "bugs": {
     "url": "https://github.com/steven-mercatante/react-timeline/issues"
   },
-  "homepage": "https://github.com/steven-mercatante/react-timeline#readme"
+  "homepage": "https://github.com/steven-mercatante/react-timeline#readme",
+  "dependencies": {
+    "react-markdown": "^4.1.0",
+    "react-twitter-embed": "^2.0.8",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
 }
