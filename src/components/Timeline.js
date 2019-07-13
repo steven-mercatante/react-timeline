@@ -36,7 +36,7 @@ const nodes = {
   twitter: TwitterNode
 };
 
-export default function Timeline({ events, inlineDate }) {
+export default function Timeline({ events }) {
   // TODO: use a more semantic var name
   const [isCompact, setIsCompact] = useState(false);
 
@@ -62,13 +62,8 @@ export default function Timeline({ events, inlineDate }) {
       {events.map((event, i) => {
         const Node = nodes[event.type.toLowerCase()];
         return (
-          <NodeWrapper
-            key={i}
-            event={event}
-            inlineDate={inlineDate}
-            isCompact={isCompact}
-          >
-            <Node key={i} event={event} inlineDate={inlineDate} />
+          <NodeWrapper key={i} event={event} isCompact={isCompact}>
+            <Node key={i} event={event} />
           </NodeWrapper>
         );
       })}
