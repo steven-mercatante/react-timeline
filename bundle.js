@@ -2333,7 +2333,7 @@ function Timeline(_ref) {
 
 exports.ImageNode = ImageNode;
 exports.TextNode = TextNode;
-exports.Timeline = Timeline;
 exports.TwitterNode = TwitterNode;
 exports.YouTubeNode = YouTubeNode;
+exports.default = Timeline;
 exports.useIntersectionObserver = useIntersectionObserver;

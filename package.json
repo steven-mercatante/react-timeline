@@ -1,8 +1,9 @@
 {
   "name": "@merc/react-timeline",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "An opinionated (but highly customizable) timeline component",
   "main": "bundle.js",
+  "module": "bundle.esm.js",
   "scripts": {
     "test": "jest",
     "build": "rollup -c"
@@ -40,7 +41,6 @@
     "rollup": "^1.16.7",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.0.1",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-replace": "^2.2.0"
+    "rollup-plugin-node-resolve": "^5.2.0"
   }
 }
