@@ -5,11 +5,12 @@ import TwitterNode from "./components/TwitterNode";
 import YouTubeNode from "./components/YouTubeNode";
 import useIntersectionObserver from "./hooks/useIntersectionObserver";
 
-module.exports = {
-  ImageNode,
-  TextNode,
-  Timeline,
-  TwitterNode,
-  YouTubeNode,
-  useIntersectionObserver
-};
+// module.exports = {
+//   ImageNode,
+//   TextNode,
+//   Timeline,
+//   TwitterNode,
+//   YouTubeNode,
+//   useIntersectionObserver
+// };
+export default Timeline;

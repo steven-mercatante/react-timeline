@@ -10,17 +10,21 @@ export default [
     input: "./src/index.js",
     output: {
       file: "bundle.js",
-      format: "cjs"
+      format: "cjs",
+      globals: {
+        react: "React",
+        "react-dom": "ReactDOM"
+      }
     },
     external: ["react", "react-dom", "styled-components"],
     plugins: [
       // replace({
       //   "process.env.NODE_ENV": JSON.stringify(NODE_ENV)
       // }),
-      resolve(),
       babel({
         exclude: "node_modules/**"
       }),
+      resolve(),
       commonjs()
     ]
   }
