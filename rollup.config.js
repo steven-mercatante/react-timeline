@@ -1,41 +1,14 @@
-import resolve from "rollup-plugin-node-resolve";
 import babel from "rollup-plugin-babel";
+import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 
 export default [
-  // CommonJS
   {
-    input: "./src/index.js",
-    output: {
-      file: "bundle.js",
-      format: "cjs",
-      globals: {
-        react: "React",
-        "react-dom": "ReactDOM"
-      }
-    },
-    external: ["react", "react-dom", "styled-components"],
-    plugins: [
-      babel({
-        exclude: "node_modules/**"
-      }),
-      resolve(),
-      commonjs()
-    ]
-  },
-
-  // ES
-  // CommonJS
-  {
-    input: "./src/index.js",
-    output: {
-      file: "es/bundle.js",
-      format: "es",
-      globals: {
-        react: "React",
-        "react-dom": "ReactDOM"
-      }
-    },
+    input: "src/index.js",
+    output: [
+      { file: "dist/bundle.cjs.js", format: "cjs" },
+      { file: "dist/bundle.esm.js", format: "es" }
+    ],
     external: ["react", "react-dom", "styled-components"],
     plugins: [
       babel({
