@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import TextNode from "./TextNode";
-import ImageNode from "./ImageNode";
+// import ImageNode from "./ImageNode";
 import NodeWrapper from "./NodeWrapper";
-import YouTubeNode from "./YouTubeNode";
-import TwitterNode from "./TwitterNode";
+// import YouTubeNode from "./YouTubeNode";
+// import TwitterNode from "./TwitterNode";
 
 const OverflowWrapper = styled.div`
   overflow: auto;
@@ -32,10 +32,10 @@ const Container = styled.div`
 `;
 
 const nodes = {
-  text: TextNode,
-  image: ImageNode,
-  youtube: YouTubeNode,
-  twitter: TwitterNode
+  text: TextNode
+  // image: ImageNode,
+  // youtube: YouTubeNode,
+  // twitter: TwitterNode
 };
 
 export default function Timeline({ events }) {

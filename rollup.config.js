@@ -9,7 +9,7 @@ export default [
   {
     input: "./src/index.js",
     output: {
-      file: "./build/dev.js",
+      file: "bundle.js",
       format: "cjs"
     },
     external: ["react", "react-dom", "styled-components"],
@@ -17,10 +17,10 @@ export default [
       // replace({
       //   "process.env.NODE_ENV": JSON.stringify(NODE_ENV)
       // }),
+      resolve(),
       babel({
         exclude: "node_modules/**"
       }),
-      resolve(),
       commonjs()
     ]
   }

@@ -1,8 +1,8 @@
 {
   "name": "@merc/react-timeline",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "An opinionated (but highly customizable) timeline component",
-  "main": "src/index.js",
+  "main": "bundle.js",
   "scripts": {
     "test": "jest",
     "build": "rollup -c"
