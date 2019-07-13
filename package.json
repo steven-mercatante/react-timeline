@@ -1,6 +1,6 @@
 {
   "name": "@merc/react-timeline",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An opinionated (but highly customizable) timeline component",
   "main": "index.js",
   "scripts": {
