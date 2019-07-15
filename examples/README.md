@@ -2,7 +2,7 @@
 
 Each example is a [Create React App](https://facebook.github.io/create-react-app/) app.
 
-_You must link @merc/react-timeline before running any examples._
+**You must link @merc/react-timeline before running any examples.**
 
 ```
 # from the library root
