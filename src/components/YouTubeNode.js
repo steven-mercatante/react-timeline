@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Markdown from "markdown-to-jsx";
 import ConditionalMarkdown from "./ConditionalMarkdown";
 
 const Container = styled.div`

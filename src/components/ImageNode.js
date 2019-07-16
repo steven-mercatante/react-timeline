@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Markdown from "markdown-to-jsx";
+import ConditionalMarkdown from "./ConditionalMarkdown";
 
 const Container = styled.div`
   display: flex;
@@ -23,7 +23,7 @@ export default function ImageNode({ event }) {
   const { src, alt, credit, text } = event;
   return (
     <Container className="image">
-      {text && <Markdown className="text">{text}</Markdown>}
+      <ConditionalMarkdown text={text} />
       <img src={src} alt={alt} />
       {credit && <Markdown className="credit">{credit}</Markdown>}
     </Container>
