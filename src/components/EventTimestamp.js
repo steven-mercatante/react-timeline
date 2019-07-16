@@ -3,7 +3,7 @@ import EventContainer from "./EventContainer";
 
 const EventTimestamp = styled.div`
   position: ${({ inline }) => (inline === true ? "static" : "absolute")};
-  top: calc(50% - 10px);
+  top: calc(50% - 6px);
   ${({ inline }) => inline && `margin-bottom: 10px`}
   z-index: 100;
 
