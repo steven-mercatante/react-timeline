@@ -4,7 +4,7 @@ import EventContainer from "./EventContainer";
 const EventTimestamp = styled.div`
   position: ${({ inline }) => (inline === true ? "static" : "absolute")};
   top: calc(50% - 10px);
-  margin-bottom: 4px;
+  ${({ inline }) => inline && `margin-bottom: 10px`}
   z-index: 100;
 
   ${EventContainer}:nth-child(even) & {
