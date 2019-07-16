@@ -26,7 +26,7 @@ export default function NodeWrapper({ event, children, isCompact }) {
     >
       {!isCompact && (
         <EventTimestamp className="timestamp" inline={false}>
-          {event.date}
+          <time>{event.date}</time>
         </EventTimestamp>
       )}
       <EventMarker className="node-marker" />
@@ -36,7 +36,7 @@ export default function NodeWrapper({ event, children, isCompact }) {
       >
         {isCompact && (
           <EventTimestamp className="timestamp inline" inline={true}>
-            {event.date}
+            <time>{event.date}</time>
           </EventTimestamp>
         )}
         {children}

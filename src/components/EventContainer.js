@@ -12,7 +12,7 @@ const EventContainer = styled.div`
     margin-top: 20px;
   }
 
-  :nth-child(odd) {
+  :nth-child(even) {
     flex-direction: row-reverse;
   }
 

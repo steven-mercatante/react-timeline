@@ -4,6 +4,8 @@ import EventContainer from "./EventContainer";
 const EventContent = styled.div`
   // border: 1px solid yellow;
   position: relative;
+  display: flex;
+  flex-direction: column;
   border-radius: 4px;
   background-color: #4e4e50;
   flex-grow: 0;
@@ -14,11 +16,11 @@ const EventContent = styled.div`
   ${({ width }) => width && `width: ${width};`}
 
   ${EventContainer}:nth-child(odd) & {
-    right: calc(50% + 30px);
+    left: calc(50% + 30px);
   }
 
   ${EventContainer}:nth-child(even) & {
-    left: calc(50% + 30px);
+    right: calc(50% + 30px);
   }
 
   @media (max-width: 768px) {
