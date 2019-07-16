@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Markdown from "markdown-to-jsx";
+import ConditionalMarkdown from "./ConditionalMarkdown";
 
 const Container = styled.div`
   position: relative;
@@ -21,7 +22,7 @@ export default function YouTubeNode({ event }) {
   const { id, name, text } = event;
   return (
     <div>
-      {text && <Markdown>{text}</Markdown>}
+      <ConditionalMarkdown text={text} />
       <Container className="youtube-container">
         <RespIframe
           title={name}
