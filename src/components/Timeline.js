@@ -20,8 +20,9 @@ const Container = styled.div`
   // renders the vertical line
   ::after {
     position: absolute;
-    left: ${props => `calc(50% - ${props.theme.track.width / 2}px)`};
-    width: ${props => props.theme.track.width}px;
+    left: ${props =>
+      `calc(50% - ${parseInt(props.theme.track.width, 10) / 2}px)`};
+    width: ${props => props.theme.track.width};
     height: 100%;
     background-color: ${props => props.theme.track.color};
     content: "";
@@ -45,7 +46,7 @@ const theme = {
   Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
   track: {
     color: "#ee18b6",
-    width: 2
+    width: "6px"
   }
 };
 
