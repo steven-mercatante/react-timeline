@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import TextNode from "./TextNode";
 import ImageNode from "./ImageNode";
 import NodeWrapper from "./NodeWrapper";
@@ -14,18 +14,16 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 14px;
+  font-family: ${props => props.theme.fontFamily};
+  font-size: ${props => props.theme.fontSize};
 
   // renders the vertical line
-  // TODO: can width (and thus left calc) be passed via prop?
   ::after {
     position: absolute;
-    left: calc(50% - 1px);
-    width: 2px;
+    left: ${props => `calc(50% - ${props.theme.track.width / 2}px)`};
+    width: ${props => props.theme.track.width}px;
     height: 100%;
-    background-color: #ee18b6;
+    background-color: ${props => props.theme.track.color};
     content: "";
 
     @media (max-width: 768px) {
@@ -39,6 +37,16 @@ const nodes = {
   image: ImageNode,
   youtube: YouTubeNode,
   twitter: TwitterNode
+};
+
+const theme = {
+  fontSize: "14px",
+  fontFamily: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+  Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  track: {
+    color: "#ee18b6",
+    width: 2
+  }
 };
 
 export default function Timeline({ className, events }) {
@@ -68,23 +76,25 @@ export default function Timeline({ className, events }) {
   }
 
   return (
-    <OverflowWrapper className={classNames.join(" ")}>
-      <Container className="timeline container">
-        {events.map((event, i) => {
-          let Node;
-          if (event.component) {
-            Node = event.component;
-          } else {
-            Node = nodes[event.type.toLowerCase()];
-          }
+    <ThemeProvider theme={theme}>
+      <OverflowWrapper className={classNames.join(" ")}>
+        <Container className="timeline container">
+          {events.map((event, i) => {
+            let Node;
+            if (event.component) {
+              Node = event.component;
+            } else {
+              Node = nodes[event.type.toLowerCase()];
+            }
 
-          return (
-            <NodeWrapper key={i} event={event} isCompact={isCompact}>
-              <Node key={i} event={event} />
-            </NodeWrapper>
-          );
-        })}
-      </Container>
-    </OverflowWrapper>
+            return (
+              <NodeWrapper key={i} event={event} isCompact={isCompact}>
+                <Node key={i} event={event} />
+              </NodeWrapper>
+            );
+          })}
+        </Container>
+      </OverflowWrapper>
+    </ThemeProvider>
   );
 }
