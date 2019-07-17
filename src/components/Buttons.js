@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
+  margin-top: 10px;
 `;
 
 // TODO: pull font-size from theme
