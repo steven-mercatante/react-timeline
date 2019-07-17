@@ -41,7 +41,7 @@ const nodes = {
   twitter: TwitterNode
 };
 
-export default function Timeline({ events }) {
+export default function Timeline({ className, events }) {
   // TODO: use a more semantic var name
   const [isCompact, setIsCompact] = useState(false);
 
@@ -62,9 +62,14 @@ export default function Timeline({ events }) {
     }
   }
 
+  const classNames = ["timeline", "overflow-wrapper"];
+  if (className) {
+    classNames.push(className);
+  }
+
   return (
-    <OverflowWrapper className="timeline-overflow-wrapper">
-      <Container className="timeline-container">
+    <OverflowWrapper className={classNames.join(" ")}>
+      <Container className="timeline container">
         {events.map((event, i) => {
           let Node;
           if (event.component) {
