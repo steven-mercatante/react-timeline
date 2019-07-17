@@ -31,6 +31,12 @@ const Container = styled.div`
       left: 24px;
     }
   }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
 `;
 
 const nodes = {
@@ -46,7 +52,14 @@ const theme = {
   Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
   track: {
     color: "#ee18b6",
-    width: "6px"
+    width: "2px"
+  },
+  marker: {
+    width: "20px",
+    height: "20px",
+    backgroundColor: "#eb2db4",
+    border: " 2px solid #eb2db4",
+    borderRadius: "50%"
   }
 };
 
