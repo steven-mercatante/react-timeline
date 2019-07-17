@@ -14,6 +14,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
 
   // renders the vertical line
   // TODO: can width (and thus left calc) be passed via prop?
