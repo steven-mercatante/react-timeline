@@ -25,7 +25,9 @@ export default function ImageNode({ event }) {
     <Container className="image">
       <ConditionalMarkdown text={text} />
       <img src={src} alt={alt} />
-      {credit && <Markdown className="credit">{credit}</Markdown>}
+      {credit && (
+        <ConditionalMarkdown className="credit">{credit}</ConditionalMarkdown>
+      )}
     </Container>
   );
 }
