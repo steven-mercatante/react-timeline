@@ -60,6 +60,15 @@ const theme = {
     backgroundColor: "#eb2db4",
     border: " 2px solid #eb2db4",
     borderRadius: "50%"
+  },
+  eventContent: {
+    color: '#fff',
+    backgroundColor: "#4e4e50",
+    borderRadius: '4px',
+    maxWidth: '42%',
+    padding: '10px',
+    leftOffset: '30px',
+    rightOffset: '30px'
   }
 };
 
