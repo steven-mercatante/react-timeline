@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ConditionalMarkdown from "./ConditionalMarkdown";
+import Buttons from "./Buttons";
 
 const Container = styled.div`
   position: relative;
@@ -18,7 +19,7 @@ const RespIframe = styled.iframe`
 `;
 
 export default function YouTubeNode({ event }) {
-  const { id, name, text } = event;
+  const { id, name, text, buttons } = event;
   return (
     <div>
       <ConditionalMarkdown text={text} />
@@ -33,6 +34,7 @@ export default function YouTubeNode({ event }) {
           allowFullScreen
         />
       </Container>
+      {buttons && <Buttons buttons={buttons} />}
     </div>
   );
 }

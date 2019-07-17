@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ConditionalMarkdown from "./ConditionalMarkdown";
+import Buttons from "./Buttons";
 
 const Container = styled.div`
   display: flex;
@@ -20,7 +21,8 @@ const Container = styled.div`
 `;
 
 export default function ImageNode({ event }) {
-  const { src, alt, credit, text } = event;
+  const { src, alt, credit, text, buttons } = event;
+
   return (
     <Container className="image">
       <ConditionalMarkdown text={text} />
@@ -28,6 +30,7 @@ export default function ImageNode({ event }) {
       {credit && (
         <ConditionalMarkdown className="credit">{credit}</ConditionalMarkdown>
       )}
+      {buttons && <Buttons buttons={buttons} />}
     </Container>
   );
 }
