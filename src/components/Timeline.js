@@ -66,7 +66,13 @@ export default function Timeline({ events }) {
     <OverflowWrapper className="timeline-overflow-wrapper">
       <Container className="timeline-container">
         {events.map((event, i) => {
-          const Node = nodes[event.type.toLowerCase()];
+          let Node;
+          if (event.component) {
+            Node = event.component;
+          } else {
+            Node = nodes[event.type.toLowerCase()];
+          }
+
           return (
             <NodeWrapper key={i} event={event} isCompact={isCompact}>
               <Node key={i} event={event} />
