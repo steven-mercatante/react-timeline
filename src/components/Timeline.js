@@ -9,10 +9,12 @@ import themes from "../themes";
 import merge from "lodash.merge";
 import isPlainObject from "lodash.isplainobject";
 
+// TODO: move to own module?
 const OverflowWrapper = styled.div`
   overflow: auto;
 `;
 
+// TODO: move to own module?
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -52,7 +54,7 @@ const nodes = {
   twitter: TwitterNode
 };
 
-export default function Timeline({ className, events, theme }) {
+export default function Timeline({ className, events, theme, opts = {} }) {
   // TODO: use a more semantic var name
   const [isCompact, setIsCompact] = useState(false);
 

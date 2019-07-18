@@ -3,10 +3,16 @@ import EventMarker from "./EventMarker";
 import EventTimestamp from "./EventTimestamp";
 import EventContent from "./EventContent";
 
-export default function EventInner({ event, isCompact, isVisible, children }) {
+export default function EventInner({
+  event,
+  isCompact,
+  isVisible,
+  children,
+  inlineTimestamp = false
+}) {
   return (
     <React.Fragment>
-      {!isCompact && (
+      {!isCompact && !inlineTimestamp && (
         <EventTimestamp className="timestamp" inline={false}>
           <time>{event.date}</time>
         </EventTimestamp>
@@ -16,7 +22,7 @@ export default function EventInner({ event, isCompact, isVisible, children }) {
         className="node-content"
         width={event.type.toLowerCase() === "youtube" ? "500px" : null}
       >
-        {isCompact && (
+        {(isCompact || inlineTimestamp) && (
           <EventTimestamp className="timestamp inline" inline={true}>
             <time>{event.date}</time>
           </EventTimestamp>
