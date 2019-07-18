@@ -30,7 +30,7 @@ const UrlButton = styled.a`
 `;
 
 function renderButton(button, key) {
-  const { label, url, onClick, class: className, ...rest } = button;
+  const { label, url, onClick, cssClass, ...rest } = button;
 
   let ButtonComponent;
   if (url) {
@@ -45,8 +45,8 @@ function renderButton(button, key) {
   }
 
   const classes = ["button"];
-  if (className) {
-    classes.push(className);
+  if (cssClass) {
+    classes.push(cssClass);
   }
 
   return (
