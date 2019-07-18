@@ -7,6 +7,7 @@ import YouTubeNode from "./YouTubeNode";
 import TwitterNode from "./TwitterNode";
 import themes from "../themes";
 import merge from "lodash.merge";
+import isPlainObject from "lodash.isplainobject";
 
 const OverflowWrapper = styled.div`
   overflow: auto;
@@ -63,14 +64,13 @@ export default function Timeline({ className, events, theme }) {
     };
   });
 
-  let finalTheme = themes.roli;
-  if (theme) {
-    // TODO: check if theme is obj. If it's  a str, try fetching that theme from the hashmap
-    finalTheme = merge(finalTheme, theme);
-    console.log("MERGE ITTTT");
+  let finalTheme = themes.default;
+  if (typeof theme === "string" && themes[theme.toLowerCase()]) {
+    finalTheme = themes[theme.toLowerCase()];
   }
-
-  console.log(finalTheme);
+  if (isPlainObject(theme)) {
+    finalTheme = merge(finalTheme, theme);
+  }
 
   function handleResize() {
     const mediaQueryList = window.matchMedia(`(max-width: 768px)`);
