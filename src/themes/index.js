@@ -1,3 +1,5 @@
 import defaultTheme from "./default";
 
-export { defaultTheme };
+export default {
+  default: defaultTheme
+};

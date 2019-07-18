@@ -4,6 +4,7 @@ import Timeline from "./components/Timeline";
 import TwitterNode from "./components/TwitterNode";
 import YouTubeNode from "./components/YouTubeNode";
 import useIntersectionObserver from "./hooks/useIntersectionObserver";
+import themes from "./themes";
 
 export default Timeline;
 
@@ -12,5 +13,6 @@ export {
   TextNode,
   TwitterNode,
   YouTubeNode,
-  useIntersectionObserver
+  useIntersectionObserver,
+  themes
 };

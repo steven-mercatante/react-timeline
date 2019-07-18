@@ -5,7 +5,8 @@ import ImageNode from "./ImageNode";
 import NodeWrapper from "./NodeWrapper";
 import YouTubeNode from "./YouTubeNode";
 import TwitterNode from "./TwitterNode";
-import { defaultTheme } from "../themes";
+import themes from "../themes";
+import merge from "lodash.merge";
 
 const OverflowWrapper = styled.div`
   overflow: auto;
@@ -25,7 +26,7 @@ const Container = styled.div`
       `calc(50% - ${parseInt(props.theme.track.width, 10) / 2}px)`};
     width: ${props => props.theme.track.width};
     height: 100%;
-    background-color: ${props => props.theme.track.color};
+    background-color: ${props => props.theme.track.backgroundColor};
     content: "";
 
     @media (max-width: 768px) {
@@ -47,7 +48,7 @@ const nodes = {
   twitter: TwitterNode
 };
 
-export default function Timeline({ className, events }) {
+export default function Timeline({ className, events, theme }) {
   // TODO: use a more semantic var name
   const [isCompact, setIsCompact] = useState(false);
 
@@ -58,6 +59,15 @@ export default function Timeline({ className, events }) {
       window.removeEventListener("resize", handleResize);
     };
   });
+
+  let finalTheme = themes.default;
+  if (theme) {
+    // TODO: check if theme is obj. If it's  a str, try fetching that theme from the hashmap
+    finalTheme = merge(finalTheme, theme);
+    console.log("MERGE ITTTT");
+  }
+
+  console.log(finalTheme);
 
   function handleResize() {
     const mediaQueryList = window.matchMedia(`(max-width: 768px)`);
@@ -74,7 +84,7 @@ export default function Timeline({ className, events }) {
   }
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={finalTheme}>
       <OverflowWrapper className={classNames.join(" ")}>
         <Container className="timeline container">
           {events.map((event, i) => {

@@ -25,6 +25,7 @@
   "homepage": "https://github.com/steven-mercatante/react-timeline#readme",
   "dependencies": {
     "intersection-observer": "^0.7.0",
+    "lodash.merge": "^4.6.2",
     "markdown-to-jsx": "^6.10.2",
     "react-twitter-embed": "^2.0.8",
     "styled-components": "^4.3.2"
