@@ -9,24 +9,25 @@ const Container = styled.div`
 // TODO: pull font-size from theme
 const Button = styled.button`
   display: inline-block;
-  background-color: rebeccapurple;
-  border-radius: 4px;
-  padding: 4px;
-  color: #fff;
-  margin-right: 4px;
+  background-color: ${props => props.theme.buttons.backgroundColor};
+  border: ${props => props.theme.buttons.border};
+  border-radius: ${props => props.theme.buttons.borderRadius};
+  padding: ${props => props.theme.buttons.padding};
+  color: ${props => props.theme.buttons.color};
+  margin: ${props => props.theme.buttons.margin};
+  font-size: ${props => props.theme.buttons.fontSize};
   cursor: pointer;
-  border: none;
-  font-size: 14px;
 `;
 
 const UrlButton = styled.a`
   display: inline-block;
-  background-color: rebeccapurple;
-  border-radius: 4px;
-  padding: 4px;
-  color: #fff;
+  background-color: ${props => props.theme.buttons.backgroundColor};
+  border: ${props => props.theme.buttons.border};
+  border-radius: ${props => props.theme.buttons.borderRadius};
+  padding: ${props => props.theme.buttons.padding};
+  color: ${props => props.theme.buttons.color};
+  margin: ${props => props.theme.buttons.margin};
   text-decoration: none;
-  margin-right: 4px;
 `;
 
 function renderButton(button, key) {

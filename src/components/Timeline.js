@@ -62,13 +62,22 @@ const theme = {
     borderRadius: "50%"
   },
   eventContent: {
-    color: '#fff',
+    color: "#fff",
     backgroundColor: "#4e4e50",
-    borderRadius: '4px',
-    maxWidth: '42%',
-    padding: '10px',
-    leftOffset: '30px',
-    rightOffset: '30px'
+    borderRadius: "4px",
+    maxWidth: "42%",
+    padding: "10px",
+    leftOffset: "30px",
+    rightOffset: "30px"
+  },
+  buttons: {
+    fontSize: "14px",
+    backgroundColor: "rebeccapurple",
+    borderRadius: "4px",
+    padding: "4px",
+    color: "#fff",
+    margin: "0 4px 0 0",
+    border: "none"
   }
 };
 
