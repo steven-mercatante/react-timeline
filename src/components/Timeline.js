@@ -89,6 +89,14 @@ const theme = {
     topOffset: "-10px",
     leftOffset: "30px",
     rightOffset: "30px"
+  },
+  image: {
+    width: "100%",
+    maxHeight: "400px",
+    objectFit: "cover",
+    credit: {
+      fontSize: "0.85rem"
+    }
   }
 };
 

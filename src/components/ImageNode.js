@@ -6,17 +6,17 @@ import Buttons from "./Buttons";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  max-height: 400px;
-  width: 100%;
+  max-height: ${props => props.theme.image.maxHeight};
+  width: ${props => props.theme.image.width};
 
   img {
     flex: 1;
-    object-fit: cover;
+    object-fit: ${props => props.theme.image.objectFit};
     overflow: hidden;
   }
 
   .credit {
-    font-size: 0.85rem;
+    font-size: ${props => props.theme.image.credit.fontSize};
   }
 `;
 
