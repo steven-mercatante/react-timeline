@@ -54,7 +54,11 @@ const nodes = {
   twitter: TwitterNode
 };
 
-export default function Timeline({ className, events, theme, opts = {} }) {
+const _opts = {
+  inlineTimestamp: false
+};
+
+export default function Timeline({ className, events, theme, opts }) {
   // TODO: use a more semantic var name
   const [isCompact, setIsCompact] = useState(false);
 
@@ -73,6 +77,13 @@ export default function Timeline({ className, events, theme, opts = {} }) {
   if (isPlainObject(theme)) {
     finalTheme = merge(finalTheme, theme);
   }
+
+  let finalOpts = _opts;
+  if (opts && isPlainObject(opts)) {
+    finalOpts = merge(finalOpts, opts);
+  }
+
+  console.table(finalOpts);
 
   function handleResize() {
     const mediaQueryList = window.matchMedia(`(max-width: 768px)`);
@@ -101,8 +112,13 @@ export default function Timeline({ className, events, theme, opts = {} }) {
             }
 
             return (
-              <NodeWrapper key={i} event={event} isCompact={isCompact}>
-                <Node key={i} event={event} />
+              <NodeWrapper
+                key={i}
+                event={event}
+                isCompact={isCompact}
+                opts={finalOpts}
+              >
+                <Node event={event} />
               </NodeWrapper>
             );
           })}

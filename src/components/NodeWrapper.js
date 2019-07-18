@@ -3,7 +3,7 @@ import EventContainer from "./EventContainer";
 import useIntersectionObserver from "../hooks/useIntersectionObserver";
 import EventInner from "./EventInner";
 
-export default function NodeWrapper({ event, children, isCompact }) {
+export default function NodeWrapper({ event, children, isCompact, opts }) {
   // TODO: can the intersection observer opts be passed via param so user can customize?
   const [isVisible, ref] = useIntersectionObserver({
     root: null,
@@ -22,7 +22,12 @@ export default function NodeWrapper({ event, children, isCompact }) {
       ref={ref}
       isVisible={isVisible}
     >
-      <EventInner event={event} isCompact={isCompact} isVisible={isVisible}>
+      <EventInner
+        event={event}
+        isCompact={isCompact}
+        isVisible={isVisible}
+        opts={opts}
+      >
         {children}
       </EventInner>
     </EventContainer>

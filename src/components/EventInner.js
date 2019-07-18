@@ -8,8 +8,10 @@ export default function EventInner({
   isCompact,
   isVisible,
   children,
-  inlineTimestamp = false
+  opts
 }) {
+  const { inlineTimestamp } = opts;
+
   return (
     <React.Fragment>
       {!isCompact && !inlineTimestamp && (
