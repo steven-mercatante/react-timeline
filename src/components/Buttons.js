@@ -6,7 +6,6 @@ const Container = styled.div`
   margin-top: 10px;
 `;
 
-// TODO: pull font-size from theme
 const Button = styled.button`
   display: inline-block;
   background-color: ${props => props.theme.buttons.backgroundColor};
@@ -31,7 +30,7 @@ const UrlButton = styled.a`
 `;
 
 function renderButton(button, key) {
-  const { label, url, onClick, ...rest } = button;
+  const { label, url, onClick, class: className, ...rest } = button;
 
   let ButtonComponent;
   if (url) {
@@ -45,8 +44,13 @@ function renderButton(button, key) {
     buttonProps.href = url;
   }
 
+  const classes = ["button"];
+  if (className) {
+    classes.push(className);
+  }
+
   return (
-    <ButtonComponent key={key} {...buttonProps}>
+    <ButtonComponent key={key} className={classes.join(" ")} {...buttonProps}>
       {label}
     </ButtonComponent>
   );
@@ -54,7 +58,7 @@ function renderButton(button, key) {
 
 export default function Buttons({ buttons }) {
   return (
-    <Container>
+    <Container className="buttons">
       {buttons.map((button, i) => {
         return renderButton(button, i);
       })}
