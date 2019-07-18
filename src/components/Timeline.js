@@ -18,6 +18,9 @@ const Container = styled.div`
   position: relative;
   font-family: ${props => props.theme.fontFamily};
   font-size: ${props => props.theme.fontSize};
+  ${props =>
+    props.theme.backgroundColor &&
+    `background-color: ${props.theme.backgroundColor}`}
 
   // renders the vertical line
   ::after {
@@ -60,7 +63,7 @@ export default function Timeline({ className, events, theme }) {
     };
   });
 
-  let finalTheme = themes.default;
+  let finalTheme = themes.roli;
   if (theme) {
     // TODO: check if theme is obj. If it's  a str, try fetching that theme from the hashmap
     finalTheme = merge(finalTheme, theme);

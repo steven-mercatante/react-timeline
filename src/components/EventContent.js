@@ -7,6 +7,9 @@ const EventContent = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  ${props =>
+    props.theme.eventContent.border &&
+    `border: ${props.theme.eventContent.border}`};
   border-radius: ${props => props.theme.eventContent.borderRadius};
   background-color: ${props => props.theme.eventContent.backgroundColor};
   color: ${props => props.theme.eventContent.color};
@@ -16,11 +19,11 @@ const EventContent = styled.div`
   ${({ width }) => width && `width: ${width};`}
 
   ${EventContainer}:nth-child(odd) & {
-    left: ${props => `calc(50% + ${props.theme.eventContent.leftOffset})`}
+    left: ${props => `calc(50% + ${props.theme.eventContent.leftOffset})`};
   }
 
   ${EventContainer}:nth-child(even) & {
-    right: ${props => `calc(50% + ${props.theme.eventContent.rightOffset})`}
+    right: ${props => `calc(50% + ${props.theme.eventContent.rightOffset})`};
   }
 
   @media (max-width: 768px) {

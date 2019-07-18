@@ -19,6 +19,9 @@ const EventTimestamp = styled.div`
     background-color: ${props => props.theme.timestamp.backgroundColor};
     padding: ${props => props.theme.timestamp.padding};
     color: ${props => props.theme.timestamp.color}
+    ${props =>
+      props.theme.timestamp.border &&
+      `border: ${props.theme.timestamp.border}`};
     border-radius: ${props => props.theme.timestamp.borderRadius};
     font-weight: ${props => props.theme.timestamp.fontWeight};
     font-size: ${props => props.theme.timestamp.fontSize};

@@ -1,5 +1,7 @@
 import defaultTheme from "./default";
+import roliTheme from "./roli";
 
 export default {
-  default: defaultTheme
+  default: defaultTheme,
+  roli: roliTheme,
 };
