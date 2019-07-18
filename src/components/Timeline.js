@@ -97,6 +97,12 @@ const theme = {
     credit: {
       fontSize: "0.85rem"
     }
+  },
+  twitter: {
+    width: "100%",
+    minWidth: "300px",
+    minHeight: "120px",
+    backgroundColor: "#fff"
   }
 };
 
