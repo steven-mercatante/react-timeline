@@ -15,6 +15,10 @@ const EventContent = styled.div`
   color: ${props => props.theme.eventContent.color};
   padding: ${props => props.theme.eventContent.padding};
 
+  ${props =>
+    props.theme.eventContent.minWidth &&
+    `min-width: ${props.theme.eventContent.minWidth}`}
+
   max-width: ${props => props.theme.eventContent.maxWidth};
   ${({ width }) => width && `width: ${width};`}
 
