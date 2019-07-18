@@ -55,7 +55,8 @@ const nodes = {
 };
 
 const _opts = {
-  inlineTimestamp: false
+  inlineTimestamp: false,
+  animationsEnabled: true
 };
 
 export default function Timeline({ className, events, theme, opts }) {

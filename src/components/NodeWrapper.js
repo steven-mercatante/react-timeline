@@ -21,6 +21,7 @@ export default function NodeWrapper({ event, children, isCompact, opts }) {
       className={classes.join(" ")}
       ref={ref}
       isVisible={isVisible}
+      animationsEnabled={opts.animationsEnabled}
     >
       <EventInner
         event={event}

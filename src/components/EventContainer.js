@@ -5,8 +5,11 @@ const EventContainer = styled.div`
   position: relative;
   display: flex;
   margin-bottom: 20px;
-  opacity: ${({ isVisible }) => (isVisible ? 1 : 0.15)};
-  transition: opacity 0.25s ease-in;
+
+  ${props =>
+    props.animationsEnabled && `opacity: ${props.isVisible ? 1 : 0.15};`}
+  ${({ animationsEnabled }) =>
+    animationsEnabled && `transition: opacity 0.25s ease-in;`}
 
   :nth-child(1) {
     margin-top: 20px;
