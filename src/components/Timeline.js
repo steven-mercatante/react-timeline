@@ -35,21 +35,17 @@ const Container = styled.div`
     height: 100%;
     background-color: ${props => props.theme.track.backgroundColor};
     content: "";
-
-    // @media (max-width: 768px) {
-    //   left: 24px;
-    // }
   }
 
   &.inline-events {
     ::after {
-      left: 153px;
+      left: 130px;
     }
   }
 
   &.inline-events-inline-date {
     ::after {
-      left: 24px;
+      left: 29px;
     }
   }
 

@@ -7,7 +7,7 @@ import kebabCase from "lodash.kebabcase";
 import styled from "styled-components";
 
 const FlexColumn = styled.div`
-  border: 1px solid cyan;
+  // border: 1px solid cyan;
   display: flex;
   flex-direction: column;
   flex-basis: ${({ flexBasis }) => flexBasis};
@@ -27,8 +27,7 @@ const FlexColumn = styled.div`
     margin-bottom: 10px;
   }
 
-  &.inline-events,
-  &.inline-events-inline-date {
+  &.inline-events {}
     flex-basis: 100px;
     justify-content: center;
     align-items: flex-end;
@@ -36,6 +35,9 @@ const FlexColumn = styled.div`
 
   &.inline-events-inline-date {
     margin-bottom: 10px;
+    flex-basis: 0;
+    justify-content: center;
+    align-items: flex-end;
   }
 `;
 
