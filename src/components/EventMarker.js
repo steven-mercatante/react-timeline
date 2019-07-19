@@ -7,7 +7,8 @@ const Container = styled.span`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-basis: 100px;
+  flex-basis: 40px;
+  flex-shrink: 0;
   z-index: 100;
 `;
 

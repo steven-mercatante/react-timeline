@@ -1,4 +1,5 @@
 import React from "react";
+import EventContainer from './EventContainer'
 import EventMarker from "./EventMarker";
 import EventTimestamp from "./EventTimestamp";
 import EventContent from "./EventContent";
@@ -6,9 +7,36 @@ import kebabCase from "lodash.kebabcase";
 import styled from "styled-components";
 
 const FlexColumn = styled.div`
+  border: 1px solid cyan;
   display: flex;
   flex-direction: column;
   flex-basis: ${({ flexBasis }) => flexBasis};
+  justify-content: center;
+  align-items: flex-end;
+
+  &.alternate-events,
+  &.alternate-events-inline-date {
+    flex-basis: 50%;
+
+    ${EventContainer}:nth-child(even) & {
+      align-items: flex-start;
+    }
+  }
+
+  &.alternate-events-inline-date {
+    margin-bottom: 10px;
+  }
+
+  &.inline-events,
+  &.inline-events-inline-date {
+    flex-basis: 100px;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  &.inline-events-inline-date {
+    margin-bottom: 10px;
+  }
 `;
 
 export default function EventInner({
@@ -25,12 +53,14 @@ export default function EventInner({
 
   return (
     <React.Fragment>
-      {/* <FlexColumn className="col-1" flexBasis="50%">
+      <FlexColumn className={`col-1 ${kebabLayout}`} flexBasis="50%">
+        {!isCompact && !inlineTimestamp && <EventTimestamp>{event.date}</EventTimestamp>}
+      </FlexColumn>
 
-      </FlexColumn> */}
-      <EventTimestamp className={`timestamp ${kebabLayout}`}>
+      {/* <EventTimestamp className={`timestamp ${kebabLayout}`}>
         {!isCompact && !inlineTimestamp && <time>{event.date}</time>}
-      </EventTimestamp>
+      </EventTimestamp> */}
+
       <EventMarker layout={kebabLayout} />
       <EventContent
         className="node-content"

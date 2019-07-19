@@ -135,7 +135,7 @@ export default function Timeline({ className, events, theme, opts }) {
                 <Event
                   key={i}
                   event={event}
-                  isCompact={isCompact}
+                  isCompact={false}
                   opts={finalOpts}
                 >
                   <Node event={event} />
