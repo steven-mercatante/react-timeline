@@ -1,36 +1,45 @@
 import styled from "styled-components";
 import EventContainer from "./EventContainer";
 
-// TODO: write "inline" rules in an ".inline" selector instead of doing hard-to-read logic with `props`
-
 const EventTimestamp = styled.div`
-  border: 1px solid cyan;
+  // border: 1px solid cyan;
+  
+  &.alternate-events {
+    position: absolute;
+    ${EventContainer}:nth-child(even) & {
+      left: ${props => `calc(50% + ${props.theme.timestamp.leftOffset})`}
+    }
+  
+    ${EventContainer}:nth-child(odd) & {
+      right: ${props => `calc(50% + ${props.theme.timestamp.rightOffset})`}
+    }
+  }
 
-  display: flex;
-  flex-basis: 100px;
-  justify-content: flex-end;
-  align-items: center;
-  position: relative;
-  left: 30px;
+  &.alternate-events-inline-date {
+    margin-bottom: 10px
+  }
 
-  // position: ${({ inline }) => (inline === true ? "static" : "absolute")};
+  &.inline-events {
+    display: flex;
+    flex-basis: 100px;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    left: 30px;
+  }
+
+  &.inline-events-inline-date {
+    margin-bottom: 10px;
+  }
+
   top: ${props => `calc(50% + ${props.theme.timestamp.topOffset})`};
-  ${({ inline }) => inline && `margin-bottom: 10px`}
   z-index: 100;
-
-  // ${EventContainer}:nth-child(even) & {
-  //   left: ${props => `calc(50% + ${props.theme.timestamp.leftOffset})`}
-  // }
-
-  // ${EventContainer}:nth-child(odd) & {
-  //   right: ${props => `calc(50% + ${props.theme.timestamp.rightOffset})`}
-  // }
 
   time {
     background-color: ${props => props.theme.timestamp.backgroundColor};
-    // padding: ${props => props.theme.timestamp.padding};
+    padding: ${props => props.theme.timestamp.padding};
     color: ${props => props.theme.timestamp.color}
-    // ${props =>
+    ${props =>
       props.theme.timestamp.border &&
       `border: ${props.theme.timestamp.border}`};
     border-radius: ${props => props.theme.timestamp.borderRadius};

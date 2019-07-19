@@ -12,21 +12,22 @@ export default function EventInner({
   opts
 }) {
   const inlineTimestamp = opts.layout.toLowerCase().includes('inlinedate')
+  const kebabLayout = kebabCase(opts.layout)
 
   return (
     <React.Fragment>
       {!isCompact && !inlineTimestamp && (
-        <EventTimestamp className="timestamp" inline={false}>
+        <EventTimestamp className={`timestamp ${kebabLayout}`}>
           <time>{event.date}</time>
         </EventTimestamp>
       )}
-      <EventMarker className={`node-marker ${kebabCase(opts.layout)}`}/>
+      <EventMarker className={`node-marker ${kebabLayout}`}/>
       <EventContent
         className="node-content"
         width={event.type.toLowerCase() === "youtube" ? "500px" : null}
       >
         {(isCompact || inlineTimestamp) && (
-          <EventTimestamp className="timestamp inline" inline={true}>
+          <EventTimestamp className={`timestamp ${kebabLayout}`}>
             <time>{event.date}</time>
           </EventTimestamp>
         )}
