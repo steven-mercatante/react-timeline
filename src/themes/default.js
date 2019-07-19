@@ -43,8 +43,8 @@ export default {
     rightOffset: "30px"
   },
   image: {
-    width: "100%",
-    maxHeight: "400px",
+    // width: "100%",
+    // maxHeight: "400px",
     objectFit: "cover",
     credit: {
       fontSize: "0.85rem"

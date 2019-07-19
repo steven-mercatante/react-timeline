@@ -3,16 +3,17 @@ import styled from "styled-components";
 import ConditionalMarkdown from "./ConditionalMarkdown";
 import Buttons from "./Buttons";
 
+// TODO: pass img width via prop?
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  max-height: ${props => props.theme.image.maxHeight};
-  width: ${props => props.theme.image.width};
+  ${props => props.theme.image.maxHeight && `max-height: ${props.theme.image.maxHeight};`}
 
   img {
-    flex: 1;
     object-fit: ${props => props.theme.image.objectFit};
     overflow: hidden;
+    width: 100%;
   }
 
   .credit {
@@ -25,12 +26,12 @@ export default function ImageNode({ event }) {
 
   return (
     <Container className="image">
-      <ConditionalMarkdown text={text} />
+      {/* <ConditionalMarkdown text={text} /> */}
       <img src={src} alt={alt} />
-      {credit && (
+      {/* {credit && (
         <ConditionalMarkdown className="credit">{credit}</ConditionalMarkdown>
       )}
-      {buttons && <Buttons buttons={buttons} />}
+      {buttons && <Buttons buttons={buttons} />} */}
     </Container>
   );
 }

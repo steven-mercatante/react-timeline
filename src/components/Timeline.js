@@ -58,6 +58,7 @@ const Container = styled.div`
 
 const Events = styled.div`
   padding: 10px;
+  max-width: 800px;
 `
 
 const nodes = {
@@ -111,8 +112,6 @@ export default function Timeline({ className, events, theme, opts }) {
   if (className) {
     classNames.push(className);
   }
-
-  console.log('timeline layout:', kebabCase(finalOpts.layout))
 
   return (
     <ThemeProvider theme={finalTheme}>

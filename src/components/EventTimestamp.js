@@ -21,6 +21,6 @@ const Time = styled.time`
 
 export default function EventTimestamp({ children, inline }) {
   return (
-     <Container inline={inline}><Time>{children}</Time></Container>
+     <Container className="date" inline={inline}><Time>{children}</Time></Container>
   );
 }
