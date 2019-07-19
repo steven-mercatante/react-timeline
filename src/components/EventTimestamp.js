@@ -9,13 +9,13 @@ const EventTimestamp = styled.div`
   ${({ inline }) => inline && `margin-bottom: 10px`}
   z-index: 100;
 
-  ${EventContainer}:nth-child(even) & {
-    left: ${props => `calc(50% + ${props.theme.timestamp.leftOffset})`}
-  }
+  // ${EventContainer}:nth-child(even) & {
+  //   left: ${props => `calc(50% + ${props.theme.timestamp.leftOffset})`}
+  // }
 
-  ${EventContainer}:nth-child(odd) & {
-    right: ${props => `calc(50% + ${props.theme.timestamp.rightOffset})`}
-  }
+  // ${EventContainer}:nth-child(odd) & {
+  //   right: ${props => `calc(50% + ${props.theme.timestamp.rightOffset})`}
+  // }
 
   time {
     background-color: ${props => props.theme.timestamp.backgroundColor};

@@ -41,7 +41,12 @@ const Container = styled.div`
     }
   }
 
-  &.inline-events,
+  &.inline-events {
+    ::after {
+      left: 153px;
+    }
+  }
+
   &.inline-events-inline-date {
     ::after {
       left: 24px;

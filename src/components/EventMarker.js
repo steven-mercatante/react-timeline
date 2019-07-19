@@ -14,7 +14,7 @@ const EventMarker = styled.span`
   z-index: 100;
 
   &.inline-events {
-    left: 43px;
+    left: 143px;
   }
 
   &.inline-events-inline-date {
