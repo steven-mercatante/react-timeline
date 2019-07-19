@@ -67,7 +67,7 @@ const EventContainer = styled.div`
   @media (max-width: 768px) {
     flex-direction: row !important;
 
-    .content {
+    .node-content {
       max-width: 80%;
     }
 
