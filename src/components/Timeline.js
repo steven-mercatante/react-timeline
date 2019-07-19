@@ -57,7 +57,7 @@ const nodes = {
 const _opts = {
   inlineTimestamp: false,
   animationsEnabled: true,
-  alternateEvents: true
+  layout: 'alternateEvents' // alternateEvents, alternateEventsInlineDate, inlineEvents, inlineEventsInlineDate
 };
 
 export default function Timeline({ className, events, theme, opts }) {

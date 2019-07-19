@@ -22,7 +22,6 @@ export default function EventInner({
       <EventMarker className="node-marker" />
       <EventContent
         className="node-content"
-        alternateEvents={opts.alternateEvents}
         width={event.type.toLowerCase() === "youtube" ? "500px" : null}
       >
         {(isCompact || inlineTimestamp) && (

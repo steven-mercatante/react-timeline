@@ -3,7 +3,7 @@ import EventContainer from "./EventContainer";
 
 // TODO: should width be able to be passed in via theme?
 const EventContent = styled.div`
-  // border: 1px solid yellow;
+  border: 1px solid yellow;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -26,16 +26,6 @@ ${props =>
 
   max-width: ${props => props.theme.eventContent.maxWidth};
   ${({ width }) => width && `width: ${width};`}
-
-  ${props => props.alternateEvents && `
-    ${EventContainer}:nth-child(odd) & {
-      left: calc(50% + ${props.theme.eventContent.leftOffset});
-    }
-  `}
-
-  ${EventContainer}:nth-child(even) & {
-    right: ${props => `calc(50% + ${props.theme.eventContent.rightOffset})`};
-  }
 
   @media (max-width: 768px) {
     max-width: 80%;
