@@ -100,7 +100,7 @@ export default function Timeline({ className, events, theme, opts }) {
   if (opts && isPlainObject(opts)) {
     finalOpts = merge(finalOpts, opts);
   }
-  console.table(finalOpts)
+  // console.table(finalOpts)
 
   function handleResize() {
     const mediaQueryList = window.matchMedia(`(max-width: 768px)`);

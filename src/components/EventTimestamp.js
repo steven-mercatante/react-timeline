@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import EventContainer from "./EventContainer";
 
 const Container = styled.div`
-  // top: ${props => `calc(50% + ${props.theme.timestamp.topOffset})`};
-  `;
+  ${({inline}) => inline && `margin-bottom: 10px;`}
+`
 
 const Time = styled.time`
   background-color: ${props => props.theme.timestamp.backgroundColor};
@@ -20,10 +19,8 @@ const Time = styled.time`
   z-index: 100;
 `;
 
-export default function EventTimestamp({ children }) {
+export default function EventTimestamp({ children, inline }) {
   return (
-    <div>
-      <Time>{children}</Time>
-    </div>
+     <Container inline={inline}><Time>{children}</Time></Container>
   );
 }

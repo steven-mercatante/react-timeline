@@ -67,8 +67,8 @@ export default function EventInner({
         width={event.type.toLowerCase() === "youtube" ? "500px" : null}
       >
         {(isCompact || inlineTimestamp) && (
-          <EventTimestamp className={`timestamp ${kebabLayout}`}>
-            <time>{event.date}</time>
+          <EventTimestamp className='timestamp' inline={true}>
+            {event.date}
           </EventTimestamp>
         )}
         {children}
