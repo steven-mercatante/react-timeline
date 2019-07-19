@@ -30,7 +30,7 @@ const EventContainer = styled.div`
 
     &.inline-events {
       .node-content {
-        left: 183px;
+        left: 80px;
       }
     }
 
@@ -52,14 +52,12 @@ const EventContainer = styled.div`
     }
 
     &.inline-events {
-      border: 2px solid green;
       .node-content {
-        left: 183px;
+        left: 80px;
       }
     }
 
     &.inline-events-inline-date {
-      border: 2px solid green;
       .node-content {
         left: 50px;
       }
