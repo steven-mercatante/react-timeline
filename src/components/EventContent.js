@@ -19,10 +19,6 @@ const EventContent = styled.div`
   background-color: ${props => props.theme.eventContent.backgroundColor};
   color: ${props => props.theme.eventContent.color};
   padding: ${props => props.theme.eventContent.padding};
-
-  ${props =>
-    props.theme.eventContent.minWidth &&
-    `min-width: ${props.theme.eventContent.minWidth}`}
 `;
 
 export default EventContent;

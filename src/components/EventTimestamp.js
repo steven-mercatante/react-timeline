@@ -22,14 +22,12 @@ const EventTimestamp = styled.div`
     margin-bottom: 10px;
   }
 
-  // &.inline-events {
-  //   display: flex;
-  //   flex-basis: 100px;
-  //   justify-content: flex-end;
-  //   align-items: center;
-  //   position: relative;
-  //   left: 30px;
-  // }
+  &.inline-events,
+  &.inline-events-inline-date {
+    flex-basis: 100px;
+    justify-content: center;
+    align-items: flex-end;
+  }
 
   &.inline-events-inline-date {
     margin-bottom: 10px;
