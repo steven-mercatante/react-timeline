@@ -2,6 +2,7 @@ import React from 'react'
 import styled from "styled-components";
 
 const Container = styled.span`
+  // border: 1px solid pink;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,7 +12,6 @@ const Container = styled.span`
     flex-basis: 100px;
   }
 
-  border: 1px solid pink;
 
  
   z-index: 100;

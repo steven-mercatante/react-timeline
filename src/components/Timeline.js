@@ -60,6 +60,10 @@ const Container = styled.div`
   }
 `;
 
+const Events = styled.div`
+  padding: 10px;
+`
+
 const nodes = {
   text: TextNode,
   image: ImageNode,
@@ -118,28 +122,27 @@ export default function Timeline({ className, events, theme, opts }) {
     <ThemeProvider theme={finalTheme}>
       <OverflowWrapper className={classNames.join(" ")}>
         <Container className={`timeline container ${kebabCase(finalOpts.layout)}`}>
-          {events.map((event, i) => {
-            let Node;
-            if (event.component) {
-              Node = event.component;
-            } else {
-              Node = nodes[event.type.toLowerCase()];
-            }
+          <Events>
+            {events.map((event, i) => {
+              let Node;
+              if (event.component) {
+                Node = event.component;
+              } else {
+                Node = nodes[event.type.toLowerCase()];
+              }
 
-            const oddOrEven = i % 2 === 0 ? 'even' : 'odd'
-            console.log('>>>>>', i, oddOrEven)
-
-            return (
-              <Event
-                key={i}
-                event={event}
-                isCompact={isCompact}
-                opts={finalOpts}
-              >
-                <Node event={event} />
-              </Event>
-            );
-          })}
+              return (
+                <Event
+                  key={i}
+                  event={event}
+                  isCompact={isCompact}
+                  opts={finalOpts}
+                >
+                  <Node event={event} />
+                </Event>
+              );
+            })}
+          </Events>
         </Container>
       </OverflowWrapper>
     </ThemeProvider>

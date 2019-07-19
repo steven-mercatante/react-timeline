@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const EventContainer = styled.div`
-  border: 1px solid red;
+  // border: 1px solid red;
   position: relative;
   display: flex;
   margin-bottom: 20px;
@@ -20,48 +20,8 @@ const EventContainer = styled.div`
     flex-direction: row !important;
   }
 
-  :nth-child(odd) {
-    &.alternate-events,
-    &.alternate-events-inline-date {
-      .node-content {
-        left: calc(50% + ${props => props.theme.eventContent.leftOffset});
-      }
-    }
-
-    &.inline-events {
-      .node-content {
-        left: 80px;
-      }
-    }
-
-    &.inline-events-inline-date {
-      .node-content {
-        left: 50px;
-      }
-    }
-  }
-
   :nth-child(even) {
     flex-direction: row-reverse;
-
-    &.alternate-events,
-    &.alternate-events-inline-date {
-      .node-content {
-        right: calc(50% + ${props => props.theme.eventContent.rightOffset});
-      }
-    }
-
-    &.inline-events {
-      .node-content {
-        left: 80px;
-      }
-    }
-
-    &.inline-events-inline-date {
-      .node-content {
-        left: 50px;
-      }
-    }
   }
 
   @media (max-width: 768px) {

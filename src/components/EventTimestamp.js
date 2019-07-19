@@ -3,7 +3,7 @@ import EventContainer from "./EventContainer";
 import Event from "./Event";
 
 const EventTimestamp = styled.div`
-  border: 1px solid cyan;
+  // border: 1px solid cyan;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
