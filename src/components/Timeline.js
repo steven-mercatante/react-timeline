@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import TextNode from "./TextNode";
 import ImageNode from "./ImageNode";
-import NodeWrapper from "./NodeWrapper";
+import Event from "./Event";
 import YouTubeNode from "./YouTubeNode";
 import TwitterNode from "./TwitterNode";
 import themes from "../themes";
@@ -113,14 +113,14 @@ export default function Timeline({ className, events, theme, opts }) {
             }
 
             return (
-              <NodeWrapper
+              <Event
                 key={i}
                 event={event}
                 isCompact={isCompact}
                 opts={finalOpts}
               >
                 <Node event={event} />
-              </NodeWrapper>
+              </Event>
             );
           })}
         </Container>

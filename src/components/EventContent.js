@@ -3,7 +3,7 @@ import EventContainer from "./EventContainer";
 
 // TODO: should width be able to be passed in via theme?
 const EventContent = styled.div`
-  // border: 1px solid yellow;
+  border: 1px solid yellow;
   position: relative;
   display: flex;
   flex-direction: column;
