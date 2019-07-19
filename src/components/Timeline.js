@@ -58,7 +58,7 @@ const Container = styled.div`
 
 const Events = styled.div`
   padding: 10px;
-  max-width: 800px;
+  // max-width: 800px;
 `
 
 const nodes = {
