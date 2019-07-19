@@ -126,6 +126,9 @@ export default function Timeline({ className, events, theme, opts }) {
               Node = nodes[event.type.toLowerCase()];
             }
 
+            const oddOrEven = i % 2 === 0 ? 'even' : 'odd'
+            console.log('>>>>>', i, oddOrEven)
+
             return (
               <Event
                 key={i}

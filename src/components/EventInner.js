@@ -21,7 +21,7 @@ export default function EventInner({
           <time>{event.date}</time>
         </EventTimestamp>
       )}
-      <EventMarker className={`node-marker ${kebabLayout}`}/>
+      <EventMarker layout={kebabLayout} />
       <EventContent
         className="node-content"
         width={event.type.toLowerCase() === "youtube" ? "500px" : null}

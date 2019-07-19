@@ -1,32 +1,45 @@
 import styled from "styled-components";
 import EventContainer from "./EventContainer";
+import Event from "./Event";
 
 const EventTimestamp = styled.div`
-  // border: 1px solid cyan;
-  
+  border: 1px solid cyan;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+
   &.alternate-events {
-    position: absolute;
+    flex-basis: 50%;
+
     ${EventContainer}:nth-child(even) & {
-      left: ${props => `calc(50% + ${props.theme.timestamp.leftOffset})`}
-    }
-  
-    ${EventContainer}:nth-child(odd) & {
-      right: ${props => `calc(50% + ${props.theme.timestamp.rightOffset})`}
+      align-items: flex-start;
     }
   }
+  
+  // &.alternate-events {
+  //   position: absolute;
+  //   ${EventContainer}:nth-child(even) & {
+  //     left: ${props => `calc(50% + ${props.theme.timestamp.leftOffset})`}
+  //   }
+  
+  //   ${EventContainer}:nth-child(odd) & {
+  //     right: ${props => `calc(50% + ${props.theme.timestamp.rightOffset})`}
+  //   }
+  // }
 
   &.alternate-events-inline-date {
     margin-bottom: 10px
   }
 
-  &.inline-events {
-    display: flex;
-    flex-basis: 100px;
-    justify-content: flex-end;
-    align-items: center;
-    position: relative;
-    left: 30px;
-  }
+  // &.inline-events {
+  //   display: flex;
+  //   flex-basis: 100px;
+  //   justify-content: flex-end;
+  //   align-items: center;
+  //   position: relative;
+  //   left: 30px;
+  // }
 
   &.inline-events-inline-date {
     margin-bottom: 10px;

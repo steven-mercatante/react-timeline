@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 const EventContent = styled.div`
-  // border: 1px solid yellow;
+  border: 1px solid yellow;
   position: relative;
   display: flex;
   flex-direction: column;
+  flex-basis: 50%;
 
   ${props =>
     props.theme.eventContent.flexGrow &&
@@ -23,12 +24,8 @@ const EventContent = styled.div`
     props.theme.eventContent.minWidth &&
     `min-width: ${props.theme.eventContent.minWidth}`}
 
-  max-width: ${props => props.theme.eventContent.maxWidth};
-  ${({ width }) => width && `width: ${width};`}
+  
 
-  @media (max-width: 768px) {
-    max-width: 80%;
-  }
 `;
 
 export default EventContent;
