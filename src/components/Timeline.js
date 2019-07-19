@@ -68,9 +68,11 @@ const nodes = {
   twitter: TwitterNode
 };
 
+// TODO: need to account for user passing invalid layout and responsiveLayout values
 const _opts = {
   animationsEnabled: true,
-  layout: 'alternateEvents' // alternateEvents, alternateEventsInlineDate, inlineEvents, inlineEventsInlineDate
+  layout: 'alternateEvents', // alternateEvents, alternateEventsInlineDate, inlineEvents, inlineEventsInlineDate
+  responsiveLayout: 'inlineEvents'
 };
 
 export default function Timeline({ className, events, theme, opts }) {
@@ -97,7 +99,11 @@ export default function Timeline({ className, events, theme, opts }) {
   if (opts && isPlainObject(opts)) {
     finalOpts = merge(finalOpts, opts);
   }
-  // console.table(finalOpts)
+  console.table(finalOpts)
+  console.log('is compact?', isCompact)
+  if (isCompact && finalOpts.responsiveLayout) {
+    finalOpts.layout = finalOpts.responsiveLayout
+  }
 
   function handleResize() {
     const mediaQueryList = window.matchMedia(`(max-width: 768px)`);
