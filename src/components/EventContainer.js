@@ -8,6 +8,7 @@ const EventContainer = styled.div`
 
   ${props =>
     props.animationsEnabled && `opacity: ${props.isVisible ? 1 : 0.15};`}
+
   ${({ animationsEnabled }) =>
     animationsEnabled && `transition: opacity 0.25s ease-in;`}
 
@@ -15,28 +16,13 @@ const EventContainer = styled.div`
     margin-top: 20px;
   }
 
-  :nth-child(even) {
-    flex-direction: row-reverse;
+  &.inline-events,
+  &.inline-events-inline-date {
+    flex-direction: row !important;
   }
 
-  @media (max-width: 768px) {
-    flex-direction: row !important;
-
-    .content {
-      max-width: 80%;
-    }
-
-    :nth-child(odd) {
-      .node-content {
-        left: 50px !important;
-      }
-    }
-
-    :nth-child(even) {
-      .node-content {
-        left: 50px !important;
-      }
-    }
+  :nth-child(even) {
+    flex-direction: row-reverse;
   }
 `;
 

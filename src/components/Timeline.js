@@ -8,6 +8,7 @@ import TwitterNode from "./TwitterNode";
 import themes from "../themes";
 import merge from "lodash.merge";
 import isPlainObject from "lodash.isplainobject";
+import kebabCase from 'lodash.kebabcase'
 
 // TODO: move to own module?
 const OverflowWrapper = styled.div`
@@ -34,9 +35,17 @@ const Container = styled.div`
     height: 100%;
     background-color: ${props => props.theme.track.backgroundColor};
     content: "";
+  }
 
-    @media (max-width: 768px) {
-      left: 24px;
+  &.inline-events {
+    ::after {
+      left: 130px;
+    }
+  }
+
+  &.inline-events-inline-date {
+    ::after {
+      left: 29px;
     }
   }
 
@@ -47,6 +56,11 @@ const Container = styled.div`
   }
 `;
 
+const Events = styled.div`
+  padding: 10px;
+  // max-width: 800px;
+`
+
 const nodes = {
   text: TextNode,
   image: ImageNode,
@@ -54,9 +68,11 @@ const nodes = {
   twitter: TwitterNode
 };
 
+// TODO: need to account for user passing invalid layout and responsiveLayout values
 const _opts = {
-  inlineTimestamp: false,
-  animationsEnabled: true
+  animationsEnabled: true,
+  layout: 'alternateEvents', // alternateEvents, alternateEventsInlineDate, inlineEvents, inlineEventsInlineDate
+  responsiveLayout: 'inlineEvents'
 };
 
 export default function Timeline({ className, events, theme, opts }) {
@@ -83,8 +99,11 @@ export default function Timeline({ className, events, theme, opts }) {
   if (opts && isPlainObject(opts)) {
     finalOpts = merge(finalOpts, opts);
   }
-
-  console.table(finalOpts);
+  console.table(finalOpts)
+  console.log('is compact?', isCompact)
+  if (isCompact && finalOpts.responsiveLayout) {
+    finalOpts.layout = finalOpts.responsiveLayout
+  }
 
   function handleResize() {
     const mediaQueryList = window.matchMedia(`(max-width: 768px)`);
@@ -103,26 +122,28 @@ export default function Timeline({ className, events, theme, opts }) {
   return (
     <ThemeProvider theme={finalTheme}>
       <OverflowWrapper className={classNames.join(" ")}>
-        <Container className="timeline container">
-          {events.map((event, i) => {
-            let Node;
-            if (event.component) {
-              Node = event.component;
-            } else {
-              Node = nodes[event.type.toLowerCase()];
-            }
+        <Container className={`timeline container ${kebabCase(finalOpts.layout)}`}>
+          <Events className="events">
+            {events.map((event, i) => {
+              let Node;
+              if (event.component) {
+                Node = event.component;
+              } else {
+                Node = nodes[event.type.toLowerCase()];
+              }
 
-            return (
-              <Event
-                key={i}
-                event={event}
-                isCompact={isCompact}
-                opts={finalOpts}
-              >
-                <Node event={event} />
-              </Event>
-            );
-          })}
+              return (
+                <Event
+                  key={i}
+                  event={event}
+                  isCompact={false}
+                  opts={finalOpts}
+                >
+                  <Node event={event} />
+                </Event>
+              );
+            })}
+          </Events>
         </Container>
       </OverflowWrapper>
     </ThemeProvider>
