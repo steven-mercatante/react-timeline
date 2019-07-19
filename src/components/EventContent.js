@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const EventContent = styled.div`
-  // border: 1px solid yellow;
+  border: 1px solid yellow;
   position: relative;
   display: flex;
   flex-direction: column;

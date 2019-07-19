@@ -2,7 +2,7 @@ import React from 'react'
 import styled from "styled-components";
 
 const Container = styled.span`
-  // border: 1px solid pink;
+  border: 3px solid rebeccapurple;
   display: flex;
   flex-direction: column;
   justify-content: center;
