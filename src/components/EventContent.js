@@ -3,10 +3,15 @@ import EventContainer from "./EventContainer";
 
 // TODO: should width be able to be passed in via theme?
 const EventContent = styled.div`
-  border: 1px solid yellow;
+  // border: 1px solid yellow;
   position: relative;
   display: flex;
   flex-direction: column;
+
+${props =>
+  props.theme.eventContent.flexGrow &&
+  `flex-grow: ${props.theme.eventContent.flexGrow}`}
+
   ${props =>
     props.theme.eventContent.border &&
     `border: ${props.theme.eventContent.border}`};
