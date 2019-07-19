@@ -2,6 +2,7 @@ import React from "react";
 import EventMarker from "./EventMarker";
 import EventTimestamp from "./EventTimestamp";
 import EventContent from "./EventContent";
+import kebabCase from 'lodash.kebabcase'
 
 export default function EventInner({
   event,
@@ -11,7 +12,6 @@ export default function EventInner({
   opts
 }) {
   const inlineTimestamp = opts.layout.toLowerCase().includes('inlinedate')
-  console.log('inlineTimestamp:', inlineTimestamp)
 
   return (
     <React.Fragment>
@@ -20,7 +20,7 @@ export default function EventInner({
           <time>{event.date}</time>
         </EventTimestamp>
       )}
-      <EventMarker className="node-marker" />
+      <EventMarker className={`node-marker ${kebabCase(opts.layout)}`}/>
       <EventContent
         className="node-content"
         width={event.type.toLowerCase() === "youtube" ? "500px" : null}

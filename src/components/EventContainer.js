@@ -22,6 +22,13 @@ const EventContainer = styled.div`
         left: calc(50% + ${props => props.theme.eventContent.leftOffset});
       }
     }
+
+    &.inline-events,
+    &.inline-events-inline-date {
+      .node-content {
+        left: 50px;
+      }
+    }
   }
 
   :nth-child(even) {
@@ -31,6 +38,13 @@ const EventContainer = styled.div`
     &.alternate-events-inline-date {
       .node-content {
         right: calc(50% + ${props => props.theme.eventContent.rightOffset});
+      }
+    }
+
+    &.inline-events,
+    &.inline-events-inline-date {
+      .node-content {
+        left: 50px;
       }
     }
   }

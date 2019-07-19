@@ -8,6 +8,7 @@ import TwitterNode from "./TwitterNode";
 import themes from "../themes";
 import merge from "lodash.merge";
 import isPlainObject from "lodash.isplainobject";
+import kebabCase from 'lodash.kebabcase'
 
 // TODO: move to own module?
 const OverflowWrapper = styled.div`
@@ -36,6 +37,13 @@ const Container = styled.div`
     content: "";
 
     @media (max-width: 768px) {
+      left: 24px;
+    }
+  }
+
+  &.inline-events,
+  &.inline-events-inline-date {
+    ::after {
       left: 24px;
     }
   }
@@ -99,10 +107,12 @@ export default function Timeline({ className, events, theme, opts }) {
     classNames.push(className);
   }
 
+  console.log('timeline layout:', kebabCase(finalOpts.layout))
+
   return (
     <ThemeProvider theme={finalTheme}>
       <OverflowWrapper className={classNames.join(" ")}>
-        <Container className="timeline container">
+        <Container className={`timeline container ${kebabCase(finalOpts.layout)}`}>
           {events.map((event, i) => {
             let Node;
             if (event.component) {

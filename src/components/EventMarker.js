@@ -13,6 +13,14 @@ const EventMarker = styled.span`
   height: ${props => props.theme.marker.height};
   z-index: 100;
 
+  &.inline-events {
+    left: 43px;
+  }
+
+  &.inline-events-inline-date {
+    left: 13px;
+  }
+
   @media (max-width: 768px) {
     left: 13px;
   }
