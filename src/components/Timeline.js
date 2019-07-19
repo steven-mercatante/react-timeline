@@ -122,7 +122,7 @@ export default function Timeline({ className, events, theme, opts }) {
     <ThemeProvider theme={finalTheme}>
       <OverflowWrapper className={classNames.join(" ")}>
         <Container className={`timeline container ${kebabCase(finalOpts.layout)}`}>
-          <Events>
+          <Events className="events">
             {events.map((event, i) => {
               let Node;
               if (event.component) {
