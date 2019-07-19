@@ -22,6 +22,7 @@ export default function Event({ event, children, isCompact, opts }) {
       ref={ref}
       isVisible={isVisible}
       animationsEnabled={opts.animationsEnabled}
+      alternateEvents={opts.alternateEvents}
     >
       <EventInner
         event={event}

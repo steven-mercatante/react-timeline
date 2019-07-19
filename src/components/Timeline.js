@@ -56,7 +56,8 @@ const nodes = {
 
 const _opts = {
   inlineTimestamp: false,
-  animationsEnabled: true
+  animationsEnabled: true,
+  alternateEvents: true
 };
 
 export default function Timeline({ className, events, theme, opts }) {
@@ -83,8 +84,6 @@ export default function Timeline({ className, events, theme, opts }) {
   if (opts && isPlainObject(opts)) {
     finalOpts = merge(finalOpts, opts);
   }
-
-  console.table(finalOpts);
 
   function handleResize() {
     const mediaQueryList = window.matchMedia(`(max-width: 768px)`);

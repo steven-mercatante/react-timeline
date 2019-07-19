@@ -27,9 +27,11 @@ ${props =>
   max-width: ${props => props.theme.eventContent.maxWidth};
   ${({ width }) => width && `width: ${width};`}
 
-  ${EventContainer}:nth-child(odd) & {
-    left: ${props => `calc(50% + ${props.theme.eventContent.leftOffset})`};
-  }
+  ${props => props.alternateEvents && `
+    ${EventContainer}:nth-child(odd) & {
+      left: calc(50% + ${props.theme.eventContent.leftOffset});
+    }
+  `}
 
   ${EventContainer}:nth-child(even) & {
     right: ${props => `calc(50% + ${props.theme.eventContent.rightOffset})`};
