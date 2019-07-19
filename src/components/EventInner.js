@@ -10,7 +10,8 @@ export default function EventInner({
   children,
   opts
 }) {
-  const { inlineTimestamp } = opts;
+  const inlineTimestamp = opts.layout.toLowerCase().includes('inlinedate')
+  console.log('inlineTimestamp:', inlineTimestamp)
 
   return (
     <React.Fragment>

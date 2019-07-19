@@ -16,7 +16,8 @@ const EventContainer = styled.div`
   }
 
   :nth-child(odd) {
-    &.alternate-events {
+    &.alternate-events,
+    &.alternate-events-inline-date {
       .node-content {
         left: calc(50% + ${props => props.theme.eventContent.leftOffset});
       }
@@ -26,7 +27,8 @@ const EventContainer = styled.div`
   :nth-child(even) {
     flex-direction: row-reverse;
 
-    &.alternate-events {
+    &.alternate-events,
+    &.alternate-events-inline-date {
       .node-content {
         right: calc(50% + ${props => props.theme.eventContent.rightOffset});
       }

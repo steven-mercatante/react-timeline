@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import EventContainer from "./EventContainer";
 
+// TODO: write "inline" rules in an ".inline" selector instead of doing hard-to-read logic with `props`
+
 const EventTimestamp = styled.div`
   position: ${({ inline }) => (inline === true ? "static" : "absolute")};
   top: ${props => `calc(50% + ${props.theme.timestamp.topOffset})`};
