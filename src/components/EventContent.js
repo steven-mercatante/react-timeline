@@ -8,9 +8,9 @@ const EventContent = styled.div`
   display: flex;
   flex-direction: column;
 
-${props =>
-  props.theme.eventContent.flexGrow &&
-  `flex-grow: ${props.theme.eventContent.flexGrow}`}
+  ${props =>
+    props.theme.eventContent.flexGrow &&
+    `flex-grow: ${props.theme.eventContent.flexGrow}`}
 
   ${props =>
     props.theme.eventContent.border &&

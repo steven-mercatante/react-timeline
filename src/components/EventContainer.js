@@ -15,6 +15,11 @@ const EventContainer = styled.div`
     margin-top: 20px;
   }
 
+  &.inline-events,
+  &.inline-events-inline-date {
+    flex-direction: row !important;
+  }
+
   :nth-child(odd) {
     &.alternate-events,
     &.alternate-events-inline-date {
@@ -43,6 +48,7 @@ const EventContainer = styled.div`
 
     &.inline-events,
     &.inline-events-inline-date {
+      border: 2px solid green;
       .node-content {
         left: 50px;
       }
