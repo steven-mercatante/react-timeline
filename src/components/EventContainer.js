@@ -24,25 +24,25 @@ const EventContainer = styled.div`
     flex-direction: row-reverse;
   }
 
-  @media (max-width: 768px) {
-    flex-direction: row !important;
+  // @media (max-width: 768px) {
+  //   flex-direction: row !important;
 
-    .node-content {
-      max-width: 80%;
-    }
+  //   .node-content {
+  //     max-width: 80%;
+  //   }
 
-    :nth-child(odd) {
-      .node-content {
-        left: 50px !important;
-      }
-    }
+  //   :nth-child(odd) {
+  //     .node-content {
+  //       left: 50px !important;
+  //     }
+  //   }
 
-    :nth-child(even) {
-      .node-content {
-        left: 50px !important;
-      }
-    }
-  }
+  //   :nth-child(even) {
+  //     .node-content {
+  //       left: 50px !important;
+  //     }
+  //   }
+  // }
 `;
 
 export default EventContainer;

@@ -36,9 +36,9 @@ const Container = styled.div`
     background-color: ${props => props.theme.track.backgroundColor};
     content: "";
 
-    @media (max-width: 768px) {
-      left: 24px;
-    }
+    // @media (max-width: 768px) {
+    //   left: 24px;
+    // }
   }
 
   &.inline-events {
