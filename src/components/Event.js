@@ -78,7 +78,7 @@ export default function Event({
 
       <EventMarker layout={kebabLayout} />
 
-      {children}
+      {React.cloneElement(children, { isCompact, inlineTimestamp })}
     </EventContainer>
   );
 }

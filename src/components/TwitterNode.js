@@ -17,11 +17,11 @@ const Container = styled.div`
   background-color: ${props => props.theme.twitter.backgroundColor};
 `;
 
-export default function TwitterNode({ event }) {
+export default function TwitterNode({ event, ...rest }) {
   const { id, text, buttons } = event;
 
   return (
-    <CardWrapper className="twitter overflow-wrapper">
+    <CardWrapper event={event} {...rest}>
       <ConditionalMarkdown text={text} />
       <Container className="tweet-container">
         <TwitterTweetEmbed tweetId={id} />

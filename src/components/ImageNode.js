@@ -24,11 +24,11 @@ const Container = styled.div`
   }
 `;
 // TODO: might not need Container now that we have CardWrapper
-export default function ImageNode({ event }) {
+export default function ImageNode({ event, ...rest }) {
   const { src, alt, credit, text, buttons } = event;
 
   return (
-    <CardWrapper>
+    <CardWrapper event={event} {...rest}>
       <Container className="image">
         <ConditionalMarkdown text={text} />
         <img src={src} alt={alt} />

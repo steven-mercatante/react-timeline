@@ -1,4 +1,5 @@
 import React from "react";
+import EventTimestamp from "./EventTimestamp";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -22,7 +23,12 @@ const Container = styled.div`
   padding: ${props => props.theme.eventContent.padding};
 `;
 
-export default function CardWrapper({ isCompact, inlineTimestamp, children }) {
+export default function CardWrapper({
+  event,
+  isCompact,
+  inlineTimestamp,
+  children
+}) {
   return (
     <Container>
       {(isCompact || inlineTimestamp) && (
