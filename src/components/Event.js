@@ -96,7 +96,7 @@ export default function Event({
       layout={opts.layout}
     >
       <FlexColumn className={`col-1 ${kebabLayout}`} flexBasis="50%">
-        {!isCompact && !inlineDate && <EventDate>{event.date}</EventDate>}
+        {!inlineDate && <EventDate>{event.date}</EventDate>}
       </FlexColumn>
 
       <EventMarker layout={kebabLayout} />

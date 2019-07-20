@@ -26,7 +26,6 @@ export default function TwitterCard({ event, ...rest }) {
     <CardWrapper event={event} {...rest}>
       <ConditionalMarkdown text={text} />
       <Tweet className="tweet" data-id={id} />
-
       {buttons && <Buttons buttons={buttons} />}
     </CardWrapper>
   );

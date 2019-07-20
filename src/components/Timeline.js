@@ -102,8 +102,7 @@ export default function Timeline({ className, events, theme, opts }) {
   if (opts && isPlainObject(opts)) {
     finalOpts = merge(finalOpts, opts);
   }
-  console.table(finalOpts);
-  console.log("is compact?", isCompact);
+
   if (isCompact && finalOpts.responsiveLayout) {
     finalOpts.layout = finalOpts.responsiveLayout;
   }

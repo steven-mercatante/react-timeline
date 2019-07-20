@@ -28,7 +28,7 @@ export default function CardWrapper({
 }) {
   return (
     <Container className="card-wrapper">
-      {(isCompact || inlineDate) && (
+      {((isCompact && inlineDate) || inlineDate) && (
         <EventDate inline={true}>{event.date}</EventDate>
       )}
       {children}
