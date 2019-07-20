@@ -4,7 +4,6 @@ import Buttons from "./Buttons";
 import CardWrapper from "./CardWrapper";
 
 export default function TextCard({ event, ...rest }) {
-  console.log("...rest:", rest);
   const { text, buttons } = event;
 
   return (

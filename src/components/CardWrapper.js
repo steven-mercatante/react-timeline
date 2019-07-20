@@ -1,5 +1,5 @@
 import React from "react";
-import EventTimestamp from "./EventTimestamp";
+import EventDate from "./EventDate";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -26,13 +26,13 @@ const Container = styled.div`
 export default function CardWrapper({
   event,
   isCompact,
-  inlineTimestamp,
+  inlineDate,
   children
 }) {
   return (
     <Container>
-      {(isCompact || inlineTimestamp) && (
-        <EventTimestamp inline={true}>{event.date}</EventTimestamp>
+      {(isCompact || inlineDate) && (
+        <EventDate inline={true}>{event.date}</EventDate>
       )}
       {children}
     </Container>

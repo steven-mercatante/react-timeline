@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  ${({inline}) => inline && `margin-bottom: 10px;`}
-`
+  ${({ inline }) => inline && `margin-bottom: 10px;`}
+`;
 
 const Time = styled.time`
   background-color: ${props => props.theme.timestamp.backgroundColor};
@@ -19,8 +19,10 @@ const Time = styled.time`
   z-index: 100;
 `;
 
-export default function EventTimestamp({ children, inline }) {
+export default function EventDate({ children, inline }) {
   return (
-     <Container className="date" inline={inline}><Time>{children}</Time></Container>
+    <Container className="date" inline={inline}>
+      <Time>{children}</Time>
+    </Container>
   );
 }

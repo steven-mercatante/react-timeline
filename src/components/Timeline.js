@@ -122,7 +122,7 @@ export default function Timeline({ className, events, theme, opts }) {
     classNames.push(className);
   }
 
-  const inlineTimestamp = finalOpts.layout.toLowerCase().includes("inlinedate");
+  const inlineDate = finalOpts.layout.toLowerCase().includes("inlinedate");
   const kebabLayout = kebabCase(finalOpts.layout);
 
   return (
@@ -144,12 +144,12 @@ export default function Timeline({ className, events, theme, opts }) {
                   event={event}
                   isCompact={isCompact}
                   opts={finalOpts}
-                  inlineTimestamp={inlineTimestamp}
+                  inlineDate={inlineDate}
                 >
                   <Card
                     event={event}
                     isCompact={isCompact}
-                    inlineTimestamp={inlineTimestamp}
+                    inlineDate={inlineDate}
                   />
                 </Event>
               );

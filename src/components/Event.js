@@ -1,7 +1,7 @@
 import React from "react";
 import EventContainer from "./EventContainer";
 import useIntersectionObserver from "../hooks/useIntersectionObserver";
-import EventTimestamp from "./EventTimestamp";
+import EventDate from "./EventDate";
 import EventMarker from "./EventMarker";
 import styled from "styled-components";
 import kebabCase from "lodash.kebabcase";
@@ -45,7 +45,7 @@ export default function Event({
   event,
   children,
   isCompact,
-  inlineTimestamp,
+  inlineDate,
   opts
 }) {
   // TODO: can the intersection observer opts be passed via param so user can customize?
@@ -71,14 +71,12 @@ export default function Event({
       layout={opts.layout}
     >
       <FlexColumn className={`col-1 ${kebabLayout}`} flexBasis="50%">
-        {!isCompact && !inlineTimestamp && (
-          <EventTimestamp>{event.date}</EventTimestamp>
-        )}
+        {!isCompact && !inlineDate && <EventDate>{event.date}</EventDate>}
       </FlexColumn>
 
       <EventMarker layout={kebabLayout} />
 
-      {React.cloneElement(children, { isCompact, inlineTimestamp })}
+      {React.cloneElement(children, { isCompact, inlineDate })}
     </EventContainer>
   );
 }
