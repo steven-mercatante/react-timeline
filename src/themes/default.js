@@ -13,7 +13,7 @@ export default {
     border: " 2px solid #eb2db4",
     borderRadius: "50%"
   },
-  eventContent: {
+  cardWrapper: {
     color: "#fff",
     backgroundColor: "#4e4e50",
     borderRadius: "4px",

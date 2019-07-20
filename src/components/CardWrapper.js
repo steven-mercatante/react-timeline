@@ -10,17 +10,17 @@ const Container = styled.div`
   flex-basis: 50%;
 
   ${props =>
-    props.theme.eventContent.flexGrow &&
-    `flex-grow: ${props.theme.eventContent.flexGrow}`}
+    props.theme.cardWrapper.flexGrow &&
+    `flex-grow: ${props.theme.cardWrapper.flexGrow}`}
 
   ${props =>
-    props.theme.eventContent.border &&
-    `border: ${props.theme.eventContent.border}`};
+    props.theme.cardWrapper.border &&
+    `border: ${props.theme.cardWrapper.border}`};
 
-  border-radius: ${props => props.theme.eventContent.borderRadius};
-  background-color: ${props => props.theme.eventContent.backgroundColor};
-  color: ${props => props.theme.eventContent.color};
-  padding: ${props => props.theme.eventContent.padding};
+  border-radius: ${props => props.theme.cardWrapper.borderRadius};
+  background-color: ${props => props.theme.cardWrapper.backgroundColor};
+  color: ${props => props.theme.cardWrapper.color};
+  padding: ${props => props.theme.cardWrapper.padding};
 `;
 
 export default function CardWrapper({
@@ -30,7 +30,7 @@ export default function CardWrapper({
   children
 }) {
   return (
-    <Container>
+    <Container className="card-wrapper">
       {(isCompact || inlineDate) && (
         <EventDate inline={true}>{event.date}</EventDate>
       )}
