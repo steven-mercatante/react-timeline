@@ -1,6 +1,8 @@
+import React from "react";
+import EventDate from "./EventDate";
 import styled from "styled-components";
 
-const EventContent = styled.div`
+const Container = styled.div`
   // border: 1px solid yellow;
   position: relative;
   display: flex;
@@ -21,4 +23,18 @@ const EventContent = styled.div`
   padding: ${props => props.theme.eventContent.padding};
 `;
 
-export default EventContent;
+export default function CardWrapper({
+  event,
+  isCompact,
+  inlineDate,
+  children
+}) {
+  return (
+    <Container>
+      {(isCompact || inlineDate) && (
+        <EventDate inline={true}>{event.date}</EventDate>
+      )}
+      {children}
+    </Container>
+  );
+}

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ConditionalMarkdown from "./ConditionalMarkdown";
 import Buttons from "./Buttons";
+import CardWrapper from "./CardWrapper";
 
 const Container = styled.div`
   position: relative;
@@ -18,10 +19,11 @@ const RespIframe = styled.iframe`
   border: 0;
 `;
 
-export default function YouTubeNode({ event }) {
+export default function YouTubeCard({ event, ...rest }) {
   const { id, name, text, buttons } = event;
+
   return (
-    <div>
+    <CardWrapper event={event} {...rest}>
       <ConditionalMarkdown text={text} />
       <Container className="youtube-container">
         <RespIframe
@@ -35,6 +37,6 @@ export default function YouTubeNode({ event }) {
         />
       </Container>
       {buttons && <Buttons buttons={buttons} />}
-    </div>
+    </CardWrapper>
   );
 }

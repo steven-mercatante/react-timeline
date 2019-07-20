@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
-import TextNode from "./TextNode";
-import ImageNode from "./ImageNode";
+import TextCard from "./TextCard";
+import ImageCard from "./ImageCard";
 import Event from "./Event";
-import YouTubeNode from "./YouTubeNode";
-import TwitterNode from "./TwitterNode";
+import YouTubeCard from "./YouTubeCard";
+import TwitterCard from "./TwitterCard";
 import themes from "../themes";
 import merge from "lodash.merge";
 import isPlainObject from "lodash.isplainobject";
-import kebabCase from 'lodash.kebabcase'
+import kebabCase from "lodash.kebabcase";
 
 // TODO: move to own module?
 const OverflowWrapper = styled.div`
@@ -62,20 +62,20 @@ const Events = styled.div`
   &.inline-events-inline-date {
     padding-left: 0px;
   }
-`
+`;
 
-const nodes = {
-  text: TextNode,
-  image: ImageNode,
-  youtube: YouTubeNode,
-  twitter: TwitterNode
+const cards = {
+  text: TextCard,
+  image: ImageCard,
+  youtube: YouTubeCard,
+  twitter: TwitterCard
 };
 
 // TODO: need to account for user passing invalid layout and responsiveLayout values
 const _opts = {
   animationsEnabled: true,
-  layout: 'alternateEvents', // alternateEvents, alternateEventsInlineDate, inlineEvents, inlineEventsInlineDate
-  responsiveLayout: 'inlineEvents'
+  layout: "alternateEvents", // alternateEvents, alternateEventsInlineDate, inlineEvents, inlineEventsInlineDate
+  responsiveLayout: "inlineEvents"
 };
 
 export default function Timeline({ className, events, theme, opts }) {
@@ -102,10 +102,10 @@ export default function Timeline({ className, events, theme, opts }) {
   if (opts && isPlainObject(opts)) {
     finalOpts = merge(finalOpts, opts);
   }
-  console.table(finalOpts)
-  console.log('is compact?', isCompact)
+  console.table(finalOpts);
+  console.log("is compact?", isCompact);
   if (isCompact && finalOpts.responsiveLayout) {
-    finalOpts.layout = finalOpts.responsiveLayout
+    finalOpts.layout = finalOpts.responsiveLayout;
   }
 
   function handleResize() {
@@ -122,7 +122,8 @@ export default function Timeline({ className, events, theme, opts }) {
     classNames.push(className);
   }
 
-  const kebabLayout = kebabCase(finalOpts.layout)
+  const inlineDate = finalOpts.layout.toLowerCase().includes("inlinedate");
+  const kebabLayout = kebabCase(finalOpts.layout);
 
   return (
     <ThemeProvider theme={finalTheme}>
@@ -130,21 +131,26 @@ export default function Timeline({ className, events, theme, opts }) {
         <Container className={`timeline container ${kebabLayout}`}>
           <Events className={`events ${kebabLayout}`}>
             {events.map((event, i) => {
-              let Node;
+              let Card;
               if (event.component) {
-                Node = event.component;
+                Card = event.component;
               } else {
-                Node = nodes[event.type.toLowerCase()];
+                Card = cards[event.type.toLowerCase()];
               }
 
               return (
                 <Event
                   key={i}
                   event={event}
-                  isCompact={false}
+                  isCompact={isCompact}
                   opts={finalOpts}
+                  inlineDate={inlineDate}
                 >
-                  <Node event={event} />
+                  <Card
+                    event={event}
+                    isCompact={isCompact}
+                    inlineDate={inlineDate}
+                  />
                 </Event>
               );
             })}
