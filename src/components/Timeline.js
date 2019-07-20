@@ -8,7 +8,7 @@ import TwitterNode from "./TwitterNode";
 import themes from "../themes";
 import merge from "lodash.merge";
 import isPlainObject from "lodash.isplainobject";
-import kebabCase from 'lodash.kebabcase'
+import kebabCase from "lodash.kebabcase";
 
 // TODO: move to own module?
 const OverflowWrapper = styled.div`
@@ -62,7 +62,7 @@ const Events = styled.div`
   &.inline-events-inline-date {
     padding-left: 0px;
   }
-`
+`;
 
 const nodes = {
   text: TextNode,
@@ -74,8 +74,8 @@ const nodes = {
 // TODO: need to account for user passing invalid layout and responsiveLayout values
 const _opts = {
   animationsEnabled: true,
-  layout: 'alternateEvents', // alternateEvents, alternateEventsInlineDate, inlineEvents, inlineEventsInlineDate
-  responsiveLayout: 'inlineEvents'
+  layout: "alternateEvents", // alternateEvents, alternateEventsInlineDate, inlineEvents, inlineEventsInlineDate
+  responsiveLayout: "inlineEvents"
 };
 
 export default function Timeline({ className, events, theme, opts }) {
@@ -102,10 +102,10 @@ export default function Timeline({ className, events, theme, opts }) {
   if (opts && isPlainObject(opts)) {
     finalOpts = merge(finalOpts, opts);
   }
-  console.table(finalOpts)
-  console.log('is compact?', isCompact)
+  console.table(finalOpts);
+  console.log("is compact?", isCompact);
   if (isCompact && finalOpts.responsiveLayout) {
-    finalOpts.layout = finalOpts.responsiveLayout
+    finalOpts.layout = finalOpts.responsiveLayout;
   }
 
   function handleResize() {
@@ -122,7 +122,8 @@ export default function Timeline({ className, events, theme, opts }) {
     classNames.push(className);
   }
 
-  const kebabLayout = kebabCase(finalOpts.layout)
+  const inlineTimestamp = finalOpts.layout.toLowerCase().includes("inlinedate");
+  const kebabLayout = kebabCase(finalOpts.layout);
 
   return (
     <ThemeProvider theme={finalTheme}>
@@ -141,10 +142,15 @@ export default function Timeline({ className, events, theme, opts }) {
                 <Event
                   key={i}
                   event={event}
-                  isCompact={false}
+                  isCompact={isCompact}
                   opts={finalOpts}
+                  inlineTimestamp={inlineTimestamp}
                 >
-                  <Node event={event} />
+                  <Node
+                    event={event}
+                    isCompact={isCompact}
+                    inlineTimestamp={inlineTimestamp}
+                  />
                 </Event>
               );
             })}

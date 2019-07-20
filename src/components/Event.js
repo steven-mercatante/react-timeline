@@ -3,7 +3,6 @@ import EventContainer from "./EventContainer";
 import useIntersectionObserver from "../hooks/useIntersectionObserver";
 import EventTimestamp from "./EventTimestamp";
 import EventMarker from "./EventMarker";
-import EventContent from "./EventContent";
 import styled from "styled-components";
 import kebabCase from "lodash.kebabcase";
 
@@ -42,7 +41,13 @@ const FlexColumn = styled.div`
   }
 `;
 
-export default function Event({ event, children, isCompact, opts }) {
+export default function Event({
+  event,
+  children,
+  isCompact,
+  inlineTimestamp,
+  opts
+}) {
   // TODO: can the intersection observer opts be passed via param so user can customize?
   const [isVisible, ref] = useIntersectionObserver({
     root: null,
@@ -50,7 +55,6 @@ export default function Event({ event, children, isCompact, opts }) {
     threshold: 0.5
   });
 
-  const inlineTimestamp = opts.layout.toLowerCase().includes("inlinedate");
   const kebabLayout = kebabCase(opts.layout);
 
   const classes = ["event", event.type.toLowerCase(), kebabLayout];
@@ -74,15 +78,7 @@ export default function Event({ event, children, isCompact, opts }) {
 
       <EventMarker layout={kebabLayout} />
 
-      <EventContent
-        className="node-content"
-        width={event.type.toLowerCase() === "youtube" ? "500px" : null}
-      >
-        {(isCompact || inlineTimestamp) && (
-          <EventTimestamp inline={true}>{event.date}</EventTimestamp>
-        )}
-        {children}
-      </EventContent>
+      {children}
     </EventContainer>
   );
 }

@@ -3,10 +3,11 @@ import styled from "styled-components";
 import { TwitterTweetEmbed } from "react-twitter-embed";
 import ConditionalMarkdown from "./ConditionalMarkdown";
 import Buttons from "./Buttons";
+import CardWrapper from "./CardWrapper";
 
 const OverflowWrapper = styled.div`
   overflow: hidden;
-`
+`;
 
 // TODO: show loading indicator while Tweet loads?
 const Container = styled.div`
@@ -20,12 +21,12 @@ export default function TwitterNode({ event }) {
   const { id, text, buttons } = event;
 
   return (
-    <OverflowWrapper className="twitter overflow-wrapper">
+    <CardWrapper className="twitter overflow-wrapper">
       <ConditionalMarkdown text={text} />
       <Container className="tweet-container">
         <TwitterTweetEmbed tweetId={id} />
       </Container>
       {buttons && <Buttons buttons={buttons} />}
-    </OverflowWrapper>
+    </CardWrapper>
   );
 }
