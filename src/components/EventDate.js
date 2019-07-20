@@ -20,6 +20,10 @@ const Time = styled.time`
 `;
 
 export default function EventDate({ children, inline }) {
+  if (!children) {
+    return null;
+  }
+
   return (
     <Container className="date" inline={inline}>
       <Time>{children}</Time>
