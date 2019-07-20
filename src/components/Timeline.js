@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
-import TextNode from "./TextNode";
-import ImageNode from "./ImageNode";
+import TextCard from "./TextCard";
+import ImageCard from "./ImageCard";
 import Event from "./Event";
-import YouTubeNode from "./YouTubeNode";
-import TwitterNode from "./TwitterNode";
+import YouTubeCard from "./YouTubeCard";
+import TwitterCard from "./TwitterCard";
 import themes from "../themes";
 import merge from "lodash.merge";
 import isPlainObject from "lodash.isplainobject";
@@ -64,11 +64,11 @@ const Events = styled.div`
   }
 `;
 
-const nodes = {
-  text: TextNode,
-  image: ImageNode,
-  youtube: YouTubeNode,
-  twitter: TwitterNode
+const cards = {
+  text: TextCard,
+  image: ImageCard,
+  youtube: YouTubeCard,
+  twitter: TwitterCard
 };
 
 // TODO: need to account for user passing invalid layout and responsiveLayout values
@@ -131,11 +131,11 @@ export default function Timeline({ className, events, theme, opts }) {
         <Container className={`timeline container ${kebabLayout}`}>
           <Events className={`events ${kebabLayout}`}>
             {events.map((event, i) => {
-              let Node;
+              let Card;
               if (event.component) {
-                Node = event.component;
+                Card = event.component;
               } else {
-                Node = nodes[event.type.toLowerCase()];
+                Card = cards[event.type.toLowerCase()];
               }
 
               return (
@@ -146,7 +146,7 @@ export default function Timeline({ className, events, theme, opts }) {
                   opts={finalOpts}
                   inlineTimestamp={inlineTimestamp}
                 >
-                  <Node
+                  <Card
                     event={event}
                     isCompact={isCompact}
                     inlineTimestamp={inlineTimestamp}

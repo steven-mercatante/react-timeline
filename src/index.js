@@ -1,9 +1,9 @@
 import CardWrapper from "./components/CardWrapper";
-import ImageNode from "./components/ImageNode";
-import TextNode from "./components/TextNode";
+import ImageCard from "./components/ImageCard";
+import TextCard from "./components/TextCard";
 import Timeline from "./components/Timeline";
-import TwitterNode from "./components/TwitterNode";
-import YouTubeNode from "./components/YouTubeNode";
+import TwitterCard from "./components/TwitterCard";
+import YouTubeCard from "./components/YouTubeCard";
 import useIntersectionObserver from "./hooks/useIntersectionObserver";
 import themes from "./themes";
 
@@ -11,10 +11,10 @@ export default Timeline;
 
 export {
   CardWrapper,
-  ImageNode,
-  TextNode,
-  TwitterNode,
-  YouTubeNode,
+  ImageCard,
+  TextCard,
+  TwitterCard,
+  YouTubeCard,
   useIntersectionObserver,
   themes
 };
