@@ -1,3 +1,4 @@
+import CardWrapper from "./components/CardWrapper";
 import ImageNode from "./components/ImageNode";
 import TextNode from "./components/TextNode";
 import Timeline from "./components/Timeline";
@@ -9,6 +10,7 @@ import themes from "./themes";
 export default Timeline;
 
 export {
+  CardWrapper,
   ImageNode,
   TextNode,
   TwitterNode,
