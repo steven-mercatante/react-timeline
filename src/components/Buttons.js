@@ -1,9 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
+// TODO: set position relative and do left = amount of padding in outer card
 const Container = styled.div`
+  // border: 1px solid red;
   display: flex;
-  margin-top: 10px;
+  flex-wrap: wrap;
+  position: relative;
+  left: -10px;
 `;
 
 const Button = styled.button`

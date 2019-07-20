@@ -28,7 +28,7 @@ export default {
     borderRadius: "4px",
     padding: "4px",
     color: "#fff",
-    margin: "0 10px 0 0",
+    margin: "10px 5px 5px 10px",
     border: "none"
   },
   timestamp: {
