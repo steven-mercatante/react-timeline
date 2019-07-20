@@ -1,10 +1,35 @@
 import React from "react";
-import EventContainer from "./EventContainer";
 import useIntersectionObserver from "../hooks/useIntersectionObserver";
 import EventDate from "./EventDate";
 import EventMarker from "./EventMarker";
 import styled from "styled-components";
 import kebabCase from "lodash.kebabcase";
+
+const Container = styled.div`
+  // border: 1px solid red;
+  position: relative;
+  display: flex;
+  margin-bottom: 20px;
+
+  ${props =>
+    props.animationsEnabled && `opacity: ${props.isVisible ? 1 : 0.15};`}
+
+  ${({ animationsEnabled }) =>
+    animationsEnabled && `transition: opacity 0.25s ease-in;`}
+
+  :nth-child(1) {
+    margin-top: 20px;
+  }
+
+  &.inline-events,
+  &.inline-events-inline-date {
+    flex-direction: row !important;
+  }
+
+  :nth-child(even) {
+    flex-direction: row-reverse;
+  }
+`;
 
 const FlexColumn = styled.div`
   // border: 1px solid cyan;
@@ -18,7 +43,7 @@ const FlexColumn = styled.div`
   &.alternate-events-inline-date {
     flex-basis: 50%;
 
-    ${EventContainer}:nth-child(even) & {
+    ${Container}:nth-child(even) & {
       align-items: flex-start;
     }
   }
@@ -63,7 +88,7 @@ export default function Event({
   }
 
   return (
-    <EventContainer
+    <Container
       className={classes.join(" ")}
       ref={ref}
       isVisible={isVisible}
@@ -77,6 +102,6 @@ export default function Event({
       <EventMarker layout={kebabLayout} />
 
       {React.cloneElement(children, { isCompact, inlineDate })}
-    </EventContainer>
+    </Container>
   );
 }
