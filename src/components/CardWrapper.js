@@ -8,10 +8,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   flex-basis: 50%;
-
-  ${props =>
-    props.theme.cardWrapper.flexGrow &&
-    `flex-grow: ${props.theme.cardWrapper.flexGrow}`}
+  flex-grow: 1;
 
   ${props =>
     props.theme.cardWrapper.border &&
