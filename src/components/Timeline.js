@@ -45,7 +45,7 @@ const Container = styled.div`
 
   &.inline-events-inline-date {
     ::after {
-      left: 29px;
+      left: 19px;
     }
   }
 
@@ -59,6 +59,9 @@ const Container = styled.div`
 const Events = styled.div`
   padding: 10px;
   // max-width: 800px;
+  &.inline-events-inline-date {
+    padding-left: 0px;
+  }
 `
 
 const nodes = {
@@ -119,11 +122,13 @@ export default function Timeline({ className, events, theme, opts }) {
     classNames.push(className);
   }
 
+  const kebabLayout = kebabCase(finalOpts.layout)
+
   return (
     <ThemeProvider theme={finalTheme}>
       <OverflowWrapper className={classNames.join(" ")}>
-        <Container className={`timeline container ${kebabCase(finalOpts.layout)}`}>
-          <Events className="events">
+        <Container className={`timeline container ${kebabLayout}`}>
+          <Events className={`events ${kebabLayout}`}>
             {events.map((event, i) => {
               let Node;
               if (event.component) {
