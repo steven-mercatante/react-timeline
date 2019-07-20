@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 import styled from "styled-components";
 
 const Container = styled.span`
-  // border: 3px solid rebeccapurple;
+  border: 1px solid rebeccapurple;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,8 +18,12 @@ const Marker = styled.span`
   border-radius: ${props => props.theme.marker.borderRadius};
   width: ${props => props.theme.marker.width};
   height: ${props => props.theme.marker.height};
-`
+`;
 
-export default function EventMarker({layout}) {
-  return <Container className={`marker container ${layout}`}><Marker /></Container>
-};
+export default function EventMarker({ layout }) {
+  return (
+    <Container className={`marker container ${layout}`}>
+      <Marker />
+    </Container>
+  );
+}

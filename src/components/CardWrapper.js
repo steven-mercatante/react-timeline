@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 const Container = styled.div(props => {
   const defaults = {
+    border: "1px solid yellow",
     display: "flex",
     flexDirection: "column",
     flexBasis: "50%",

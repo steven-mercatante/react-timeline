@@ -17,7 +17,6 @@ export default {
     color: "cyan",
     backgroundColor: "#4e4e50",
     borderRadius: "4px",
-    maxWidth: "42%",
     padding: "10px"
   },
   buttons: {
