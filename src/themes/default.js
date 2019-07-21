@@ -13,12 +13,6 @@ export default {
     border: " 2px solid #eb2db4",
     borderRadius: "50%"
   },
-  CardWrapper: {
-    color: "cyan",
-    backgroundColor: "#4e4e50",
-    borderRadius: "4px",
-    padding: "10px"
-  },
   buttons: {
     fontSize: "14px",
     backgroundColor: "rebeccapurple",

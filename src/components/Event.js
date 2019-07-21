@@ -6,7 +6,7 @@ import styled from "styled-components";
 import kebabCase from "lodash.kebabcase";
 
 const Container = styled.div`
-  border: 1px solid red;
+  // border: 1px solid red;
   position: relative;
   display: flex;
   margin-bottom: 20px;
@@ -32,7 +32,7 @@ const Container = styled.div`
 `;
 
 const FlexColumn = styled.div`
-  border: 1px solid cyan;
+  // border: 1px solid cyan;
   display: flex;
   flex-direction: column;
   flex-basis: ${({ flexBasis }) => flexBasis};
