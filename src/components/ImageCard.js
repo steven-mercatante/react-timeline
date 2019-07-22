@@ -22,10 +22,11 @@ const Container = styled.div`
     font-size: ${props => props.theme.image.credit.fontSize};
   }
 `;
+
 // TODO: might not need Container now that we have CardWrapper
 export default function ImageCard({ src, alt, credit, text }) {
   return (
-    <CardWrapper event={event}>
+    <CardWrapper>
       <Container className="image">
         <ConditionalMarkdown>{text}</ConditionalMarkdown>
         <img src={src} alt={alt} />
