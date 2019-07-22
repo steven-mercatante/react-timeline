@@ -19,12 +19,10 @@ const RespIframe = styled.iframe`
   border: 0;
 `;
 
-export default function YouTubeCard({ event, ...rest }) {
-  const { id, name, text, buttons } = event;
-
+export default function YouTubeCard({ id, name, text, ...rest }) {
   return (
     <CardWrapper event={event} {...rest}>
-      <ConditionalMarkdown text={text} />
+      <ConditionalMarkdown>{text}</ConditionalMarkdown>
       <Container className="youtube-container">
         <RespIframe
           title={name}
@@ -36,7 +34,6 @@ export default function YouTubeCard({ event, ...rest }) {
           allowFullScreen
         />
       </Container>
-      {buttons && <Buttons buttons={buttons} />}
     </CardWrapper>
   );
 }
