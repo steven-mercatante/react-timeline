@@ -1,6 +1,5 @@
 import React from "react";
 import Event from "./Event";
-import CardWrapper from "./CardWrapper";
 import YouTubeCard from "./YouTubeCard";
 
 export default function YouTubeEvent(props) {
@@ -8,9 +7,7 @@ export default function YouTubeEvent(props) {
 
   return (
     <Event date={date}>
-      <CardWrapper date={date}>
-        <YouTubeCard id={id} name={name} text={text} />
-      </CardWrapper>
+      <YouTubeCard id={id} name={name} text={text} />
     </Event>
   );
 }
