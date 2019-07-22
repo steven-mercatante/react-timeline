@@ -9,6 +9,7 @@ import themes from "../themes";
 import merge from "lodash.merge";
 import isPlainObject from "lodash.isplainobject";
 import kebabCase from "lodash.kebabcase";
+import TimelineContext from "../TimelineContext";
 
 // TODO: move to own module?
 const OverflowWrapper = styled.div`
@@ -53,14 +54,6 @@ const Container = styled.div`
   *:before,
   *:after {
     box-sizing: border-box;
-  }
-`;
-
-const Events = styled.div`
-  padding: 10px;
-  // max-width: 800px;
-  &.inline-events-inline-date {
-    padding-left: 0px;
   }
 `;
 
@@ -128,14 +121,16 @@ export default function Timeline({ className, events, theme, opts, children }) {
     <ThemeProvider theme={finalTheme}>
       <OverflowWrapper className={classNames.join(" ")}>
         <Container className={`timeline container ${kebabLayout}`}>
-          {/* TODO: Events should be passed by user */}
-          <Events className={`events ${kebabLayout}`}>
-            {React.cloneElement(children, {
+          <TimelineContext.Provider
+            value={{
               opts: finalOpts,
+              kebabLayout,
               isCompact,
               inlineDate
-            })}
-          </Events>
+            }}
+          >
+            {children}
+          </TimelineContext.Provider>
         </Container>
       </OverflowWrapper>
     </ThemeProvider>

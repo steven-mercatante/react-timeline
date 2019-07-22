@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import useIntersectionObserver from "../hooks/useIntersectionObserver";
 import EventDate from "./EventDate";
 import EventMarker from "./EventMarker";
 import styled from "styled-components";
 import kebabCase from "lodash.kebabcase";
+import TimelineContext from "../TimelineContext";
 
 const Container = styled.div`
   // border: 1px solid red;
@@ -66,7 +67,11 @@ const FlexColumn = styled.div`
   }
 `;
 
-export default function Event({ date, children, isCompact, inlineDate, opts }) {
+export default function Event({ date, children }) {
+  const { kebabLayout, inlineDate, isCompact, opts } = useContext(
+    TimelineContext
+  );
+
   // TODO: can the intersection observer opts be passed via param so user can customize?
   const [isVisible, ref] = useIntersectionObserver({
     root: null,
@@ -74,15 +79,12 @@ export default function Event({ date, children, isCompact, inlineDate, opts }) {
     threshold: 0.5
   });
 
-  const kebabLayout = kebabCase(opts.layout);
-
   return (
     <Container
       className={`event ${kebabLayout}`}
       ref={ref}
       isVisible={isVisible}
       animationsEnabled={opts.animationsEnabled}
-      layout={opts.layout}
     >
       <FlexColumn className={`col-1 ${kebabLayout}`} flexBasis="50%">
         {!inlineDate && <EventDate>{date}</EventDate>}

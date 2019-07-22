@@ -1,4 +1,5 @@
 import CardWrapper from "./components/CardWrapper";
+import Events from "./components/Events";
 import ImageCard from "./components/ImageCard";
 import TextEvent from "./components/TextEvent";
 import TextCard from "./components/TextCard";
@@ -11,6 +12,7 @@ import themes from "./themes";
 export default Timeline;
 
 export {
+  Events,
   CardWrapper,
   ImageCard,
   TextEvent,

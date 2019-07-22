@@ -7,8 +7,8 @@ export default function TextEvent(props) {
   const { date, children } = props;
 
   return (
-    <Event {...props}>
-      <CardWrapper {...props}>
+    <Event date={date}>
+      <CardWrapper date={date}>
         <Markdown>{children}</Markdown>
       </CardWrapper>
     </Event>
