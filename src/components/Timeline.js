@@ -78,7 +78,7 @@ const _opts = {
   responsiveLayout: "inlineEvents"
 };
 
-export default function Timeline({ className, events, theme, opts }) {
+export default function Timeline({ className, events, theme, opts, children }) {
   // TODO: use a more semantic var name
   const [isCompact, setIsCompact] = useState(false);
 
@@ -128,30 +128,12 @@ export default function Timeline({ className, events, theme, opts }) {
     <ThemeProvider theme={finalTheme}>
       <OverflowWrapper className={classNames.join(" ")}>
         <Container className={`timeline container ${kebabLayout}`}>
+          {/* TODO: Events should be passed by user */}
           <Events className={`events ${kebabLayout}`}>
-            {events.map((event, i) => {
-              let Card;
-              if (event.component) {
-                Card = event.component;
-              } else {
-                Card = cards[event.type.toLowerCase()];
-              }
-
-              return (
-                <Event
-                  key={i}
-                  event={event}
-                  isCompact={isCompact}
-                  opts={finalOpts}
-                  inlineDate={inlineDate}
-                >
-                  <Card
-                    event={event}
-                    isCompact={isCompact}
-                    inlineDate={inlineDate}
-                  />
-                </Event>
-              );
+            {React.cloneElement(children, {
+              opts: finalOpts,
+              isCompact,
+              inlineDate
             })}
           </Events>
         </Container>

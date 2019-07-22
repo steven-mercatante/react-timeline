@@ -1,5 +1,6 @@
 import CardWrapper from "./components/CardWrapper";
 import ImageCard from "./components/ImageCard";
+import TextEvent from "./components/TextEvent";
 import TextCard from "./components/TextCard";
 import Timeline from "./components/Timeline";
 import TwitterCard from "./components/TwitterCard";
@@ -12,6 +13,7 @@ export default Timeline;
 export {
   CardWrapper,
   ImageCard,
+  TextEvent,
   TextCard,
   TwitterCard,
   YouTubeCard,

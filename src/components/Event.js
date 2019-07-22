@@ -66,13 +66,7 @@ const FlexColumn = styled.div`
   }
 `;
 
-export default function Event({
-  event,
-  children,
-  isCompact,
-  inlineDate,
-  opts
-}) {
+export default function Event({ date, children, isCompact, inlineDate, opts }) {
   // TODO: can the intersection observer opts be passed via param so user can customize?
   const [isVisible, ref] = useIntersectionObserver({
     root: null,
@@ -82,21 +76,16 @@ export default function Event({
 
   const kebabLayout = kebabCase(opts.layout);
 
-  const classes = ["event", event.type.toLowerCase(), kebabLayout];
-  if (event.opts && event.opts.cssClass) {
-    classes.push(event.opts.cssClass);
-  }
-
   return (
     <Container
-      className={classes.join(" ")}
+      className={`event ${kebabLayout}`}
       ref={ref}
       isVisible={isVisible}
       animationsEnabled={opts.animationsEnabled}
       layout={opts.layout}
     >
       <FlexColumn className={`col-1 ${kebabLayout}`} flexBasis="50%">
-        {!inlineDate && <EventDate>{event.date}</EventDate>}
+        {!inlineDate && <EventDate>{date}</EventDate>}
       </FlexColumn>
 
       <EventMarker layout={kebabLayout} />
