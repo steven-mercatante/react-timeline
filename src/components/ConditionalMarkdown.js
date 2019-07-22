@@ -6,11 +6,11 @@ const Container = styled.div`
   margin-bottom: 10px;
 `;
 
-export default function ConditionalMarkdown({ text }) {
-  if (text) {
+export default function ConditionalMarkdown({ children }) {
+  if (children) {
     return (
       <Container>
-        <Markdown>{text}</Markdown>
+        <Markdown>{children}</Markdown>
       </Container>
     );
   }

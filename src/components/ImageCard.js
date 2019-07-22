@@ -24,9 +24,7 @@ const Container = styled.div`
   }
 `;
 // TODO: might not need Container now that we have CardWrapper
-export default function ImageCard({ event, ...rest }) {
-  const { src, alt, credit, text, buttons } = event;
-
+export default function ImageCard({ src, alt, credit, text, ...rest }) {
   return (
     <CardWrapper event={event} {...rest}>
       <Container className="image">

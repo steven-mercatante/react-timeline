@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import TextCard from "./TextCard";
 import ImageCard from "./ImageCard";
-import Event from "./Event";
 import YouTubeCard from "./YouTubeCard";
 import TwitterCard from "./TwitterCard";
 import themes from "../themes";
