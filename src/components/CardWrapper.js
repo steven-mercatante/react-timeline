@@ -20,16 +20,11 @@ const Container = styled.div`
   padding: ${props => props.theme.cardWrapper.padding};
 `;
 
-export default function CardWrapper({
-  event,
-  isCompact,
-  inlineDate,
-  children
-}) {
+export default function CardWrapper({ date, isCompact, inlineDate, children }) {
   return (
     <Container className="card-wrapper">
       {((isCompact && inlineDate) || inlineDate) && (
-        <EventDate inline={true}>{event.date}</EventDate>
+        <EventDate inline={true}>{date}</EventDate>
       )}
       {children}
     </Container>
