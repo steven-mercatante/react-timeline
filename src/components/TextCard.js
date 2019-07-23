@@ -2,10 +2,10 @@ import React from "react";
 import Markdown from "markdown-to-jsx";
 import CardWrapper from "./CardWrapper";
 
-export default function TextCard({ children }) {
+export default function TextCard({ text }) {
   return (
     <CardWrapper>
-      <Markdown>{children}</Markdown>
+      <Markdown>{text}</Markdown>
     </CardWrapper>
   );
 }

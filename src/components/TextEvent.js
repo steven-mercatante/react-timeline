@@ -1,16 +1,13 @@
 import React from "react";
 import Event from "./Event";
-import CardWrapper from "./CardWrapper";
-import Markdown from "markdown-to-jsx";
+import TextCard from "./TextCard";
 
 export default function TextEvent(props) {
-  const { date, children } = props;
+  const { date, text, children } = props;
 
   return (
     <Event date={date}>
-      <CardWrapper date={date}>
-        <Markdown>{children}</Markdown>
-      </CardWrapper>
+      <TextCard text={text} />
     </Event>
   );
 }
