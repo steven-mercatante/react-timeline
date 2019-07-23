@@ -13,7 +13,7 @@ export default {
     border: " 4px solid #323343",
     borderRadius: "50%"
   },
-  cardWrapper: {
+  Card: {
     color: "#fff",
     backgroundColor: "#22212E",
     border: "4px solid #323343",

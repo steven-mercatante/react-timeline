@@ -9,7 +9,7 @@ import TextAtom from "./components/atoms/TextAtom";
 import TweetAtom from "./components/atoms/TweetAtom";
 import YouTubeAtom from "./components/atoms/YouTubeAtom";
 
-import CardWrapper from "./components/cards/CardWrapper";
+import Card from "./components/cards/Card";
 import ImageCard from "./components/cards/ImageCard";
 import TextCard from "./components/cards/TextCard";
 import TweetCard from "./components/cards/TweetCard";
@@ -28,7 +28,7 @@ export {
   Event,
   EventMarker,
   Events,
-  CardWrapper,
+  Card,
   ImageEvent,
   ImageCard,
   TextEvent,

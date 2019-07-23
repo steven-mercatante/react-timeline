@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import ConditionalMarkdown from "../atoms/ConditionalMarkdown";
-import CardWrapper from "../cards/CardWrapper";
+import Card from "./Card";
 import TweetAtom from "../atoms/TweetAtom";
 
 export default function TweetCard({ date, id, text }) {
@@ -12,9 +12,9 @@ export default function TweetCard({ date, id, text }) {
   }, [id]);
 
   return (
-    <CardWrapper date={date}>
+    <Card date={date}>
       <ConditionalMarkdown>{text}</ConditionalMarkdown>
       <TweetAtom id={id} />
-    </CardWrapper>
+    </Card>
   );
 }

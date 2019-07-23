@@ -11,17 +11,15 @@ const Container = styled.div`
   flex-basis: 50%;
   flex-grow: 1;
 
-  ${props =>
-    props.theme.cardWrapper.border &&
-    `border: ${props.theme.cardWrapper.border}`};
+  ${props => props.theme.Card.border && `border: ${props.theme.Card.border}`};
 
-  border-radius: ${props => props.theme.cardWrapper.borderRadius};
-  background-color: ${props => props.theme.cardWrapper.backgroundColor};
-  color: ${props => props.theme.cardWrapper.color};
-  padding: ${props => props.theme.cardWrapper.padding};
+  border-radius: ${props => props.theme.Card.borderRadius};
+  background-color: ${props => props.theme.Card.backgroundColor};
+  color: ${props => props.theme.Card.color};
+  padding: ${props => props.theme.Card.padding};
 `;
 
-export default function CardWrapper({ date, children }) {
+export default function Card({ date, children }) {
   const { isCompact, inlineDate, kebabLayout } = useContext(TimelineContext);
 
   let DateComponent;

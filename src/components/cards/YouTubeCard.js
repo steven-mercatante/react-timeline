@@ -1,13 +1,13 @@
 import React from "react";
 import ConditionalMarkdown from "../atoms/ConditionalMarkdown";
-import CardWrapper from "../cards/CardWrapper";
+import Card from "./Card";
 import YouTubeAtom from "../atoms/YouTubeAtom";
 
 export default function YouTubeCard({ date, id, name, text }) {
   return (
-    <CardWrapper date={date}>
+    <Card date={date}>
       <ConditionalMarkdown>{text}</ConditionalMarkdown>
       <YouTubeAtom id={id} name={name} />
-    </CardWrapper>
+    </Card>
   );
 }

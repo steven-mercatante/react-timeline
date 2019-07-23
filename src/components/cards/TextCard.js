@@ -1,12 +1,12 @@
 import React from "react";
-import CardWrapper from "../cards/CardWrapper";
+import Card from "./Card";
 import TextAtom from "../atoms/TextAtom";
 
 export default function TextCard({ date, text, children }) {
   return (
-    <CardWrapper date={date}>
+    <Card date={date}>
       <TextAtom text={text} />
       {children}
-    </CardWrapper>
+    </Card>
   );
 }

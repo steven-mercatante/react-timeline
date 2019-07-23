@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ConditionalMarkdown from "../atoms/ConditionalMarkdown";
-import CardWrapper from "./CardWrapper";
+import Card from "./Card";
 
 // TODO: pass img width via prop?
 
@@ -23,10 +23,10 @@ const Container = styled.div`
   }
 `;
 
-// TODO: might not need Container now that we have CardWrapper
+// TODO: might not need Container now that we have Card
 export default function ImageCard({ date, src, alt, credit, text }) {
   return (
-    <CardWrapper date={date}>
+    <Card date={date}>
       <Container className="image">
         <ConditionalMarkdown>{text}</ConditionalMarkdown>
         <img src={src} alt={alt} />
@@ -34,6 +34,6 @@ export default function ImageCard({ date, src, alt, credit, text }) {
           <ConditionalMarkdown className="credit">{credit}</ConditionalMarkdown>
         )}
       </Container>
-    </CardWrapper>
+    </Card>
   );
 }
