@@ -1,6 +1,7 @@
 import Button from "./components/Button";
 import CardWrapper from "./components/CardWrapper";
 import Event from "./components/Event";
+import EventMarker from "./components/EventMarker";
 import Events from "./components/Events";
 import ImageEvent from "./components/ImageEvent";
 import ImageCard from "./components/ImageCard";
@@ -20,6 +21,7 @@ export default Timeline;
 export {
   Button,
   Event,
+  EventMarker,
   Events,
   CardWrapper,
   ImageEvent,
