@@ -8,6 +8,7 @@ import TextEvent from "./components/TextEvent";
 import TextCard from "./components/TextCard";
 import Timeline from "./components/Timeline";
 import TwitterCard from "./components/TwitterCard";
+import TwitterEvent from "./components/TwitterEvent";
 import YouTubeAtom from "./components/YouTubeAtom";
 import YouTubeCard from "./components/YouTubeCard";
 import YouTubeEvent from "./components/YouTubeEvent";
@@ -26,6 +27,7 @@ export {
   TextEvent,
   TextCard,
   TwitterCard,
+  TwitterEvent,
   YouTubeAtom,
   YouTubeCard,
   YouTubeEvent,
