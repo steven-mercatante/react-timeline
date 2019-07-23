@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
-import TextCard from "./TextCard";
-import ImageCard from "./ImageCard";
-import YouTubeCard from "./YouTubeCard";
-import TwitterCard from "./TwitterCard";
 import themes from "../themes";
 import merge from "lodash.merge";
 import isPlainObject from "lodash.isplainobject";
@@ -56,13 +52,6 @@ const Container = styled.div`
   }
 `;
 
-const cards = {
-  text: TextCard,
-  image: ImageCard,
-  youtube: YouTubeCard,
-  twitter: TwitterCard
-};
-
 // TODO: need to account for user passing invalid layout and responsiveLayout values
 const _opts = {
   animationsEnabled: true,
@@ -70,7 +59,7 @@ const _opts = {
   responsiveLayout: "inlineEvents"
 };
 
-export default function Timeline({ className, events, theme, opts, children }) {
+export default function Timeline({ className, theme, opts, children }) {
   // TODO: use a more semantic var name
   const [isCompact, setIsCompact] = useState(false);
 
