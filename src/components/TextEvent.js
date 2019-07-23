@@ -7,7 +7,7 @@ export default function TextEvent(props) {
 
   return (
     <Event date={date}>
-      <TextCard text={text} />
+      <TextCard date={date} text={text} />
     </Event>
   );
 }

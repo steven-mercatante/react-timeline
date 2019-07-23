@@ -7,8 +7,9 @@ import TextEvent from "./components/TextEvent";
 import TextCard from "./components/TextCard";
 import Timeline from "./components/Timeline";
 import TwitterCard from "./components/TwitterCard";
-import YouTubeEvent from "./components/YouTubeEvent";
+import YouTubeAtom from "./components/YouTubeAtom";
 import YouTubeCard from "./components/YouTubeCard";
+import YouTubeEvent from "./components/YouTubeEvent";
 import useIntersectionObserver from "./hooks/useIntersectionObserver";
 import themes from "./themes";
 
@@ -23,8 +24,9 @@ export {
   TextEvent,
   TextCard,
   TwitterCard,
-  YouTubeEvent,
+  YouTubeAtom,
   YouTubeCard,
+  YouTubeEvent,
   useIntersectionObserver,
   themes
 };
