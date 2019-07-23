@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -30,3 +31,8 @@ export default function EventDate({ date, inline }) {
     </Container>
   );
 }
+
+EventDate.propTypes = {
+  date: PropTypes.string.isRequired,
+  inline: PropTypes.bool
+};

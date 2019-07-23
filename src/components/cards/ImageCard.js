@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import ConditionalMarkdown from "../atoms/ConditionalMarkdown";
 import Card from "./Card";
@@ -38,3 +39,16 @@ export default function ImageCard({ date, src, alt, credit, text, children }) {
     </Card>
   );
 }
+
+ImageCard.propTypes = {
+  date: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func,
+    PropTypes.element
+  ]).isRequired,
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string,
+  credit: PropTypes.string,
+  text: PropTypes.string,
+  children: PropTypes.node
+};

@@ -10,6 +10,6 @@ const Marker = styled.span`
   z-index: 100;
 `;
 
-export default function EventMarker({ layout }) {
-  return <Marker />;
+export default function EventMarker() {
+  return <Marker className="marker" />;
 }

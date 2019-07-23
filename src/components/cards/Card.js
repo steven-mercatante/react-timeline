@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import PropTypes from "prop-types";
 import EventDate from "../EventDate";
 import styled from "styled-components";
 import TimelineContext from "../../TimelineContext";
@@ -43,3 +44,12 @@ export default function Card({ date, children }) {
     </Container>
   );
 }
+
+Card.propTypes = {
+  date: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func,
+    PropTypes.element
+  ]).isRequired,
+  children: PropTypes.node
+};
