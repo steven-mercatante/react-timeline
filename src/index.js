@@ -9,6 +9,7 @@ import TextEvent from "./components/TextEvent";
 import TextAtom from "./components/TextAtom";
 import TextCard from "./components/TextCard";
 import Timeline from "./components/Timeline";
+import TweetAtom from "./components/TweetAtom";
 import TwitterCard from "./components/TwitterCard";
 import TwitterEvent from "./components/TwitterEvent";
 import YouTubeAtom from "./components/YouTubeAtom";
@@ -30,6 +31,7 @@ export {
   TextEvent,
   TextAtom,
   TextCard,
+  TweetAtom,
   TwitterCard,
   TwitterEvent,
   YouTubeAtom,

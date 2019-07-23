@@ -1,15 +1,7 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
 import ConditionalMarkdown from "./ConditionalMarkdown";
 import CardWrapper from "./CardWrapper";
-
-// TODO: show loading indicator while Tweet loads?
-
-const Tweet = styled.div`
-  .twitter-tweet {
-    width: 100% !important;
-  }
-`;
+import TweetAtom from "./TweetAtom";
 
 export default function TwitterCard({ date, id, text }) {
   useEffect(() => {
@@ -22,7 +14,7 @@ export default function TwitterCard({ date, id, text }) {
   return (
     <CardWrapper date={date}>
       <ConditionalMarkdown>{text}</ConditionalMarkdown>
-      <Tweet className="tweet" data-id={id} />
+      <TweetAtom id={id} />
     </CardWrapper>
   );
 }
