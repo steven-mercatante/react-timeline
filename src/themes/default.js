@@ -2,6 +2,7 @@ export default {
   fontSize: "14px",
   fontFamily: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
   Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  maxWidth: "none",
   track: {
     backgroundColor: "#ee18b6",
     width: "2px"

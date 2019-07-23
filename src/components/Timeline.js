@@ -6,16 +6,15 @@ import isPlainObject from "lodash.isplainobject";
 import kebabCase from "lodash.kebabcase";
 import TimelineContext from "../TimelineContext";
 
-// TODO: move to own module?
 const OverflowWrapper = styled.div`
   overflow: auto;
 `;
 
-// TODO: move to own module?
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  max-width: ${props => props.theme.maxWidth};
   font-family: ${props => props.theme.fontFamily};
   font-size: ${props => props.theme.fontSize};
   ${props =>
