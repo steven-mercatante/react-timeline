@@ -6,6 +6,7 @@ import Events from "./components/Events";
 import ImageEvent from "./components/ImageEvent";
 import ImageCard from "./components/ImageCard";
 import TextEvent from "./components/TextEvent";
+import TextAtom from "./components/TextAtom";
 import TextCard from "./components/TextCard";
 import Timeline from "./components/Timeline";
 import TwitterCard from "./components/TwitterCard";
@@ -27,6 +28,7 @@ export {
   ImageEvent,
   ImageCard,
   TextEvent,
+  TextAtom,
   TextCard,
   TwitterCard,
   TwitterEvent,

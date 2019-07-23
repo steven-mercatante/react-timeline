@@ -1,11 +1,11 @@
 import React from "react";
-import Markdown from "markdown-to-jsx";
 import CardWrapper from "./CardWrapper";
+import TextAtom from "./TextAtom";
 
 export default function TextCard({ date, text, children }) {
   return (
     <CardWrapper date={date}>
-      <Markdown>{text}</Markdown>
+      <TextAtom text={text} />
       {children}
     </CardWrapper>
   );
