@@ -76,6 +76,15 @@ export default function Event({ date, marker, children }) {
     threshold: 0.5
   });
 
+  let DateComponent;
+  if (date && typeof date === "string") {
+    DateComponent = <EventDate date={date} layout={kebabLayout} />;
+  } else if (date && typeof date === "function") {
+    DateComponent = date({ layout: kebabLayout });
+  } else {
+    DateComponent = React.cloneElement(date, { layout: kebabLayout });
+  }
+
   let MarkerComponent;
   if (marker && typeof marker === "function") {
     // user passed a function
@@ -96,7 +105,7 @@ export default function Event({ date, marker, children }) {
       animationsEnabled={opts.animationsEnabled}
     >
       <FlexColumn className={`col-1 ${kebabLayout}`} flexBasis="50%">
-        {!inlineDate && <EventDate>{date}</EventDate>}
+        {!inlineDate && DateComponent}
       </FlexColumn>
 
       {MarkerComponent}

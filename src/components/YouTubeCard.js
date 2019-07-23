@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import ConditionalMarkdown from "./ConditionalMarkdown";
-import Buttons from "./Buttons";
 import CardWrapper from "./CardWrapper";
 
 const Container = styled.div`
