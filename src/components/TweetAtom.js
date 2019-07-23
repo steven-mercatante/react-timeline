@@ -9,7 +9,7 @@ const Tweet = styled.div`
   }
 `;
 
-export default function TwitterAtom({ date, id, text }) {
+export default function TweetAtom({ date, id, text }) {
   useEffect(() => {
     window.twttr.widgets.createTweet(
       id,

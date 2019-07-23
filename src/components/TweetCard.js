@@ -3,7 +3,7 @@ import ConditionalMarkdown from "./ConditionalMarkdown";
 import CardWrapper from "./CardWrapper";
 import TweetAtom from "./TweetAtom";
 
-export default function TwitterCard({ date, id, text }) {
+export default function TweetCard({ date, id, text }) {
   useEffect(() => {
     window.twttr.widgets.createTweet(
       id,

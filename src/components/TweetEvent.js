@@ -1,13 +1,13 @@
 import React from "react";
 import Event from "./Event";
-import TwitterCard from "./TwitterCard";
+import TweetCard from "./TweetCard";
 
-export default function TwitterEvent(props) {
+export default function TweetEvent(props) {
   const { date, id, text, marker } = props;
 
   return (
     <Event date={date} marker={marker}>
-      <TwitterCard date={date} id={id} text={text} />
+      <TweetCard date={date} id={id} text={text} />
     </Event>
   );
 }

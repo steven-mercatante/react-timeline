@@ -10,8 +10,8 @@ import TextAtom from "./components/TextAtom";
 import TextCard from "./components/TextCard";
 import Timeline from "./components/Timeline";
 import TweetAtom from "./components/TweetAtom";
-import TwitterCard from "./components/TwitterCard";
-import TwitterEvent from "./components/TwitterEvent";
+import TweetCard from "./components/TweetCard";
+import TweetEvent from "./components/TweetEvent";
 import YouTubeAtom from "./components/YouTubeAtom";
 import YouTubeCard from "./components/YouTubeCard";
 import YouTubeEvent from "./components/YouTubeEvent";
@@ -32,8 +32,8 @@ export {
   TextAtom,
   TextCard,
   TweetAtom,
-  TwitterCard,
-  TwitterEvent,
+  TweetCard,
+  TweetEvent,
   YouTubeAtom,
   YouTubeCard,
   YouTubeEvent,
