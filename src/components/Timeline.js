@@ -40,7 +40,7 @@ const Container = styled.div`
 
   &.inline-events-inline-date {
     ::after {
-      left: 19px;
+      left: 29px;
     }
   }
 
