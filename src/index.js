@@ -1,3 +1,4 @@
+import Button from "./components/Button";
 import CardWrapper from "./components/CardWrapper";
 import Event from "./components/Event";
 import Events from "./components/Events";
@@ -16,6 +17,7 @@ import themes from "./themes";
 export default Timeline;
 
 export {
+  Button,
   Event,
   Events,
   CardWrapper,
