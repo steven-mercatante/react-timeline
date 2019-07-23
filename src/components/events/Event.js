@@ -1,9 +1,9 @@
-import React from "react";
-import useIntersectionObserver from "../hooks/useIntersectionObserver";
-import EventDate from "./EventDate";
-import EventMarker from "./EventMarker";
+import React, { useContext } from "react";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
+import EventDate from "../EventDate";
+import EventMarker from "../EventMarker";
 import styled from "styled-components";
-import kebabCase from "lodash.kebabcase";
+import TimelineContext from "../../TimelineContext";
 
 const Container = styled.div`
   // border: 1px solid red;
@@ -66,13 +66,9 @@ const FlexColumn = styled.div`
   }
 `;
 
-export default function Event({
-  event,
-  children,
-  isCompact,
-  inlineDate,
-  opts
-}) {
+export default function Event({ date, marker, children }) {
+  const { kebabLayout, inlineDate, opts } = useContext(TimelineContext);
+
   // TODO: can the intersection observer opts be passed via param so user can customize?
   const [isVisible, ref] = useIntersectionObserver({
     root: null,
@@ -80,28 +76,43 @@ export default function Event({
     threshold: 0.5
   });
 
-  const kebabLayout = kebabCase(opts.layout);
+  let DateComponent;
+  if (date) {
+    if (typeof date === "string") {
+      DateComponent = <EventDate date={date} layout={kebabLayout} />;
+    } else if (typeof date === "function") {
+      DateComponent = date({ layout: kebabLayout });
+    } else {
+      DateComponent = React.cloneElement(date, { layout: kebabLayout });
+    }
+  }
 
-  const classes = ["event", event.type.toLowerCase(), kebabLayout];
-  if (event.opts && event.opts.cssClass) {
-    classes.push(event.opts.cssClass);
+  let MarkerComponent;
+  if (marker && typeof marker === "function") {
+    // user passed a function
+    MarkerComponent = marker({ layout: kebabLayout });
+  } else if (marker) {
+    // user passed JSX
+    MarkerComponent = React.cloneElement(marker, { layout: kebabLayout });
+  } else {
+    // user didn't pass anything - use default marker component
+    MarkerComponent = <EventMarker layout={kebabLayout} />;
   }
 
   return (
     <Container
-      className={classes.join(" ")}
+      className={`event ${kebabLayout}`}
       ref={ref}
       isVisible={isVisible}
       animationsEnabled={opts.animationsEnabled}
-      layout={opts.layout}
     >
       <FlexColumn className={`col-1 ${kebabLayout}`} flexBasis="50%">
-        {!inlineDate && <EventDate>{event.date}</EventDate>}
+        {!inlineDate && DateComponent}
       </FlexColumn>
 
-      <EventMarker layout={kebabLayout} />
+      {MarkerComponent}
 
-      {React.cloneElement(children, { isCompact, inlineDate })}
+      {children}
     </Container>
   );
 }

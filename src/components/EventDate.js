@@ -19,14 +19,14 @@ const Time = styled.time`
   z-index: 100;
 `;
 
-export default function EventDate({ children, inline }) {
-  if (!children) {
+export default function EventDate({ date, inline }) {
+  if (!date) {
     return null;
   }
 
   return (
     <Container className="date" inline={inline}>
-      <Time>{children}</Time>
+      <Time>{date}</Time>
     </Container>
   );
 }

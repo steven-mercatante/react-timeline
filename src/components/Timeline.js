@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
-import TextCard from "./TextCard";
-import ImageCard from "./ImageCard";
-import Event from "./Event";
-import YouTubeCard from "./YouTubeCard";
-import TwitterCard from "./TwitterCard";
 import themes from "../themes";
 import merge from "lodash.merge";
 import isPlainObject from "lodash.isplainobject";
 import kebabCase from "lodash.kebabcase";
+import TimelineContext from "../TimelineContext";
 
 // TODO: move to own module?
 const OverflowWrapper = styled.div`
@@ -56,21 +52,6 @@ const Container = styled.div`
   }
 `;
 
-const Events = styled.div`
-  padding: 10px;
-  // max-width: 800px;
-  &.inline-events-inline-date {
-    padding-left: 0px;
-  }
-`;
-
-const cards = {
-  text: TextCard,
-  image: ImageCard,
-  youtube: YouTubeCard,
-  twitter: TwitterCard
-};
-
 // TODO: need to account for user passing invalid layout and responsiveLayout values
 const _opts = {
   animationsEnabled: true,
@@ -78,7 +59,7 @@ const _opts = {
   responsiveLayout: "inlineEvents"
 };
 
-export default function Timeline({ className, events, theme, opts }) {
+export default function Timeline({ className, theme, opts, children }) {
   // TODO: use a more semantic var name
   const [isCompact, setIsCompact] = useState(false);
 
@@ -128,32 +109,16 @@ export default function Timeline({ className, events, theme, opts }) {
     <ThemeProvider theme={finalTheme}>
       <OverflowWrapper className={classNames.join(" ")}>
         <Container className={`timeline container ${kebabLayout}`}>
-          <Events className={`events ${kebabLayout}`}>
-            {events.map((event, i) => {
-              let Card;
-              if (event.component) {
-                Card = event.component;
-              } else {
-                Card = cards[event.type.toLowerCase()];
-              }
-
-              return (
-                <Event
-                  key={i}
-                  event={event}
-                  isCompact={isCompact}
-                  opts={finalOpts}
-                  inlineDate={inlineDate}
-                >
-                  <Card
-                    event={event}
-                    isCompact={isCompact}
-                    inlineDate={inlineDate}
-                  />
-                </Event>
-              );
-            })}
-          </Events>
+          <TimelineContext.Provider
+            value={{
+              opts: finalOpts,
+              kebabLayout,
+              isCompact,
+              inlineDate
+            }}
+          >
+            {children}
+          </TimelineContext.Provider>
         </Container>
       </OverflowWrapper>
     </ThemeProvider>

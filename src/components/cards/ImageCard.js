@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import ConditionalMarkdown from "./ConditionalMarkdown";
-import Buttons from "./Buttons";
-import CardWrapper from "./CardWrapper";
+import ConditionalMarkdown from "../atoms/ConditionalMarkdown";
+import Card from "./Card";
 
 // TODO: pass img width via prop?
 
@@ -23,20 +22,19 @@ const Container = styled.div`
     font-size: ${props => props.theme.image.credit.fontSize};
   }
 `;
-// TODO: might not need Container now that we have CardWrapper
-export default function ImageCard({ event, ...rest }) {
-  const { src, alt, credit, text, buttons } = event;
 
+// TODO: might not need Container now that we have Card
+export default function ImageCard({ date, src, alt, credit, text, children }) {
   return (
-    <CardWrapper event={event} {...rest}>
+    <Card date={date}>
       <Container className="image">
-        <ConditionalMarkdown text={text} />
+        <ConditionalMarkdown>{text}</ConditionalMarkdown>
         <img src={src} alt={alt} />
         {credit && (
           <ConditionalMarkdown className="credit">{credit}</ConditionalMarkdown>
         )}
-        {buttons && <Buttons buttons={buttons} />}
+        {children}
       </Container>
-    </CardWrapper>
+    </Card>
   );
 }

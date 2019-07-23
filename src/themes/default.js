@@ -13,7 +13,7 @@ export default {
     border: " 2px solid #eb2db4",
     borderRadius: "50%"
   },
-  cardWrapper: {
+  Card: {
     color: "#fff",
     backgroundColor: "#4e4e50",
     borderRadius: "4px",
@@ -28,7 +28,7 @@ export default {
     borderRadius: "4px",
     padding: "4px",
     color: "#fff",
-    margin: "10px 5px 5px 10px",
+    margin: "10px 5px 5px 0",
     border: "none"
   },
   timestamp: {
