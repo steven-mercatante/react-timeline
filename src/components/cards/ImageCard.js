@@ -24,7 +24,7 @@ const Container = styled.div`
 `;
 
 // TODO: might not need Container now that we have Card
-export default function ImageCard({ date, src, alt, credit, text }) {
+export default function ImageCard({ date, src, alt, credit, text, children }) {
   return (
     <Card date={date}>
       <Container className="image">
@@ -33,6 +33,7 @@ export default function ImageCard({ date, src, alt, credit, text }) {
         {credit && (
           <ConditionalMarkdown className="credit">{credit}</ConditionalMarkdown>
         )}
+        {children}
       </Container>
     </Card>
   );
