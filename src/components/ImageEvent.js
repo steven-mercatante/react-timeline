@@ -7,7 +7,7 @@ export default function ImageEvent(props) {
 
   return (
     <Event date={date}>
-      <ImageCard src={src} alt={alt} credit={credit} text={text} />
+      <ImageCard date={date} src={src} alt={alt} credit={credit} text={text} />
     </Event>
   );
 }

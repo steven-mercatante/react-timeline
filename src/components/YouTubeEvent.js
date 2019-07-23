@@ -7,7 +7,7 @@ export default function YouTubeEvent(props) {
 
   return (
     <Event date={date}>
-      <YouTubeCard id={id} name={name} text={text} />
+      <YouTubeCard date={date} id={id} name={name} text={text} />
     </Event>
   );
 }

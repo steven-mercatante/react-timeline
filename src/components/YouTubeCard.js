@@ -19,9 +19,9 @@ const RespIframe = styled.iframe`
   border: 0;
 `;
 
-export default function YouTubeCard({ id, name, text }) {
+export default function YouTubeCard({ date, id, name, text }) {
   return (
-    <CardWrapper>
+    <CardWrapper date={date}>
       <ConditionalMarkdown>{text}</ConditionalMarkdown>
       <Container className="youtube-container">
         <RespIframe

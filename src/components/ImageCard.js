@@ -24,9 +24,9 @@ const Container = styled.div`
 `;
 
 // TODO: might not need Container now that we have CardWrapper
-export default function ImageCard({ src, alt, credit, text }) {
+export default function ImageCard({ date, src, alt, credit, text }) {
   return (
-    <CardWrapper>
+    <CardWrapper date={date}>
       <Container className="image">
         <ConditionalMarkdown>{text}</ConditionalMarkdown>
         <img src={src} alt={alt} />
