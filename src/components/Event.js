@@ -77,12 +77,14 @@ export default function Event({ date, marker, children }) {
   });
 
   let DateComponent;
-  if (date && typeof date === "string") {
-    DateComponent = <EventDate date={date} layout={kebabLayout} />;
-  } else if (date && typeof date === "function") {
-    DateComponent = date({ layout: kebabLayout });
-  } else {
-    DateComponent = React.cloneElement(date, { layout: kebabLayout });
+  if (date) {
+    if (typeof date === "string") {
+      DateComponent = <EventDate date={date} layout={kebabLayout} />;
+    } else if (typeof date === "function") {
+      DateComponent = date({ layout: kebabLayout });
+    } else {
+      DateComponent = React.cloneElement(date, { layout: kebabLayout });
+    }
   }
 
   let MarkerComponent;

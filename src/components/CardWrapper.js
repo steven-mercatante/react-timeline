@@ -22,13 +22,27 @@ const Container = styled.div`
 `;
 
 export default function CardWrapper({ date, children }) {
-  const { isCompact, inlineDate } = useContext(TimelineContext);
+  const { isCompact, inlineDate, kebabLayout } = useContext(TimelineContext);
+
+  let DateComponent;
+  if (date) {
+    if (typeof date === "string") {
+      DateComponent = (
+        <EventDate date={date} layout={kebabLayout} inline={true} />
+      );
+    } else if (typeof date === "function") {
+      DateComponent = date({ layout: kebabLayout, inline: true });
+    } else {
+      DateComponent = React.cloneElement(date, {
+        layout: kebabLayout,
+        inline: true
+      });
+    }
+  }
 
   return (
     <Container className="card-wrapper">
-      {((isCompact && inlineDate) || inlineDate) && (
-        <EventDate inline={true}>{date}</EventDate>
-      )}
+      {((isCompact && inlineDate) || inlineDate) && DateComponent}
       {children}
     </Container>
   );
