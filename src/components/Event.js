@@ -3,7 +3,6 @@ import useIntersectionObserver from "../hooks/useIntersectionObserver";
 import EventDate from "./EventDate";
 import EventMarker from "./EventMarker";
 import styled from "styled-components";
-import kebabCase from "lodash.kebabcase";
 import TimelineContext from "../TimelineContext";
 
 const Container = styled.div`
@@ -67,10 +66,8 @@ const FlexColumn = styled.div`
   }
 `;
 
-export default function Event({ date, children }) {
-  const { kebabLayout, inlineDate, isCompact, opts } = useContext(
-    TimelineContext
-  );
+export default function Event({ date, marker, children }) {
+  const { kebabLayout, inlineDate, opts } = useContext(TimelineContext);
 
   // TODO: can the intersection observer opts be passed via param so user can customize?
   const [isVisible, ref] = useIntersectionObserver({
@@ -78,6 +75,18 @@ export default function Event({ date, children }) {
     rootMargin: "0px",
     threshold: 0.5
   });
+
+  let MarkerComponent;
+  if (marker && typeof marker === "function") {
+    // user passed a function
+    MarkerComponent = marker({ layout: kebabLayout });
+  } else if (marker) {
+    // user passed JSX
+    MarkerComponent = React.cloneElement(marker, { layout: kebabLayout });
+  } else {
+    // user didn't pass anything - use default marker component
+    MarkerComponent = <EventMarker layout={kebabLayout} />;
+  }
 
   return (
     <Container
@@ -90,7 +99,7 @@ export default function Event({ date, children }) {
         {!inlineDate && <EventDate>{date}</EventDate>}
       </FlexColumn>
 
-      <EventMarker layout={kebabLayout} />
+      {MarkerComponent}
 
       {children}
     </Container>
