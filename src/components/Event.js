@@ -92,7 +92,7 @@ export default function Event({ date, children }) {
 
       <EventMarker layout={kebabLayout} />
 
-      {React.cloneElement(children, { isCompact, inlineDate })}
+      {React.cloneElement(children, { date, isCompact, inlineDate })}
     </Container>
   );
 }
