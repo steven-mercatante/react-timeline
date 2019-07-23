@@ -1,6 +1,6 @@
 import React from "react";
 import Event from "./Event";
-import YouTubeCard from "./YouTubeCard";
+import YouTubeCard from "../cards/YouTubeCard";
 
 export default function YouTubeEvent(props) {
   const { date, id, name, text, marker } = props;

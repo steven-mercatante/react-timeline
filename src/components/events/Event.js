@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import useIntersectionObserver from "../hooks/useIntersectionObserver";
-import EventDate from "./EventDate";
-import EventMarker from "./EventMarker";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
+import EventDate from "../EventDate";
+import EventMarker from "../EventMarker";
 import styled from "styled-components";
-import TimelineContext from "../TimelineContext";
+import TimelineContext from "../../TimelineContext";
 
 const Container = styled.div`
   // border: 1px solid red;

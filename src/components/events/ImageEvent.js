@@ -1,6 +1,6 @@
 import React from "react";
-import Event from "./Event";
-import ImageCard from "./ImageCard";
+import Event from "../events/Event";
+import ImageCard from "../cards/ImageCard";
 
 export default function ImageEvent(props) {
   const { date, src, alt, credit, text, marker } = props;

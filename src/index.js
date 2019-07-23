@@ -1,22 +1,25 @@
 import Button from "./components/Button";
-import CardWrapper from "./components/CardWrapper";
-import Event from "./components/Event";
 import EventMarker from "./components/EventMarker";
 import Events from "./components/Events";
-import ImageEvent from "./components/ImageEvent";
-import ImageCard from "./components/ImageCard";
-import TextEvent from "./components/TextEvent";
-import TextAtom from "./components/TextAtom";
-import TextCard from "./components/TextCard";
 import Timeline from "./components/Timeline";
-import TweetAtom from "./components/TweetAtom";
-import TweetCard from "./components/TweetCard";
-import TweetEvent from "./components/TweetEvent";
-import YouTubeAtom from "./components/YouTubeAtom";
-import YouTubeCard from "./components/YouTubeCard";
-import YouTubeEvent from "./components/YouTubeEvent";
 import useIntersectionObserver from "./hooks/useIntersectionObserver";
 import themes from "./themes";
+
+import TextAtom from "./components/atoms/TextAtom";
+import TweetAtom from "./components/atoms/TweetAtom";
+import YouTubeAtom from "./components/atoms/YouTubeAtom";
+
+import CardWrapper from "./components/cards/CardWrapper";
+import ImageCard from "./components/cards/ImageCard";
+import TextCard from "./components/cards/TextCard";
+import TweetCard from "./components/cards/TweetCard";
+import YouTubeCard from "./components/cards/YouTubeCard";
+
+import Event from "./components/events/Event";
+import ImageEvent from "./components/events/ImageEvent";
+import TextEvent from "./components/events/TextEvent";
+import TweetEvent from "./components/events/TweetEvent";
+import YouTubeEvent from "./components/events/YouTubeEvent";
 
 export default Timeline;
 

@@ -1,8 +1,7 @@
 import React from "react";
-import styled from "styled-components";
-import ConditionalMarkdown from "./ConditionalMarkdown";
-import CardWrapper from "./CardWrapper";
-import YouTubeAtom from "./YouTubeAtom";
+import ConditionalMarkdown from "../atoms/ConditionalMarkdown";
+import CardWrapper from "../cards/CardWrapper";
+import YouTubeAtom from "../atoms/YouTubeAtom";
 
 export default function YouTubeCard({ date, id, name, text }) {
   return (

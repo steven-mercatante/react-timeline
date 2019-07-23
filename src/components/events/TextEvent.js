@@ -1,6 +1,6 @@
 import React from "react";
 import Event from "./Event";
-import TextCard from "./TextCard";
+import TextCard from "../cards/TextCard";
 
 export default function TextEvent(props) {
   const { date, text, marker, children } = props;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ConditionalMarkdown from "./ConditionalMarkdown";
+import ConditionalMarkdown from "../atoms/ConditionalMarkdown";
 import CardWrapper from "./CardWrapper";
 
 // TODO: pass img width via prop?

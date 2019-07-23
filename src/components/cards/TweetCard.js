@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import ConditionalMarkdown from "./ConditionalMarkdown";
-import CardWrapper from "./CardWrapper";
-import TweetAtom from "./TweetAtom";
+import ConditionalMarkdown from "../atoms/ConditionalMarkdown";
+import CardWrapper from "../cards/CardWrapper";
+import TweetAtom from "../atoms/TweetAtom";
 
 export default function TweetCard({ date, id, text }) {
   useEffect(() => {

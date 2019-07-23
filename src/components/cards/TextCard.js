@@ -1,6 +1,6 @@
 import React from "react";
-import CardWrapper from "./CardWrapper";
-import TextAtom from "./TextAtom";
+import CardWrapper from "../cards/CardWrapper";
+import TextAtom from "../atoms/TextAtom";
 
 export default function TextCard({ date, text, children }) {
   return (

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import EventDate from "./EventDate";
+import EventDate from "../EventDate";
 import styled from "styled-components";
-import TimelineContext from "../TimelineContext";
+import TimelineContext from "../../TimelineContext";
 
 const Container = styled.div`
   // border: 1px solid yellow;
