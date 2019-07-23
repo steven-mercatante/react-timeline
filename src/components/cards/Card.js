@@ -8,8 +8,6 @@ const Container = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  flex-basis: 50%;
-  flex-grow: 1;
 
   ${props => props.theme.Card.border && `border: ${props.theme.Card.border}`};
 
@@ -39,7 +37,7 @@ export default function Card({ date, children }) {
   }
 
   return (
-    <Container className="card-wrapper">
+    <Container className="card">
       {((isCompact && inlineDate) || inlineDate) && DateComponent}
       {children}
     </Container>

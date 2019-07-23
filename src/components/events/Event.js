@@ -31,12 +31,12 @@ const Container = styled.div`
   }
 `;
 
-const FlexColumn = styled.div`
+const DateColumn = styled.div`
   // border: 1px solid cyan;
   display: flex;
   flex-direction: column;
-  flex-basis: ${({ flexBasis }) => flexBasis};
   justify-content: center;
+  flex-basis: 50%;
   align-items: flex-end;
 
   &.alternate-events,
@@ -64,6 +64,28 @@ const FlexColumn = styled.div`
     justify-content: center;
     align-items: flex-end;
   }
+  `;
+
+const MarkerColumn = styled.div`
+  // border: 1px solid yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 40px;
+  flex-shrink: 0;
+`;
+
+const CardColumn = styled.div`
+  // border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 50%;
+  flex-grow: 1;
 `;
 
 export default function Event({ date, marker, children }) {
@@ -106,13 +128,15 @@ export default function Event({ date, marker, children }) {
       isVisible={isVisible}
       animationsEnabled={opts.animationsEnabled}
     >
-      <FlexColumn className={`col-1 ${kebabLayout}`} flexBasis="50%">
+      <DateColumn className={`date-col ${kebabLayout}`}>
         {!inlineDate && DateComponent}
-      </FlexColumn>
+      </DateColumn>
 
-      {MarkerComponent}
+      <MarkerColumn className={`marker-col ${kebabLayout}`}>
+        {MarkerComponent}
+      </MarkerColumn>
 
-      {children}
+      <CardColumn className={`card-col ${kebabLayout}`}>{children}</CardColumn>
     </Container>
   );
 }
