@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import EventDate from "./EventDate";
 import styled from "styled-components";
+import TimelineContext from "../TimelineContext";
 
 const Container = styled.div`
   // border: 1px solid yellow;
@@ -20,7 +21,9 @@ const Container = styled.div`
   padding: ${props => props.theme.cardWrapper.padding};
 `;
 
-export default function CardWrapper({ date, isCompact, inlineDate, children }) {
+export default function CardWrapper({ date, children }) {
+  const { isCompact, inlineDate } = useContext(TimelineContext);
+
   return (
     <Container className="card-wrapper">
       {((isCompact && inlineDate) || inlineDate) && (
