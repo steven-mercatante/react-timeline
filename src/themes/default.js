@@ -7,16 +7,8 @@ export default {
     backgroundColor: "#ee18b6",
     width: "2px"
   },
-  marker: {
-    width: "20px",
-    height: "20px",
-    backgroundColor: "#eb2db4",
-    border: " 2px solid #eb2db4",
-    borderRadius: "50%"
-  },
-  card: {
-   
-  },
+  marker: {},
+  card: {},
   buttons: {
     fontSize: "14px",
     backgroundColor: "rebeccapurple",
