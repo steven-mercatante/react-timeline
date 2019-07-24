@@ -7,6 +7,10 @@ import isPlainObject from "lodash.isplainobject";
 import kebabCase from "lodash.kebabcase";
 import TimelineContext from "../TimelineContext";
 
+import ReactDOM from "react-dom";
+import axe from "react-axe";
+axe(React, ReactDOM, 1000);
+
 const OverflowWrapper = styled.div`
   overflow: auto;
 `;
