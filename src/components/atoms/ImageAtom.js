@@ -6,7 +6,8 @@ const Image = styled.img(props => {
   const defaults = {
     objectFit: "cover",
     overflow: "hidden",
-    width: "100%"
+    width: "100%",
+    maxHeight: "400px"
   };
 
   const style = { ...defaults, ...props.theme.imageAtom };

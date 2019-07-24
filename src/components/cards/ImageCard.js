@@ -3,39 +3,33 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import ConditionalMarkdown from "../atoms/ConditionalMarkdown";
 import Card from "./Card";
+import ImageAtom from "../atoms/ImageAtom";
 
-// TODO: pass img width via prop?
+const ImageText = styled(ConditionalMarkdown)(props => {
+  const defaults = {
+    fontSize: "1rem"
+  };
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  ${props =>
-    props.theme.image.maxHeight &&
-    `max-height: ${props.theme.image.maxHeight};`}
+  const style = { ...defaults, ...props.theme.imageCardText };
 
-  img {
-    object-fit: ${props => props.theme.image.objectFit};
-    overflow: hidden;
-    width: 100%;
-  }
+  return style;
+});
 
-  .credit {
-    font-size: ${props => props.theme.image.credit.fontSize};
-  }
-`;
+const ImageCredit = styled(ConditionalMarkdown)(props => {
+  const defaults = {};
 
-// TODO: might not need Container now that we have Card
+  const style = { ...defaults, ...props.theme.imageCardCredit };
+
+  return style;
+});
+
 export default function ImageCard({ date, src, alt, credit, text, children }) {
   return (
     <Card date={date}>
-      <Container className="image">
-        <ConditionalMarkdown>{text}</ConditionalMarkdown>
-        <img src={src} alt={alt} />
-        {credit && (
-          <ConditionalMarkdown className="credit">{credit}</ConditionalMarkdown>
-        )}
-        {children}
-      </Container>
+      <ImageText className="image-text">{text}</ImageText>
+      <ImageAtom src={src} alt={alt} />
+      {credit && <ImageCredit className="credit">{credit}</ImageCredit>}
+      {children}
     </Card>
   );
 }
