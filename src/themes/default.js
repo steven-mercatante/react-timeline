@@ -21,5 +21,6 @@ export default {
   imageAtom: {},
   imageCredit: {},
   imageText: {},
-  tweetText: {}
+  tweetText: {},
+  youTubeText: {}
 };

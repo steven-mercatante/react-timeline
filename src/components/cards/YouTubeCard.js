@@ -3,11 +3,20 @@ import PropTypes from "prop-types";
 import ConditionalMarkdown from "../atoms/ConditionalMarkdown";
 import Card from "./Card";
 import YouTubeAtom from "../atoms/YouTubeAtom";
+import styled from "styled-components";
+
+const YouTubeText = styled(ConditionalMarkdown)(props => {
+  const defaults = {};
+
+  const style = { ...defaults, ...props.theme.youTubeText };
+
+  return style;
+});
 
 export default function YouTubeCard({ date, id, name, text, children }) {
   return (
     <Card date={date}>
-      <ConditionalMarkdown>{text}</ConditionalMarkdown>
+      <YouTubeText className="youtube-text">{text}</YouTubeText>
       <YouTubeAtom id={id} name={name} />
       {children}
     </Card>
