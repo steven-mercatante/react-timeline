@@ -15,6 +15,7 @@ const ImageText = styled(ConditionalMarkdown)(props => {
 
 const ImageCredit = styled(ConditionalMarkdown)(props => {
   const defaults = {
+    marginTop: "10px",
     fontSize: "0.85rem"
   };
 
