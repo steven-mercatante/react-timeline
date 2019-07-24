@@ -2,23 +2,32 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const Container = styled.div`
-  ${({ inline }) => inline && `margin-bottom: 10px;`}
-`;
+const Container = styled.div(props => {
+  const style = {
+    zIndex: 100
+  }
 
-const Time = styled.time`
-  background-color: ${props => props.theme.timestamp.backgroundColor};
-  padding: ${props => props.theme.timestamp.padding};
-  color: ${props => props.theme.timestamp.color}
-    ${props =>
-      props.theme.timestamp.border &&
-      `border: ${props.theme.timestamp.border}`};
+  if (props.inline) {
+    style.marginBottom = props.theme.date.marginBottom || '10px'
+  }
 
-  border-radius: ${props => props.theme.timestamp.borderRadius};
-  font-weight: ${props => props.theme.timestamp.fontWeight};
-  font-size: ${props => props.theme.timestamp.fontSize};
-  z-index: 100;
-`;
+  return style;
+})
+
+const Time = styled.time(props => {
+  const defaults = {
+    backgroundColor: '#ec24b5',
+    padding: '4px',
+    color: '#fff',
+    borderRadius: '4px',
+    fontWeight: 500,
+    fontSize: '.85rem',
+  }
+
+  const style = { ...defaults, ...props.theme.date };
+
+  return style;
+})
 
 export default function EventDate({ date, inline }) {
   if (!date) {

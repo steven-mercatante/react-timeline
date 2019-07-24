@@ -4,19 +4,24 @@ import EventDate from "../EventDate";
 import styled from "styled-components";
 import TimelineContext from "../../TimelineContext";
 
-const Container = styled.div`
-  // border: 1px solid yellow;
-  position: relative;
-  display: flex;
-  flex-direction: column;
+const Container = styled.div(props => {
+  const defaults = {
+    position: "relative",
+    display: "flex",
+    flexDirection: "column",
+    borderRadius: "4px",
+    backgroundColor: "#fff",
+    color: "#333",
+    padding: "10px",
+    boxShadow: "0 4px 6px 0 hsla(0, 0%, 0%, 0.2)",
+    width: "100%",
+    maxWidth: "560px"
+  };
 
-  ${props => props.theme.Card.border && `border: ${props.theme.Card.border}`};
+  const style = { ...defaults, ...props.theme.card };
 
-  border-radius: ${props => props.theme.Card.borderRadius};
-  background-color: ${props => props.theme.Card.backgroundColor};
-  color: ${props => props.theme.Card.color};
-  padding: ${props => props.theme.Card.padding};
-`;
+  return style;
+});
 
 export default function Card({ date, children }) {
   const { isCompact, inlineDate, kebabLayout } = useContext(TimelineContext);

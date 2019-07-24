@@ -1,10 +1,16 @@
 import styled from "styled-components";
 
-const Events = styled.div`
-  padding: 10px;
-  &.inline-events-inline-date {
-    padding-left: 0px;
-  }
-`;
+const Events = styled.div(props => {
+  const defaults = {
+    padding: "10px",
+    "&.inline-events-inline-date": {
+      paddingLeft: "0px"
+    }
+  };
+
+  const style = { ...defaults, ...props.theme.events };
+
+  return style;
+});
 
 export default Events;
