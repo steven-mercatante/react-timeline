@@ -5,6 +5,7 @@ import EventDate from "../EventDate";
 import EventMarker from "../EventMarker";
 import styled from "styled-components";
 import TimelineContext from "../../TimelineContext";
+import { joinClassNames } from "../utils/classNames";
 
 const Container = styled.div(props => {
   const defaults = {
@@ -139,7 +140,7 @@ export default function Event({ date, marker, children, className }) {
     MarkerComponent = <EventMarker layout={kebabLayout} />;
   }
 
-  const classNames = ["event", className, kebabLayout].filter(x => x).join(" ");
+  const classNames = joinClassNames(["event", className, kebabLayout]);
 
   return (
     <Container

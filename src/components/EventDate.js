@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { joinClassNames } from "../utils/classNames";
 
 const Container = styled.div(props => {
   const defaults = {
@@ -35,12 +36,15 @@ export default function EventDate({ date, inline }) {
     return null;
   }
 
+  const containerClassNames = joinClassNames([
+    "date-container",
+    inline ? "inline" : null
+  ]);
+  const dateClassNames = joinClassNames(["date", inline ? "inline" : null]);
+
   return (
-    <Container
-      className={`date-container ${inline ? "inline" : ""}`}
-      inline={inline}
-    >
-      <Date className={`date ${inline ? "inline" : ""}`}>{date}</Date>
+    <Container className={containerClassNames} inline={inline}>
+      <Date className={dateClassNames}>{date}</Date>
     </Container>
   );
 }

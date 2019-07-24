@@ -6,6 +6,7 @@ import merge from "lodash.merge";
 import isPlainObject from "lodash.isplainobject";
 import kebabCase from "lodash.kebabcase";
 import TimelineContext from "../TimelineContext";
+import { joinClassNames } from "../utils/classNames";
 
 const OverflowWrapper = styled.div`
   overflow: auto;
@@ -99,17 +100,17 @@ export default function Timeline({ className, theme, opts, children }) {
     }
   }
 
-  const classNames = ["timeline", "overflow-wrapper"];
-  if (className) {
-    classNames.push(className);
-  }
-
+  const classNames = joinClassNames([
+    "timeline",
+    "overflow-wrapper",
+    className
+  ]);
   const inlineDate = finalOpts.layout.toLowerCase().includes("inlinedate");
   const kebabLayout = kebabCase(finalOpts.layout);
 
   return (
     <ThemeProvider theme={finalTheme}>
-      <OverflowWrapper className={classNames.join(" ")}>
+      <OverflowWrapper className={classNames}>
         <Container className={`timeline container ${kebabLayout}`}>
           <TimelineContext.Provider
             value={{
