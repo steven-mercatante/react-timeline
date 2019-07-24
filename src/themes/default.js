@@ -1,7 +1,5 @@
 export default {
-  timeline: {
-    width: "700px"
-  },
+  timeline: {},
   timelineTrack: {},
   marker: {},
   card: {},

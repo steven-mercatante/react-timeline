@@ -15,11 +15,7 @@ const Container = styled.div(props => {
       marginTop: "20px"
     },
 
-    "&.inline-events": {
-      flexDirection: "row !important"
-    },
-
-    "&.inline-events-inline-date": {
+    "&.inline-events, &.inline-events-inline-date": {
       flexDirection: "row !important"
     },
 
@@ -41,15 +37,7 @@ const DateColumn = styled.div(props => {
     flexBasis: "50%",
     alignItems: "flex-end",
 
-    "&.alternate-events": {
-      flexBasis: "50%",
-
-      [`${Container}:nth-child(even) &`]: {
-        alignItems: "flex-start"
-      }
-    },
-
-    "&.alternate-events-inline-date": {
+    "&.alternate-events, &.alternate-events-inline-date": {
       flexBasis: "50%",
 
       [`${Container}:nth-child(even) &`]: {
@@ -106,13 +94,7 @@ const CardColumn = styled.div(props => {
     flexBasis: "50%",
     flexGrow: "1",
 
-    "&.alternate-events": {
-      [`${Container}:nth-child(even) &`]: {
-        alignItems: "flex-end"
-      }
-    },
-
-    "&.alternate-events-inline-date": {
+    "&.alternate-events, &.alternate-events-inline-date": {
       [`${Container}:nth-child(even) &`]: {
         alignItems: "flex-end"
       }
