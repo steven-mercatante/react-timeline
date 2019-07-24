@@ -18,17 +18,7 @@ export default {
     margin: "10px 5px 5px 0",
     border: "none"
   },
-  timestamp: {
-    backgroundColor: "#ec24b5",
-    padding: "4px",
-    color: "#fff",
-    borderRadius: "4px",
-    fontWeight: 500,
-    fontSize: ".85rem",
-    topOffset: "-10px",
-    leftOffset: "30px",
-    rightOffset: "30px"
-  },
+  date: {},
   image: {
     // width: "100%",
     // maxHeight: "400px",
