@@ -12,6 +12,7 @@ const Container = styled.div(props => {
     position: "relative",
     display: "flex",
     marginBottom: "20px",
+
     ":nth-child(1)": {
       marginTop: "20px"
     },
@@ -24,6 +25,11 @@ const Container = styled.div(props => {
       flexDirection: "row-reverse"
     }
   };
+
+  if (props.animationsEnabled) {
+    defaults.opacity = props.isVisible ? 1 : 0.15;
+    defaults.transition = "opacity 0.25s ease-in";
+  }
 
   const style = { ...defaults, ...props.theme.event };
 
