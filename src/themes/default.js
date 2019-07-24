@@ -24,5 +24,6 @@ export default {
     minWidth: "300px",
     minHeight: "120px",
     backgroundColor: "#fff"
-  }
+  },
+  conditionalMarkdown: {}
 };
