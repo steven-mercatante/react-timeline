@@ -7,6 +7,10 @@ import isPlainObject from "lodash.isplainobject";
 import kebabCase from "lodash.kebabcase";
 import TimelineContext from "../TimelineContext";
 
+const OverflowWrapper = styled.div`
+  overflow: auto;
+`;
+
 const Container = styled.div(props => {
   const trackWidth = props.theme.timelineTrack.width || "2px";
   const trackDefaults = {
@@ -95,23 +99,30 @@ export default function Timeline({ className, theme, opts, children }) {
     }
   }
 
+  const classNames = ["timeline", "overflow-wrapper"];
+  if (className) {
+    classNames.push(className);
+  }
+
   const inlineDate = finalOpts.layout.toLowerCase().includes("inlinedate");
   const kebabLayout = kebabCase(finalOpts.layout);
 
   return (
     <ThemeProvider theme={finalTheme}>
-      <Container className={`timeline ${kebabLayout}`}>
-        <TimelineContext.Provider
-          value={{
-            opts: finalOpts,
-            kebabLayout,
-            isCompact,
-            inlineDate
-          }}
-        >
-          {children}
-        </TimelineContext.Provider>
-      </Container>
+      <OverflowWrapper className={classNames.join(" ")}>
+        <Container className={`timeline container ${kebabLayout}`}>
+          <TimelineContext.Provider
+            value={{
+              opts: finalOpts,
+              kebabLayout,
+              isCompact,
+              inlineDate
+            }}
+          >
+            {children}
+          </TimelineContext.Provider>
+        </Container>
+      </OverflowWrapper>
     </ThemeProvider>
   );
 }
