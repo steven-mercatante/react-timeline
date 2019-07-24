@@ -3,11 +3,20 @@ import PropTypes from "prop-types";
 import ConditionalMarkdown from "../atoms/ConditionalMarkdown";
 import Card from "./Card";
 import TweetAtom from "../atoms/TweetAtom";
+import styled from "styled-components";
+
+const TweetText = styled(ConditionalMarkdown)(props => {
+  const defaults = {};
+
+  const style = { ...defaults, ...props.theme.tweetText };
+
+  return style;
+});
 
 export default function TweetCard({ date, id, text, children }) {
   return (
     <Card date={date}>
-      <ConditionalMarkdown>{text}</ConditionalMarkdown>
+      <TweetText className="tweet-text">{text}</TweetText>
       <TweetAtom id={id} />
       {children}
     </Card>

@@ -6,19 +6,19 @@ import Card from "./Card";
 import ImageAtom from "../atoms/ImageAtom";
 
 const ImageText = styled(ConditionalMarkdown)(props => {
-  const defaults = {
-    fontSize: "1rem"
-  };
+  const defaults = {};
 
-  const style = { ...defaults, ...props.theme.imageCardText };
+  const style = { ...defaults, ...props.theme.imageText };
 
   return style;
 });
 
 const ImageCredit = styled(ConditionalMarkdown)(props => {
-  const defaults = {};
+  const defaults = {
+    fontSize: "0.85rem"
+  };
 
-  const style = { ...defaults, ...props.theme.imageCardCredit };
+  const style = { ...defaults, ...props.theme.imageCredit };
 
   return style;
 });
@@ -28,7 +28,7 @@ export default function ImageCard({ date, src, alt, credit, text, children }) {
     <Card date={date}>
       <ImageText className="image-text">{text}</ImageText>
       <ImageAtom src={src} alt={alt} />
-      {credit && <ImageCredit className="credit">{credit}</ImageCredit>}
+      {credit && <ImageCredit className="image-credit">{credit}</ImageCredit>}
       {children}
     </Card>
   );

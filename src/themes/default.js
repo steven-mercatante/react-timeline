@@ -19,6 +19,7 @@ export default {
   },
   conditionalMarkdown: {},
   imageAtom: {},
-  imageCardCredit: {},
-  imageCardText: {}
+  imageCredit: {},
+  imageText: {},
+  tweetText: {}
 };
