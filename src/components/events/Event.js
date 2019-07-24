@@ -106,7 +106,7 @@ const CardColumn = styled.div(props => {
   return style;
 });
 
-export default function Event({ date, marker, children }) {
+export default function Event({ date, marker, children, className }) {
   const { kebabLayout, inlineDate, opts } = useContext(TimelineContext);
 
   // TODO: can the intersection observer opts be passed via param so user can customize?
@@ -139,9 +139,11 @@ export default function Event({ date, marker, children }) {
     MarkerComponent = <EventMarker layout={kebabLayout} />;
   }
 
+  const classNames = ["event", className, kebabLayout].filter(x => x).join(" ");
+
   return (
     <Container
-      className={`event ${kebabLayout}`}
+      className={classNames}
       ref={ref}
       isVisible={isVisible}
       animationsEnabled={opts.animationsEnabled}
