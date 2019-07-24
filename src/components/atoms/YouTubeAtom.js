@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -16,7 +17,7 @@ const RespIframe = styled.iframe`
   border: 0;
 `;
 
-export default function YouTubeCard({ id, name }) {
+export default function YouTubeAtom({ id, name }) {
   return (
     <Container className="youtube-container">
       <RespIframe
@@ -31,3 +32,8 @@ export default function YouTubeCard({ id, name }) {
     </Container>
   );
 }
+
+YouTubeAtom.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string
+};

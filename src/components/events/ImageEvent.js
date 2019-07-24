@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Event from "../events/Event";
 import ImageCard from "../cards/ImageCard";
 
@@ -13,3 +14,17 @@ export default function ImageEvent(props) {
     </Event>
   );
 }
+
+ImageEvent.propTypes = {
+  date: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func,
+    PropTypes.element
+  ]).isRequired,
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string,
+  credit: PropTypes.string,
+  text: PropTypes.string,
+  marker: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  children: PropTypes.node
+};

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Markdown from "markdown-to-jsx";
 import styled from "styled-components";
 
@@ -17,3 +18,7 @@ export default function ConditionalMarkdown({ children }) {
 
   return null;
 }
+
+ConditionalMarkdown.propTypes = {
+  children: PropTypes.string.isRequired
+};

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import styled, { ThemeProvider } from "styled-components";
 import themes from "../themes";
 import merge from "lodash.merge";
@@ -123,3 +124,10 @@ export default function Timeline({ className, theme, opts, children }) {
     </ThemeProvider>
   );
 }
+
+Timeline.propTypes = {
+  className: PropTypes.string,
+  theme: PropTypes.object,
+  opts: PropTypes.object,
+  children: PropTypes.element.isRequired
+};
