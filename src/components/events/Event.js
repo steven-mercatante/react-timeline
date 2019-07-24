@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import PropTypes from "prop-types";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import EventDate from "../EventDate";
 import EventMarker from "../EventMarker";
@@ -140,3 +141,13 @@ export default function Event({ date, marker, children }) {
     </Container>
   );
 }
+
+Event.propTypes = {
+  date: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func,
+    PropTypes.element
+  ]).isRequired,
+  marker: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  children: PropTypes.node.isRequired
+};

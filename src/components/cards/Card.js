@@ -51,5 +51,5 @@ Card.propTypes = {
     PropTypes.func,
     PropTypes.element
   ]).isRequired,
-  children: PropTypes.node
+  children: PropTypes.node.isRequired
 };

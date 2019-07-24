@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Event from "./Event";
 import YouTubeCard from "../cards/YouTubeCard";
 
@@ -13,3 +14,16 @@ export default function YouTubeEvent(props) {
     </Event>
   );
 }
+
+YouTubeEvent.propTypes = {
+  date: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func,
+    PropTypes.element
+  ]).isRequired,
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  text: PropTypes.string,
+  marker: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  children: PropTypes.node
+};
