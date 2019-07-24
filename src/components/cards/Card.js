@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import EventDate from "../EventDate";
 import styled from "styled-components";
 import TimelineContext from "../../TimelineContext";
+import { joinClassNames } from "../../utils/classNames";
 
 const Container = styled.div(props => {
   const defaults = {
@@ -23,7 +24,7 @@ const Container = styled.div(props => {
   return style;
 });
 
-export default function Card({ date, children }) {
+export default function Card({ date, children, className }) {
   const { isCompact, inlineDate, kebabLayout } = useContext(TimelineContext);
 
   let DateComponent;
@@ -43,7 +44,7 @@ export default function Card({ date, children }) {
   }
 
   return (
-    <Container className="card">
+    <Container className={joinClassNames(["card", className])}>
       {((isCompact && inlineDate) || inlineDate) && DateComponent}
       {children}
     </Container>
@@ -56,5 +57,6 @@ Card.propTypes = {
     PropTypes.func,
     PropTypes.element
   ]).isRequired,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string
 };
