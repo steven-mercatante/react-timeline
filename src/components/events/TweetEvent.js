@@ -4,10 +4,10 @@ import Event from "./Event";
 import TweetCard from "../cards/TweetCard";
 
 export default function TweetEvent(props) {
-  const { date, id, text, marker, children } = props;
+  const { date, id, text, marker, children, className } = props;
 
   return (
-    <Event date={date} marker={marker}>
+    <Event className={className} date={date} marker={marker}>
       <TweetCard date={date} id={id} text={text}>
         {children}
       </TweetCard>
@@ -24,5 +24,6 @@ TweetEvent.propTypes = {
   id: PropTypes.string.isRequired,
   text: PropTypes.string,
   marker: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-  children: PropTypes.node
+  children: PropTypes.node,
+  className: PropTypes.string
 };

@@ -4,10 +4,10 @@ import Event from "./Event";
 import TextCard from "../cards/TextCard";
 
 export default function TextEvent(props) {
-  const { date, text, marker, children } = props;
+  const { date, text, marker, children, className } = props;
 
   return (
-    <Event date={date} marker={marker}>
+    <Event className={className} date={date} marker={marker}>
       <TextCard date={date} text={text}>
         {children}
       </TextCard>
@@ -23,5 +23,6 @@ TextEvent.propTypes = {
   ]).isRequired,
   text: PropTypes.string.isRequired,
   marker: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-  children: PropTypes.node
+  children: PropTypes.node,
+  className: PropTypes.string
 };

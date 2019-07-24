@@ -4,10 +4,10 @@ import Event from "../events/Event";
 import ImageCard from "../cards/ImageCard";
 
 export default function ImageEvent(props) {
-  const { date, src, alt, credit, text, marker, children } = props;
+  const { date, src, alt, credit, text, marker, children, className } = props;
 
   return (
-    <Event date={date} marker={marker}>
+    <Event className={className} date={date} marker={marker}>
       <ImageCard date={date} src={src} alt={alt} credit={credit} text={text}>
         {children}
       </ImageCard>
@@ -26,5 +26,6 @@ ImageEvent.propTypes = {
   credit: PropTypes.string,
   text: PropTypes.string,
   marker: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-  children: PropTypes.node
+  children: PropTypes.node,
+  className: PropTypes.string
 };

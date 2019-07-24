@@ -4,10 +4,10 @@ import Event from "./Event";
 import YouTubeCard from "../cards/YouTubeCard";
 
 export default function YouTubeEvent(props) {
-  const { date, id, name, text, marker, children } = props;
+  const { date, id, name, text, marker, children, className } = props;
 
   return (
-    <Event date={date} marker={marker}>
+    <Event className={className} date={date} marker={marker}>
       <YouTubeCard date={date} id={id} name={name} text={text}>
         {children}
       </YouTubeCard>
@@ -25,5 +25,6 @@ YouTubeEvent.propTypes = {
   name: PropTypes.string,
   text: PropTypes.string,
   marker: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-  children: PropTypes.node
+  children: PropTypes.node,
+  className: PropTypes.string
 };
