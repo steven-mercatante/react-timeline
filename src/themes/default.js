@@ -23,6 +23,8 @@ export default {
   imageText: {},
   tweetText: {},
   youTubeText: {},
+  events: {},
+  event: {},
   eventDateColumn: {},
   eventMarkerColumn: {},
   eventCardColumn: {}

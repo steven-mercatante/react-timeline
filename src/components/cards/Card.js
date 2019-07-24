@@ -14,8 +14,8 @@ const Container = styled.div(props => {
     color: "#333",
     padding: "10px",
     boxShadow: "0 4px 6px 0 hsla(0, 0%, 0%, 0.2)",
-    width: '100%',
-    maxWidth: '500px'
+    width: "100%",
+    maxWidth: "560px"
   };
 
   const style = { ...defaults, ...props.theme.card };
