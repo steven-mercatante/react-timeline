@@ -11,46 +11,48 @@ const OverflowWrapper = styled.div`
   overflow: auto;
 `;
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  max-width: ${props => props.theme.maxWidth};
-  font-family: ${props => props.theme.fontFamily};
-  font-size: ${props => props.theme.fontSize};
-  ${props =>
-    props.theme.backgroundColor &&
-    `background-color: ${props.theme.backgroundColor}`}
+const Container = styled.div(props => {
+  const trackWidth = props.theme.timelineTrack.width || "2px";
+  const trackDefaults = {
+    position: "absolute",
+    left: `calc(50% - ${parseInt(trackWidth, 10) / 2}px)`,
+    width: trackWidth,
+    height: "100%",
+    backgroundColor: "#ee18b6",
+    content: "''"
+  };
 
-  // renders the vertical line
-  ::after {
-    position: absolute;
-    left: ${props =>
-      `calc(50% - ${parseInt(props.theme.track.width, 10) / 2}px)`};
-    width: ${props => props.theme.track.width};
-    height: 100%;
-    background-color: ${props => props.theme.track.backgroundColor};
-    content: "";
-  }
+  const defaults = {
+    display: "flex",
+    flexDirection: "column",
+    position: "relative",
+    fontFamily: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
 
-  &.inline-events {
-    ::after {
-      left: 130px;
+    // renders the vertical line
+    "::after": { ...trackDefaults, ...props.theme.timelineTrack },
+
+    "&.inline-events": {
+      "::after": {
+        left: "130px"
+      }
+    },
+
+    "&.inline-events-inline-date": {
+      "::after": {
+        left: "29px"
+      }
+    },
+
+    "*, *:before, *:after": {
+      boxSizing: "border-box"
     }
-  }
+  };
 
-  &.inline-events-inline-date {
-    ::after {
-      left: 29px;
-    }
-  }
+  const style = { ...defaults, ...props.theme.timeline };
 
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
-  }
-`;
+  return style;
+});
 
 // TODO: need to account for user passing invalid layout and responsiveLayout values
 const _opts = {
