@@ -6,31 +6,55 @@ import EventMarker from "../EventMarker";
 import styled from "styled-components";
 import TimelineContext from "../../TimelineContext";
 
-const Container = styled.div`
-  // border: 1px solid red;
-  position: relative;
-  display: flex;
-  margin-bottom: 20px;
+// const Container = styled.div`
+//   // border: 1px solid red;
+//   position: relative;
+//   display: flex;
+//   margin-bottom: 20px;
 
-  ${props =>
-    props.animationsEnabled && `opacity: ${props.isVisible ? 1 : 0.15};`}
+//   ${props =>
+//     props.animationsEnabled && `opacity: ${props.isVisible ? 1 : 0.15};`}
 
-  ${({ animationsEnabled }) =>
-    animationsEnabled && `transition: opacity 0.25s ease-in;`}
+//   ${({ animationsEnabled }) =>
+//     animationsEnabled && `transition: opacity 0.25s ease-in;`}
 
-  :nth-child(1) {
-    margin-top: 20px;
-  }
+//   :nth-child(1) {
+//     margin-top: 20px;
+//   }
 
-  &.inline-events,
-  &.inline-events-inline-date {
-    flex-direction: row !important;
-  }
+//   &.inline-events,
+//   &.inline-events-inline-date {
+//     flex-direction: row !important;
+//   }
 
-  :nth-child(even) {
-    flex-direction: row-reverse;
-  }
-`;
+//   :nth-child(even) {
+//     flex-direction: row-reverse;
+//   }
+// `;
+
+const Container = styled.div(props => {
+  return {
+    position: "relative",
+    display: "flex",
+    marginBottom: "20px",
+
+    ":nth-child(1)": {
+      marginTop: "20px"
+    },
+
+    "&.inline-events": {
+      flexDirection: "row !important"
+    },
+
+    "&.inline-events-inline-date": {
+      flexDirection: "row !important"
+    },
+
+    ":nth-child(even)": {
+      flexDirection: "row-reverse"
+    }
+  };
+});
 
 const DateColumn = styled.div`
   // border: 1px solid cyan;
@@ -87,6 +111,13 @@ const CardColumn = styled.div`
   justify-content: center;
   flex-basis: 50%;
   flex-grow: 1;
+
+  &.alternate-events,
+  &.alternate-events-inline-date {
+    ${Container}:nth-child(even) & {
+      align-items: flex-end;
+    }
+  }
 `;
 
 export default function Event({ date, marker, children }) {
