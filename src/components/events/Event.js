@@ -6,38 +6,11 @@ import EventMarker from "../EventMarker";
 import styled from "styled-components";
 import TimelineContext from "../../TimelineContext";
 
-// const Container = styled.div`
-//   // border: 1px solid red;
-//   position: relative;
-//   display: flex;
-//   margin-bottom: 20px;
-
-//   ${props =>
-//     props.animationsEnabled && `opacity: ${props.isVisible ? 1 : 0.15};`}
-
-//   ${({ animationsEnabled }) =>
-//     animationsEnabled && `transition: opacity 0.25s ease-in;`}
-
-//   :nth-child(1) {
-//     margin-top: 20px;
-//   }
-
-//   &.inline-events,
-//   &.inline-events-inline-date {
-//     flex-direction: row !important;
-//   }
-
-//   :nth-child(even) {
-//     flex-direction: row-reverse;
-//   }
-// `;
-
 const Container = styled.div(props => {
-  return {
+  const defaults = {
     position: "relative",
     display: "flex",
     marginBottom: "20px",
-
     ":nth-child(1)": {
       marginTop: "20px"
     },
@@ -54,71 +27,102 @@ const Container = styled.div(props => {
       flexDirection: "row-reverse"
     }
   };
+
+  const style = { ...defaults, ...props.theme.event };
+
+  return style;
 });
 
-const DateColumn = styled.div`
-  // border: 1px solid cyan;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-basis: 50%;
-  align-items: flex-end;
+const DateColumn = styled.div(props => {
+  const defaults = {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    flexBasis: "50%",
+    alignItems: "flex-end",
 
-  &.alternate-events,
-  &.alternate-events-inline-date {
-    flex-basis: 50%;
+    "&.alternate-events": {
+      flexBasis: "50%",
 
-    ${Container}:nth-child(even) & {
-      align-items: flex-start;
+      [`${Container}:nth-child(even) &`]: {
+        alignItems: "flex-start"
+      }
+    },
+
+    "&.alternate-events-inline-date": {
+      flexBasis: "50%",
+
+      [`${Container}:nth-child(even) &`]: {
+        alignItems: "flex-start"
+      }
+    },
+
+    "&.alternate-events-inline-date": {
+      marginBottom: "10px"
+    },
+
+    "&.inline-events": {
+      flexBasis: "100px",
+      justifyContent: "center",
+      alignItems: "flex-end"
+    },
+
+    "&.inline-events-inline-date": {
+      marginBottom: "10px",
+      flexBasis: 0,
+      justifyContent: "center",
+      alignItems: "flex-end"
     }
-  }
+  };
 
-  &.alternate-events-inline-date {
-    margin-bottom: 10px;
-  }
+  const style = { ...defaults, ...props.theme.eventDateColumn };
 
-  &.inline-events {}
-    flex-basis: 100px;
-    justify-content: center;
-    align-items: flex-end;
-  }
+  return style;
+});
 
-  &.inline-events-inline-date {
-    margin-bottom: 10px;
-    flex-basis: 0;
-    justify-content: center;
-    align-items: flex-end;
-  }
-  `;
+const MarkerColumn = styled.div(props => {
+  const defaults = {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    flexBasis: "40px",
+    flexShrink: 0
+  };
 
-const MarkerColumn = styled.div`
-  // border: 1px solid yellow;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-basis: 40px;
-  flex-shrink: 0;
-`;
+  const style = { ...defaults, ...props.theme.eventMarkerColumn };
 
-const CardColumn = styled.div`
-  // border: 1px solid green;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-basis: 50%;
-  flex-grow: 1;
+  return style;
+});
 
-  &.alternate-events,
-  &.alternate-events-inline-date {
-    ${Container}:nth-child(even) & {
-      align-items: flex-end;
+const CardColumn = styled.div(props => {
+  const defaults = {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    flexBasis: "50%",
+    flexGrow: "1",
+
+    "&.alternate-events": {
+      [`${Container}:nth-child(even) &`]: {
+        alignItems: "flex-end"
+      }
+    },
+
+    "&.alternate-events-inline-date": {
+      [`${Container}:nth-child(even) &`]: {
+        alignItems: "flex-end"
+      }
     }
-  }
-`;
+  };
+
+  const style = { ...defaults, ...props.theme.eventCardColumn };
+
+  return style;
+});
 
 export default function Event({ date, marker, children }) {
   const { kebabLayout, inlineDate, opts } = useContext(TimelineContext);

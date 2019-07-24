@@ -22,5 +22,8 @@ export default {
   imageCredit: {},
   imageText: {},
   tweetText: {},
-  youTubeText: {}
+  youTubeText: {},
+  eventDateColumn: {},
+  eventMarkerColumn: {},
+  eventCardColumn: {}
 };
