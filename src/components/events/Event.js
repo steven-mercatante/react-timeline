@@ -5,7 +5,7 @@ import EventDate from "../EventDate";
 import EventMarker from "../EventMarker";
 import styled from "styled-components";
 import TimelineContext from "../../TimelineContext";
-import { joinClassNames } from "../utils/classNames";
+import { joinClassNames } from "../../utils/classNames";
 
 const Container = styled.div(props => {
   const defaults = {
