@@ -4,6 +4,7 @@ export default {
   marker: {},
   card: {},
   button: {},
+  dateContainer: {},
   date: {},
   conditionalMarkdown: {},
   imageAtom: {},

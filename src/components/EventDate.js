@@ -3,31 +3,32 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Container = styled.div(props => {
-  const style = {
-    zIndex: 100
-  }
+  const defaults = {
+    zIndex: 100,
+    "&.inline": {
+      marginBottom: "10px"
+    }
+  };
 
-  if (props.inline) {
-    style.marginBottom = props.theme.date.marginBottom || '10px'
-  }
+  const style = { ...defaults, ...props.theme.dateContainer };
 
   return style;
-})
+});
 
-const Time = styled.time(props => {
+const Date = styled.time(props => {
   const defaults = {
-    backgroundColor: '#ec24b5',
-    padding: '4px',
-    color: '#fff',
-    borderRadius: '4px',
+    backgroundColor: "#ec24b5",
+    padding: "4px",
+    color: "#fff",
+    borderRadius: "4px",
     fontWeight: 500,
-    fontSize: '.85rem',
-  }
+    fontSize: ".85rem"
+  };
 
   const style = { ...defaults, ...props.theme.date };
 
   return style;
-})
+});
 
 export default function EventDate({ date, inline }) {
   if (!date) {
@@ -35,8 +36,11 @@ export default function EventDate({ date, inline }) {
   }
 
   return (
-    <Container className="date" inline={inline}>
-      <Time>{date}</Time>
+    <Container
+      className={`date-container ${inline ? "inline" : ""}`}
+      inline={inline}
+    >
+      <Date className={`date ${inline ? "inline" : ""}`}>{date}</Date>
     </Container>
   );
 }
