@@ -97,7 +97,7 @@ const CardColumn = styled.div(props => {
   const defaults = {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     flexBasis: "50%",
     flexGrow: "1",
 
