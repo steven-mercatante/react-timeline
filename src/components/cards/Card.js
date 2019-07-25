@@ -44,7 +44,7 @@ export default function Card({ date, children, className }) {
   }
 
   return (
-    <Container className={joinClassNames(["card", className])}>
+    <Container className={joinClassNames(["card", className, kebabLayout])}>
       {((isCompact && inlineDate) || inlineDate) && DateComponent}
       {children}
     </Container>
