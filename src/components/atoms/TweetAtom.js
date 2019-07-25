@@ -28,13 +28,18 @@ const Tweet = styled.div(props => {
   return style;
 });
 
-export default function TweetAtom({ id }) {
+// See https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference for list of tweetOpts
+export default function TweetAtom({ id, tweetOpts }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     window.twttr.widgets
-      .createTweet(id, document.querySelector(`.tweet[data-id="${id}"]`))
-      .then(resp => {
+      .createTweet(
+        id,
+        document.querySelector(`.tweet[data-id="${id}"]`),
+        tweetOpts
+      )
+      .then(_ => {
         setLoading(false);
       });
   }, [id]);
@@ -48,5 +53,6 @@ export default function TweetAtom({ id }) {
 }
 
 TweetAtom.propTypes = {
-  id: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
+  tweetOpts: PropTypes.object
 };

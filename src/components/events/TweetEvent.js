@@ -5,7 +5,7 @@ import TweetCard from "../cards/TweetCard";
 import { joinClassNames } from "../../utils/classNames";
 
 export default function TweetEvent(props) {
-  const { date, id, text, marker, children, className } = props;
+  const { date, id, text, marker, tweetOpts, children, className } = props;
 
   return (
     <Event
@@ -13,7 +13,7 @@ export default function TweetEvent(props) {
       date={date}
       marker={marker}
     >
-      <TweetCard date={date} id={id} text={text}>
+      <TweetCard date={date} id={id} text={text} tweetOpts={tweetOpts}>
         {children}
       </TweetCard>
     </Event>
@@ -29,6 +29,7 @@ TweetEvent.propTypes = {
   id: PropTypes.string.isRequired,
   text: PropTypes.string,
   marker: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  tweetOpts: PropTypes.object,
   children: PropTypes.node,
   className: PropTypes.string
 };

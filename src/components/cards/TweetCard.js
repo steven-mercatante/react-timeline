@@ -13,11 +13,11 @@ const TweetText = styled(ConditionalMarkdown)(props => {
   return style;
 });
 
-export default function TweetCard({ date, id, text, children }) {
+export default function TweetCard({ date, id, text, tweetOpts, children }) {
   return (
     <Card date={date}>
       <TweetText className="tweet-text">{text}</TweetText>
-      <TweetAtom id={id} />
+      <TweetAtom id={id} tweetOpts={tweetOpts} />
       {children}
     </Card>
   );
@@ -31,5 +31,6 @@ TweetCard.propTypes = {
   ]).isRequired,
   id: PropTypes.string.isRequired,
   text: PropTypes.string,
+  tweetOpts: PropTypes.object,
   children: PropTypes.node
 };
