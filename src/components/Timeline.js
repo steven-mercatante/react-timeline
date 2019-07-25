@@ -47,6 +47,12 @@ const Container = styled.div(props => {
 
     "*, *:before, *:after": {
       boxSizing: "border-box"
+    },
+
+    "&.alt-evts-in-evts": {
+      "@media (max-width: 768px)": {
+        "::after": { left: "130px" }
+      }
     }
   };
 
@@ -87,9 +93,9 @@ export default function Timeline({ className, theme, opts, children }) {
     finalOpts = merge(finalOpts, opts);
   }
 
-  if (isCompact && finalOpts.responsiveLayout) {
-    finalOpts.layout = finalOpts.responsiveLayout;
-  }
+  // if (isCompact && finalOpts.responsiveLayout) {
+  //   finalOpts.layout = finalOpts.responsiveLayout;
+  // }
 
   function handleResize() {
     const mediaQueryList = window.matchMedia(`(max-width: 768px)`);

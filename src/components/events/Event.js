@@ -23,6 +23,12 @@ const Container = styled.div(props => {
 
     ":nth-child(even)": {
       flexDirection: "row-reverse"
+    },
+
+    "&.alt-evts-in-evts": {
+      "@media (max-width: 768px)": {
+        flexDirection: "row !important"
+      }
     }
   };
 
@@ -67,6 +73,14 @@ const DateColumn = styled.div(props => {
       flexBasis: 0,
       justifyContent: "center",
       alignItems: "flex-end"
+    },
+
+    "&.alt-evts-in-evts": {
+      "@media (max-width: 768px)": {
+        flexBasis: "100px",
+        justifyContent: "center",
+        alignItems: "flex-end"
+      }
     }
   };
 
