@@ -5,6 +5,7 @@ import { joinClassNames } from "../utils/classNames";
 
 const Container = styled.div(props => {
   const defaults = {
+    position: "relative",
     zIndex: 100,
     "&.inline": {
       marginBottom: "10px"
@@ -18,6 +19,7 @@ const Container = styled.div(props => {
 
 const Date = styled.time(props => {
   const defaults = {
+    position: "relative",
     backgroundColor: "#ec24b5",
     padding: "4px",
     color: "#fff",
