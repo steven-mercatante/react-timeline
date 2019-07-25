@@ -7,8 +7,20 @@ const Container = styled.div(props => {
   const defaults = {
     position: "relative",
     zIndex: 100,
+
     "&.inline": {
-      marginBottom: "10px"
+      display: "none",
+      marginBottom: "10px",
+
+      "@media (max-width: 768px)": {
+        display: "initial"
+      }
+    },
+
+    "&:not(.inline)": {
+      "@media (max-width: 768px)": {
+        display: "none"
+      }
     }
   };
 

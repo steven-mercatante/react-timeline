@@ -25,7 +25,7 @@ const Container = styled.div(props => {
 });
 
 export default function Card({ date, children, className }) {
-  const { isCompact, inlineDate, kebabLayout } = useContext(TimelineContext);
+  const { inlineDate, kebabLayout } = useContext(TimelineContext);
 
   let DateComponent;
   if (date) {
@@ -45,7 +45,7 @@ export default function Card({ date, children, className }) {
 
   return (
     <Container className={joinClassNames(["card", className, kebabLayout])}>
-      {((isCompact && inlineDate) || inlineDate) && DateComponent}
+      {DateComponent}
       {children}
     </Container>
   );

@@ -51,7 +51,7 @@ const Container = styled.div(props => {
 
     "&.alt-evts-in-evts": {
       "@media (max-width: 768px)": {
-        "::after": { left: "130px" }
+        "::after": { left: "29px" }
       }
     }
   };
@@ -69,17 +69,6 @@ const _opts = {
 };
 
 export default function Timeline({ className, theme, opts, children }) {
-  // TODO: use a more semantic var name
-  const [isCompact, setIsCompact] = useState(false);
-
-  useEffect(() => {
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  });
-
   let finalTheme = themes.default;
   if (typeof theme === "string" && themes[theme.toLowerCase()]) {
     finalTheme = themes[theme.toLowerCase()];
@@ -93,25 +82,12 @@ export default function Timeline({ className, theme, opts, children }) {
     finalOpts = merge(finalOpts, opts);
   }
 
-  // if (isCompact && finalOpts.responsiveLayout) {
-  //   finalOpts.layout = finalOpts.responsiveLayout;
-  // }
-
-  function handleResize() {
-    const mediaQueryList = window.matchMedia(`(max-width: 768px)`);
-    if (mediaQueryList.matches === true) {
-      setIsCompact(true);
-    } else {
-      setIsCompact(false);
-    }
-  }
-
   const classNames = joinClassNames([
     "timeline",
     "overflow-wrapper",
     className
   ]);
-  const inlineDate = finalOpts.layout.toLowerCase().includes("inlinedate");
+  const inlineDate = finalOpts.layout.toLowerCase().includes("in-date");
   const kebabLayout = kebabCase(finalOpts.layout);
 
   return (
@@ -122,7 +98,6 @@ export default function Timeline({ className, theme, opts, children }) {
             value={{
               opts: finalOpts,
               kebabLayout,
-              isCompact,
               inlineDate
             }}
           >
