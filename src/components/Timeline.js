@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import styled, { ThemeProvider } from "styled-components";
 import themes from "../themes";
@@ -36,18 +36,6 @@ const Container = styled.div(props => {
     // renders the vertical line
     "::after": { ...trackDefaults, ...props.theme.timelineTrack },
 
-    // "&.inline-events": {
-    //   "::after": {
-    //     left: "130px"
-    //   }
-    // },
-
-    // "&.inline-events-inline-date": {
-    //   "::after": {
-    //     left: "29px"
-    //   }
-    // },
-
     "&.inline-evts": {
       "::after": { left: "130px" }
     },
@@ -68,7 +56,7 @@ const Container = styled.div(props => {
 
 const _opts = {
   animationsEnabled: true,
-  layout: "alternateEvents" // alternateEvents, alternateEventsInlineDate, inlineEvents, inlineEventsInlineDate
+  layout: "alt-evts" //  alt-evts, alt-evts-inline-date, inline-evts, inline-evts-inline-date
 };
 
 export default function Timeline({ className, theme, opts, children }) {

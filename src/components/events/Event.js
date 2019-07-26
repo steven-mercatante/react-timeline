@@ -54,17 +54,6 @@ const DateColumn = styled.div(props => {
       }
     },
 
-    // "&.alt-evts, &.alt-evts-inline-date": {
-    //   flexBasis: "50%",
-
-    //   [`${Container}:nth-child(even) &`]: {
-    //     alignItems: "flex-start"
-    //   }
-    // },
-
-    // "&.alt-evts-inline-date": {
-    //   marginBottom: "10px"
-    // },
     "&.inline-evts": {
       flexBasis: "100px",
       justifyContent: "center",
@@ -76,13 +65,6 @@ const DateColumn = styled.div(props => {
       justifyContent: "center",
       alignItems: "flex-end"
     },
-
-    // "&.inline-events-inline-date": {
-    //   marginBottom: "10px",
-    //   flexBasis: 0,
-    //   justifyContent: "center",
-    //   alignItems: "flex-end"
-    // },
 
     "@media (max-width: 768px)": {
       flexBasis: "0 !important"
