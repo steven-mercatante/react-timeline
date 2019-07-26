@@ -25,7 +25,7 @@ const Container = styled.div(props => {
 });
 
 export default function Card({ date, children, className }) {
-  const { inlineDate, kebabLayout } = useContext(TimelineContext);
+  const { kebabLayout } = useContext(TimelineContext);
 
   let DateComponent;
   if (date) {

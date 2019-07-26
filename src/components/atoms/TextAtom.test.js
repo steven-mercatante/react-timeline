@@ -5,19 +5,19 @@ import "@testing-library/jest-dom/extend-expect";
 
 afterEach(cleanup);
 
-test("it renders plain text", () => {
+test("TextAtom renders plain text", () => {
   const { getByText } = render(<TextAtom text="hello world" />);
 
   expect(getByText("hello world")).toBeInTheDocument();
 });
 
-test("it renders markdown", () => {
+test("TextAtom renders markdown", () => {
   const { container } = render(<TextAtom text="**hello** _world_" />);
 
   expect(container).toContainHTML("<strong>hello</strong> <em>world</em>");
 });
 
-test(`it renders null when you don't provide text`, () => {
+test(`TextAtom renders null when you don't provide text`, () => {
   const { container } = render(<TextAtom />);
 
   expect(container).toBeEmpty();
