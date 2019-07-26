@@ -21,7 +21,7 @@ const Container = styled.div(props => {
       flexDirection: "row-reverse"
     },
 
-    "&.inline-evts": {
+    "&.inline-evts, &.inline-evts-inline-date": {
       flexDirection: "row !important"
     },
 
@@ -65,9 +65,14 @@ const DateColumn = styled.div(props => {
     // "&.alt-evts-inline-date": {
     //   marginBottom: "10px"
     // },
-
     "&.inline-evts": {
       flexBasis: "100px",
+      justifyContent: "center",
+      alignItems: "flex-end"
+    },
+
+    "&.inline-evts-inline-date": {
+      flexBasis: 0,
       justifyContent: "center",
       alignItems: "flex-end"
     },

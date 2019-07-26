@@ -52,6 +52,10 @@ const Container = styled.div(props => {
       "::after": { left: "130px" }
     },
 
+    "&.inline-evts-inline-date": {
+      "::after": { left: "29px" }
+    },
+
     "@media (max-width: 768px)": {
       "::after": { left: "29px !important" }
     }

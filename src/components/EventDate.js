@@ -12,7 +12,7 @@ const Container = styled.div(props => {
       display: "none",
       marginBottom: "10px",
 
-      "&.alt-evts-inline-date": {
+      "&.alt-evts-inline-date, &.inline-evts-inline-date": {
         display: "initial"
       },
 
@@ -22,7 +22,7 @@ const Container = styled.div(props => {
     },
 
     "&:not(.inline)": {
-      "&.alt-evts-inline-date": {
+      "&.alt-evts-inline-date, &.inline-evts-inline-date": {
         display: "none"
       },
 
