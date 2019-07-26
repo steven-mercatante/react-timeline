@@ -7,7 +7,7 @@ export default function TextAtom({ text }) {
     return null;
   }
 
-  return <Markdown>{text}</Markdown>;
+  return <Markdown className="markdown">{text}</Markdown>;
 }
 
 TextAtom.propTypes = {
