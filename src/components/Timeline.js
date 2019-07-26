@@ -36,20 +36,24 @@ const Container = styled.div(props => {
     // renders the vertical line
     "::after": { ...trackDefaults, ...props.theme.timelineTrack },
 
-    "&.inline-events": {
-      "::after": {
-        left: "130px"
-      }
-    },
+    // "&.inline-events": {
+    //   "::after": {
+    //     left: "130px"
+    //   }
+    // },
 
-    "&.inline-events-inline-date": {
-      "::after": {
-        left: "29px"
-      }
+    // "&.inline-events-inline-date": {
+    //   "::after": {
+    //     left: "29px"
+    //   }
+    // },
+
+    "&.inline-evts": {
+      "::after": { left: "130px" }
     },
 
     "@media (max-width: 768px)": {
-      "::after": { left: "29px" }
+      "::after": { left: "29px !important" }
     }
   };
 

@@ -21,6 +21,10 @@ const Container = styled.div(props => {
       flexDirection: "row-reverse"
     },
 
+    "&.inline-evts": {
+      flexDirection: "row !important"
+    },
+
     "@media (max-width: 768px)": {
       flexDirection: "row !important"
     }
@@ -62,11 +66,11 @@ const DateColumn = styled.div(props => {
     //   marginBottom: "10px"
     // },
 
-    // "&.inline-events": {
-    //   flexBasis: "100px",
-    //   justifyContent: "center",
-    //   alignItems: "flex-end"
-    // },
+    "&.inline-evts": {
+      flexBasis: "100px",
+      justifyContent: "center",
+      alignItems: "flex-end"
+    },
 
     // "&.inline-events-inline-date": {
     //   marginBottom: "10px",
@@ -76,7 +80,7 @@ const DateColumn = styled.div(props => {
     // },
 
     "@media (max-width: 768px)": {
-      flexBasis: 0
+      flexBasis: "0 !important"
     }
   };
 
