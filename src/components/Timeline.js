@@ -29,6 +29,9 @@ const Container = styled.div(props => {
     position: "relative",
     fontFamily: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+    "*, *:before, *:after": {
+      boxSizing: "border-box"
+    },
 
     // renders the vertical line
     "::after": { ...trackDefaults, ...props.theme.timelineTrack },
@@ -45,14 +48,8 @@ const Container = styled.div(props => {
       }
     },
 
-    "*, *:before, *:after": {
-      boxSizing: "border-box"
-    },
-
-    "&.alt-evts-in-evts": {
-      "@media (max-width: 768px)": {
-        "::after": { left: "29px" }
-      }
+    "@media (max-width: 768px)": {
+      "::after": { left: "29px" }
     }
   };
 
@@ -61,11 +58,9 @@ const Container = styled.div(props => {
   return style;
 });
 
-// TODO: need to account for user passing invalid layout and responsiveLayout values
 const _opts = {
   animationsEnabled: true,
-  layout: "alternateEvents", // alternateEvents, alternateEventsInlineDate, inlineEvents, inlineEventsInlineDate
-  responsiveLayout: "inlineEvents"
+  layout: "alternateEvents" // alternateEvents, alternateEventsInlineDate, inlineEvents, inlineEventsInlineDate
 };
 
 export default function Timeline({ className, theme, opts, children }) {

@@ -17,18 +17,12 @@ const Container = styled.div(props => {
       marginTop: "20px"
     },
 
-    "&.inline-events, &.inline-events-inline-date": {
-      flexDirection: "row !important"
-    },
-
     ":nth-child(even)": {
       flexDirection: "row-reverse"
     },
 
-    "&.alt-evts-in-evts": {
-      "@media (max-width: 768px)": {
-        flexDirection: "row !important"
-      }
+    "@media (max-width: 768px)": {
+      flexDirection: "row !important"
     }
   };
 
@@ -50,37 +44,39 @@ const DateColumn = styled.div(props => {
     flexBasis: "50%",
     alignItems: "flex-end",
 
-    "&.alternate-events, &.alternate-events-inline-date": {
-      flexBasis: "50%",
-
+    "&.alt-evts": {
       [`${Container}:nth-child(even) &`]: {
         alignItems: "flex-start"
       }
     },
 
-    "&.alternate-events-inline-date": {
-      marginBottom: "10px"
-    },
+    // "&.alt-evts, &.alt-evts-inline-date": {
+    //   flexBasis: "50%",
 
-    "&.inline-events": {
-      flexBasis: "100px",
-      justifyContent: "center",
-      alignItems: "flex-end"
-    },
+    //   [`${Container}:nth-child(even) &`]: {
+    //     alignItems: "flex-start"
+    //   }
+    // },
 
-    "&.inline-events-inline-date": {
-      marginBottom: "10px",
-      flexBasis: 0,
-      justifyContent: "center",
-      alignItems: "flex-end"
-    },
+    // "&.alt-evts-inline-date": {
+    //   marginBottom: "10px"
+    // },
 
-    "&.alt-evts-in-evts": {
-      "@media (max-width: 768px)": {
-        flexBasis: 0,
-        justifyContent: "center",
-        alignItems: "flex-end"
-      }
+    // "&.inline-events": {
+    //   flexBasis: "100px",
+    //   justifyContent: "center",
+    //   alignItems: "flex-end"
+    // },
+
+    // "&.inline-events-inline-date": {
+    //   marginBottom: "10px",
+    //   flexBasis: 0,
+    //   justifyContent: "center",
+    //   alignItems: "flex-end"
+    // },
+
+    "@media (max-width: 768px)": {
+      flexBasis: 0
     }
   };
 
@@ -115,10 +111,14 @@ const CardColumn = styled.div(props => {
     flexBasis: "50%",
     flexGrow: "1",
 
-    "&.alternate-events, &.alternate-events-inline-date": {
+    "&.alt-evts, &.alt-evts-inline-date": {
       [`${Container}:nth-child(even) &`]: {
         alignItems: "flex-end"
       }
+    },
+
+    "@media (max-width: 768px)": {
+      alignItems: "flex-start !important"
     }
   };
 
