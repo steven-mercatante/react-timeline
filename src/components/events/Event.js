@@ -17,12 +17,16 @@ const Container = styled.div(props => {
       marginTop: "20px"
     },
 
-    "&.inline-events, &.inline-events-inline-date": {
+    ":nth-child(even)": {
+      flexDirection: "row-reverse"
+    },
+
+    "&.inline-evts, &.inline-evts-inline-date": {
       flexDirection: "row !important"
     },
 
-    ":nth-child(even)": {
-      flexDirection: "row-reverse"
+    "@media (max-width: 768px)": {
+      flexDirection: "row !important"
     }
   };
 
@@ -44,29 +48,44 @@ const DateColumn = styled.div(props => {
     flexBasis: "50%",
     alignItems: "flex-end",
 
-    "&.alternate-events, &.alternate-events-inline-date": {
-      flexBasis: "50%",
-
+    "&.alt-evts": {
       [`${Container}:nth-child(even) &`]: {
         alignItems: "flex-start"
       }
     },
 
-    "&.alternate-events-inline-date": {
-      marginBottom: "10px"
-    },
+    // "&.alt-evts, &.alt-evts-inline-date": {
+    //   flexBasis: "50%",
 
-    "&.inline-events": {
+    //   [`${Container}:nth-child(even) &`]: {
+    //     alignItems: "flex-start"
+    //   }
+    // },
+
+    // "&.alt-evts-inline-date": {
+    //   marginBottom: "10px"
+    // },
+    "&.inline-evts": {
       flexBasis: "100px",
       justifyContent: "center",
       alignItems: "flex-end"
     },
 
-    "&.inline-events-inline-date": {
-      marginBottom: "10px",
+    "&.inline-evts-inline-date": {
       flexBasis: 0,
       justifyContent: "center",
       alignItems: "flex-end"
+    },
+
+    // "&.inline-events-inline-date": {
+    //   marginBottom: "10px",
+    //   flexBasis: 0,
+    //   justifyContent: "center",
+    //   alignItems: "flex-end"
+    // },
+
+    "@media (max-width: 768px)": {
+      flexBasis: "0 !important"
     }
   };
 
@@ -97,14 +116,18 @@ const CardColumn = styled.div(props => {
   const defaults = {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     flexBasis: "50%",
     flexGrow: "1",
 
-    "&.alternate-events, &.alternate-events-inline-date": {
+    "&.alt-evts, &.alt-evts-inline-date": {
       [`${Container}:nth-child(even) &`]: {
         alignItems: "flex-end"
       }
+    },
+
+    "@media (max-width: 768px)": {
+      alignItems: "flex-start !important"
     }
   };
 
@@ -156,7 +179,7 @@ export default function Event({ date, marker, children, className }) {
       animationsEnabled={opts.animationsEnabled}
     >
       <DateColumn className={`date-col ${kebabLayout}`}>
-        {!inlineDate && DateComponent}
+        {DateComponent}
       </DateColumn>
 
       <MarkerColumn className={`marker-col ${kebabLayout}`}>

@@ -2,11 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const Container = styled.div`
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 56.25%;
-`;
+const Container = styled.div(props => {
+  const defaults = {
+    position: "relative",
+    overflow: "hidden",
+    paddingBottom: "56.25%"
+  };
+
+  const style = { ...defaults, ...props.theme.youTubeAtom };
+
+  return style;
+});
 
 const RespIframe = styled.iframe`
   position: absolute;

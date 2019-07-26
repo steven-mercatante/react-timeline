@@ -27,5 +27,5 @@ export default function ConditionalMarkdown({ className, children }) {
 
 ConditionalMarkdown.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.string.isRequired
+  children: PropTypes.string
 };

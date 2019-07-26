@@ -5,9 +5,30 @@ import { joinClassNames } from "../utils/classNames";
 
 const Container = styled.div(props => {
   const defaults = {
+    position: "relative",
     zIndex: 100,
+
     "&.inline": {
-      marginBottom: "10px"
+      display: "none",
+      marginBottom: "10px",
+
+      "&.alt-evts-inline-date, &.inline-evts-inline-date": {
+        display: "initial"
+      },
+
+      "@media (max-width: 768px)": {
+        display: "initial"
+      }
+    },
+
+    "&:not(.inline)": {
+      "&.alt-evts-inline-date, &.inline-evts-inline-date": {
+        display: "none"
+      },
+
+      "@media (max-width: 768px)": {
+        display: "none"
+      }
     }
   };
 
@@ -18,6 +39,7 @@ const Container = styled.div(props => {
 
 const Date = styled.time(props => {
   const defaults = {
+    position: "relative",
     backgroundColor: "#ec24b5",
     padding: "4px",
     color: "#fff",
@@ -31,14 +53,15 @@ const Date = styled.time(props => {
   return style;
 });
 
-export default function EventDate({ date, inline }) {
+export default function EventDate({ date, inline, layout }) {
   if (!date) {
     return null;
   }
 
   const containerClassNames = joinClassNames([
     "date-container",
-    inline ? "inline" : null
+    inline ? "inline" : null,
+    layout
   ]);
   const dateClassNames = joinClassNames(["date", inline ? "inline" : null]);
 

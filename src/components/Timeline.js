@@ -29,24 +29,35 @@ const Container = styled.div(props => {
     position: "relative",
     fontFamily: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+    "*, *:before, *:after": {
+      boxSizing: "border-box"
+    },
 
     // renders the vertical line
     "::after": { ...trackDefaults, ...props.theme.timelineTrack },
 
-    "&.inline-events": {
-      "::after": {
-        left: "130px"
-      }
+    // "&.inline-events": {
+    //   "::after": {
+    //     left: "130px"
+    //   }
+    // },
+
+    // "&.inline-events-inline-date": {
+    //   "::after": {
+    //     left: "29px"
+    //   }
+    // },
+
+    "&.inline-evts": {
+      "::after": { left: "130px" }
     },
 
-    "&.inline-events-inline-date": {
-      "::after": {
-        left: "29px"
-      }
+    "&.inline-evts-inline-date": {
+      "::after": { left: "29px" }
     },
 
-    "*, *:before, *:after": {
-      boxSizing: "border-box"
+    "@media (max-width: 768px)": {
+      "::after": { left: "29px !important" }
     }
   };
 
@@ -55,25 +66,12 @@ const Container = styled.div(props => {
   return style;
 });
 
-// TODO: need to account for user passing invalid layout and responsiveLayout values
 const _opts = {
   animationsEnabled: true,
-  layout: "alternateEvents", // alternateEvents, alternateEventsInlineDate, inlineEvents, inlineEventsInlineDate
-  responsiveLayout: "inlineEvents"
+  layout: "alternateEvents" // alternateEvents, alternateEventsInlineDate, inlineEvents, inlineEventsInlineDate
 };
 
 export default function Timeline({ className, theme, opts, children }) {
-  // TODO: use a more semantic var name
-  const [isCompact, setIsCompact] = useState(false);
-
-  useEffect(() => {
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  });
-
   let finalTheme = themes.default;
   if (typeof theme === "string" && themes[theme.toLowerCase()]) {
     finalTheme = themes[theme.toLowerCase()];
@@ -87,25 +85,12 @@ export default function Timeline({ className, theme, opts, children }) {
     finalOpts = merge(finalOpts, opts);
   }
 
-  if (isCompact && finalOpts.responsiveLayout) {
-    finalOpts.layout = finalOpts.responsiveLayout;
-  }
-
-  function handleResize() {
-    const mediaQueryList = window.matchMedia(`(max-width: 768px)`);
-    if (mediaQueryList.matches === true) {
-      setIsCompact(true);
-    } else {
-      setIsCompact(false);
-    }
-  }
-
   const classNames = joinClassNames([
     "timeline",
     "overflow-wrapper",
     className
   ]);
-  const inlineDate = finalOpts.layout.toLowerCase().includes("inlinedate");
+  const inlineDate = finalOpts.layout.toLowerCase().includes("in-date");
   const kebabLayout = kebabCase(finalOpts.layout);
 
   return (
@@ -116,7 +101,6 @@ export default function Timeline({ className, theme, opts, children }) {
             value={{
               opts: finalOpts,
               kebabLayout,
-              isCompact,
               inlineDate
             }}
           >
