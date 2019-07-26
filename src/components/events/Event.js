@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
-import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import EventDate from "../EventDate";
 import EventMarker from "../EventMarker";
 import styled from "styled-components";
@@ -29,11 +28,6 @@ const Container = styled.div(props => {
       flexDirection: "row !important"
     }
   };
-
-  if (props.animationsEnabled) {
-    defaults.opacity = props.isVisible ? 1 : 0.15;
-    defaults.transition = "opacity 0.25s ease-in";
-  }
 
   const style = { ...defaults, ...props.theme.event };
 
@@ -119,14 +113,7 @@ const CardColumn = styled.div(props => {
 });
 
 export default function Event({ date, marker, children, className }) {
-  const { kebabLayout, inlineDate, opts } = useContext(TimelineContext);
-
-  // TODO: can the intersection observer opts be passed via param so user can customize?
-  const [isVisible, ref] = useIntersectionObserver({
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.5
-  });
+  const { kebabLayout, opts } = useContext(TimelineContext);
 
   let DateComponent;
   if (date) {
@@ -154,12 +141,7 @@ export default function Event({ date, marker, children, className }) {
   const classNames = joinClassNames(["event", className, kebabLayout]);
 
   return (
-    <Container
-      className={classNames}
-      ref={ref}
-      isVisible={isVisible}
-      animationsEnabled={opts.animationsEnabled}
-    >
+    <Container className={classNames}>
       <DateColumn className={`date-col ${kebabLayout}`}>
         {DateComponent}
       </DateColumn>

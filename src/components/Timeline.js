@@ -55,7 +55,6 @@ const Container = styled.div(props => {
 });
 
 const _opts = {
-  animationsEnabled: true,
   layout: "alt-evts" //  alt-evts, alt-evts-inline-date, inline-evts, inline-evts-inline-date
 };
 
