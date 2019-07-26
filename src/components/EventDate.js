@@ -12,12 +12,20 @@ const Container = styled.div(props => {
       display: "none",
       marginBottom: "10px",
 
+      "&.alt-evts-inline-date": {
+        display: "initial"
+      },
+
       "@media (max-width: 768px)": {
         display: "initial"
       }
     },
 
     "&:not(.inline)": {
+      "&.alt-evts-inline-date": {
+        display: "none"
+      },
+
       "@media (max-width: 768px)": {
         display: "none"
       }
@@ -45,14 +53,15 @@ const Date = styled.time(props => {
   return style;
 });
 
-export default function EventDate({ date, inline }) {
+export default function EventDate({ date, inline, layout }) {
   if (!date) {
     return null;
   }
 
   const containerClassNames = joinClassNames([
     "date-container",
-    inline ? "inline" : null
+    inline ? "inline" : null,
+    layout
   ]);
   const dateClassNames = joinClassNames(["date", inline ? "inline" : null]);
 
