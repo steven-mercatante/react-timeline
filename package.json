@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/steven-mercatante/react-timeline#readme",
   "dependencies": {
-    "intersection-observer": "^0.7.0",
     "lodash.isplainobject": "^4.0.6",
     "lodash.kebabcase": "^4.1.1",
     "lodash.merge": "^4.6.2",
