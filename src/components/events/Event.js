@@ -1,32 +1,32 @@
-import React, { useContext } from "react";
-import PropTypes from "prop-types";
-import EventDate from "../EventDate";
-import EventMarker from "../EventMarker";
-import styled from "styled-components";
-import TimelineContext from "../../TimelineContext";
-import { joinClassNames } from "../../utils/classNames";
+import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
+import EventDate from '../EventDate';
+import EventMarker from '../EventMarker';
+import styled from 'styled-components';
+import TimelineContext from '../../TimelineContext';
+import { joinClassNames } from '../../utils/classNames';
 
 const Container = styled.div(props => {
   const defaults = {
-    position: "relative",
-    display: "flex",
-    marginBottom: "20px",
+    position: 'relative',
+    display: 'flex',
+    marginBottom: '20px',
 
-    ":nth-child(1)": {
-      marginTop: "20px"
+    ':nth-child(1)': {
+      marginTop: '20px',
     },
 
-    ":nth-child(even)": {
-      flexDirection: "row-reverse"
+    ':nth-child(even)': {
+      flexDirection: 'row-reverse',
     },
 
-    "&.inline-evts, &.inline-evts-inline-date": {
-      flexDirection: "row !important"
+    '&.inline-evts, &.inline-evts-inline-date': {
+      flexDirection: 'row !important',
     },
 
-    "@media (max-width: 768px)": {
-      flexDirection: "row !important"
-    }
+    '@media (max-width: 768px)': {
+      flexDirection: 'row !important',
+    },
   };
 
   const style = { ...defaults, ...props.theme.event };
@@ -36,33 +36,33 @@ const Container = styled.div(props => {
 
 const DateColumn = styled.div(props => {
   const defaults = {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    flexBasis: "50%",
-    alignItems: "flex-end",
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    flexBasis: '50%',
+    alignItems: 'flex-end',
 
-    "&.alt-evts": {
+    '&.alt-evts': {
       [`${Container}:nth-child(even) &`]: {
-        alignItems: "flex-start"
-      }
+        alignItems: 'flex-start',
+      },
     },
 
-    "&.inline-evts": {
-      flexBasis: "100px",
-      justifyContent: "center",
-      alignItems: "flex-end"
+    '&.inline-evts': {
+      flexBasis: '100px',
+      justifyContent: 'center',
+      alignItems: 'flex-end',
     },
 
-    "&.inline-evts-inline-date": {
+    '&.inline-evts-inline-date': {
       flexBasis: 0,
-      justifyContent: "center",
-      alignItems: "flex-end"
+      justifyContent: 'center',
+      alignItems: 'flex-end',
     },
 
-    "@media (max-width: 768px)": {
-      flexBasis: "0 !important"
-    }
+    '@media (max-width: 768px)': {
+      flexBasis: '0 !important',
+    },
   };
 
   const style = { ...defaults, ...props.theme.eventDateColumn };
@@ -72,15 +72,12 @@ const DateColumn = styled.div(props => {
 
 const MarkerColumn = styled.div(props => {
   const defaults = {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    flexBasis: "40px",
-    flexShrink: 0
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexBasis: '40px',
+    flexShrink: 0,
   };
 
   const style = { ...defaults, ...props.theme.eventMarkerColumn };
@@ -90,21 +87,21 @@ const MarkerColumn = styled.div(props => {
 
 const CardColumn = styled.div(props => {
   const defaults = {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    flexBasis: "50%",
-    flexGrow: "1",
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    flexBasis: '50%',
+    flexGrow: '1',
 
-    "&.alt-evts, &.alt-evts-inline-date": {
+    '&.alt-evts, &.alt-evts-inline-date': {
       [`${Container}:nth-child(even) &`]: {
-        alignItems: "flex-end"
-      }
+        alignItems: 'flex-end',
+      },
     },
 
-    "@media (max-width: 768px)": {
-      alignItems: "flex-start !important"
-    }
+    '@media (max-width: 768px)': {
+      alignItems: 'flex-start !important',
+    },
   };
 
   const style = { ...defaults, ...props.theme.eventCardColumn };
@@ -113,13 +110,13 @@ const CardColumn = styled.div(props => {
 });
 
 export default function Event({ date, marker, children, className }) {
-  const { kebabLayout, opts } = useContext(TimelineContext);
+  const { kebabLayout } = useContext(TimelineContext);
 
   let DateComponent;
   if (date) {
-    if (typeof date === "string") {
+    if (typeof date === 'string') {
       DateComponent = <EventDate date={date} layout={kebabLayout} />;
-    } else if (typeof date === "function") {
+    } else if (typeof date === 'function') {
       DateComponent = date({ layout: kebabLayout });
     } else {
       DateComponent = React.cloneElement(date, { layout: kebabLayout });
@@ -127,7 +124,7 @@ export default function Event({ date, marker, children, className }) {
   }
 
   let MarkerComponent;
-  if (marker && typeof marker === "function") {
+  if (marker && typeof marker === 'function') {
     // user passed a function
     MarkerComponent = marker({ layout: kebabLayout });
   } else if (marker) {
@@ -138,7 +135,7 @@ export default function Event({ date, marker, children, className }) {
     MarkerComponent = <EventMarker layout={kebabLayout} />;
   }
 
-  const classNames = joinClassNames(["event", className, kebabLayout]);
+  const classNames = joinClassNames(['event', className, kebabLayout]);
 
   return (
     <Container className={classNames}>
@@ -159,8 +156,9 @@ Event.propTypes = {
   date: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.func,
-    PropTypes.element
+    PropTypes.element,
   ]).isRequired,
   marker: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
 };

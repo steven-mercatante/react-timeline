@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import ConditionalMarkdown from "../atoms/ConditionalMarkdown";
-import Card from "./Card";
-import ImageAtom from "../atoms/ImageAtom";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import ConditionalMarkdown from '../atoms/ConditionalMarkdown';
+import Card from './Card';
+import ImageAtom from '../atoms/ImageAtom';
 
 const ImageText = styled(ConditionalMarkdown)(props => {
   const defaults = {};
@@ -15,8 +15,8 @@ const ImageText = styled(ConditionalMarkdown)(props => {
 
 const ImageCredit = styled(ConditionalMarkdown)(props => {
   const defaults = {
-    marginTop: "10px",
-    fontSize: "0.85rem"
+    marginTop: '10px',
+    fontSize: '0.85rem',
   };
 
   const style = { ...defaults, ...props.theme.imageCredit };
@@ -39,11 +39,11 @@ ImageCard.propTypes = {
   date: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.func,
-    PropTypes.element
+    PropTypes.element,
   ]).isRequired,
   src: PropTypes.string.isRequired,
   alt: PropTypes.string,
   credit: PropTypes.string,
   text: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
 };

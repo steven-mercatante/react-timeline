@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import ConditionalMarkdown from "../atoms/ConditionalMarkdown";
-import Card from "./Card";
-import YouTubeAtom from "../atoms/YouTubeAtom";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import ConditionalMarkdown from '../atoms/ConditionalMarkdown';
+import Card from './Card';
+import YouTubeAtom from '../atoms/YouTubeAtom';
+import styled from 'styled-components';
 
 const YouTubeText = styled(ConditionalMarkdown)(props => {
   const defaults = {};
@@ -27,10 +27,10 @@ YouTubeCard.propTypes = {
   date: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.func,
-    PropTypes.element
+    PropTypes.element,
   ]).isRequired,
   id: PropTypes.string.isRequired,
   name: PropTypes.string,
   text: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
 };

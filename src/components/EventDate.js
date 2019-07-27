@@ -1,35 +1,35 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import { joinClassNames } from "../utils/classNames";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { joinClassNames } from '../utils/classNames';
 
 const Container = styled.div(props => {
   const defaults = {
-    position: "relative",
+    position: 'relative',
     zIndex: 100,
 
-    "&.inline": {
-      display: "none",
-      marginBottom: "10px",
+    '&.inline': {
+      display: 'none',
+      marginBottom: '10px',
 
-      "&.alt-evts-inline-date, &.inline-evts-inline-date": {
-        display: "initial"
+      '&.alt-evts-inline-date, &.inline-evts-inline-date': {
+        display: 'initial',
       },
 
-      "@media (max-width: 768px)": {
-        display: "initial"
-      }
+      '@media (max-width: 768px)': {
+        display: 'initial',
+      },
     },
 
-    "&:not(.inline)": {
-      "&.alt-evts-inline-date, &.inline-evts-inline-date": {
-        display: "none"
+    '&:not(.inline)': {
+      '&.alt-evts-inline-date, &.inline-evts-inline-date': {
+        display: 'none',
       },
 
-      "@media (max-width: 768px)": {
-        display: "none"
-      }
-    }
+      '@media (max-width: 768px)': {
+        display: 'none',
+      },
+    },
   };
 
   const style = { ...defaults, ...props.theme.dateContainer };
@@ -39,13 +39,13 @@ const Container = styled.div(props => {
 
 const Date = styled.time(props => {
   const defaults = {
-    position: "relative",
-    backgroundColor: "#ec24b5",
-    padding: "4px",
-    color: "#fff",
-    borderRadius: "4px",
+    position: 'relative',
+    backgroundColor: '#ec24b5',
+    padding: '4px',
+    color: '#fff',
+    borderRadius: '4px',
     fontWeight: 500,
-    fontSize: ".85rem"
+    fontSize: '.85rem',
   };
 
   const style = { ...defaults, ...props.theme.date };
@@ -59,11 +59,11 @@ export default function EventDate({ date, inline, layout }) {
   }
 
   const containerClassNames = joinClassNames([
-    "date-container",
-    inline ? "inline" : null,
-    layout
+    'date-container',
+    inline ? 'inline' : null,
+    layout,
   ]);
-  const dateClassNames = joinClassNames(["date", inline ? "inline" : null]);
+  const dateClassNames = joinClassNames(['date', inline ? 'inline' : null]);
 
   return (
     <Container className={containerClassNames} inline={inline}>
@@ -74,5 +74,6 @@ export default function EventDate({ date, inline, layout }) {
 
 EventDate.propTypes = {
   date: PropTypes.string.isRequired,
-  inline: PropTypes.bool
+  inline: PropTypes.bool,
+  layout: PropTypes.string.isRequired,
 };

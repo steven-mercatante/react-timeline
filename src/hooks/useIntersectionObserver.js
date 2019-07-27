@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import "intersection-observer";
+import { useEffect, useRef, useState } from 'react';
+import 'intersection-observer';
 
 export default function useIntersectionObserver(opts) {
   const [isVisible, setIsVisible] = useState(false);

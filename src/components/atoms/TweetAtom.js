@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 // TODO: show loading indicator while Tweet loads?
 
 const Loading = styled.div(props => {
   const defaults = {
-    width: "100%",
-    height: "200px",
-    backgroundColor: "#fff"
+    width: '100%',
+    height: '200px',
+    backgroundColor: '#fff',
   };
 
   const style = { ...defaults, ...props.theme.twitterAtomLoading };
@@ -18,9 +18,9 @@ const Loading = styled.div(props => {
 
 const Tweet = styled.div(props => {
   const defaults = {
-    ".twitter-tweet": {
-      width: "100% !important"
-    }
+    '.twitter-tweet': {
+      width: '100% !important',
+    },
   };
 
   const style = { ...defaults, ...props.theme.twitterAtom };
@@ -42,7 +42,7 @@ export default function TweetAtom({ id, tweetOpts }) {
       .then(_ => {
         setLoading(false);
       });
-  }, [id]);
+  }, [id, tweetOpts]);
 
   return (
     <React.Fragment>
@@ -54,5 +54,5 @@ export default function TweetAtom({ id, tweetOpts }) {
 
 TweetAtom.propTypes = {
   id: PropTypes.string.isRequired,
-  tweetOpts: PropTypes.object
+  tweetOpts: PropTypes.object,
 };
