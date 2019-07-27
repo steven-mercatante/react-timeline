@@ -75,4 +75,5 @@ export default function EventDate({ date, inline, layout }) {
 EventDate.propTypes = {
   date: PropTypes.string.isRequired,
   inline: PropTypes.bool,
+  layout: PropTypes.string.isRequired,
 };

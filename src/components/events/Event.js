@@ -75,9 +75,6 @@ const MarkerColumn = styled.div(props => {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
     alignItems: 'center',
     flexBasis: '40px',
     flexShrink: 0,
@@ -113,7 +110,7 @@ const CardColumn = styled.div(props => {
 });
 
 export default function Event({ date, marker, children, className }) {
-  const { kebabLayout, opts } = useContext(TimelineContext);
+  const { kebabLayout } = useContext(TimelineContext);
 
   let DateComponent;
   if (date) {
@@ -163,4 +160,5 @@ Event.propTypes = {
   ]).isRequired,
   marker: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
 };

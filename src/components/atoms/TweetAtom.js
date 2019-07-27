@@ -42,7 +42,7 @@ export default function TweetAtom({ id, tweetOpts }) {
       .then(_ => {
         setLoading(false);
       });
-  }, [id]);
+  }, [id, tweetOpts]);
 
   return (
     <React.Fragment>
