@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Markdown from "markdown-to-jsx";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Markdown from 'markdown-to-jsx';
 
 export default function TextAtom({ text }) {
   if (!text) {
@@ -11,5 +11,5 @@ export default function TextAtom({ text }) {
 }
 
 TextAtom.propTypes = {
-  text: PropTypes.string.isRequired
+  text: PropTypes.string.isRequired,
 };

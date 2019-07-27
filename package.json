@@ -6,6 +6,7 @@
   "module": "dist/index.esm.js",
   "scripts": {
     "lint": "eslint src",
+    "format": "prettier '**/*.js' --write",
     "test": "jest",
     "watch": "watch 'npm run build' ./src",
     "build": "rollup -c"
@@ -51,6 +52,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
     "jest": "^24.8.0",
+    "prettier": "^1.18.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "rollup": "^1.16.7",

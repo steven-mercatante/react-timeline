@@ -1,52 +1,52 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { ThemeProvider } from "styled-components";
-import themes from "../themes";
-import merge from "lodash.merge";
-import isPlainObject from "lodash.isplainobject";
-import kebabCase from "lodash.kebabcase";
-import TimelineContext from "../TimelineContext";
-import { joinClassNames } from "../utils/classNames";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { ThemeProvider } from 'styled-components';
+import themes from '../themes';
+import merge from 'lodash.merge';
+import isPlainObject from 'lodash.isplainobject';
+import kebabCase from 'lodash.kebabcase';
+import TimelineContext from '../TimelineContext';
+import { joinClassNames } from '../utils/classNames';
 
 const OverflowWrapper = styled.div`
   overflow: auto;
 `;
 
 const Container = styled.div(props => {
-  const trackWidth = props.theme.timelineTrack.width || "2px";
+  const trackWidth = props.theme.timelineTrack.width || '2px';
   const trackDefaults = {
-    position: "absolute",
+    position: 'absolute',
     left: `calc(50% - ${parseInt(trackWidth, 10) / 2}px)`,
     width: trackWidth,
-    height: "100%",
-    backgroundColor: "#ee18b6",
-    content: "''"
+    height: '100%',
+    backgroundColor: '#ee18b6',
+    content: "''",
   };
 
   const defaults = {
-    display: "flex",
-    flexDirection: "column",
-    position: "relative",
+    display: 'flex',
+    flexDirection: 'column',
+    position: 'relative',
     fontFamily: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
-    "*, *:before, *:after": {
-      boxSizing: "border-box"
+    '*, *:before, *:after': {
+      boxSizing: 'border-box',
     },
 
     // renders the vertical line
-    "::after": { ...trackDefaults, ...props.theme.timelineTrack },
+    '::after': { ...trackDefaults, ...props.theme.timelineTrack },
 
-    "&.inline-evts": {
-      "::after": { left: "130px" }
+    '&.inline-evts': {
+      '::after': { left: '130px' },
     },
 
-    "&.inline-evts-inline-date": {
-      "::after": { left: "29px" }
+    '&.inline-evts-inline-date': {
+      '::after': { left: '29px' },
     },
 
-    "@media (max-width: 768px)": {
-      "::after": { left: "29px !important" }
-    }
+    '@media (max-width: 768px)': {
+      '::after': { left: '29px !important' },
+    },
   };
 
   const style = { ...defaults, ...props.theme.timeline };
@@ -55,12 +55,12 @@ const Container = styled.div(props => {
 });
 
 const _opts = {
-  layout: "alt-evts" //  alt-evts, alt-evts-inline-date, inline-evts, inline-evts-inline-date
+  layout: 'alt-evts', //  alt-evts, alt-evts-inline-date, inline-evts, inline-evts-inline-date
 };
 
 export default function Timeline({ className, theme, opts, children }) {
   let finalTheme = themes.default;
-  if (typeof theme === "string" && themes[theme.toLowerCase()]) {
+  if (typeof theme === 'string' && themes[theme.toLowerCase()]) {
     finalTheme = themes[theme.toLowerCase()];
   }
   if (isPlainObject(theme)) {
@@ -73,11 +73,11 @@ export default function Timeline({ className, theme, opts, children }) {
   }
 
   const classNames = joinClassNames([
-    "timeline",
-    "overflow-wrapper",
-    className
+    'timeline',
+    'overflow-wrapper',
+    className,
   ]);
-  const inlineDate = finalOpts.layout.toLowerCase().includes("in-date");
+  const inlineDate = finalOpts.layout.toLowerCase().includes('in-date');
   const kebabLayout = kebabCase(finalOpts.layout);
 
   return (
@@ -88,7 +88,7 @@ export default function Timeline({ className, theme, opts, children }) {
             value={{
               opts: finalOpts,
               kebabLayout,
-              inlineDate
+              inlineDate,
             }}
           >
             {children}
@@ -103,5 +103,5 @@ Timeline.propTypes = {
   className: PropTypes.string,
   theme: PropTypes.object,
   opts: PropTypes.object,
-  children: PropTypes.element.isRequired
+  children: PropTypes.element.isRequired,
 };

@@ -1,16 +1,16 @@
-import React from "react";
-import { render, cleanup } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
-import TextEvent from "./TextEvent";
-import TimelineContext from "../../TimelineContext";
+import React from 'react';
+import { render, cleanup } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+import TextEvent from './TextEvent';
+import TimelineContext from '../../TimelineContext';
 
 afterEach(cleanup);
 
-test("TextEvent takes a custom class", () => {
-  const customClass = "my-custom-class";
+test('TextEvent takes a custom class', () => {
+  const customClass = 'my-custom-class';
 
   const { container } = render(
-    <TimelineContext.Provider value={{ kebabLayout: "test" }}>
+    <TimelineContext.Provider value={{ kebabLayout: 'test' }}>
       <TextEvent className={customClass} />
     </TimelineContext.Provider>
   );
@@ -18,14 +18,14 @@ test("TextEvent takes a custom class", () => {
   expect(container.firstChild).toHaveClass(customClass);
 });
 
-test("TextEvent renders text", () => {
+test('TextEvent renders text', () => {
   const { container } = render(
-    <TimelineContext.Provider value={{ kebabLayout: "test" }}>
+    <TimelineContext.Provider value={{ kebabLayout: 'test' }}>
       <TextEvent text="lorem ipsum" />
     </TimelineContext.Provider>
   );
 
-  const markdown = container.querySelector(".markdown");
+  const markdown = container.querySelector('.markdown');
 
   expect(markdown).toHaveTextContent(/^lorem ipsum$/);
 });

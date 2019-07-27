@@ -1,13 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const Image = styled.img(props => {
   const defaults = {
-    objectFit: "cover",
-    overflow: "hidden",
-    width: "100%",
-    maxHeight: "400px"
+    objectFit: 'cover',
+    overflow: 'hidden',
+    width: '100%',
+    maxHeight: '400px',
   };
 
   const style = { ...defaults, ...props.theme.imageAtom };
@@ -21,5 +21,5 @@ export default function ImageAtom({ src, alt }) {
 
 ImageAtom.propTypes = {
   src: PropTypes.string.isRequired,
-  alt: PropTypes.string
+  alt: PropTypes.string,
 };
