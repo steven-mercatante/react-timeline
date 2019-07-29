@@ -4,6 +4,7 @@ import Events from './components/Events';
 import Timeline from './components/Timeline';
 import themes from './themes';
 
+import ImageAtom from './components/atoms/ImageAtom';
 import TextAtom from './components/atoms/TextAtom';
 import TweetAtom from './components/atoms/TweetAtom';
 import YouTubeAtom from './components/atoms/YouTubeAtom';
@@ -23,6 +24,7 @@ export {
   EventMarker,
   Events,
   Card,
+  ImageAtom,
   ImageEvent,
   TextEvent,
   TextAtom,
