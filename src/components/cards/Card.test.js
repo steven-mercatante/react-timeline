@@ -17,3 +17,45 @@ test('Card includes custom class', () => {
 
   expect(container.firstChild).toHaveClass(customClassName);
 });
+
+test('Card renders a custom date component from a function', () => {
+  function renderCustomDate() {
+    return (
+      <div className="my-custom-date">
+        <h1>CUSTOM DATE</h1>
+      </div>
+    );
+  }
+
+  const { container } = render(
+    <TimelineContext.Provider value={{ kebabLayout: 'test' }}>
+      <Card date={renderCustomDate} />
+    </TimelineContext.Provider>
+  );
+
+  expect(container).toContainHTML(
+    '<div class="my-custom-date"><h1>CUSTOM DATE</h1></div>'
+  );
+});
+
+test('Card renders a custom date component from JSX', () => {
+  function CustomDate({ children }) {
+    return <div className="my-custom-date">{children}</div>;
+  }
+
+  const { container } = render(
+    <TimelineContext.Provider value={{ kebabLayout: 'test' }}>
+      <Card
+        date={
+          <CustomDate>
+            <h1>CUSTOM DATE</h1>
+          </CustomDate>
+        }
+      />
+    </TimelineContext.Provider>
+  );
+
+  expect(container).toContainHTML(
+    '<div class="my-custom-date"><h1>CUSTOM DATE</h1></div>'
+  );
+});
