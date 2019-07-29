@@ -1,21 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Event from './Event';
-import TextCard from '../cards/TextCard';
+import TextAtom from '../atoms/TextAtom';
 import { joinClassNames } from '../../utils/classNames';
 
 export default function TextEvent(props) {
-  const { date, text, marker, children, className } = props;
+  const { date, text, marker, children, className, card } = props;
 
   return (
     <Event
       className={joinClassNames(['text-event', className])}
       date={date}
       marker={marker}
+      card={card}
     >
-      <TextCard date={date} text={text}>
-        {children}
-      </TextCard>
+      <TextAtom text={text} />
+      {children}
     </Event>
   );
 }
@@ -30,4 +30,5 @@ TextEvent.propTypes = {
   marker: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   children: PropTypes.node,
   className: PropTypes.string,
+  card: PropTypes.func,
 };

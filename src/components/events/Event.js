@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import EventDate from '../EventDate';
 import EventMarker from '../EventMarker';
+import Card from './Card';
 import styled from 'styled-components';
 import TimelineContext from '../../TimelineContext';
 import { joinClassNames } from '../../utils/classNames';
@@ -110,7 +111,7 @@ const CardColumn = styled.div(props => {
   return style;
 });
 
-export default function Event({ date, marker, children, className }) {
+export default function Event({ date, marker, children, className, card }) {
   const { kebabLayout } = useContext(TimelineContext);
 
   let DateComponent;
@@ -136,6 +137,13 @@ export default function Event({ date, marker, children, className }) {
     MarkerComponent = <EventMarker layout={kebabLayout} />;
   }
 
+  let CardComponent;
+  if (typeof card === 'function') {
+    CardComponent = card({ date, children });
+  } else {
+    CardComponent = <Card date={date} children={children} />;
+  }
+
   const classNames = joinClassNames(['event', className, kebabLayout]);
 
   return (
@@ -148,7 +156,9 @@ export default function Event({ date, marker, children, className }) {
         {MarkerComponent}
       </MarkerColumn>
 
-      <CardColumn className={`card-col ${kebabLayout}`}>{children}</CardColumn>
+      <CardColumn className={`card-col ${kebabLayout}`}>
+        {CardComponent}
+      </CardColumn>
     </Container>
   );
 }
@@ -162,4 +172,5 @@ Event.propTypes = {
   marker: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  card: PropTypes.func,
 };

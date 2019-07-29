@@ -89,3 +89,19 @@ test('Event renders a custom date component from JSX', () => {
     '<div class="my-custom-date"><h1>CUSTOM DATE</h1></div>'
   );
 });
+
+test('Event renders a custom card component from a function', () => {
+  function CustomCard() {
+    return <div className="my-custom-card">CUSTOM CARD</div>;
+  }
+
+  const { container } = render(
+    <TimelineContext.Provider value={{ kebabLayout: 'test' }}>
+      <Event card={CustomCard} />
+    </TimelineContext.Provider>
+  );
+
+  expect(container).toContainHTML(
+    '<div class="my-custom-card">CUSTOM CARD</div>'
+  );
+});

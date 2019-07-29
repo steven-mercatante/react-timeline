@@ -24,7 +24,7 @@ const Container = styled.div(props => {
   return style;
 });
 
-export default function Card({ date, children, className }) {
+export default function Card({ date, children }) {
   const { kebabLayout } = useContext(TimelineContext);
 
   let DateComponent;
@@ -44,7 +44,7 @@ export default function Card({ date, children, className }) {
   }
 
   return (
-    <Container className={joinClassNames(['card', className, kebabLayout])}>
+    <Container className={joinClassNames(['card', kebabLayout])}>
       {DateComponent}
       {children}
     </Container>
@@ -58,5 +58,4 @@ Card.propTypes = {
     PropTypes.element,
   ]).isRequired,
   children: PropTypes.node.isRequired,
-  className: PropTypes.string,
 };

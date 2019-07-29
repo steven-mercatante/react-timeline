@@ -6,18 +6,6 @@ import TimelineContext from '../../TimelineContext';
 
 afterEach(cleanup);
 
-test('Card includes custom class', () => {
-  const customClassName = 'my-custom-class';
-
-  const { container } = render(
-    <TimelineContext.Provider value={{ kebabLayout: 'test' }}>
-      <Card className={customClassName} />
-    </TimelineContext.Provider>
-  );
-
-  expect(container.firstChild).toHaveClass(customClassName);
-});
-
 test('Card renders a custom date component from a function', () => {
   function renderCustomDate() {
     return (
