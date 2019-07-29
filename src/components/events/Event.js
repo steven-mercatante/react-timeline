@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import EventDate from '../EventDate';
 import EventMarker from '../EventMarker';
+import Card from './Card';
 import styled from 'styled-components';
 import TimelineContext from '../../TimelineContext';
 import { joinClassNames } from '../../utils/classNames';
@@ -136,6 +137,8 @@ export default function Event({ date, marker, children, className }) {
     MarkerComponent = <EventMarker layout={kebabLayout} />;
   }
 
+  let CardComponent = Card;
+
   const classNames = joinClassNames(['event', className, kebabLayout]);
 
   return (
@@ -148,7 +151,9 @@ export default function Event({ date, marker, children, className }) {
         {MarkerComponent}
       </MarkerColumn>
 
-      <CardColumn className={`card-col ${kebabLayout}`}>{children}</CardColumn>
+      <CardColumn className={`card-col ${kebabLayout}`}>
+        <CardComponent>{children}</CardComponent>
+      </CardColumn>
     </Container>
   );
 }

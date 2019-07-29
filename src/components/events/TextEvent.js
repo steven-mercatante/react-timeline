@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Event from './Event';
-import TextCard from '../cards/TextCard';
+import Card from './Card';
+import TextAtom from '../atoms/TextAtom';
 import { joinClassNames } from '../../utils/classNames';
 
 export default function TextEvent(props) {
@@ -12,10 +13,10 @@ export default function TextEvent(props) {
       className={joinClassNames(['text-event', className])}
       date={date}
       marker={marker}
+      card={Card}
     >
-      <TextCard date={date} text={text}>
-        {children}
-      </TextCard>
+      <TextAtom text={text} />
+      {children}
     </Event>
   );
 }

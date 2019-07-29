@@ -1,8 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import Event from './Event';
-import TweetCard from '../cards/TweetCard';
+import ConditionalMarkdown from '../atoms/ConditionalMarkdown';
+import TweetAtom from '../atoms/TweetAtom';
 import { joinClassNames } from '../../utils/classNames';
+
+const TweetText = styled(ConditionalMarkdown)(props => {
+  const defaults = {};
+
+  const style = { ...defaults, ...props.theme.tweetText };
+
+  return style;
+});
 
 export default function TweetEvent(props) {
   const { date, id, text, marker, tweetOpts, children, className } = props;
@@ -13,9 +23,9 @@ export default function TweetEvent(props) {
       date={date}
       marker={marker}
     >
-      <TweetCard date={date} id={id} text={text} tweetOpts={tweetOpts}>
-        {children}
-      </TweetCard>
+      <TweetText className="tweet-text">{text}</TweetText>
+      <TweetAtom id={id} tweetOpts={tweetOpts} />
+      {children}
     </Event>
   );
 }
