@@ -7,6 +7,7 @@ import isPlainObject from 'lodash.isplainobject';
 import kebabCase from 'lodash.kebabcase';
 import TimelineContext from '../TimelineContext';
 import { joinClassNames } from '../utils/classNames';
+import LAYOUTS from '../constants/layouts';
 
 const OverflowWrapper = styled.div`
   overflow: auto;
@@ -36,11 +37,11 @@ const Container = styled.div(props => {
     // renders the vertical line
     '::after': { ...trackDefaults, ...props.theme.timelineTrack },
 
-    '&.inline-evts': {
+    [`&.${LAYOUTS.INLINE_EVENTS}`]: {
       '::after': { left: '130px' },
     },
 
-    '&.inline-evts-inline-date': {
+    [`&.${LAYOUTS.INLINE_EVENTS_INLINE_DATE}`]: {
       '::after': { left: '29px' },
     },
 
@@ -55,7 +56,7 @@ const Container = styled.div(props => {
 });
 
 const _opts = {
-  layout: 'alt-evts', //  alt-evts, alt-evts-inline-date, inline-evts, inline-evts-inline-date
+  layout: LAYOUTS.ALTERNATE_EVENTS, // see LAYOUTS constant
 };
 
 export default function Timeline({ className, theme, opts, children }) {
