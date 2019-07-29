@@ -172,4 +172,5 @@ Event.propTypes = {
   marker: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  card: PropTypes.func,
 };
