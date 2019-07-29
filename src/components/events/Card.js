@@ -43,8 +43,6 @@ export default function Card({ date, children }) {
     }
   }
 
-  console.log('kebabLayout:', kebabLayout);
-
   return (
     <Container className={joinClassNames(['card', kebabLayout])}>
       {DateComponent}

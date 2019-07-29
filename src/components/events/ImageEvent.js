@@ -26,13 +26,24 @@ const ImageCredit = styled(ConditionalMarkdown)(props => {
 });
 
 export default function ImageEvent(props) {
-  const { date, src, alt, credit, text, marker, children, className } = props;
+  const {
+    date,
+    src,
+    alt,
+    credit,
+    text,
+    marker,
+    children,
+    className,
+    card,
+  } = props;
 
   return (
     <Event
       className={joinClassNames(['image-event', className])}
       date={date}
       marker={marker}
+      card={card}
     >
       <ImageText className="image-text">{text}</ImageText>
       <ImageAtom src={src} alt={alt} />
@@ -55,4 +66,5 @@ ImageEvent.propTypes = {
   marker: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   children: PropTypes.node,
   className: PropTypes.string,
+  card: PropTypes.func,
 };

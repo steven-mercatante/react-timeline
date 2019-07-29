@@ -15,13 +15,23 @@ const TweetText = styled(ConditionalMarkdown)(props => {
 });
 
 export default function TweetEvent(props) {
-  const { date, id, text, marker, tweetOpts, children, className } = props;
+  const {
+    date,
+    id,
+    text,
+    marker,
+    tweetOpts,
+    children,
+    className,
+    card,
+  } = props;
 
   return (
     <Event
       className={joinClassNames(['tweet-event', className])}
       date={date}
       marker={marker}
+      card={card}
     >
       <TweetText className="tweet-text">{text}</TweetText>
       <TweetAtom id={id} tweetOpts={tweetOpts} />
@@ -42,4 +52,5 @@ TweetEvent.propTypes = {
   tweetOpts: PropTypes.object,
   children: PropTypes.node,
   className: PropTypes.string,
+  card: PropTypes.func,
 };

@@ -15,13 +15,14 @@ const YouTubeText = styled(ConditionalMarkdown)(props => {
 });
 
 export default function YouTubeEvent(props) {
-  const { date, id, name, text, marker, children, className } = props;
+  const { date, id, name, text, marker, children, className, card } = props;
 
   return (
     <Event
       className={joinClassNames(['youtube-event', className])}
       date={date}
       marker={marker}
+      card={card}
     >
       <YouTubeText className="youtube-text">{text}</YouTubeText>
       <YouTubeAtom id={id} name={name} />
@@ -42,4 +43,5 @@ YouTubeEvent.propTypes = {
   marker: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   children: PropTypes.node,
   className: PropTypes.string,
+  card: PropTypes.func,
 };
