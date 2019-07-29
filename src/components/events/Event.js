@@ -5,6 +5,7 @@ import EventMarker from '../EventMarker';
 import styled from 'styled-components';
 import TimelineContext from '../../TimelineContext';
 import { joinClassNames } from '../../utils/classNames';
+import LAYOUTS from '../../constants/layouts';
 
 const Container = styled.div(props => {
   const defaults = {
@@ -20,7 +21,7 @@ const Container = styled.div(props => {
       flexDirection: 'row-reverse',
     },
 
-    '&.inline-evts, &.inline-evts-inline-date': {
+    [`&.${LAYOUTS.INLINE_EVENTS}, &.${LAYOUTS.INLINE_EVENTS_INLINE_DATE}`]: {
       flexDirection: 'row !important',
     },
 
@@ -42,19 +43,19 @@ const DateColumn = styled.div(props => {
     flexBasis: '50%',
     alignItems: 'flex-end',
 
-    '&.alt-evts': {
+    [`&.${LAYOUTS.ALTERNATE_EVENTS}`]: {
       [`${Container}:nth-child(even) &`]: {
         alignItems: 'flex-start',
       },
     },
 
-    '&.inline-evts': {
+    [`&.${LAYOUTS.INLINE_EVENTS}`]: {
       flexBasis: '100px',
       justifyContent: 'center',
       alignItems: 'flex-end',
     },
 
-    '&.inline-evts-inline-date': {
+    [`&.${LAYOUTS.INLINE_EVENTS_INLINE_DATE}`]: {
       flexBasis: 0,
       justifyContent: 'center',
       alignItems: 'flex-end',
@@ -93,7 +94,7 @@ const CardColumn = styled.div(props => {
     flexBasis: '50%',
     flexGrow: '1',
 
-    '&.alt-evts, &.alt-evts-inline-date': {
+    [`&.${LAYOUTS.ALTERNATE_EVENTS}, &.${LAYOUTS.ALTERNATE_EVENTS_INLINE_DATE}`]: {
       [`${Container}:nth-child(even) &`]: {
         alignItems: 'flex-end',
       },

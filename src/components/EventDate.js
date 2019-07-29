@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { joinClassNames } from '../utils/classNames';
+import LAYOUTS from '../constants/layouts';
 
 const Container = styled.div(props => {
   const defaults = {
@@ -12,7 +13,7 @@ const Container = styled.div(props => {
       display: 'none',
       marginBottom: '10px',
 
-      '&.alt-evts-inline-date, &.inline-evts-inline-date': {
+      [`&.${LAYOUTS.ALTERNATE_EVENTS}, &.${LAYOUTS.ALTERNATE_EVENTS_INLINE_DATE}`]: {
         display: 'initial',
       },
 
@@ -22,7 +23,7 @@ const Container = styled.div(props => {
     },
 
     '&:not(.inline)': {
-      '&.alt-evts-inline-date, &.inline-evts-inline-date': {
+      [`&.${LAYOUTS.ALTERNATE_EVENTS_INLINE_DATE}, &.${LAYOUTS.INLINE_EVENTS_INLINE_DATE}`]: {
         display: 'none',
       },
 
