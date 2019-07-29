@@ -152,7 +152,7 @@ export default function Event({ date, marker, children, className }) {
       </MarkerColumn>
 
       <CardColumn className={`card-col ${kebabLayout}`}>
-        <CardComponent>{children}</CardComponent>
+        <CardComponent date={date}>{children}</CardComponent>
       </CardColumn>
     </Container>
   );
