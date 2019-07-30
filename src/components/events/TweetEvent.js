@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Event from './Event';
-import ConditionalMarkdown from '../atoms/ConditionalMarkdown';
+import TextAtom from '../atoms/TextAtom';
 import TweetAtom from '../atoms/TweetAtom';
 import { joinClassNames } from '../../utils/classNames';
 
-const TweetText = styled(ConditionalMarkdown)(props => {
+const TweetText = styled(TextAtom)(props => {
   const defaults = {};
 
   const style = { ...defaults, ...props.theme.tweetText };
@@ -33,7 +33,7 @@ export default function TweetEvent(props) {
       marker={marker}
       card={card}
     >
-      <TweetText className="tweet-text">{text}</TweetText>
+      {text && <TweetText className="tweet-text" text={text} />}
       <TweetAtom id={id} tweetOpts={tweetOpts} />
       {children}
     </Event>

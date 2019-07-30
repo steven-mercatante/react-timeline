@@ -37,9 +37,7 @@ test('ImageEvent renders text', () => {
     </TimelineContext.Provider>
   );
 
-  const imageText = container.querySelector('.image-text');
-
-  expect(imageText).toHaveTextContent(/^check out my photo!$/);
+  expect(container).toHaveTextContent(/^check out my photo!$/);
 });
 
 test('ImageEvent renders credit', () => {
@@ -49,7 +47,5 @@ test('ImageEvent renders credit', () => {
     </TimelineContext.Provider>
   );
 
-  const credit = container.querySelector('.image-credit');
-
-  expect(credit).toHaveTextContent(/^photo by me$/);
+  expect(container).toHaveTextContent(/^photo by me$/);
 });

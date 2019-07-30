@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Event from '../events/Event';
-import ConditionalMarkdown from '../atoms/ConditionalMarkdown';
+import TextAtom from '../atoms/TextAtom';
 import ImageAtom from '../atoms/ImageAtom';
 import { joinClassNames } from '../../utils/classNames';
 
-const ImageText = styled(ConditionalMarkdown)(props => {
+const ImageText = styled(TextAtom)(props => {
   const defaults = {};
 
   const style = { ...defaults, ...props.theme.imageText };
@@ -14,7 +14,7 @@ const ImageText = styled(ConditionalMarkdown)(props => {
   return style;
 });
 
-const ImageCredit = styled(ConditionalMarkdown)(props => {
+const ImageCredit = styled(TextAtom)(props => {
   const defaults = {
     marginTop: '10px',
     fontSize: '0.85rem',
@@ -45,9 +45,9 @@ export default function ImageEvent(props) {
       marker={marker}
       card={card}
     >
-      <ImageText className="image-text">{text}</ImageText>
+      {text && <ImageText className="image-text" text={text} />}
       <ImageAtom src={src} alt={alt} />
-      {credit && <ImageCredit className="image-credit">{credit}</ImageCredit>}
+      {credit && <ImageCredit className="image-credit" text={credit} />}
       {children}
     </Event>
   );

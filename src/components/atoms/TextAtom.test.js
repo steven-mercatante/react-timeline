@@ -16,9 +16,3 @@ test('TextAtom renders markdown', () => {
 
   expect(container).toContainHTML('<strong>hello</strong> <em>world</em>');
 });
-
-test(`TextAtom renders null when you don't provide text`, () => {
-  const { container } = render(<TextAtom />);
-
-  expect(container).toBeEmpty();
-});
