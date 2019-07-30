@@ -1,4 +1,5 @@
 import Button from './components/Button';
+import UrlButton from './components/UrlButton';
 import Events from './components/Events';
 import Timeline from './components/Timeline';
 import themes from './themes';
@@ -21,6 +22,7 @@ export default Timeline;
 
 export {
   Button,
+  UrlButton,
   Event,
   EventDate,
   Marker,
