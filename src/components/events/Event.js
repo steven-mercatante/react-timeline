@@ -67,7 +67,7 @@ const DateColumn = styled.div(props => {
     },
   };
 
-  const style = { ...defaults, ...props.theme.eventDateColumn };
+  const style = { ...defaults, ...props.theme.dateColumn };
 
   return style;
 });
@@ -82,7 +82,7 @@ const MarkerColumn = styled.div(props => {
     flexShrink: 0,
   };
 
-  const style = { ...defaults, ...props.theme.MarkerColumn };
+  const style = { ...defaults, ...props.theme.markerColumn };
 
   return style;
 });
@@ -106,7 +106,7 @@ const CardColumn = styled.div(props => {
     },
   };
 
-  const style = { ...defaults, ...props.theme.eventCardColumn };
+  const style = { ...defaults, ...props.theme.cardColumn };
 
   return style;
 });
