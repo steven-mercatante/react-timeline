@@ -16,7 +16,7 @@ test('Event renders a custom marker from a function', () => {
   }
 
   const { container } = render(
-    <TimelineContext.Provider value={{ kebabLayout: 'test' }}>
+    <TimelineContext.Provider value={{ layout: 'test' }}>
       <Event marker={CustomMarker} />
     </TimelineContext.Provider>
   );
@@ -36,7 +36,7 @@ test('Event renders a custom date component from a function', () => {
   }
 
   const { container } = render(
-    <TimelineContext.Provider value={{ kebabLayout: 'test' }}>
+    <TimelineContext.Provider value={{ layout: 'test' }}>
       <Event date={renderCustomDate} />
     </TimelineContext.Provider>
   );
@@ -52,7 +52,7 @@ test('Event renders a custom card component from a function', () => {
   }
 
   const { container } = render(
-    <TimelineContext.Provider value={{ kebabLayout: 'test' }}>
+    <TimelineContext.Provider value={{ layout: 'test' }}>
       <Event card={CustomCard} />
     </TimelineContext.Provider>
   );

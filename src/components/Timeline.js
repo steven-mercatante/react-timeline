@@ -4,7 +4,6 @@ import styled, { ThemeProvider } from 'styled-components';
 import themes from '../themes';
 import merge from 'lodash.merge';
 import isPlainObject from 'lodash.isplainobject';
-import kebabCase from 'lodash.kebabcase';
 import TimelineContext from '../TimelineContext';
 import { joinClassNames } from '../utils/classNames';
 import LAYOUTS from '../constants/layouts';
@@ -79,16 +78,15 @@ export default function Timeline({ className, theme, opts, children }) {
     className,
   ]);
   const inlineDate = finalOpts.layout.toLowerCase().includes('in-date');
-  const kebabLayout = kebabCase(finalOpts.layout);
 
   return (
     <ThemeProvider theme={finalTheme}>
       <OverflowWrapper className={classNames}>
-        <Container className={`timeline container ${kebabLayout}`}>
+        <Container className={`timeline container ${finalOpts.layout}`}>
           <TimelineContext.Provider
             value={{
               opts: finalOpts,
-              kebabLayout,
+              layout: finalOpts.layout,
               inlineDate,
             }}
           >
