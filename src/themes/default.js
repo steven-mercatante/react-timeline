@@ -13,7 +13,7 @@ export default {
   youTubeText: {},
   events: {},
   event: {},
-  eventDateColumn: {},
-  eventMarkerColumn: {},
+  dateColumn: {},
+  markerColumn: {},
   eventCardColumn: {},
 };

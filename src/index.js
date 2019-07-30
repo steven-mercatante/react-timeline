@@ -1,5 +1,4 @@
 import Button from './components/Button';
-import EventMarker from './components/EventMarker';
 import Events from './components/Events';
 import Timeline from './components/Timeline';
 import themes from './themes';
@@ -15,13 +14,16 @@ import ImageEvent from './components/events/ImageEvent';
 import TextEvent from './components/events/TextEvent';
 import TweetEvent from './components/events/TweetEvent';
 import YouTubeEvent from './components/events/YouTubeEvent';
+import EventDate from './components/events/EventDate';
+import Marker from './components/events/Marker';
 
 export default Timeline;
 
 export {
   Button,
   Event,
-  EventMarker,
+  EventDate,
+  Marker,
   Events,
   Card,
   ImageAtom,

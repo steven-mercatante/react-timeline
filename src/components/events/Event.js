@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import EventDate from '../EventDate';
-import EventMarker from '../EventMarker';
+import EventDate from './EventDate';
+import Marker from './Marker';
 import Card from './Card';
 import styled from 'styled-components';
 import TimelineContext from '../../TimelineContext';
@@ -67,7 +67,7 @@ const DateColumn = styled.div(props => {
     },
   };
 
-  const style = { ...defaults, ...props.theme.eventDateColumn };
+  const style = { ...defaults, ...props.theme.dateColumn };
 
   return style;
 });
@@ -82,7 +82,7 @@ const MarkerColumn = styled.div(props => {
     flexShrink: 0,
   };
 
-  const style = { ...defaults, ...props.theme.eventMarkerColumn };
+  const style = { ...defaults, ...props.theme.markerColumn };
 
   return style;
 });
@@ -106,7 +106,7 @@ const CardColumn = styled.div(props => {
     },
   };
 
-  const style = { ...defaults, ...props.theme.eventCardColumn };
+  const style = { ...defaults, ...props.theme.cardColumn };
 
   return style;
 });
@@ -127,7 +127,7 @@ export default function Event({ date, marker, children, className, card }) {
   if (typeof marker === 'function') {
     MarkerComponent = marker({ layout: kebabLayout });
   } else {
-    MarkerComponent = <EventMarker layout={kebabLayout} />;
+    MarkerComponent = <Marker layout={kebabLayout} />;
   }
 
   let CardComponent;
