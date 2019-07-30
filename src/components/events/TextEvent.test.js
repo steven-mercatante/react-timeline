@@ -11,7 +11,7 @@ test('TextEvent takes a custom class', () => {
 
   const { container } = render(
     <TimelineContext.Provider value={{ kebabLayout: 'test' }}>
-      <TextEvent className={customClass} />
+      <TextEvent className={customClass} text="test" />
     </TimelineContext.Provider>
   );
 

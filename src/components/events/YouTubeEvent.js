@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Event from './Event';
-import ConditionalMarkdown from '../atoms/ConditionalMarkdown';
+import TextAtom from '../atoms/TextAtom';
 import YouTubeAtom from '../atoms/YouTubeAtom';
 import { joinClassNames } from '../../utils/classNames';
 
-const YouTubeText = styled(ConditionalMarkdown)(props => {
+const YouTubeText = styled(TextAtom)(props => {
   const defaults = {};
 
   const style = { ...defaults, ...props.theme.youTubeText };
@@ -24,7 +24,7 @@ export default function YouTubeEvent(props) {
       marker={marker}
       card={card}
     >
-      <YouTubeText className="youtube-text">{text}</YouTubeText>
+      {text && <YouTubeText className="youtube-text" text={text} />}
       <YouTubeAtom id={id} name={name} />
       {children}
     </Event>

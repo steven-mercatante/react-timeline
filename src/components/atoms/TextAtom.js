@@ -1,13 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Markdown from 'markdown-to-jsx';
+import styled from 'styled-components';
+
+const Container = styled.div(props => {
+  const defaults = {
+    marginBottom: '10px',
+  };
+
+  const style = { ...defaults, ...props.theme.textAtom };
+
+  return style;
+});
 
 export default function TextAtom({ text }) {
-  if (!text) {
-    return null;
-  }
-
-  return <Markdown className="markdown">{text}</Markdown>;
+  return (
+    <Container>
+      <Markdown className="markdown">{text}</Markdown>
+    </Container>
+  );
 }
 
 TextAtom.propTypes = {

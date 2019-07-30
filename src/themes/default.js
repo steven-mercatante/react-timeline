@@ -6,7 +6,6 @@ export default {
   button: {},
   dateContainer: {},
   date: {},
-  conditionalMarkdown: {},
   imageAtom: {},
   imageCredit: {},
   imageText: {},
