@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from './Button';
 
 export default function UrlButton({ href, target, children }) {
@@ -13,3 +14,9 @@ export default function UrlButton({ href, target, children }) {
     </Button>
   );
 }
+
+UrlButton.propTypes = {
+  href: PropTypes.string.isRequired,
+  target: PropTypes.string,
+  children: PropTypes.string.isRequired,
+};
