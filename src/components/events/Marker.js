@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Marker = styled.span(props => {
+const Container = styled.span(props => {
   const defaults = {
     position: 'relative',
     backgroundColor: '#fff',
@@ -17,6 +17,6 @@ const Marker = styled.span(props => {
   return style;
 });
 
-export default function EventMarker() {
-  return <Marker className="marker" />;
+export default function Marker() {
+  return <Container className="marker" />;
 }

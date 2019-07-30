@@ -14,6 +14,6 @@ export default {
   events: {},
   event: {},
   eventDateColumn: {},
-  eventMarkerColumn: {},
+  markerColumn: {},
   eventCardColumn: {},
 };

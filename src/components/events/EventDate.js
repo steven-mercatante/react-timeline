@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { joinClassNames } from '../utils/classNames';
-import LAYOUTS from '../constants/layouts';
+import { joinClassNames } from '../../utils/classNames';
+import LAYOUTS from '../../constants/layouts';
 
 const Container = styled.div(props => {
   const defaults = {

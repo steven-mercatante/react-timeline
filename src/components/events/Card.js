@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import EventDate from '../EventDate';
+import EventDate from './EventDate';
 import styled from 'styled-components';
 import TimelineContext from '../../TimelineContext';
 import { joinClassNames } from '../../utils/classNames';
