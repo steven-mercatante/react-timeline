@@ -10,7 +10,7 @@ test('TextEvent takes a custom class', () => {
   const customClass = 'my-custom-class';
 
   const { container } = render(
-    <TimelineContext.Provider value={{ kebabLayout: 'test' }}>
+    <TimelineContext.Provider value={{ layout: 'test' }}>
       <TextEvent className={customClass} text="test" />
     </TimelineContext.Provider>
   );
@@ -20,7 +20,7 @@ test('TextEvent takes a custom class', () => {
 
 test('TextEvent renders text', () => {
   const { container } = render(
-    <TimelineContext.Provider value={{ kebabLayout: 'test' }}>
+    <TimelineContext.Provider value={{ layout: 'test' }}>
       <TextEvent text="lorem ipsum" />
     </TimelineContext.Provider>
   );

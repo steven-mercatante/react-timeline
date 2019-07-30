@@ -25,26 +25,24 @@ const Container = styled.div(props => {
 });
 
 export default function Card({ date, children }) {
-  const { kebabLayout } = useContext(TimelineContext);
+  const { layout } = useContext(TimelineContext);
 
   let DateComponent;
   if (date) {
     if (typeof date === 'string') {
-      DateComponent = (
-        <EventDate date={date} layout={kebabLayout} inline={true} />
-      );
+      DateComponent = <EventDate date={date} layout={layout} inline={true} />;
     } else if (typeof date === 'function') {
-      DateComponent = date({ layout: kebabLayout, inline: true });
+      DateComponent = date({ layout, inline: true });
     } else {
       DateComponent = React.cloneElement(date, {
-        layout: kebabLayout,
+        layout,
         inline: true,
       });
     }
   }
 
   return (
-    <Container className={joinClassNames(['card', kebabLayout])}>
+    <Container className={joinClassNames(['card', layout])}>
       {DateComponent}
       {children}
     </Container>

@@ -112,22 +112,22 @@ const CardColumn = styled.div(props => {
 });
 
 export default function Event({ date, marker, children, className, card }) {
-  const { kebabLayout } = useContext(TimelineContext);
+  const { layout } = useContext(TimelineContext);
 
   let DateComponent;
   if (date) {
     if (typeof date === 'function') {
-      DateComponent = date({ layout: kebabLayout });
+      DateComponent = date({ layout });
     } else {
-      DateComponent = <EventDate date={date} layout={kebabLayout} />;
+      DateComponent = <EventDate date={date} layout={layout} />;
     }
   }
 
   let MarkerComponent;
   if (typeof marker === 'function') {
-    MarkerComponent = marker({ layout: kebabLayout });
+    MarkerComponent = marker({ layout });
   } else {
-    MarkerComponent = <Marker layout={kebabLayout} />;
+    MarkerComponent = <Marker layout={layout} />;
   }
 
   let CardComponent;
@@ -137,21 +137,17 @@ export default function Event({ date, marker, children, className, card }) {
     CardComponent = <Card date={date} children={children} />;
   }
 
-  const classNames = joinClassNames(['event', className, kebabLayout]);
+  const classNames = joinClassNames(['event', className, layout]);
 
   return (
     <Container className={classNames}>
-      <DateColumn className={`date-col ${kebabLayout}`}>
-        {DateComponent}
-      </DateColumn>
+      <DateColumn className={`date-col ${layout}`}>{DateComponent}</DateColumn>
 
-      <MarkerColumn className={`marker-col ${kebabLayout}`}>
+      <MarkerColumn className={`marker-col ${layout}`}>
         {MarkerComponent}
       </MarkerColumn>
 
-      <CardColumn className={`card-col ${kebabLayout}`}>
-        {CardComponent}
-      </CardColumn>
+      <CardColumn className={`card-col ${layout}`}>{CardComponent}</CardColumn>
     </Container>
   );
 }

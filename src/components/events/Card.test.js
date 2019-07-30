@@ -16,7 +16,7 @@ test('Card renders a custom date component from a function', () => {
   }
 
   const { container } = render(
-    <TimelineContext.Provider value={{ kebabLayout: 'test' }}>
+    <TimelineContext.Provider value={{ layout: 'test' }}>
       <Card date={renderCustomDate} />
     </TimelineContext.Provider>
   );
@@ -32,7 +32,7 @@ test('Card renders a custom date component from JSX', () => {
   }
 
   const { container } = render(
-    <TimelineContext.Provider value={{ kebabLayout: 'test' }}>
+    <TimelineContext.Provider value={{ layout: 'test' }}>
       <Card
         date={
           <CustomDate>

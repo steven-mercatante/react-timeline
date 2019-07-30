@@ -10,7 +10,7 @@ test('ImageEvent takes a custom class', () => {
   const customClass = 'my-custom-class';
 
   const { container } = render(
-    <TimelineContext.Provider value={{ kebabLayout: 'test' }}>
+    <TimelineContext.Provider value={{ layout: 'test' }}>
       <ImageEvent className={customClass} />
     </TimelineContext.Provider>
   );
@@ -20,7 +20,7 @@ test('ImageEvent takes a custom class', () => {
 
 test('ImageEvent renders an image tag', () => {
   const { container } = render(
-    <TimelineContext.Provider value={{ kebabLayout: 'test' }}>
+    <TimelineContext.Provider value={{ layout: 'test' }}>
       <ImageEvent src="test.png" alt="test image" />
     </TimelineContext.Provider>
   );
@@ -32,7 +32,7 @@ test('ImageEvent renders an image tag', () => {
 
 test('ImageEvent renders text', () => {
   const { container } = render(
-    <TimelineContext.Provider value={{ kebabLayout: 'test' }}>
+    <TimelineContext.Provider value={{ layout: 'test' }}>
       <ImageEvent text="check out my photo!" />
     </TimelineContext.Provider>
   );
@@ -42,7 +42,7 @@ test('ImageEvent renders text', () => {
 
 test('ImageEvent renders credit', () => {
   const { container } = render(
-    <TimelineContext.Provider value={{ kebabLayout: 'test' }}>
+    <TimelineContext.Provider value={{ layout: 'test' }}>
       <ImageEvent credit="photo by me" />
     </TimelineContext.Provider>
   );
