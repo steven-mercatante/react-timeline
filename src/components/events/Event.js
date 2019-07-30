@@ -116,12 +116,10 @@ export default function Event({ date, marker, children, className, card }) {
 
   let DateComponent;
   if (date) {
-    if (typeof date === 'string') {
-      DateComponent = <EventDate date={date} layout={kebabLayout} />;
-    } else if (typeof date === 'function') {
+    if (typeof date === 'function') {
       DateComponent = date({ layout: kebabLayout });
     } else {
-      DateComponent = React.cloneElement(date, { layout: kebabLayout });
+      DateComponent = <EventDate date={date} layout={kebabLayout} />;
     }
   }
 
