@@ -116,24 +116,17 @@ export default function Event({ date, marker, children, className, card }) {
 
   let DateComponent;
   if (date) {
-    if (typeof date === 'string') {
-      DateComponent = <EventDate date={date} layout={kebabLayout} />;
-    } else if (typeof date === 'function') {
+    if (typeof date === 'function') {
       DateComponent = date({ layout: kebabLayout });
     } else {
-      DateComponent = React.cloneElement(date, { layout: kebabLayout });
+      DateComponent = <EventDate date={date} layout={kebabLayout} />;
     }
   }
 
   let MarkerComponent;
-  if (marker && typeof marker === 'function') {
-    // user passed a function
+  if (typeof marker === 'function') {
     MarkerComponent = marker({ layout: kebabLayout });
-  } else if (marker) {
-    // user passed JSX
-    MarkerComponent = React.cloneElement(marker, { layout: kebabLayout });
   } else {
-    // user didn't pass anything - use default marker component
     MarkerComponent = <EventMarker layout={kebabLayout} />;
   }
 
@@ -169,7 +162,7 @@ Event.propTypes = {
     PropTypes.func,
     PropTypes.element,
   ]).isRequired,
-  marker: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  marker: PropTypes.func,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   card: PropTypes.func,
