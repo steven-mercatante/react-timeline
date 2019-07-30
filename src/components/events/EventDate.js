@@ -13,7 +13,7 @@ const Container = styled.div(props => {
       display: 'none',
       marginBottom: '10px',
 
-      [`&.${LAYOUTS.ALTERNATE_EVENTS_INLINE_DATE}, &.${LAYOUTS.ALTERNATE_EVENTS_INLINE_DATE}`]: {
+      [`&.${LAYOUTS.ALTERNATE_EVENTS_INLINE_DATE}, &.${LAYOUTS.INLINE_EVENTS_INLINE_DATE}`]: {
         display: 'initial',
       },
 
