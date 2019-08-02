@@ -4,9 +4,7 @@ import Markdown from 'markdown-to-jsx';
 import styled from 'styled-components';
 
 const Container = styled.div(props => {
-  const defaults = {
-    marginBottom: '10px',
-  };
+  const defaults = {};
 
   const style = { ...defaults, ...props.theme.textAtom };
 
