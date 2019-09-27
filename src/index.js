@@ -18,22 +18,21 @@ import YouTubeEvent from './components/events/YouTubeEvent';
 import EventDate from './components/events/EventDate';
 import Marker from './components/events/Marker';
 
-export default Timeline;
-
 export {
   Button,
-  UrlButton,
+  Card,
   Event,
   EventDate,
-  Marker,
   Events,
-  Card,
   ImageAtom,
   ImageEvent,
-  TextEvent,
+  Marker,
   TextAtom,
+  TextEvent,
+  Timeline,
   TweetAtom,
   TweetEvent,
+  UrlButton,
   YouTubeAtom,
   YouTubeEvent,
   themes,
