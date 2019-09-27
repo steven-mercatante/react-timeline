@@ -73,7 +73,7 @@ export default function Timeline({ className, theme, opts, children }) {
   }
 
   const classNames = joinClassNames([
-    'timeline',
+    'timeline-outer',
     'overflow-wrapper',
     className,
   ]);
@@ -82,7 +82,7 @@ export default function Timeline({ className, theme, opts, children }) {
   return (
     <ThemeProvider theme={finalTheme}>
       <OverflowWrapper className={classNames}>
-        <Container className={`timeline container ${finalOpts.layout}`}>
+        <Container className={`timeline-inner container ${finalOpts.layout}`}>
           <TimelineContext.Provider
             value={{
               opts: finalOpts,
