@@ -1,5 +1,8 @@
 # React Timeline
 
+[![npm badge](https://img.shields.io/npm/v/@merc/react-timeline)](https://www.npmjs.com/package/@merc/react-timeline)
+[![travis badge](https://img.shields.io/travis/steven-mercatante/react-timeline)](https://travis-ci.org/steven-mercatante/react-timeline)
+
 The easiest way to add responsive and customizable timelines to React apps.
 
 ## Installation
