@@ -1,10 +1,18 @@
 ---
 id: doc1
-title: Latin-ish
-sidebar_label: Example Page
+title: Getting Started
+sidebar_label: Getting Started
 ---
 
-Check the [documentation](https://docusaurus.io) for how to use Docusaurus.
+React Timeline is the easiest way to add responsive and customizable timelines to React apps.
+
+Check out the [demos](https://docusaurus.io).
+
+## Quick Start
+
+```bash
+npm install @merc/react-timeline
+```
 
 ## Lorem
 

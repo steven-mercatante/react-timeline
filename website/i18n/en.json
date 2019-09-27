@@ -3,11 +3,11 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "A website for testing",
+    "tagline": "A library for building responsive and customizable timelines",
     "docs": {
       "doc1": {
-        "title": "Latin-ish",
-        "sidebar_label": "Example Page"
+        "title": "Getting Started",
+        "sidebar_label": "Getting Started"
       },
       "doc2": {
         "title": "document number 2"
@@ -25,11 +25,10 @@
     "links": {
       "Docs": "Docs",
       "API": "API",
-      "Help": "Help",
-      "Blog": "Blog"
+      "Help": "Help"
     },
     "categories": {
-      "Docusaurus": "Docusaurus",
+      "Getting Started": "Getting Started",
       "First Category": "First Category",
       "Second Category": "Second Category"
     }
