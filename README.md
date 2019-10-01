@@ -18,10 +18,11 @@ yarn add @merc/react-timeline
 ```jsx
 // App.js
 import Timeline, {
+  Events,
   UrlButton,
   ImageEvent,
   TextEvent,
-  TwitterEvent,
+  TweetEvent,
   YouTubeEvent,
 } from '@merc/react-timeline';
 
