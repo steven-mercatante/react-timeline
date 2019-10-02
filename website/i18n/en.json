@@ -5,21 +5,24 @@
     "previous": "Previous",
     "tagline": "A library for building responsive and customizable timelines",
     "docs": {
-      "doc1": {
-        "title": "Getting Started",
-        "sidebar_label": "Getting Started"
-      },
-      "doc2": {
-        "title": "document number 2"
-      },
-      "doc3": {
-        "title": "This is document number 3"
+      "events": {
+        "title": "Events"
       },
       "doc4": {
         "title": "Other Document"
       },
       "doc5": {
         "title": "Fifth Document"
+      },
+      "general": {
+        "title": "General"
+      },
+      "getting-started": {
+        "title": "Getting Started",
+        "sidebar_label": "Getting Started"
+      },
+      "theming": {
+        "title": "Theming"
       }
     },
     "links": {
@@ -29,8 +32,9 @@
     },
     "categories": {
       "Getting Started": "Getting Started",
-      "First Category": "First Category",
-      "Second Category": "Second Category"
+      "Events": "Events",
+      "Theming": "Theming",
+      "First Category": "First Category"
     }
   },
   "pages-strings": {

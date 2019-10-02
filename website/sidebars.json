@@ -1,8 +1,8 @@
 {
   "docs": {
-    "Getting Started": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
+    "Getting Started": ["getting-started"],
+    "Events": ["events"],
+    "Theming": ["theming"]
   },
   "docs-other": {
     "First Category": ["doc4", "doc5"]
