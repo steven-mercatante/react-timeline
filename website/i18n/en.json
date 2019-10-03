@@ -5,11 +5,17 @@
     "previous": "Previous",
     "tagline": "A library for building responsive and customizable timelines",
     "docs": {
+      "api/event": {
+        "title": "Event"
+      },
+      "api/text-atom": {
+        "title": "TextAtom"
+      },
+      "atoms": {
+        "title": "Atoms"
+      },
       "events": {
         "title": "Events"
-      },
-      "doc4": {
-        "title": "Other Document"
       },
       "doc5": {
         "title": "Fifth Document"
@@ -32,9 +38,10 @@
     },
     "categories": {
       "Getting Started": "Getting Started",
+      "General": "General",
+      "Customization": "Customization",
       "Events": "Events",
-      "Theming": "Theming",
-      "First Category": "First Category"
+      "Atoms": "Atoms"
     }
   },
   "pages-strings": {

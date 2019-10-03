@@ -1,10 +1,11 @@
 {
   "docs": {
     "Getting Started": ["getting-started"],
-    "Events": ["events"],
-    "Theming": ["theming"]
+    "General": ["events", "atoms"],
+    "Customization": ["theming", "timeline-markers"]
   },
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
+  "api": {
+    "Events": ["api/event"],
+    "Atoms": ["api/text-atom"]
   }
 }
