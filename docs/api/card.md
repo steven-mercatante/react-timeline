@@ -3,7 +3,7 @@ id: card
 title: Card
 ---
 
-A `Card` is rendered by an `Event`, and is a container of `Atoms`.
+A `Card` is rendered by an [`Event`](event), and is a container of [`Atoms`](/docs/atoms).
 
 Events have a default `Card`, but you can provide your own by passing a `card` prop to an `Event`.
 
