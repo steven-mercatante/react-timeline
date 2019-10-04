@@ -17,12 +17,12 @@ yarn add @merc/react-timeline
 
 ```jsx
 // App.js
-import Timeline, {
+import {
+  Timeline,
   Events,
   UrlButton,
   ImageEvent,
   TextEvent,
-  TweetEvent,
   YouTubeEvent,
 } from '@merc/react-timeline';
 
@@ -31,18 +31,6 @@ export default function App() {
     <Timeline>
       <Events>
         <TextEvent date="1/1/19" text={`**Markdown** is *supported*`} />
-
-        <TweetEvent
-          date="6/11/18"
-          id="1006202911632904197"
-          text="I put together a resource for folks learning GraphQL"
-        >
-          <div>
-            <UrlButton href="https://graphqlstack.com" target="_blank">
-              Check it out!
-            </UrlButton>
-          </div>
-        </TweetEvent>
 
         <ImageEvent
           date="4/13/70"
