@@ -5,6 +5,7 @@
     "Customization": ["theming", "timeline-markers"]
   },
   "api": {
+    "Timeline": ["api/timeline", "api/events"],
     "Events": [
       "api/event",
       "api/text-event",
