@@ -29,8 +29,7 @@
     "lodash.isplainobject": "^4.0.6",
     "lodash.merge": "^4.6.2",
     "markdown-to-jsx": "^6.10.2",
-    "prop-types": "^15.7.2",
-    "styled-components": "^4.4.0"
+    "prop-types": "^15.7.2"
   },
   "peerDependencies": {
     "react": ">= 16.*.*",
@@ -64,6 +63,7 @@
     "rollup-plugin-commonjs": "^10.0.1",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
+    "styled-components": "^4.4.0",
     "watch": "^1.0.2"
   },
   "files": [
