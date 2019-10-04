@@ -8,8 +8,23 @@
       "api/event": {
         "title": "Event"
       },
+      "api/image-atom": {
+        "title": "ImageAtom"
+      },
+      "api/image-event": {
+        "title": "ImageEvent"
+      },
       "api/text-atom": {
         "title": "TextAtom"
+      },
+      "api/text-event": {
+        "title": "TextEvent"
+      },
+      "api/youtube-atom": {
+        "title": "YouTubeAtom"
+      },
+      "api/youtube-event": {
+        "title": "YouTubeEvent"
       },
       "atoms": {
         "title": "Atoms"

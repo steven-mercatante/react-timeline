@@ -5,7 +5,12 @@
     "Customization": ["theming", "timeline-markers"]
   },
   "api": {
-    "Events": ["api/event"],
-    "Atoms": ["api/text-atom"]
+    "Events": [
+      "api/event",
+      "api/text-event",
+      "api/image-event",
+      "api/youtube-event"
+    ],
+    "Atoms": ["api/text-atom", "api/image-atom", "api/youtube-atom"]
   }
 }
