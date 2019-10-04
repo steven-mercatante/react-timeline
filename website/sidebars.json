@@ -10,8 +10,12 @@
       "api/event",
       "api/text-event",
       "api/image-event",
-      "api/youtube-event"
+      "api/youtube-event",
+      "api/card",
+      "api/event-date",
+      "api/marker"
     ],
-    "Atoms": ["api/text-atom", "api/image-atom", "api/youtube-atom"]
+    "Atoms": ["api/text-atom", "api/image-atom", "api/youtube-atom"],
+    "Controls": ["api/button", "api/url-button"]
   }
 }

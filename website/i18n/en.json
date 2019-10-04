@@ -5,6 +5,12 @@
     "previous": "Previous",
     "tagline": "A library for building responsive and customizable timelines",
     "docs": {
+      "api/button": {
+        "title": "Button"
+      },
+      "api/card": {
+        "title": "Card"
+      },
       "api/event": {
         "title": "Event"
       },
@@ -17,6 +23,9 @@
       "api/image-event": {
         "title": "ImageEvent"
       },
+      "api/marker": {
+        "title": "Marker"
+      },
       "api/text-atom": {
         "title": "TextAtom"
       },
@@ -25,6 +34,9 @@
       },
       "api/timeline": {
         "title": "Timeline"
+      },
+      "api/url-button": {
+        "title": "UrlButton"
       },
       "api/youtube-atom": {
         "title": "YouTubeAtom"
@@ -63,7 +75,8 @@
       "Customization": "Customization",
       "Timeline": "Timeline",
       "Events": "Events",
-      "Atoms": "Atoms"
+      "Atoms": "Atoms",
+      "Controls": "Controls"
     }
   },
   "pages-strings": {
