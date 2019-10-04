@@ -1,0 +1,62 @@
+---
+id: events
+title: Events
+---
+
+Events are the lifeblood of a timeline. They represent anything from when you were born, to the first moon landing, to a conference talk you delivered, or literally anything else that occurred at some point in time.
+
+Events are usually displayed in chronological order, either ascending or descending, but you can order them however you like.
+
+## Anatomy of an Event
+
+An event is composed of a few pieces:
+
+- its outer container, responsible for its positioning and flexbox layout. This container uses `display: flex` and contains three columns:
+  - `DateColumn` renders the event's date. It usually expects a string (e.g `10/03/19`), but can also be passed a custom [`EventDate`](/docs/api/event-date) instance.
+  - `MarkerColumn` renders the event's marker (the dot or other shape on the vertical timeline). You can pass a custom [`EventMarker`](/docs/api/event-marker) to events.
+  - `CardColumn` renders the event's [`card`](/docs/api/card). A card is responsible for rendering one or more [atoms](atoms), which make up the contents of an event.
+
+Here's what an event's structure looks like in code. Note that this is a reduced example.
+
+```
+<Container>
+  <DateColumn>{DateComponent}</DateColumn>
+
+  <MarkerColumn>{MarkerComponent}</MarkerColumn>
+
+  <CardColumn>{CardComponent}</CardColumn>
+</Container>
+```
+
+**INCLUDE IMAGE OF EVENT AND MARK UP THE DIFFERENT PIECES**
+
+## The Base Event
+
+The base `Event` component is the foundational building block of higher-level events. You can render these directly, but it's often easier to compose a higher-level event.
+
+## Higher-level Events
+
+React Timeline provides numerous higher-level event types. These include:
+
+- [`TextEvent`](/docs/api/text-event) for simply displaying text
+- [`ImageEvent`](/docs/api/image-event) for displaying images
+- [`YouTubeEvent`](/docs/api/youtube-event) for embedding YouTube videos (great for when you want to highlight a talk you gave!)
+
+## The Events wrapper
+
+All `Event` instances must be children of an [`Events`](/docs/api/events) component. A [`Timeline`](/docs/api/timeline) should contain only one child `Events` component.
+
+```
+<Timeline>
+  <Events>
+    <TextEvent
+      date="07/20/1969"
+      text="Apollo 11 lands on the moon! What a historic event!"
+    />
+    <TextEvent
+      date="10/02/19"
+      text="I had pizza for lunch, also very historic!"
+    />
+  </Events>
+</Timeline>
+```

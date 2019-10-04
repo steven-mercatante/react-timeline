@@ -11,6 +11,9 @@
       "api/card": {
         "title": "Card"
       },
+      "api/event-date": {
+        "title": "EventDate"
+      },
       "api/event": {
         "title": "Event"
       },
@@ -49,12 +52,6 @@
       },
       "events": {
         "title": "Events"
-      },
-      "doc5": {
-        "title": "Fifth Document"
-      },
-      "general": {
-        "title": "General"
       },
       "getting-started": {
         "title": "Getting Started",
