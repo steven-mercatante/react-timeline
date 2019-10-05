@@ -3,8 +3,6 @@ import { Timeline, Events, TextEvent } from '../../index';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
-export default { title: 'TextEvent' };
-
 storiesOf('TextEvent', module)
   .addDecorator(withKnobs)
   .add('default', () => (
