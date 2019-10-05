@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
 storiesOf('TextEvent', module)
+  .addParameters({ component: TextEvent })
   .addDecorator(withKnobs)
   .add('default', () => (
     <Timeline>
