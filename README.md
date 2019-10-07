@@ -5,6 +5,8 @@
 
 The easiest way to add responsive and customizable timelines to React apps.
 
+**View the [documentation](https://react-timeline.com/) for detailed instructions and demos.**
+
 ## Installation
 
 ```bash
