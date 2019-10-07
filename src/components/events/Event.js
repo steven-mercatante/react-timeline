@@ -43,6 +43,7 @@ const DateColumn = styled.div(props => {
     justifyContent: 'center',
     flexBasis: '50%',
     alignItems: 'flex-end',
+    zIndex: 300,
 
     [`&.${LAYOUTS.ALTERNATE_EVENTS}`]: {
       [`${Container}:nth-child(even) &`]: {
@@ -80,6 +81,7 @@ const MarkerColumn = styled.div(props => {
     alignItems: 'center',
     flexBasis: '40px',
     flexShrink: 0,
+    zIndex: 200,
   };
 
   const style = { ...defaults, ...props.theme.markerColumn };
