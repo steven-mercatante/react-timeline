@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Container = styled.span(props => {
@@ -20,3 +21,7 @@ const Container = styled.span(props => {
 export default function Marker() {
   return <Container className="marker" />;
 }
+
+Marker.propTypes = {
+  children: PropTypes.node,
+};
