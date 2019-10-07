@@ -10,7 +10,8 @@
     "test": "jest",
     "watch": "watch 'npm run build' ./src",
     "build": "rollup -c",
-    "storybook": "start-storybook -p 9009 -s public"
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -c .storybook -o .out"
   },
   "repository": {
     "type": "git",
