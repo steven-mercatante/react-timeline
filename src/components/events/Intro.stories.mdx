@@ -11,9 +11,9 @@ Events are usually displayed in chronological order, either ascending or descend
 An event is composed of a few pieces:
 
 - its outer container, responsible for its positioning and flexbox layout. This container uses `display: flex` and contains three columns:
-  - `DateColumn` renders the event's date. It usually expects a string (e.g `10/03/19`), but can also be passed a custom [`EventDate`](/docs/api/event-date) instance.
-  - `MarkerColumn` renders the event's marker (the dot or other shape on the vertical timeline). You can pass a custom [`EventMarker`](/docs/api/event-marker) to events.
-  - `CardColumn` renders the event's [`card`](/docs/api/card). A card is responsible for rendering one or more [atoms](atoms), which make up the contents of an event.
+  - `DateColumn` renders the event's date. It usually expects a string (e.g `10/03/19`), but can also be passed a custom `EventDate` instance.
+  - `MarkerColumn` renders the event's marker (the dot or other shape on the vertical timeline). You can pass a custom `EventMarker` to events.
+  - `CardColumn` renders the event's `card`. A card is responsible for rendering one or more atoms, which make up the contents of an event.
 
 Here's what an event's structure looks like in code. Note that this is a reduced example.
 
@@ -27,8 +27,6 @@ Here's what an event's structure looks like in code. Note that this is a reduced
 </Container>
 ```
 
-**INCLUDE IMAGE OF EVENT AND MARK UP THE DIFFERENT PIECES**
-
 ## The Base Event
 
 The base `Event` component is the foundational building block of higher-level events. You can render these directly, but it's often easier to compose a higher-level event.
@@ -37,13 +35,13 @@ The base `Event` component is the foundational building block of higher-level ev
 
 React Timeline provides numerous higher-level event types. These include:
 
-- [`TextEvent`](/docs/api/text-event) for simply displaying text
-- [`ImageEvent`](/docs/api/image-event) for displaying images
-- [`YouTubeEvent`](/docs/api/youtube-event) for embedding YouTube videos (great for when you want to highlight a talk you gave!)
+- `TextEvent` for simply displaying text
+- `ImageEvent` for displaying images
+- `YouTubeEvent` for embedding YouTube videos (great for when you want to highlight a talk you gave!)
 
 ## The Events wrapper
 
-All `Event` instances must be children of an [`Events`](/docs/api/events) component. A [`Timeline`](/docs/api/timeline) should contain only one child `Events` component.
+All `Event` instances must be children of an `Events` component. A `Timeline` should contain only one child `Events` component.
 
 ```jsx
 <Timeline>
