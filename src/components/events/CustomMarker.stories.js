@@ -1,8 +1,8 @@
 import React from 'react';
-import { Timeline, Events, TextEvent, Marker } from '../../index';
+import { Timeline, Events, TextEvent } from '../../index';
 
 export default {
-  title: 'Events/Custom Marker',
+  title: 'Events/Customization/Marker',
 };
 
 export const customMarker = () => {
