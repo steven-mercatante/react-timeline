@@ -1,14 +1,44 @@
+import {Timeline, Events, TextEvent, ImageEvent, YouTubeEvent, UrlButton} from './index';
+
 <Meta title="Intro" />
 
 # Introduction
 
 React Timeline is the easiest way to add responsive and customizable timelines to React apps.
 
-## Quick Start
+## Installation
 
 ```bash
 npm install @merc/react-timeline
 ```
+
+## Demo
+<Timeline>
+  <Events>
+  <TextEvent date="1/1/19" text="**Markdown** is *supported*" />
+
+  <ImageEvent
+      date="4/13/19"
+      text="You can embed images..."
+      src="https://res.cloudinary.com/dovoq8jou/image/upload/v1564772194/jellyfish.jpg"
+      alt="jellyfish swimming"
+      credit="Photo by [@tavi004](https://unsplash.com/@tavi004)"
+  >
+      <div>
+          <UrlButton href="https://unsplash.com/search/photos/undersea">
+              View more undersea photos
+          </UrlButton>
+      </div>
+  </ImageEvent>
+
+  <YouTubeEvent
+    date="6/18/19"
+    id="6UnRHtwHGSE"
+    name="General Tso's Chicken recipe"
+    text="... and YouTube videos!"
+  />
+  </Events>
+</Timeline>
 
 ```jsx
 import React from 'react'
@@ -29,6 +59,7 @@ export default function App() {
 
         <ImageEvent
           date="4/13/19"
+          text="You can embed images..."
           src="https://res.cloudinary.com/dovoq8jou/image/upload/v1564772194/jellyfish.jpg"
           alt="jellyfish swimming"
           credit="Photo by [@tavi004](https://unsplash.com/@tavi004)"
@@ -44,10 +75,11 @@ export default function App() {
           date="6/18/19"
           id="6UnRHtwHGSE"
           name="General Tso's Chicken recipe"
-          text="I learned how to make General Tso's Chicken!"
+          text="... and YouTube videos!"
         />
       </Events>
     </Timeline>
   );
 }
 ```
+
