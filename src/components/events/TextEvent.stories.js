@@ -1,14 +1,23 @@
 import React from 'react';
 import { Timeline, Events, TextEvent } from '../../index';
-import { storiesOf } from '@storybook/react';
 
-storiesOf('Events/TextEvent', module)
-  .addParameters({ component: TextEvent })
+export default {
+  title: 'Events|TextEvent',
+  component: TextEvent,
+};
 
-  .add('default', () => (
-    <Timeline>
-      <Events>
-        <TextEvent date="10/03/19" text="Hello world" />
-      </Events>
-    </Timeline>
-  ));
+export const withSimpleText = () => (
+  <Timeline>
+    <Events>
+      <TextEvent date="10/03/19" text="Hello world" />
+    </Events>
+  </Timeline>
+);
+
+export const withMarkdown = () => (
+  <Timeline>
+    <Events>
+      <TextEvent date="10/03/19" text="**Hello** _world_" />
+    </Events>
+  </Timeline>
+);

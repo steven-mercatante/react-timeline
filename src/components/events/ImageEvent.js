@@ -25,6 +25,9 @@ const ImageCredit = styled(TextAtom)(props => {
   return style;
 });
 
+/**
+ * Renders a responsive image as an event.
+ */
 export default function ImageEvent(props) {
   const {
     date,
