@@ -3,7 +3,7 @@ import { Timeline, Events, TextEvent } from '../index';
 import layouts from '../constants/layouts';
 import { storiesOf } from '@storybook/react';
 
-const stories = storiesOf('Timeline|Layouts', module).addParameters({
+const stories = storiesOf('Timeline/Layouts', module).addParameters({
   component: Timeline,
 });
 

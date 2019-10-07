@@ -2,7 +2,7 @@ import React from 'react';
 import { Timeline, Events, TextEvent } from '../../index';
 
 export default {
-  title: 'Events|TextEvent',
+  title: 'Events/TextEvent',
   component: TextEvent,
 };
 
