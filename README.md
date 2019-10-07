@@ -16,7 +16,7 @@ yarn add @merc/react-timeline
 ## Usage
 
 ```jsx
-// App.js
+import React from 'react';
 import {
   Timeline,
   Events,
@@ -30,10 +30,11 @@ export default function App() {
   return (
     <Timeline>
       <Events>
-        <TextEvent date="1/1/19" text={`**Markdown** is *supported*`} />
+        <TextEvent date="1/1/19" text="**Markdown** is *supported*" />
 
         <ImageEvent
-          date="4/13/70"
+          date="4/13/19"
+          text="You can embed images..."
           src="https://res.cloudinary.com/dovoq8jou/image/upload/v1564772194/jellyfish.jpg"
           alt="jellyfish swimming"
           credit="Photo by [@tavi004](https://unsplash.com/@tavi004)"
@@ -49,7 +50,7 @@ export default function App() {
           date="6/18/19"
           id="6UnRHtwHGSE"
           name="General Tso's Chicken recipe"
-          text="I learned how to make General Tso's Chicken!"
+          text="... and YouTube videos!"
         />
       </Events>
     </Timeline>

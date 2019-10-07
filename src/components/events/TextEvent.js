@@ -4,6 +4,9 @@ import Event from './Event';
 import TextAtom from '../atoms/TextAtom';
 import { joinClassNames } from '../../utils/classNames';
 
+/**
+ * Use `TextEvent` to render text (including markdown) as an event.
+ */
 export default function TextEvent(props) {
   const { date, text, marker, children, className, card } = props;
 
