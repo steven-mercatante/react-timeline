@@ -1,4 +1,5 @@
 import {Timeline, Events, TextEvent, ImageEvent, YouTubeEvent, UrlButton} from './index';
+import StorybookTimelineContainer from './StorybookTimelineContainer'
 
 <Meta title="Intro" />
 
@@ -13,6 +14,7 @@ npm install @merc/react-timeline
 ```
 
 ## Demo
+<StorybookTimelineContainer>
 <Timeline>
   <Events>
   <TextEvent date="1/1/19" text="**Markdown** is *supported*" />
@@ -39,6 +41,7 @@ npm install @merc/react-timeline
   />
   </Events>
 </Timeline>
+</StorybookTimelineContainer>
 
 ```jsx
 import React from 'react'
