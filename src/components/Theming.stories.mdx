@@ -1,0 +1,52 @@
+<Meta title="Timeline/Theming/Intro" />
+
+# Theming
+
+You can control the look and feel of almost every component in `React Timeline` via theming. 
+
+## Via Regular CSS
+Even though this library uses [Styled Components](https://www.styled-components.com/), each component also uses a semantic class name that you can use when writing stylesheets.
+
+## Via the Theme Object
+`Timeline` accepts a `theme` prop, which takes an `object` that defines the styles of the timeline and everything within it. Components have default styles that can be overwritten by this object. For example, the below `theme` would make the timeline's track (the vertical line on which events are placed) red:
+
+```jsx
+const theme = {
+  timelineTrack: {
+    backgroundColor: 'red'
+  }
+}
+
+<Timeline theme={theme}>
+  <Events>
+    ...
+  </Events>
+</Timeline>
+```
+
+### Creating a Theme
+Each component exposes a unique key that you can use to overwrite its style. In the above example, the timeline track uses `timelineTrack` as its key.
+
+Below is a list of all the supported keys:
+
+| Component | Description | Theme Key |
+| --------- | ----------- | --------- |
+| `Timeline` | The root timeline | `timeline` |
+| `Timeline` track | The vertical line that events are attached to | `timelineTrack` |
+| `Events` container | Contains all events | `events` |
+| `Event`: container | `Event`'s outermost container | `event` |
+| `Event`: card column | The flexbox column that contains the event's card | `cardColumn` |
+| `Card` | The event's card component | `card` |
+| `Event`: date column | The flexbox column that contains the event's date | `dateColumn` |
+| `EventDate`: container | `EventDate`'s outermost container | `dateContainer` |
+| `EventDate` | `EventDate`'s `Date` element | `date` |
+| `Event`: marker column | The flexbox column that contains the event's marker | `markerColumn` |
+| `Marker` | The dot, or similar shape, that denotes an event on the timeline track | `marker` |
+| `ImageEvent`: text | The text above the rendered image | `imageText` |
+| `ImageEvent`: credit |The text below the rendered image | `imageCredit`|
+| `YouTubeEvent`: text | The text above the rendered YouTube embed | `youTubeText` |
+| `ImageAtom` | `ImageAtom`'s `image` element | `imageAtom` |
+| `TextAtom` | `TextAtom`'s outermost container | `textAtom` |
+| `YouTubeAtom` | `YouTubeAtom`s outermost container | `youTubeAtom` |
+| `Button` | The `button` element | `button` |
+| `UrlButton` | The `button` element | `button` |
