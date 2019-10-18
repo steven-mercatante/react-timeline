@@ -3,6 +3,7 @@ import UrlButton from './components/UrlButton';
 import Events from './components/Events';
 import Timeline from './components/Timeline';
 import themes from './themes';
+import LAYOUTS from './constants/layouts';
 
 import ImageAtom from './components/atoms/ImageAtom';
 import TextAtom from './components/atoms/TextAtom';
@@ -36,4 +37,5 @@ export {
   YouTubeAtom,
   YouTubeEvent,
   themes,
+  LAYOUTS,
 };
