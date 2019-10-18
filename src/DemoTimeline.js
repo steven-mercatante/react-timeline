@@ -54,10 +54,12 @@ export default function DemoTimeline() {
   const [layout, setLayout] = useState('alt-evts');
 
   const layouts = {
-    'alt-evts': 'Alternate Events',
-    'alt-evts-inline-date': 'Alternate Events, Inline Date',
-    'inline-evts': 'Inline Events',
-    'inline-evts-inline-date': 'Inline Events, Inline Date',
+    'alt-evts': 'Alternate Events (alt-evts)',
+    'alt-evts-inline-date':
+      'Alternate Events, Inline Date (alt-evts-inline-date)',
+    'inline-evts': 'Inline Events (inline-evts)',
+    'inline-evts-inline-date':
+      'Inline Events, Inline Date (inline-evts-inline-date)',
   };
 
   function ControlPanel({ layouts }) {
