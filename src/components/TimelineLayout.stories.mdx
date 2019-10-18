@@ -1,0 +1,21 @@
+import DemoTimeline from '../DemoTimeline'
+
+<Meta title="Timeline/Layouts/Intro" />
+
+# Layouts
+
+React Timeline supports various responsive layouts by way of a the `layout` setting passed via an `opts` object.
+
+The available layouts are:
+
+| Name | Key | Description |
+| ---- | --- | ----------- |
+| Alternate Events | `alt-evts` | The default layout. Events will alternate to the left and right of the vertical timeline track. |
+| Alternate Events, Inline Date | `alt-evts-inline-date` | Similar to `alt-evts`, but the event date is rendered within the event card instead of across from it on the vertical timeline track. |
+| Inline Events | `inline-evts` | Renders all events in the same column. |
+| Inline Events, Inline Date | `inline-evts-inline-date` | Similar to `inline-evts`, but the event date is rendered within the event card instead of across from it on the vertical timeline track. |
+
+# Example
+Use the layout control panel below to test the various layouts.
+
+<DemoTimeline />
