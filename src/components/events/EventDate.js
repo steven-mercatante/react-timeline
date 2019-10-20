@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { joinClassNames } from '../../utils/classNames';
 import LAYOUTS from '../../constants/layouts';
 
-const Container = styled.div(props => {
+const DateContainer = styled.div(props => {
   const defaults = {
     position: 'relative',
     zIndex: 100,
@@ -41,12 +41,6 @@ const Container = styled.div(props => {
 const Date = styled.time(props => {
   const defaults = {
     position: 'relative',
-    backgroundColor: '#ec24b5',
-    padding: '4px',
-    color: '#fff',
-    borderRadius: '4px',
-    fontWeight: 500,
-    fontSize: '.85rem',
   };
 
   const style = { ...defaults, ...props.theme.date };
@@ -67,9 +61,9 @@ export default function EventDate({ date, inline, layout }) {
   const dateClassNames = joinClassNames(['date', inline ? 'inline' : null]);
 
   return (
-    <Container className={containerClassNames} inline={inline}>
+    <DateContainer className={containerClassNames} inline={inline}>
       <Date className={dateClassNames}>{date}</Date>
-    </Container>
+    </DateContainer>
   );
 }
 

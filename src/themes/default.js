@@ -1,4 +1,4 @@
-const theme = {
+const defaultTheme = {
   timeline: {
     fontSize: '1rem',
     fontFamily: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
@@ -41,8 +41,14 @@ const theme = {
     textDecoration: 'none',
     cursor: 'pointer',
   },
-  dateContainer: {},
-  date: {},
+  date: {
+    backgroundColor: '#ec24b5',
+    padding: '4px',
+    color: '#fff',
+    borderRadius: '4px',
+    fontWeight: 500,
+    fontSize: '.85rem',
+  },
   imageAtom: {
     objectFit: 'cover',
     overflow: 'hidden',
@@ -56,4 +62,4 @@ const theme = {
   event: { marginBottom: '20px' },
 };
 
-export default theme;
+export default defaultTheme;

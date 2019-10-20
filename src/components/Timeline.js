@@ -48,7 +48,8 @@ const _opts = {
 };
 
 export default function Timeline({ className, theme, opts, children }) {
-  let finalTheme = themes.default;
+  let finalTheme = themes.roli;
+  console.log('finalTheme::::', finalTheme);
   // if (typeof theme === 'string' && themes[theme.toLowerCase()]) {
   //   finalTheme = themes[theme.toLowerCase()];
   // }
