@@ -48,15 +48,6 @@ const _opts = {
 };
 
 export default function Timeline({ className, theme, opts, children }) {
-  let finalTheme = themes.roli;
-  console.log('finalTheme::::', finalTheme);
-  // if (typeof theme === 'string' && themes[theme.toLowerCase()]) {
-  //   finalTheme = themes[theme.toLowerCase()];
-  // }
-  // if (isPlainObject(theme)) {
-  //   finalTheme = merge(finalTheme, theme);
-  // }
-
   let finalOpts = _opts;
   if (opts && isPlainObject(opts)) {
     finalOpts = merge(finalOpts, opts);
@@ -70,7 +61,7 @@ export default function Timeline({ className, theme, opts, children }) {
   const inlineDate = finalOpts.layout.toLowerCase().includes('in-date');
 
   return (
-    <ThemeProvider theme={finalTheme}>
+    <ThemeProvider theme={theme || themes.default}>
       <OverflowWrapper className={classNames}>
         <Container className={`timeline container ${finalOpts.layout}`}>
           <TimelineContext.Provider
