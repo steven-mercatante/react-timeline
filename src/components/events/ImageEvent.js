@@ -7,22 +7,11 @@ import ImageAtom from '../atoms/ImageAtom';
 import { joinClassNames } from '../../utils/classNames';
 
 const ImageText = styled(TextAtom)(props => {
-  const defaults = {};
-
-  const style = { ...defaults, ...props.theme.imageText };
-
-  return style;
+  return props.theme.imageText;
 });
 
 const ImageCredit = styled(TextAtom)(props => {
-  const defaults = {
-    marginTop: '10px',
-    fontSize: '0.85rem',
-  };
-
-  const style = { ...defaults, ...props.theme.imageCredit };
-
-  return style;
+  return props.theme.imageCredit;
 });
 
 /**

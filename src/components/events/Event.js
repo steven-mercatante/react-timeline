@@ -12,10 +12,9 @@ const Container = styled.div(props => {
   const defaults = {
     position: 'relative',
     display: 'flex',
-    marginBottom: '20px',
 
     ':nth-child(1)': {
-      marginTop: '20px',
+      marginTop: props.theme.event.marginBottom,
     },
 
     ':nth-child(even)': {
@@ -36,81 +35,63 @@ const Container = styled.div(props => {
   return style;
 });
 
-const DateColumn = styled.div(props => {
-  const defaults = {
-    display: 'flex',
-    flexDirection: 'column',
+const DateColumn = styled.div({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  flexBasis: '50%',
+  alignItems: 'flex-end',
+  zIndex: 300,
+
+  [`&.${LAYOUTS.ALTERNATE_EVENTS}`]: {
+    [`${Container}:nth-child(even) &`]: {
+      alignItems: 'flex-start',
+    },
+  },
+
+  [`&.${LAYOUTS.INLINE_EVENTS}`]: {
+    flexBasis: '100px',
     justifyContent: 'center',
-    flexBasis: '50%',
     alignItems: 'flex-end',
-    zIndex: 300,
+  },
 
-    [`&.${LAYOUTS.ALTERNATE_EVENTS}`]: {
-      [`${Container}:nth-child(even) &`]: {
-        alignItems: 'flex-start',
-      },
-    },
-
-    [`&.${LAYOUTS.INLINE_EVENTS}`]: {
-      flexBasis: '100px',
-      justifyContent: 'center',
-      alignItems: 'flex-end',
-    },
-
-    [`&.${LAYOUTS.INLINE_EVENTS_INLINE_DATE}`]: {
-      flexBasis: 0,
-      justifyContent: 'center',
-      alignItems: 'flex-end',
-    },
-
-    '@media (max-width: 768px)': {
-      flexBasis: '0 !important',
-    },
-  };
-
-  const style = { ...defaults, ...props.theme.dateColumn };
-
-  return style;
-});
-
-const MarkerColumn = styled.div(props => {
-  const defaults = {
-    display: 'flex',
-    flexDirection: 'column',
+  [`&.${LAYOUTS.INLINE_EVENTS_INLINE_DATE}`]: {
+    flexBasis: 0,
     justifyContent: 'center',
-    alignItems: 'center',
-    flexBasis: '40px',
-    flexShrink: 0,
-    zIndex: 200,
-  };
+    alignItems: 'flex-end',
+  },
 
-  const style = { ...defaults, ...props.theme.markerColumn };
-
-  return style;
+  '@media (max-width: 768px)': {
+    flexBasis: '0 !important',
+  },
 });
 
-const CardColumn = styled.div(props => {
-  const defaults = {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    flexBasis: '50%',
-    flexGrow: '1',
+const MarkerColumn = styled.div({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexBasis: '40px',
+  flexShrink: 0,
+  zIndex: 200,
+});
 
-    [`&.${LAYOUTS.ALTERNATE_EVENTS}, &.${LAYOUTS.ALTERNATE_EVENTS_INLINE_DATE}`]: {
-      [`${Container}:nth-child(even) &`]: {
-        alignItems: 'flex-end',
-      },
+const CardColumn = styled.div({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'flex-start',
+  flexBasis: '50%',
+  flexGrow: '1',
+
+  [`&.${LAYOUTS.ALTERNATE_EVENTS}, &.${LAYOUTS.ALTERNATE_EVENTS_INLINE_DATE}`]: {
+    [`${Container}:nth-child(even) &`]: {
+      alignItems: 'flex-end',
     },
+  },
 
-    '@media (max-width: 768px)': {
-      alignItems: 'flex-start !important',
-    },
-  };
-
-  const style = { ...defaults, ...props.theme.cardColumn };
-
-  return style;
+  '@media (max-width: 768px)': {
+    alignItems: 'flex-start !important',
+  },
 });
 
 export default function Event({ date, marker, children, className, card }) {

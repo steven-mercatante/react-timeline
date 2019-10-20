@@ -10,13 +10,6 @@ const Container = styled.div(props => {
     position: 'relative',
     display: 'flex',
     flexDirection: 'column',
-    borderRadius: '4px',
-    backgroundColor: '#fff',
-    color: '#333',
-    padding: '10px',
-    boxShadow: '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)',
-    width: '100%',
-    maxWidth: '560px',
   };
 
   const style = { ...defaults, ...props.theme.card };

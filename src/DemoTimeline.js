@@ -10,6 +10,7 @@ import {
   ImageEvent,
   YouTubeEvent,
   UrlButton,
+  themes,
 } from './index';
 
 const DemoContainer = styled.div`
@@ -62,7 +63,7 @@ export default function DemoTimeline() {
       'Inline Events, Inline Date (inline-evts-inline-date)',
   };
 
-  function ControlPanel({ layouts }) {
+  function ControlPanel({ layouts, themes }) {
     return (
       <ControlPanelContainer>
         <p className="header">Select Layout</p>
@@ -96,7 +97,7 @@ export default function DemoTimeline() {
 
   return (
     <React.Fragment>
-      <ControlPanel layouts={layouts} />
+      {/* <ControlPanel layouts={layouts} theme={themes.roli} /> */}
       <DemoContainer>
         <Timeline opts={opts}>
           <Events>
