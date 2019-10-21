@@ -1,12 +1,20 @@
 import React from 'react';
-import { Timeline, Events, TextEvent, ImageEvent, UrlButton } from '../index';
+import {
+  Timeline,
+  Events,
+  TextEvent,
+  ImageEvent,
+  UrlButton,
+  themes,
+} from '../index';
+import merge from 'lodash.merge';
 
 export default {
   title: 'Timeline/Theming',
 };
 
 export const example = () => {
-  const theme = {
+  const theme = merge({}, themes.default, {
     timeline: {
       backgroundColor: '#070D24',
     },
@@ -30,7 +38,7 @@ export const example = () => {
     button: {
       backgroundColor: '#000958',
     },
-  };
+  });
 
   return (
     <Timeline theme={theme}>

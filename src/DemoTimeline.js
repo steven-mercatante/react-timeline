@@ -51,9 +51,12 @@ const ControlPanelContainer = styled.div`
   }
 `;
 
-export default function DemoTimeline() {
+export default function DemoTimeline({
+  showLayoutCP = false,
+  showThemeCP = false,
+}) {
   const [layout, setLayout] = useState('alt-evts');
-  const [themeName, setThemeName] = useState('roli');
+  const [themeName, setThemeName] = useState('default');
 
   const layouts = {
     'alt-evts': 'Alternate Events (alt-evts)',
@@ -122,8 +125,10 @@ export default function DemoTimeline() {
 
   return (
     <React.Fragment>
-      <LayoutControlPanel layouts={layouts} />
-      <ThemeControlPanel themeNames={Object.keys(themes)} />
+      {showLayoutCP === true && <LayoutControlPanel layouts={layouts} />}
+      {showThemeCP === true && (
+        <ThemeControlPanel themeNames={Object.keys(themes)} />
+      )}
       <DemoContainer>
         <Timeline opts={opts} theme={themes[themeName]}>
           <Events>
