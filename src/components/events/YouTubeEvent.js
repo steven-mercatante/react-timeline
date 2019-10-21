@@ -2,17 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Event from './Event';
-import TextAtom from '../atoms/TextAtom';
+import MarkdownAtom from '../atoms/MarkdownAtom';
 import YouTubeAtom from '../atoms/YouTubeAtom';
 import { joinClassNames } from '../../utils/classNames';
 
-const YouTubeText = styled(TextAtom)(props => {
-  const defaults = {};
+const YouTubeTextContainer = styled.div(props => props.theme.youTubeText);
 
-  const style = { ...defaults, ...props.theme.youTubeText };
-
-  return style;
-});
+function YouTubeText({ text }) {
+  return (
+    <YouTubeTextContainer>
+      <MarkdownAtom text={text} />
+    </YouTubeTextContainer>
+  );
+}
 
 export default function YouTubeEvent(props) {
   const { date, id, name, text, marker, children, className, card } = props;
