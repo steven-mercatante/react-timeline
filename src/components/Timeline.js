@@ -13,28 +13,17 @@ const OverflowWrapper = styled.div`
 `;
 
 const Container = styled.div(props => {
-  const trackWidth = props.theme.timelineTrack.width || '2px';
-  const trackDefaults = {
-    position: 'absolute',
-    left: `calc(50% - ${parseInt(trackWidth, 10) / 2}px)`,
-    width: trackWidth,
-    height: '100%',
-    backgroundColor: '#ee18b6',
-    content: "''",
-  };
-
   const defaults = {
     display: 'flex',
     flexDirection: 'column',
     position: 'relative',
-    fontFamily: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+
     '*, *:before, *:after': {
       boxSizing: 'border-box',
     },
 
     // renders the vertical line
-    '::after': { ...trackDefaults, ...props.theme.timelineTrack },
+    '::after': { ...props.theme.timelineTrack },
 
     [`&.${LAYOUTS.INLINE_EVENTS}`]: {
       '::after': { left: '130px' },
@@ -59,14 +48,6 @@ const _opts = {
 };
 
 export default function Timeline({ className, theme, opts, children }) {
-  let finalTheme = themes.default;
-  if (typeof theme === 'string' && themes[theme.toLowerCase()]) {
-    finalTheme = themes[theme.toLowerCase()];
-  }
-  if (isPlainObject(theme)) {
-    finalTheme = merge(finalTheme, theme);
-  }
-
   let finalOpts = _opts;
   if (opts && isPlainObject(opts)) {
     finalOpts = merge(finalOpts, opts);
@@ -80,7 +61,7 @@ export default function Timeline({ className, theme, opts, children }) {
   const inlineDate = finalOpts.layout.toLowerCase().includes('in-date');
 
   return (
-    <ThemeProvider theme={finalTheme}>
+    <ThemeProvider theme={theme || themes.default}>
       <OverflowWrapper className={classNames}>
         <Container className={`timeline container ${finalOpts.layout}`}>
           <TimelineContext.Provider

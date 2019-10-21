@@ -6,6 +6,7 @@ import themes from './themes';
 import LAYOUTS from './constants/layouts';
 
 import ImageAtom from './components/atoms/ImageAtom';
+import MarkdownAtom from './components/atoms/MarkdownAtom';
 import TextAtom from './components/atoms/TextAtom';
 import TweetAtom from './components/atoms/TweetAtom';
 import YouTubeAtom from './components/atoms/YouTubeAtom';
@@ -28,6 +29,7 @@ export {
   ImageAtom,
   ImageEvent,
   Marker,
+  MarkdownAtom,
   TextAtom,
   TextEvent,
   Timeline,

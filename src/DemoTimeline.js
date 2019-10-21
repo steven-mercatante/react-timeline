@@ -10,6 +10,7 @@ import {
   ImageEvent,
   YouTubeEvent,
   UrlButton,
+  themes,
 } from './index';
 
 const DemoContainer = styled.div`
@@ -26,7 +27,7 @@ const ControlPanelContainer = styled.div`
     Arial, sans-serif;
 
   .header {
-    margin: 0;
+    margin: 0 0 10px 0;
     font-weight: 600;
   }
 
@@ -50,8 +51,12 @@ const ControlPanelContainer = styled.div`
   }
 `;
 
-export default function DemoTimeline() {
+export default function DemoTimeline({
+  showLayoutCP = false,
+  showThemeCP = false,
+}) {
   const [layout, setLayout] = useState('alt-evts');
+  const [themeName, setThemeName] = useState('default');
 
   const layouts = {
     'alt-evts': 'Alternate Events (alt-evts)',
@@ -62,7 +67,7 @@ export default function DemoTimeline() {
       'Inline Events, Inline Date (inline-evts-inline-date)',
   };
 
-  function ControlPanel({ layouts }) {
+  function LayoutControlPanel({ layouts }) {
     return (
       <ControlPanelContainer>
         <p className="header">Select Layout</p>
@@ -90,15 +95,42 @@ export default function DemoTimeline() {
     );
   }
 
+  function ThemeControlPanel({ themeNames }) {
+    return (
+      <ControlPanelContainer>
+        <p className="header">Select Theme</p>
+        <ul>
+          {themeNames.map((k, i) => (
+            <li key={i}>
+              <label>
+                <input
+                  type="radio"
+                  name="theme"
+                  value={k}
+                  onChange={e => setThemeName(e.target.value)}
+                  checked={k === themeName}
+                />
+                {k}
+              </label>
+            </li>
+          ))}
+        </ul>
+      </ControlPanelContainer>
+    );
+  }
+
   const opts = {
     layout,
   };
 
   return (
     <React.Fragment>
-      <ControlPanel layouts={layouts} />
+      {showLayoutCP === true && <LayoutControlPanel layouts={layouts} />}
+      {showThemeCP === true && (
+        <ThemeControlPanel themeNames={Object.keys(themes)} />
+      )}
       <DemoContainer>
-        <Timeline opts={opts}>
+        <Timeline opts={opts} theme={themes[themeName]}>
           <Events>
             <TextEvent date="1/1/19" text="**Markdown** is *supported*" />
             <TextEvent

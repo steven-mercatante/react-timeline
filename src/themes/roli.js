@@ -1,60 +1,39 @@
-export default {
-  fontSize: '14px',
-  fontFamily: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-  Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
-  track: {
-    backgroundColor: '#323343',
-    width: '4px',
+import merge from 'lodash.merge';
+import defaultTheme from './default';
+
+const roliTheme = merge({}, defaultTheme, {
+  timeline: {
+    backgroundColor: '#0C1734',
+    a: { color: 'yellow' },
+  },
+  timelineTrack: {
+    background: 'linear-gradient(to bottom,  #d85bcf 0%,#f0799d 100%);',
+    width: '2px',
   },
   marker: {
-    width: '26px',
-    height: '26px',
-    backgroundColor: '#22212E',
-    border: ' 4px solid #323343',
+    width: '16px',
+    height: '16px',
+    backgroundColor: '#fff',
+    border: 'none',
     borderRadius: '50%',
+    left: '1px',
   },
-  Card: {
+  card: {
+    backgroundColor: '#1B2944',
     color: '#fff',
-    backgroundColor: '#22212E',
-    border: '4px solid #323343',
-    borderRadius: '4px',
-    maxWidth: '42%',
-    padding: '10px',
-    leftOffset: '30px',
-    rightOffset: '30px',
   },
-  buttons: {
+  button: {
     fontSize: '14px',
-    backgroundColor: '#3FC296',
-    borderRadius: '4px',
+    backgroundColor: '#08BE95',
     padding: '4px',
     color: '#fff',
-    margin: '0 4px 0 0',
     border: 'none',
   },
-  timestamp: {
-    backgroundColor: '#22212E',
+  date: {
     padding: '6px',
+    backgroundColor: '#9221C2',
     color: '#fff',
-    borderRadius: '4px',
-    fontWeight: 500,
-    fontSize: '.85rem',
-    topOffset: '-10px',
-    leftOffset: '30px',
-    rightOffset: '30px',
   },
-  image: {
-    width: '100%',
-    maxHeight: '400px',
-    objectFit: 'cover',
-    credit: {
-      fontSize: '0.85rem',
-    },
-  },
-  twitter: {
-    width: '100%',
-    minWidth: '300px',
-    minHeight: '120px',
-    backgroundColor: '#fff',
-  },
-};
+});
+
+export default roliTheme;

@@ -9,7 +9,7 @@ export default function UrlButton({ href, target, children }) {
   }
 
   return (
-    <Button as="a" href={href} {...extraProps}>
+    <Button as="a" href={href} className="url-button" {...extraProps}>
       {children}
     </Button>
   );
