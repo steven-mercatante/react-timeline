@@ -1,20 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Markdown from 'markdown-to-jsx';
+import MarkdownAtom from './MarkdownAtom';
 import styled from 'styled-components';
 
 const Container = styled.div(props => {
-  const defaults = {};
-
-  const style = { ...defaults, ...props.theme.textAtom };
-
-  return style;
+  return props.theme.textAtom;
 });
 
 export default function TextAtom({ text }) {
   return (
-    <Container>
-      <Markdown className="markdown">{text}</Markdown>
+    <Container className="text-atom">
+      <MarkdownAtom text={text} />
     </Container>
   );
 }

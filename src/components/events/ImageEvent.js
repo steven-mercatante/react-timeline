@@ -4,15 +4,32 @@ import styled from 'styled-components';
 import Event from '../events/Event';
 import TextAtom from '../atoms/TextAtom';
 import ImageAtom from '../atoms/ImageAtom';
+import MarkdownAtom from '../atoms/MarkdownAtom';
 import { joinClassNames } from '../../utils/classNames';
 
-const ImageText = styled(TextAtom)(props => {
+const ImageTextContainer = styled.div(props => {
   return props.theme.imageText;
 });
 
-const ImageCredit = styled(TextAtom)(props => {
+const ImageCreditContainer = styled.div(props => {
   return props.theme.imageCredit;
 });
+
+function ImageCredit({ text }) {
+  return (
+    <ImageCreditContainer>
+      <MarkdownAtom text={text} />
+    </ImageCreditContainer>
+  );
+}
+
+function ImageText({ text }) {
+  return (
+    <ImageTextContainer>
+      <MarkdownAtom text={text} />
+    </ImageTextContainer>
+  );
+}
 
 /**
  * Renders a responsive image as an event.
