@@ -2,18 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Event from '../events/Event';
-import TextAtom from '../atoms/TextAtom';
 import ImageAtom from '../atoms/ImageAtom';
 import MarkdownAtom from '../atoms/MarkdownAtom';
 import { joinClassNames } from '../../utils/classNames';
 
-const ImageTextContainer = styled.div(props => {
-  return props.theme.imageText;
-});
+const ImageTextContainer = styled.div(props => props.theme.imageText);
 
-const ImageCreditContainer = styled.div(props => {
-  return props.theme.imageCredit;
-});
+const ImageCreditContainer = styled.div(props => props.theme.imageCredit);
 
 function ImageCredit({ text }) {
   return (
