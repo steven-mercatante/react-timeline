@@ -2,27 +2,27 @@ import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import ImageEvent from './ImageEvent';
-import TimelineContext from '../../TimelineContext';
+import Timeline from '../Timeline';
 
 afterEach(cleanup);
 
 test('ImageEvent takes a custom class', () => {
   const customClass = 'my-custom-class';
 
-  const { container } = render(
-    <TimelineContext.Provider value={{ layout: 'test' }}>
+  const { container, debug } = render(
+    <Timeline value={{ layout: 'test' }}>
       <ImageEvent className={customClass} />
-    </TimelineContext.Provider>
+    </Timeline>
   );
 
-  expect(container.firstChild).toHaveClass(customClass);
+  expect(container.querySelector('.image-event')).toHaveClass(customClass);
 });
 
 test('ImageEvent renders an image tag', () => {
   const { container } = render(
-    <TimelineContext.Provider value={{ layout: 'test' }}>
+    <Timeline value={{ layout: 'test' }}>
       <ImageEvent src="test.png" alt="test image" />
-    </TimelineContext.Provider>
+    </Timeline>
   );
   const img = container.querySelector('img');
 
@@ -32,9 +32,9 @@ test('ImageEvent renders an image tag', () => {
 
 test('ImageEvent renders text', () => {
   const { container } = render(
-    <TimelineContext.Provider value={{ layout: 'test' }}>
+    <Timeline value={{ layout: 'test' }}>
       <ImageEvent text="check out my photo!" />
-    </TimelineContext.Provider>
+    </Timeline>
   );
 
   expect(container).toHaveTextContent(/^check out my photo!$/);
@@ -42,9 +42,9 @@ test('ImageEvent renders text', () => {
 
 test('ImageEvent renders credit', () => {
   const { container } = render(
-    <TimelineContext.Provider value={{ layout: 'test' }}>
+    <Timeline value={{ layout: 'test' }}>
       <ImageEvent credit="photo by me" />
-    </TimelineContext.Provider>
+    </Timeline>
   );
 
   expect(container).toHaveTextContent(/^photo by me$/);

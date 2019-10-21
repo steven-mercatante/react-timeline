@@ -3,6 +3,7 @@ import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import Event from './Event';
 import TimelineContext from '../../TimelineContext';
+import Timeline from '../Timeline';
 
 afterEach(cleanup);
 
@@ -16,9 +17,9 @@ test('Event renders a custom marker from a function', () => {
   }
 
   const { container } = render(
-    <TimelineContext.Provider value={{ layout: 'test' }}>
+    <Timeline value={{ layout: 'test' }}>
       <Event marker={CustomMarker} />
-    </TimelineContext.Provider>
+    </Timeline>
   );
 
   expect(container).toContainHTML(
@@ -36,9 +37,9 @@ test('Event renders a custom date component from a function', () => {
   }
 
   const { container } = render(
-    <TimelineContext.Provider value={{ layout: 'test' }}>
+    <Timeline value={{ layout: 'test' }}>
       <Event date={renderCustomDate} />
-    </TimelineContext.Provider>
+    </Timeline>
   );
 
   expect(container).toContainHTML(
@@ -52,9 +53,9 @@ test('Event renders a custom card component from a function', () => {
   }
 
   const { container } = render(
-    <TimelineContext.Provider value={{ layout: 'test' }}>
+    <Timeline value={{ layout: 'test' }}>
       <Event card={CustomCard} />
-    </TimelineContext.Provider>
+    </Timeline>
   );
 
   expect(container).toContainHTML(
