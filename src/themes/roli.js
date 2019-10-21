@@ -25,7 +25,7 @@ const roliTheme = merge({}, defaultTheme, {
   },
   button: {
     fontSize: '14px',
-    backgroundColor: '#09CDA1',
+    backgroundColor: '#08BE95',
     padding: '4px',
     color: '#fff',
     border: 'none',

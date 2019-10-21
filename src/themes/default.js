@@ -64,7 +64,7 @@ const defaultTheme = {
   imageCredit: { marginTop: '10px', fontSize: '0.85rem' },
   imageText: { marginBottom: '10px' },
   youTubeText: { marginBottom: '10px' },
-  events: {},
+  events: { padding: '10px' },
   event: { marginBottom: '20px' },
   textAtom: {},
 };
