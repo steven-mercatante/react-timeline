@@ -27,7 +27,7 @@ const ControlPanelContainer = styled.div`
     Arial, sans-serif;
 
   .header {
-    margin: 0;
+    margin: 0 0 10px 0;
     font-weight: 600;
   }
 
@@ -53,7 +53,7 @@ const ControlPanelContainer = styled.div`
 
 export default function DemoTimeline() {
   const [layout, setLayout] = useState('alt-evts');
-  const [themeName, setThemeName] = useState('default');
+  const [themeName, setThemeName] = useState('roli');
 
   const layouts = {
     'alt-evts': 'Alternate Events (alt-evts)',

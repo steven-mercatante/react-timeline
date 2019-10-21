@@ -2,33 +2,37 @@ import merge from 'lodash.merge';
 import defaultTheme from './default';
 
 const roliTheme = merge({}, defaultTheme, {
+  timeline: {
+    backgroundColor: '#0C1734',
+    a: { color: 'yellow' },
+  },
   timelineTrack: {
-    backgroundColor: '#323343',
-    width: '4px',
+    background: 'linear-gradient(to bottom,  #d85bcf 0%,#f0799d 100%);',
+    width: '2px',
   },
   marker: {
-    width: '26px',
-    height: '26px',
-    backgroundColor: '#22212E',
-    border: ' 4px solid #323343',
+    width: '16px',
+    height: '16px',
+    backgroundColor: '#fff',
+    border: 'none',
     borderRadius: '50%',
+    left: '1px',
   },
   card: {
+    backgroundColor: '#1B2944',
     color: '#fff',
-    backgroundColor: '#22212E',
-    border: '4px solid #323343',
+    // border: '2px solid #713DEB',
   },
   button: {
     fontSize: '14px',
-    backgroundColor: '#3FC296',
+    backgroundColor: '#09CDA1',
     padding: '4px',
     color: '#fff',
-    margin: '0 4px 0 0',
     border: 'none',
   },
   date: {
-    backgroundColor: '#22212E',
     padding: '6px',
+    backgroundColor: '#9221C2',
     color: '#fff',
   },
 });
