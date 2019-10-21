@@ -21,7 +21,6 @@ const roliTheme = merge({}, defaultTheme, {
   card: {
     backgroundColor: '#1B2944',
     color: '#fff',
-    // border: '2px solid #713DEB',
   },
   button: {
     fontSize: '14px',
