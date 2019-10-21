@@ -5,7 +5,6 @@ const Events = styled.div.attrs(_ => ({
   className: 'events',
 }))(props => {
   const defaults = {
-    padding: '10px',
     [`&.${LAYOUTS.INLINE_EVENTS_INLINE_DATE}`]: {
       paddingLeft: '0px',
     },
