@@ -13,8 +13,8 @@ const roliTheme = merge({}, defaultTheme, {
   marker: {
     width: '16px',
     height: '16px',
-    backgroundColor: '#fff',
-    border: 'none',
+    backgroundColor: '#E167BA',
+    border: '2px solid #fff',
     borderRadius: '50%',
     left: '1px',
   },

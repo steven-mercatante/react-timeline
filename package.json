@@ -9,6 +9,7 @@
     "format": "prettier '**/*.js' --write",
     "test": "jest",
     "watch": "watch 'npm run build' ./src",
+    "prepare": "npm run build",
     "build": "rollup -c",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -c .storybook -o .out"
