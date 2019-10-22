@@ -16,10 +16,9 @@ Check out the example below in which we customize some of the elements.
 
 ```jsx
 import React from 'react';
-import { Timeline, Events, TextEvent, themes } from '@merc/react-timeline';
-import merge from 'lodash.merge';
+import { Timeline, Events, TextEvent, themes, createTheme } from '@merc/react-timeline';
 
-const customTheme = merge({}, themes.default, {
+const customTheme = createTheme(themes.default, {
   card: {
     backgroundColor: '#efefef',
   },

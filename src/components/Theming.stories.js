@@ -6,15 +6,15 @@ import {
   ImageEvent,
   UrlButton,
   themes,
+  createTheme,
 } from '../index';
-import merge from 'lodash.merge';
 
 export default {
   title: 'Timeline/Theming',
 };
 
 export const customThemeExample = () => {
-  const theme = merge({}, themes.default, {
+  const theme = createTheme(themes.default, {
     timeline: {
       backgroundColor: '#070D24',
     },

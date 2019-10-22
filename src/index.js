@@ -4,6 +4,7 @@ import Events from './components/Events';
 import Timeline from './components/Timeline';
 import themes from './themes';
 import LAYOUTS from './constants/layouts';
+import { createTheme } from './utils/themes';
 
 import ImageAtom from './components/atoms/ImageAtom';
 import MarkdownAtom from './components/atoms/MarkdownAtom';
@@ -40,4 +41,5 @@ export {
   YouTubeEvent,
   themes,
   LAYOUTS,
+  createTheme,
 };

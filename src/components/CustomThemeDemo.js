@@ -1,8 +1,7 @@
 import React from 'react';
-import { Timeline, Events, TextEvent, themes } from '../index';
-import merge from 'lodash.merge';
+import { Timeline, Events, TextEvent, themes, createTheme } from '../index';
 
-const customTheme = merge({}, themes.default, {
+const customTheme = createTheme(themes.default, {
   card: {
     backgroundColor: '#efefef',
   },
