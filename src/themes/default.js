@@ -3,12 +3,6 @@ const defaultTheme = {
     fontSize: '1rem',
     fontFamily: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
   Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
-    a: {
-      color: '#EC24B5',
-      '&.url-button': {
-        color: '#fff',
-      },
-    },
   },
   timelineTrack: {
     position: 'absolute',
@@ -36,7 +30,6 @@ const defaultTheme = {
     maxWidth: '560px',
   },
   button: {
-    display: 'inline-block',
     fontSize: '14px',
     backgroundColor: 'rebeccapurple',
     borderRadius: '4px',
@@ -46,6 +39,17 @@ const defaultTheme = {
     border: 'none',
     textDecoration: 'none',
     cursor: 'pointer',
+  },
+  urlButton: {
+    display: 'inline-block',
+    fontSize: '14px',
+    backgroundColor: 'rebeccapurple',
+    borderRadius: '4px',
+    padding: '6px',
+    margin: '10px 5px 5px 0',
+    border: 'none',
+    textDecoration: 'none',
+    color: '#fff',
   },
   date: {
     backgroundColor: '#ec24b5',
