@@ -1,7 +1,7 @@
-import merge from 'lodash.merge';
 import defaultTheme from './default';
+import { createTheme } from '../utils/themes';
 
-const roliTheme = merge({}, defaultTheme, {
+const roliTheme = createTheme(defaultTheme, {
   timeline: {
     backgroundColor: '#0C1734',
     a: { color: 'yellow' },
