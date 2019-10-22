@@ -1,7 +1,7 @@
 import { createTheme } from './themes';
 
 test('createTheme creates a theme', () => {
-  const baseTheme = { timelinex: { backgroundColor: '#fff' } };
+  const baseTheme = { timeline: { backgroundColor: '#fff' } };
   const newTheme = createTheme(baseTheme, {
     timelineTrack: { backgroundColor: '#000' },
   });
