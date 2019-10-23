@@ -18,6 +18,13 @@ Check out the example below in which we customize some of the elements.
 import React from 'react';
 import { Timeline, Events, TextEvent, themes, createTheme } from '@merc/react-timeline';
 
+/**
+  * `createTheme` is a helper function that takes two arguments:
+  * - a base theme to extend from
+  * - the new theme properties
+  * It uses deep copying behind the scenes to create a new theme object with
+  * all of the required properties.
+  */
 const customTheme = createTheme(themes.default, {
   card: {
     backgroundColor: '#efefef',
