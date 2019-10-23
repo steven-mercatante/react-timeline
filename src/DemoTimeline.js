@@ -10,7 +10,6 @@ import {
   ImageEvent,
   YouTubeEvent,
   UrlButton,
-  Button,
   themes,
 } from './index';
 
@@ -150,7 +149,6 @@ export default function DemoTimeline({
                 <UrlButton href="https://unsplash.com/search/photos/undersea">
                   View more undersea photos
                 </UrlButton>
-                <Button>Regular Button</Button>
               </div>
             </ImageEvent>
 

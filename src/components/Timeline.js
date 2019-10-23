@@ -26,6 +26,7 @@ const Container = styled.div`
 
   font-size: ${props => props.theme.timeline.fontSize};
   font-family: ${props => props.theme.timeline.fontFamily};
+  background-color: ${props => props.theme.timeline.backgroundColor};
 
   ::after {
     position: absolute;

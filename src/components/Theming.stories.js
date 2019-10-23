@@ -49,11 +49,13 @@ export const customThemeExample = () => {
           </div>
         </TextEvent>
         <ImageEvent
+          date="10/04/19"
           src="https://images.unsplash.com/photo-1559291001-693fb9166cba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
           alt="jellyfish"
           credit="Photo by [Vino Li](https://unsplash.com/@vinomamba24)"
         />
         <ImageEvent
+          date="10/05/19"
           src="https://images.unsplash.com/photo-1555901879-245ec81f706c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
           alt="blue octopus"
           credit="Photo by [Adam Muise](https://unsplash.com/@muiseadam)"
