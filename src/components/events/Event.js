@@ -8,29 +8,32 @@ import TimelineContext from '../../TimelineContext';
 import { joinClassNames } from '../../utils/classNames';
 import LAYOUTS from '../../constants/layouts';
 
-const Container = styled.div`
-  && {
-    position: relative;
-    display: flex;
-    margin-bottom: ${props => props.theme.event.marginBottom};
+const Container = styled.div(props => {
+  const defaults = {
+    position: 'relative',
+    display: 'flex',
 
-    :nth-child(1) {
-      margin-top: ${props => props.theme.event.marginBottom};
-    }
+    ':nth-child(1)': {
+      marginTop: props.theme.event.marginBottom,
+    },
 
-    :nth-child(even) {
-      flex-direction: row-reverse;
-    }
+    ':nth-child(even)': {
+      flexDirection: 'row-reverse',
+    },
 
-    &.${LAYOUTS.INLINE_EVENTS}, &.${LAYOUTS.INLINE_EVENTS_INLINE_DATE} {
-      flex-direction: row !important;
-    }
+    [`&.${LAYOUTS.INLINE_EVENTS}, &.${LAYOUTS.INLINE_EVENTS_INLINE_DATE}`]: {
+      flexDirection: 'row !important',
+    },
 
-    @media (max-width: 768px) {
-      flex-direction: row !important;
-    }
-  }
-`;
+    '@media (max-width: 768px)': {
+      flexDirection: 'row !important',
+    },
+  };
+
+  const style = { ...defaults, ...props.theme.event };
+
+  return style;
+});
 
 const DateColumn = styled.div({
   display: 'flex',
@@ -63,37 +66,33 @@ const DateColumn = styled.div({
   },
 });
 
-const MarkerColumn = styled.div`
-  && {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-basis: 40px;
-    flex-shrink: 0;
-    z-index: 200;
-  }
-`;
+const MarkerColumn = styled.div({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexBasis: '40px',
+  flexShrink: 0,
+  zIndex: 200,
+});
 
-const CardColumn = styled.div`
-  && {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex-basis: 50%;
-    flex-grow: 1;
+const CardColumn = styled.div({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'flex-start',
+  flexBasis: '50%',
+  flexGrow: '1',
 
-    &.${LAYOUTS.ALTERNATE_EVENTS}, &.${LAYOUTS.ALTERNATE_EVENTS_INLINE_DATE} {
-      ${Container}:nth-child(even) & {
-        align-items: flex-end;
-      }
-    }
+  [`&.${LAYOUTS.ALTERNATE_EVENTS}, &.${LAYOUTS.ALTERNATE_EVENTS_INLINE_DATE}`]: {
+    [`${Container}:nth-child(even) &`]: {
+      alignItems: 'flex-end',
+    },
+  },
 
-    @media (max-width: 768px) : {
-      align-items: flex-start !important;
-    }
-  }
-`;
+  '@media (max-width: 768px)': {
+    alignItems: 'flex-start !important',
+  },
+});
 
 export default function Event({ date, marker, children, className, card }) {
   const { layout } = useContext(TimelineContext);
