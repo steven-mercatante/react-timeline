@@ -1,8 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-const UrlButtonContainer = styled.a(props => props.theme.urlButton);
 
 export default function UrlButton({ href, target, children }) {
   const extraProps = {};
@@ -11,9 +8,9 @@ export default function UrlButton({ href, target, children }) {
   }
 
   return (
-    <UrlButtonContainer href={href} className="url-button" {...extraProps}>
+    <a href={href} className="url-button" {...extraProps}>
       {children}
-    </UrlButtonContainer>
+    </a>
   );
 }
 

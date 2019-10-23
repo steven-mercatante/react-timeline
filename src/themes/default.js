@@ -1,11 +1,11 @@
 const defaultTheme = {
   timeline: {
+    backgroundColor: 'inherit',
     fontSize: '1rem',
     fontFamily: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
   Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
   },
   timelineTrack: {
-    position: 'absolute',
     left: `50%`,
     width: '2px',
     height: '100%',
@@ -28,6 +28,7 @@ const defaultTheme = {
     boxShadow: '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)',
     width: '100%',
     maxWidth: '560px',
+    a: { color: '#EC24B5' },
   },
   button: {
     fontSize: '14px',
@@ -37,18 +38,15 @@ const defaultTheme = {
     color: '#fff',
     margin: '10px 5px 5px 0',
     border: 'none',
-    textDecoration: 'none',
     cursor: 'pointer',
   },
   urlButton: {
-    display: 'inline-block',
     fontSize: '14px',
     backgroundColor: 'rebeccapurple',
     borderRadius: '4px',
     padding: '6px',
     margin: '10px 5px 5px 0',
     border: 'none',
-    textDecoration: 'none',
     color: '#fff',
   },
   date: {
@@ -66,8 +64,8 @@ const defaultTheme = {
     maxHeight: '400px',
   },
   imageCredit: { marginTop: '10px', fontSize: '0.85rem' },
-  imageText: { marginBottom: '10px' },
-  youTubeText: { marginBottom: '10px' },
+  imageText: { marginBottom: '10px', fontSize: '1rem' },
+  youTubeText: { marginBottom: '10px', fontSize: '1rem' },
   events: { padding: '10px' },
   event: { marginBottom: '20px' },
   textAtom: {},

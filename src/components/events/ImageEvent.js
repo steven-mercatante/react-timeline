@@ -6,9 +6,19 @@ import ImageAtom from '../atoms/ImageAtom';
 import MarkdownAtom from '../atoms/MarkdownAtom';
 import { joinClassNames } from '../../utils/classNames';
 
-const ImageTextContainer = styled.div(props => props.theme.imageText);
+const ImageTextContainer = styled.div`
+  && {
+    margin-bottom: ${props => props.theme.imageText.marginBottom};
+    font-size: ${props => props.theme.imageText.fontSize};
+  }
+`;
 
-const ImageCreditContainer = styled.div(props => props.theme.imageCredit);
+const ImageCreditContainer = styled.div`
+  && {
+    margin-top: ${props => props.theme.imageCredit.marginTop};
+    font-size: ${props => props.theme.imageCredit.fontSize};
+  }
+`;
 
 function ImageCredit({ text }) {
   return (

@@ -6,7 +6,12 @@ import MarkdownAtom from '../atoms/MarkdownAtom';
 import YouTubeAtom from '../atoms/YouTubeAtom';
 import { joinClassNames } from '../../utils/classNames';
 
-const YouTubeTextContainer = styled.div(props => props.theme.youTubeText);
+const YouTubeTextContainer = styled.div`
+  && {
+    margin-bottom: ${props => props.theme.youTubeText.marginBottom};
+    font-size: ${props => props.theme.youTubeText.fontSize};
+  }
+`;
 
 function YouTubeText({ text }) {
   return (

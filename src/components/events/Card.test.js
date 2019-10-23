@@ -2,7 +2,7 @@ import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import Card from './Card';
-import TimelineContext from '../../TimelineContext';
+import Timeline from '../Timeline';
 
 afterEach(cleanup);
 
@@ -16,9 +16,9 @@ test('Card renders a custom date component from a function', () => {
   }
 
   const { container } = render(
-    <TimelineContext.Provider value={{ layout: 'test' }}>
+    <Timeline>
       <Card date={renderCustomDate} />
-    </TimelineContext.Provider>
+    </Timeline>
   );
 
   expect(container).toContainHTML(
@@ -32,7 +32,7 @@ test('Card renders a custom date component from JSX', () => {
   }
 
   const { container } = render(
-    <TimelineContext.Provider value={{ layout: 'test' }}>
+    <Timeline>
       <Card
         date={
           <CustomDate>
@@ -40,7 +40,7 @@ test('Card renders a custom date component from JSX', () => {
           </CustomDate>
         }
       />
-    </TimelineContext.Provider>
+    </Timeline>
   );
 
   expect(container).toContainHTML(
