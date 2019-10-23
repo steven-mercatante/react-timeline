@@ -41,14 +41,12 @@ const defaultTheme = {
     cursor: 'pointer',
   },
   urlButton: {
-    display: 'inline-block',
     fontSize: '14px',
     backgroundColor: 'rebeccapurple',
     borderRadius: '4px',
     padding: '6px',
     margin: '10px 5px 5px 0',
     border: 'none',
-    textDecoration: 'none',
     color: '#fff',
   },
   date: {
