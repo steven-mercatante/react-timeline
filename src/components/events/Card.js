@@ -5,17 +5,36 @@ import styled from 'styled-components';
 import TimelineContext from '../../TimelineContext';
 import { joinClassNames } from '../../utils/classNames';
 
-const Container = styled.div(props => {
-  const defaults = {
-    position: 'relative',
-    display: 'flex',
-    flexDirection: 'column',
-  };
+const Container = styled.div`
+  && {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: ${props => props.theme.card.borderRadius};
+    background-color: ${props => props.theme.card.backgroundColor};
+    color: ${props => props.theme.card.color};
+    padding: ${props => props.theme.card.padding};
+    box-shadow: ${props => props.theme.card.boxShadow};
+    width: ${props => props.theme.card.width};
+    max-width: ${props => props.theme.card.maxWidth};
 
-  const style = { ...defaults, ...props.theme.card };
+    a {
+      color: ${props => props.theme.card.a.color};
+    }
 
-  return style;
-});
+    .url-button {
+      display: inline-block;
+      text-decoration: none;
+      font-size: ${props => props.theme.urlButton.fontSize};
+      background-color: ${props => props.theme.urlButton.backgroundColor};
+      border: ${props => props.theme.urlButton.border};
+      border-radius: ${props => props.theme.urlButton.borderRadius};
+      padding: ${props => props.theme.urlButton.padding};
+      margin: ${props => props.theme.urlButton.margin};
+      color: ${props => props.theme.urlButton.color};
+    }
+  }
+`;
 
 export default function Card({ date, children }) {
   const { layout } = useContext(TimelineContext);

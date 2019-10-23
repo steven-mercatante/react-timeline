@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Container = styled.span(props => {
-  const defaults = {
-    position: 'relative',
-  };
-
-  const style = { ...defaults, ...props.theme.marker };
-
-  return style;
-});
+const Container = styled.span`
+  position: relative;
+  zindex: 100;
+  background-color: ${props => props.theme.marker.backgroundColor};
+  border: ${props => props.theme.marker.border};
+  border-radius: ${props => props.theme.marker.borderRadius};
+  width: ${props => props.theme.marker.width};
+  height: ${props => props.theme.marker.height};
+`;
 
 export default function Marker() {
   return <Container className="marker" />;

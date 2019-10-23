@@ -28,6 +28,7 @@ const defaultTheme = {
     boxShadow: '0 4px 6px 0 hsla(0, 0%, 0%, 0.2)',
     width: '100%',
     maxWidth: '560px',
+    a: { color: '#EC24B5' },
   },
   button: {
     fontSize: '14px',
@@ -37,7 +38,6 @@ const defaultTheme = {
     color: '#fff',
     margin: '10px 5px 5px 0',
     border: 'none',
-    textDecoration: 'none',
     cursor: 'pointer',
   },
   urlButton: {
