@@ -12,36 +12,47 @@ const OverflowWrapper = styled.div`
   overflow: auto;
 `;
 
-const Container = styled.div(props => {
-  const defaults = {
-    display: 'flex',
-    flexDirection: 'column',
-    position: 'relative',
+const Container = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
 
-    '*, *:before, *:after': {
-      boxSizing: 'border-box',
-    },
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
 
-    // renders the vertical line
-    '::after': { ...props.theme.timelineTrack },
+  font-size: ${props => props.theme.timeline.fontSize};
+  font-family: ${props => props.theme.timeline.fontFamily};
 
-    [`&.${LAYOUTS.INLINE_EVENTS}`]: {
-      '::after': { left: '130px' },
-    },
+  ::after {
+    position: absolute;
+    left: ${props => props.theme.timelineTrack.left};
+    width: ${props => props.theme.timelineTrack.width};
+    height: ${props => props.theme.timelineTrack.height};
+    background-color: ${props => props.theme.timelineTrack.backgroundColor};
+    content: ${props => props.theme.timelineTrack.content};
+  }
 
-    [`&.${LAYOUTS.INLINE_EVENTS_INLINE_DATE}`]: {
-      '::after': { left: '29px' },
-    },
+  &.${LAYOUTS.INLINE_EVENTS} {
+    ::after {
+      left: 130px;
+    }
+  }
 
-    '@media (max-width: 768px)': {
-      '::after': { left: '29px !important' },
-    },
-  };
+  &.${LAYOUTS.INLINE_EVENTS_INLINE_DATE} {
+    ::after {
+      left: 29px;
+    }
+  }
 
-  const style = { ...defaults, ...props.theme.timeline };
-
-  return style;
-});
+  @media (max-width: 768px) {
+    ::after {
+      left: 29px !important;
+    }
+  }
+`;
 
 const _opts = {
   layout: LAYOUTS.ALTERNATE_EVENTS, // see LAYOUTS constant

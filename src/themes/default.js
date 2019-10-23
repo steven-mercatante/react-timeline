@@ -5,7 +5,6 @@ const defaultTheme = {
   Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
   },
   timelineTrack: {
-    position: 'absolute',
     left: `50%`,
     width: '2px',
     height: '100%',
@@ -64,8 +63,8 @@ const defaultTheme = {
     maxHeight: '400px',
   },
   imageCredit: { marginTop: '10px', fontSize: '0.85rem' },
-  imageText: { marginBottom: '10px' },
-  youTubeText: { marginBottom: '10px' },
+  imageText: { marginBottom: '10px', fontSize: '1rem' },
+  youTubeText: { marginBottom: '10px', fontSize: '1rem' },
   events: { padding: '10px' },
   event: { marginBottom: '20px' },
   textAtom: {},

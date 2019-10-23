@@ -3,16 +3,12 @@ import LAYOUTS from '../constants/layouts';
 
 const Events = styled.div.attrs(_ => ({
   className: 'events',
-}))(props => {
-  const defaults = {
-    [`&.${LAYOUTS.INLINE_EVENTS_INLINE_DATE}`]: {
-      paddingLeft: '0px',
-    },
-  };
+}))`
+  padding: ${props => props.theme.events.padding};
 
-  const style = { ...defaults, ...props.theme.events };
-
-  return style;
-});
+  &.${LAYOUTS.INLINE_EVENTS_INLINE_DATE} {
+    padding-left: 0px;
+  }
+`;
 
 export default Events;
